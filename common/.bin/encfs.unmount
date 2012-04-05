@@ -1,0 +1,2 @@
+#!/bin/bash
+fusermount -u "$1" && rm -rf "$1"

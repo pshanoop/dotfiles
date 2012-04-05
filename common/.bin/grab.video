@@ -1,0 +1,1 @@
+/usr/bin/streamer -q -c /dev/video0 -f rgb24 -r 3 -t 00:30:00 -o $HOME/Screenshots/Camera/`date +%F_%H%M%S_%N`.avi

@@ -1,0 +1,2 @@
+#!/bin/sh
+sshfs user@helios.local:/home/user /home/hugo/.mount/n900

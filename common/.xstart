@@ -1,0 +1,47 @@
+#!/bin/sh
+
+### Daemons ###
+eval `ssh-agent -s`
+
+### Compiz ###
+/usr/bin/compiz ccp &
+
+### X ###
+/usr/bin/setxkbmap -option terminate:ctrl_alt_bksp
+/usr/bin/setxkbmap -layout es
+/usr/bin/xbindkeys &
+
+### Background ###
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
+/usr/bin/lxpanel &
+
+if [ -e ~/.Xresources ]; then
+  /usr/bin/xrdb -merge ~/.Xresources
+fi;
+
+/usr/bin/volctld &
+
+### Host specific ###
+if [ "hermes.ubertech.com.ar" = "`hostname`" ]; then
+  /usr/bin/wicd-gtk -t &
+  /usr/bin/xfce4-power-manager &
+  /usr/bin/pulseaudio --start &
+fi;
+if [ "hyperion.ubertech.com.ar" = "`hostname`" ]; then
+  /usr/bin/xscreensaver -no-splash &
+  /usr/bin/blueman-applet &
+fi;
+
+# Delayed startup daemons
+# Delaying these improves startup perforance of previous applications
+/usr/bin/sleep 22
+/usr/bin/parcellite --daemon &
+
+/usr/bin/tilda &
+/usr/bin/x11vnc -forever -localhost -xauth $XAUTHORITY -display :0 -nopw -noipv6 >$HOME/.x11vnc.log 2>&1 &
+
+#/usr/bin/tty-clock -s -c -C 7
+while [ TRUE ]; do
+  #/usr/bin/terminal
+  /usr/bin/sleep 365d
+done;

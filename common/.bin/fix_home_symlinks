@@ -1,0 +1,12 @@
+#!/bin/sh
+for f in .gtk-bookmarks .gtkrc-2.0
+do
+  echo " + Processing $HOME/${f}:"
+  if [ ! -L $HOME/${f} ]; then
+    mv $HOME/${f} $HOME/.home/common/${f} &&
+      ln -s .shared/${f} $HOME/${f}
+  else
+    echo "   - File was already a symlink"
+  fi
+done
+

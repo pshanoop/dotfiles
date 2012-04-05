@@ -1,0 +1,1 @@
+/usr/bin/import -window `xwininfo |grep 'Window id:' |cut -d" " -f4` $HOME/Screenshots/Windows/`date +%F_%H%M%S_%N`.jpg

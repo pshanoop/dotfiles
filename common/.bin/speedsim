@@ -1,0 +1,2 @@
+export WINEPREFIX=/home/hugo/Wine/prefixes/speedsim
+wine $WINEPREFIX/drive_c/Program\ Files/SpeedSim/SpeedSim.exe

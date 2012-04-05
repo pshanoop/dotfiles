@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -d "$1fs" ]; then
+  mkdir "$1fs"
+fi
+
+encfs "$1" "$1fs" --extpass="$SSH_ASKPASS Password:"
+
+if [ $? != 0 ]; then
+  zenity --info --text "There was some error mounting"
+fi
+

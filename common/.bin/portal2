@@ -1,0 +1,2 @@
+#!/bin/sh
+WINEPREFIX=~/.PlayOnLinux/wineprefix/portal2/ wine ~/.PlayOnLinux/wineprefix/portal2/drive_c/Program\ Files/Valve/Portal\ 2/portal2.exe

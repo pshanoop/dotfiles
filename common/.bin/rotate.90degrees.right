@@ -1,0 +1,1 @@
+mencoder -vf rotate=1 -o $1.rotated -oac copy -ovc lavc $1

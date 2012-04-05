@@ -1,0 +1,25 @@
+#!/bin/bash
+export OLD_PWD=$PWD
+cd /home/hugo/
+
+### BEGIN PRE-COMMIT ###
+
+
+if [ ! -h .gtk-bookmarks ]; then
+  mv .gtk-bookmarks ..SharedDots/gtk-bookmarks &&
+  ln -s ..SharedDots/gtk-bookmarks .gtk-bookmarks
+fi 
+
+### END PRE-COMMIT ###
+
+cd $OLD_PWD
+/usr/bin/svn $@;
+wait
+
+### BEING POST-COMMIT ###
+
+
+
+
+
+### END POST-COMMIT ###

@@ -1,0 +1,2 @@
+Terminal = Terminal
+URL_http = firefox -remote "openURL(%u, new-window)"

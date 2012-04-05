@@ -1,0 +1,1 @@
+/usr/bin/streamer -c /dev/video0 -b 16 -o $HOME/Screenshots/Camera/`date +%F_%H%M%S_%N`.jpeg

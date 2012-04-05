@@ -1,0 +1,24 @@
+#/bin/sh
+
+ELYSION=elysion.ubertech.com.ar
+
+if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
+  ssh -fND 9999 hugo@${ELYSION} &&
+  echo -e "Port 9999\tSOCKS proxy\tLink established"
+else
+  echo -e "Port 9999\tSOCKS proxy\tPort already in use"
+fi
+
+if [ -z "`lsof -i :3690 | grep LISTEN`" ]; then
+  ssh -fN -L 3690:localhost:3690 hugo@${ELYSION} &&
+  echo -e "Port 3690\tSVN\t\tLink established"
+else
+  echo -e "Port 3690\tSVN\t\tPort already in use"
+fi
+
+if [ -z "`lsof -i :3306 | grep LISTEN`" ]; then
+  ssh -fN -L 3306:localhost:3306 hugo@${ELYSION} &&
+  echo -e "Port 3306\tMySQL\t\tLink established"
+else
+  echo -e "Port 3306\tMySQL\t\tPort already in use"
+fi
