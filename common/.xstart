@@ -4,16 +4,16 @@
 eval $(ssh-agent -s)
 eval $(gpg-agent --daemon)
 
-### Compiz ###
-/usr/bin/compiz ccp &
-sh $HOME/.fehbg
-
 ### X ###
 /usr/bin/xbindkeys &
 
 if [ -e ~/.Xresources ]; then
   /usr/bin/xrdb -merge ~/.Xresources
 fi;
+
+### Compiz ###
+/usr/bin/compiz ccp &
+sh $HOME/.fehbg
 
 ### Background ###
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -24,7 +24,6 @@ fi;
 
 ### Host specific ###
 if [ "hermes.ubertech.com.ar" = "`hostname`" ]; then
-  /usr/bin/sudo /usr/sbin/wicd
   /usr/bin/wicd-gtk &
   /usr/bin/xfce4-power-manager &
   /usr/bin/start-pulseaudio-x11 &
@@ -42,14 +41,11 @@ if [ "ares.ubertech.com.ar" = "`hostname`" ]; then
   /usr/bin/xset b 4 10000 100
 fi;
 
-# Delayed startup daemons
-# Delaying these improves startup perforance of previous applications
 /usr/bin/parcellite --daemon &
-
 /usr/bin/x11vnc -noxdamage -forever -localhost -xauth $XAUTHORITY -display :0 -nopw -ncache 10 >$HOME/.cache/x11vnc.log 2>&1 &
 
-#/usr/bin/tty-clock -s -c -C 7
+# Sleep forever, but as a hack keep gtk-window-decorator alive
 while [ TRUE ]; do
-  #/usr/bin/terminal
-  /usr/bin/sleep 365d
+  /usr/bin/gtk-window-decorator;
+  /usr/bin/sleep 365d;
 done;

@@ -9,4 +9,3 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-recent-files-max-age=0
 gtk-theme-name="A-New-Hope"
-include "/home/hugo/.gtkrc-2.0.local"

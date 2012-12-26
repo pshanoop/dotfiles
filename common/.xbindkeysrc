@@ -1,0 +1,75 @@
+# List of modifiers:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+###########
+# TELCADO #
+###########
+# Print = full screen screenshot
+"scrot /home/hugo/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png' &"
+  Print
+
+# Ctrl + Print = click window to take screenshot
+"$HOME/.bin/screenshot.window"
+  Control + Print
+
+#Alt/Super + Print = active window screenshot
+"$HOME/.bin/screenshot.active"
+  mod4 + Print
+"$HOME/.bin/screenshot.active"
+  mod1 + Print
+
+"/usr/bin/Thunar &"
+  mod4 + q
+#"/usr/bin/zenity --warning --text "Use super+f to start firefox." &"
+"/usr/bin/firefox &"
+  mod4 + c
+"/usr/bin/firefox &"
+  mod4 + f
+"/usr/bin/Terminal &"
+  mod4 + t
+"Terminal -e python &"
+  mod4 + p
+"Terminal -e iddqd &"
+  mod4 + r
+"Terminal -e alsamixer --geometry=102x24 &"
+  mod4 + v
+
+"/usr/bin/purple &"
+  mod4 + l
+
+"/usr/bin/xkill"
+  Control + Mod1 + Escape
+
+"/usr/bin/slock"
+  XF86HomePage
+
+"echo The time is `date +%R` | festival --tts"
+  XF86Search
+
+"xrandr -s 1920x1080"
+  XF86Mail
+#####################
+# TECLAS MULTIMEDIA #
+#####################
+
+"/usr/bin/Terminal -e '/usr/bin/calc -d'"
+  XF86Calculator
+
+"/usr/bin/Terminal -e '/usr/bin/calc -d'"
+  XF86Documents
+
+#########
+# MOUSE #
+#########
+
+# PLAY
+"/home/hugo/.bin/vlc.playPause"
+  m:0x0 + b:9
+
+# STOP
+"/home/hugo/.bin/vlc.stop"
+  m:0x0 + b:8
+
+"/usr/bin/gmrun &"
+  mod4 + space
+
