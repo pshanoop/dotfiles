@@ -1,0 +1,7 @@
+[user]
+	name = Hugo Osvaldo Barrera
+	email = hbarrera@wikilife.org
+[diff]
+	external = git-meld
+[push]
+	default = simple
