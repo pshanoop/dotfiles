@@ -12,7 +12,7 @@ export WINEARCH=win32
 export JAVA_OPTS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 export BROWSER=firefox
-export SSH_ASKPASS="zenity --password"
+export SSH_ASKPASS="/usr/lib/ssh/gnome-ssh-askpass2"
 
 PS1='[\u@\h \W]\$ '
 

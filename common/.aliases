@@ -7,8 +7,6 @@ alias ll='ls -l --color=tty'
 alias la='ls -la'
 alias grep="grep --color=auto"
 alias sudo='/usr/bin/sudo '
-alias nc='nc.openbsd'
 alias vte='vte --reverse -f "Droid Sans Mono" -D'
 alias clock='/usr/bin/tty-clock -s -c -C 7'
 alias readcd='readcd -dev=/dev/sg1 -f '
-alias pacman=pacman-color

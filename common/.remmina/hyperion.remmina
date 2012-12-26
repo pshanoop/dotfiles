@@ -1,4 +1,3 @@
-
 [remmina]
 keymap=
 ssh_auth=2
@@ -10,7 +9,7 @@ disableclipboard=0
 hscale=0
 group=
 password=
-name=Hyperion
+name=hyperion
 ssh_loopback=1
 proxy=
 ssh_username=hugo
@@ -25,9 +24,9 @@ showcursor=0
 disableserverinput=0
 server=hyperion.ubertech.com.ar
 aspectscale=0
-scale=1
+scale=0
 window_maximize=1
 viewmode=1
 keyboard_grab=1
-window_height=548
-window_width=804
+window_height=813
+window_width=1603

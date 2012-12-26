@@ -1,44 +1,52 @@
 #!/bin/sh
 
 ### Daemons ###
-eval `ssh-agent -s`
+eval $(ssh-agent -s)
+eval $(gpg-agent --daemon)
 
 ### Compiz ###
 /usr/bin/compiz ccp &
+sh $HOME/.fehbg
 
 ### X ###
-/usr/bin/setxkbmap -option terminate:ctrl_alt_bksp
-/usr/bin/setxkbmap -layout es
 /usr/bin/xbindkeys &
-
-### Background ###
-#/usr/lib/xfce4/notifyd/xfce4-notifyd &
-/usr/bin/lxpanel &
 
 if [ -e ~/.Xresources ]; then
   /usr/bin/xrdb -merge ~/.Xresources
 fi;
 
+### Background ###
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 /usr/bin/volctld &
+
+### Desktop ###
+/usr/bin/lxpanel &
 
 ### Host specific ###
 if [ "hermes.ubertech.com.ar" = "`hostname`" ]; then
-  /usr/bin/wicd-gtk -t &
+  /usr/bin/sudo /usr/sbin/wicd
+  /usr/bin/wicd-gtk &
   /usr/bin/xfce4-power-manager &
-  /usr/bin/pulseaudio --start &
+  /usr/bin/start-pulseaudio-x11 &
+  /usr/bin/eject -i on &
 fi;
 if [ "hyperion.ubertech.com.ar" = "`hostname`" ]; then
-  /usr/bin/xscreensaver -no-splash &
   /usr/bin/blueman-applet &
+  /usr/bin/numlockx on &
+fi;
+if [ "ares.ubertech.com.ar" = "`hostname`" ]; then
+  /usr/bin/wicd-gtk -t &
+  /usr/bin/xfce4-power-manager &
+  /usr/bin/numlockx on &
+  #/usr/bin/start-pulseaudio-x11 &
+  /usr/bin/xset b 4 10000 100
 fi;
 
 # Delayed startup daemons
 # Delaying these improves startup perforance of previous applications
-/usr/bin/sleep 22
 /usr/bin/parcellite --daemon &
 
-/usr/bin/tilda &
-/usr/bin/x11vnc -forever -localhost -xauth $XAUTHORITY -display :0 -nopw -noipv6 >$HOME/.x11vnc.log 2>&1 &
+/usr/bin/x11vnc -noxdamage -forever -localhost -xauth $XAUTHORITY -display :0 -nopw -ncache 10 >$HOME/.cache/x11vnc.log 2>&1 &
 
 #/usr/bin/tty-clock -s -c -C 7
 while [ TRUE ]; do
