@@ -1,1 +1,1 @@
-ssh root@elysion.ubertech.com.ar -i/home/hugo/.certs/root@elysion.unencrypted
+ssh elysion.ubertech.com.ar

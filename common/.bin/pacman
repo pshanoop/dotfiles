@@ -1,1 +1,2 @@
-/usr/bin/pacman-color
+#!/bin/sh
+/usr/bin/sudo pacman-color $@

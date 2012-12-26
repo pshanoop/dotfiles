@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "Rebooting using kexec"
-sudo kexec_reboot_to_grub 1

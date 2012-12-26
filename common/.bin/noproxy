@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
+  ssh -fND 9999 hugo@localhost &&
+  echo -e "Port 9999\tSOCKS proxy\tLink established"
+else
+  echo -e "Port 9999\tSOCKS proxy\tPort already in use"
+fi
+

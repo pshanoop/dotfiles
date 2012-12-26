@@ -1,0 +1,2 @@
+#!/bin/sh
+xdg-mime default ${1}.desktop `grep 'MimeType=' /usr/share/applications/${1}.desktop | sed -e 's/.*=//' -e 's/;/ /g'`
