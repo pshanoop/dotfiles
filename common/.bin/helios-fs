@@ -1,2 +1,4 @@
 #!/bin/sh
-sshfs user@helios.local:/home/user /home/hugo/mount/helios
+export MOUNTPATH=/home/hugo/mount/helios
+mkdir -p ${MOUNTPATH}
+sshfs user@helios.local:/home/user/ ${MOUNTPATH}

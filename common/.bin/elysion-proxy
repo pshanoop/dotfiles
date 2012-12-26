@@ -1,0 +1,11 @@
+#/bin/sh
+
+ELYSION=elysion.ubertech.com.ar
+
+echo -e "Port 9999 (SOCKS)"
+if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
+  ssh -fND 9999 ${ELYSION} &&
+  echo -e "\tLink established";
+else
+  echo -e "\tPort in use";
+fi

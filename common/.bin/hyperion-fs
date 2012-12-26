@@ -1,2 +1,2 @@
 #!/bin/sh
-sshfs hyperion.ubertech.com.ar:/home/hugo/ ~/mount/hyperion
+sshfs hyperion.ubertech.com.ar:/home/hugo /home/hugo/mount/hyperion

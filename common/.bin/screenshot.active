@@ -3,5 +3,5 @@
 activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
 activeWinId="${activeWinLine:40}"
 
-/usr/bin/import -window $activeWinId $HOME/Screenshots/Windows/`date +%F_%H%M%S_%N`.jpg
+/usr/bin/import -window $activeWinId $HOME/screenshots/Windows/`date +%F_%H%M%S_%N`.jpg
 

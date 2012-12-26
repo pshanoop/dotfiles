@@ -1,3 +1,0 @@
-#!/bin/sh
-export VLOCK_MESSAGE="Console locked"
-sudo env USER=hugo vlock -ans

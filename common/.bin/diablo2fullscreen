@@ -1,6 +1,0 @@
-#!/bin/sh
-export DISPLAY=:3
-export WINEPREFIX=/home/hugo/.PlayOnLinux/wineprefix/Diablo2
-
-sudo -- X :3 -ac &  wine /home/hugo/.PlayOnLinux/wineprefix/Diablo2/drive_c/Program\ Files/Diablo\ II/Diablo\ II.exe
-
