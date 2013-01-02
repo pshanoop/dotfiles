@@ -7,13 +7,15 @@ eval $(gpg-agent --daemon)
 ### X ###
 /usr/bin/xbindkeys &
 
-if [ -e ~/.Xresources ]; then
-  /usr/bin/xrdb -merge ~/.Xresources
+if [ -e $HOME/.Xresources ]; then
+  /usr/bin/xrdb -merge $HOME/.Xresources
 fi;
 
 ### Compiz ###
 /usr/bin/compiz ccp &
-sh $HOME/.fehbg
+if [ -e $HOME/.fehbg ]; then
+  sh $HOME/.fehbg
+fi;
 
 ### Background ###
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
