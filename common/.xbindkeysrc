@@ -25,7 +25,7 @@
   mod4 + c
 "/usr/bin/firefox &"
   mod4 + f
-"/usr/bin/Terminal &"
+"/usr/bin/xfce4-terminal &"
   mod4 + t
 "Terminal -e python &"
   mod4 + p
