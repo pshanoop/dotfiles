@@ -23,11 +23,10 @@ fi;
 
 ### Desktop ###
 /usr/bin/lxpanel &
+/usr/bin/xfce4-power-manager &
 
 ### Host specific ###
 if [ "hermes.ubertech.com.ar" = "`hostname`" ]; then
-  /usr/bin/wicd-gtk &
-  /usr/bin/xfce4-power-manager &
   /usr/bin/start-pulseaudio-x11 &
   /usr/bin/eject -i on &
 fi;
@@ -36,11 +35,14 @@ if [ "hyperion.ubertech.com.ar" = "`hostname`" ]; then
   /usr/bin/numlockx on &
 fi;
 if [ "ares.ubertech.com.ar" = "`hostname`" ]; then
-  /usr/bin/wicd-gtk -t &
-  /usr/bin/xfce4-power-manager &
   /usr/bin/numlockx on &
-  #/usr/bin/start-pulseaudio-x11 &
+  /usr/bin/start-pulseaudio-x11 &
   /usr/bin/xset b 4 10000 100
+fi;
+
+if [ -f $HOME/.is_laptop ]; then
+  /usr/bin/wicd-gtk -t &
+  /usr/bin/xautolock -time 5 -locker slock -corners 00-0 &
 fi;
 
 /usr/bin/parcellite --daemon &
@@ -49,5 +51,5 @@ fi;
 # Sleep forever, but as a hack keep gtk-window-decorator alive
 while [ TRUE ]; do
   /usr/bin/gtk-window-decorator;
-  /usr/bin/sleep 120;
+  /usr/bin/sleep 60;
 done;
