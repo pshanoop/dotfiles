@@ -1,0 +1,5 @@
+#!/bin/sh
+export MOUNTPATH=/home/hugo/mount/hermes
+mkdir -p ${MOUNTPATH}
+sshfs hermes.local:/home/hugo/ ${MOUNTPATH}
+
