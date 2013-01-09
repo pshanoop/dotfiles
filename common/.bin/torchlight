@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=/home/hugo/wine/prefixes/torchlight
-wine $WINEPREFIX/drive_c/Program\ Files/Runic\ Games/Torchlight/Torchlight.exe
