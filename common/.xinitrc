@@ -3,4 +3,4 @@
 # ~/.xinitrc
 #
 
-ck-launch-session dbus-launch $HOME/.xstart
+dbus-launch $HOME/.xstart
