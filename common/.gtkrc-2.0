@@ -1,0 +1,16 @@
+gtk-icon-theme-name="elementary-xfce"
+gtk-font-name="Ubuntu 12"
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=1
+gtk-recent-files-max-age=0
+gtk-theme-name="A-New-Hope"
+
+style "default" {
+	GtkTreeView::odd_row_color		= "#E0DED3"
+	GtkTreeView::even_row_color		= "#FFFFFF"
+}
