@@ -3,7 +3,8 @@ Description=A grabbing keys program for X
 After=xorg.target
 
 [Service]
-ExecStart=/usr/bin/xbindkeys -n
+ExecStart=/usr/bin/xbindkeys -n -f ${XDG_CONFIG_HOME}/xbindkeys/xbindkeysrc
+KillMode=process
 
 [Install]
 WantedBy=wm.target
