@@ -36,17 +36,13 @@ set header_cache = ~/.mutt/hcache	# Keep a cache of IMAP headers
 set smtp_url="smtps://hugo@mail.hugoosvaldobarrera.com.ar:465/"
 set smtp_pass="Axaddwas"
 
+set imap_idle = yes
 
 set date_format="%Y.%m.%d %H:%M"
 set index_format="%Z %D  %-30.30F  %s"
 
-# Set nano as editor
-#  Start at line 8
-#  Treat punctuation characters as part of a word
-#  Wrap lines at column 72
-#set editor="/usr/bin/nano +8 -W -r 72"	
 set editor="/usr/bin/vi"
-set pager="/usr/bin/vi"
+set pager="/usr/bin/less"
 
 # Auto-open some attachment types
 set mailcap_path = ~/.mutt/mailcap
