@@ -1,0 +1,10 @@
+[Unit]
+Description=Activate the numeric keypad
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/numlockx on
+Type=oneshot
+
+[Install]
+WantedBy=wm.target

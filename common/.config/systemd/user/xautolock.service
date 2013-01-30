@@ -1,0 +1,9 @@
+[Unit]
+Description=Lock the screen after 5 minutes
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/xautolock -time 5 -locker slock -corners 00-0
+
+[Install]
+WantedBy=wm.target

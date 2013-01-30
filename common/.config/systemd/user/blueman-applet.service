@@ -1,0 +1,9 @@
+[Unit]
+Description=A tray applet for managing bluetooth
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/blueman-applet
+
+[Install]
+WantedBy=wm.target
