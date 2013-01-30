@@ -1,0 +1,9 @@
+[Unit]
+Description=A GTK2-based window decorator
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/gtk-window-decorator
+
+[Install]
+WantedBy=wm.target

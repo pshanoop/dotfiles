@@ -1,0 +1,9 @@
+[Unit]
+Description=GTK client for wicd
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/wicd-gtk -t
+
+[Install]
+WantedBy=wm.target

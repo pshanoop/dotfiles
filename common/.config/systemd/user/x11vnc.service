@@ -1,0 +1,9 @@
+[Unit]
+Description=Allow VNC connections to real X11 displays
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/x11vnc -noxdamage -forever -localhost -xauth $XAUTHORITY -display :0 -nopw -ncache 10
+
+[Install]
+WantedBy=wm.target

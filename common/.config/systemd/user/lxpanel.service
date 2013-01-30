@@ -1,0 +1,9 @@
+[Unit]
+Description=A lightweight GTK2-based panel
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/lxpanel
+
+[Install]
+WantedBy=wm.target

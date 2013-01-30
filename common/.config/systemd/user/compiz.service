@@ -1,0 +1,12 @@
+[Unit]
+Description=Composite window manager
+Before=myStuff.target
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/compiz ccp
+Restart=always
+RestartSec=7
+
+[Install]
+WantedBy=wm.target

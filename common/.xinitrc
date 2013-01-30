@@ -3,4 +3,4 @@
 # ~/.xinitrc
 #
 
-dbus-launch $HOME/.xstart
+systemd --user

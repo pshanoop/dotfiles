@@ -1,0 +1,9 @@
+[Unit]
+Description=File Manager
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/thunar --daemon
+
+[Install]
+WantedBy=wm.target

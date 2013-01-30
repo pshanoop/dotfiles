@@ -1,0 +1,10 @@
+[Unit]
+Description=PulseAudio Sound Server for X11
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/start-pulseaudio-x11
+Type=oneshot
+
+[Install]
+WantedBy=wm.target

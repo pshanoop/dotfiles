@@ -1,0 +1,9 @@
+[Unit]
+Description=A grabbing keys program for X
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/xbindkeys -n
+
+[Install]
+WantedBy=wm.target

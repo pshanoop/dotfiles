@@ -1,0 +1,9 @@
+[Unit]
+Description=A volume control daemon
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/volctld
+
+[Install]
+WantedBy=wm.target
