@@ -3,4 +3,4 @@
 # ~/.xinitrc
 #
 
-systemd --user
+ck-launch-session dbus-launch ssh-agent systemd --user
