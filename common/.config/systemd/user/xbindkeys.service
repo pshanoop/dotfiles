@@ -1,10 +1,9 @@
 [Unit]
 Description=A grabbing keys program for X
-After=xorg.target
 
 [Service]
-ExecStart=/usr/bin/xbindkeys -n -f ${XDG_CONFIG_HOME}/xbindkeys/xbindkeysrc
+ExecStart=/usr/bin/xbindkeys -n -f /home/hugo/.config/xbindkeys/xbindkeysrc
 KillMode=process
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Mount all films in a single mountpoint
+
+[Service]
+ExecStart=/home/hugo/.bin/filmsfs
+Type=oneshot
+
+[Install]
+WantedBy=desktop.target

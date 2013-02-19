@@ -1,9 +1,8 @@
 [Unit]
 Description=Power manager for Xfce desktop
-After=xorg.target
 
 [Service]
 ExecStart=/usr/bin/xfce4-power-manager --no-daemon
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target

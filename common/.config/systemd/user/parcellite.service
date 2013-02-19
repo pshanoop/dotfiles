@@ -1,9 +1,8 @@
 [Unit]
 Description=Lightweight GTK+ Clipboard Manager
-After=xorg.target
 
 [Service]
 ExecStart=/usr/bin/parcellite --daemon --no-icon
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target

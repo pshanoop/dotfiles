@@ -1,10 +1,9 @@
 [Unit]
 Description=An wallpaper setter
-After=xorg.target
 
 [Service]
-ExecStart=/bin/sh $HOME/.fehbg
+ExecStart=/bin/sh /home/hugo/.fehbg
 Type=oneshot
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target

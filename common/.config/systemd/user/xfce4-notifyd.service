@@ -1,9 +1,8 @@
 [Unit]
 Description=Notification daemon for the Xfce desktop
-After=xorg.target
 
 [Service]
 ExecStart=/usr/lib/xfce4/notifyd/xfce4-notifyd
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target
