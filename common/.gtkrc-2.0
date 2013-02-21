@@ -8,9 +8,12 @@ gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-recent-files-max-age=0
-gtk-theme-name="A-New-Hope"
+#gtk-theme-name="A-New-Hope"
+#gtk-theme-name="Zukitwo"
+gtk-theme-name="Albatross"
+#gtk-theme-name="Greybird"
 
-style "default" {
-	GtkTreeView::odd_row_color		= "#E0DED3"
-	GtkTreeView::even_row_color		= "#FFFFFF"
-}
+#style "default" {
+#	GtkTreeView::odd_row_color		= "#E0DED3"
+#	GtkTreeView::even_row_color		= "#FFFFFF"
+#}
