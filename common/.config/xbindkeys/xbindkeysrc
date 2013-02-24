@@ -48,6 +48,10 @@
 
 "xrandr -s 1920x1080"
   XF86Mail
+
+"/usr/bin/b43reload"
+  XF86Eject
+
 #####################
 # TECLAS MULTIMEDIA #
 #####################
