@@ -7,4 +7,4 @@ ExecStart=/usr/bin/xmodmap /home/hugo/.config/xmodmap/invert_alt_super
 Type=oneshot
 
 [Install]
-WantedBy=wm.target
+WantedBy=desktop.target
