@@ -1,0 +1,10 @@
+[Unit]
+Description=Reverts the scrolling direction
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/xmodmap /home/hugo/.config/xmodmap/reverse_scrolling
+Type=oneshot
+
+[Install]
+WantedBy=wm.target
