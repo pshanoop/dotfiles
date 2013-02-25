@@ -1,6 +1,6 @@
 [Unit]
 Description=Composite window manager
-Before=compizDesktop.target
+Before=compiz.target
 
 [Service]
 ExecStart=/usr/bin/compiz ccp
