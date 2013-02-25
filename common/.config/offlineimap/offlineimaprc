@@ -1,0 +1,34 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# suit to get started fast.
+
+[general]
+metadata = ~/.local/share/offlineimap
+accounts = Personal
+# max number of concurrent connections
+maxsyncaccounts = 4
+
+#### GMAIL Account Settings ####
+[Account Personal]
+localrepository = LocalPersonal
+remoterepository = RemotePersonal
+# minutes until next sync
+autorefresh = 10
+# number of 'quick' syncs between full syncs, saves time
+quick = 5
+
+[Repository LocalPersonal]
+# format of the local repository. choose Maildir if you will use Mutt
+type = Maildir
+# location of the email
+localfolders = ~/.local/share/maildir/Personal
+# don't let offlineimap touch the atime of files
+restoreatime = no
+
+[Repository RemotePersonal]
+type = IMAP
+remotehost = imap.ubertech.com.ar
+remoteuser = hugo@osvaldobarrera.com.ar
+remotepass = Axaddwas
+ssl = yes
+idlefolders = ['INBOX']
+cert_fingerprint = b44acbd24170713c753efbd0afdf02e91dc9dc0f

@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronize emails
+
+[Service]
+ExecStart=/usr/bin/offlineimap -c %h/.config/offlineimap/offlineimaprc
+Restart=always
+
+[Install]
+WantedBy=desktop.target
