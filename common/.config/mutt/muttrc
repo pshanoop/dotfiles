@@ -29,7 +29,8 @@ set postponed = "+Drafts"		# Save Drafts to "Drafts"
 
 set copy = yes				# Keep copies of outgoing mail...
 set record = "+INBOX"			# ... and it gets saved in =outbox.
-set beep_new=yes			# Beep when new messages arrive
+set fcc_attach = yes
+set beep_new = yes			# Beep when new messages arrive
 
 set header_cache = ~/.cache/mutt/hcache	# Keep a header cache
 
@@ -148,9 +149,6 @@ bind generic } bottom-page
 bind generic \177 last-entry
 
 macro index \cb "<pipe-message> urlview<Enter>"	# simulate the old browse-url function
-
-macro index S "<save-message>+spam<Enter>"
-macro pager S "<save-message>+spam<Enter>"
 
 #macro index \#	"<search>bug<Enter>"	# search for bugs
 #macro index "\""	"<enter-command> set realname=\"real hairy macro\" ?realname<Enter>" # and a comment to boot!

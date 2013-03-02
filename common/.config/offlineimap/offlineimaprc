@@ -6,6 +6,7 @@ metadata = ~/.local/share/offlineimap
 accounts = Personal
 # max number of concurrent connections
 maxsyncaccounts = 4
+ui = basic
 
 #### GMAIL Account Settings ####
 [Account Personal]
@@ -15,6 +16,7 @@ remoterepository = RemotePersonal
 autorefresh = 10
 # number of 'quick' syncs between full syncs, saves time
 quick = 5
+postsynchook = /usr/bin/notmuch new
 
 [Repository LocalPersonal]
 # format of the local repository. choose Maildir if you will use Mutt
