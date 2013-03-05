@@ -8,9 +8,9 @@ gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-recent-files-max-age=0
-#gtk-theme-name="A-New-Hope"
+gtk-theme-name="A-New-Hope"
 #gtk-theme-name="Zukitwo"
-gtk-theme-name="Albatross"
+#gtk-theme-name="Albatross"
 #gtk-theme-name="Greybird"
 
 #style "default" {
