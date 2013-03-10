@@ -1,9 +1,0 @@
-[Unit]
-Description=An wallpaper setter
-
-[Service]
-ExecStart=/bin/sh /home/hugo/.fehbg
-Type=oneshot
-
-[Install]
-WantedBy=desktop.target
