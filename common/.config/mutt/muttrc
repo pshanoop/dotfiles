@@ -24,6 +24,7 @@ set mbox_type	= Maildir
 set folder	= ~/.local/share/maildir/Personal/
 set spoolfile	= +INBOX
 set move	= no			# Don't auto-move read mails
+set folder_format="%2C %N %f" # what I settled on
 
 set postponed = "+Drafts"		# Save Drafts to "Drafts"
 
