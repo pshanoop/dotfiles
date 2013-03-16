@@ -1,0 +1,28 @@
+
+
+#set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x1BFBED44 -- -r %r -- %f"
+#set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x1BFBED44 -- -r %r -- %f"
+
+# uid to use when encrypting/signing
+set pgp_sign_as = 0x1BFBED44
+
+# the number of seconds to keep in memory the passpharse used to encrypt/sign
+# the more the less secure it will be
+set pgp_timeout=21600
+
+# it's a regexp used against the GPG output: if it matches some line of the output
+# then mutt considers the message a good signed one (ignoring the GPG exit code)
+set pgp_good_sign="^gpg: Good signature from"
+#set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+
+# mutt uses by default PGP/GPG to sign/encrypt messages
+# if you want to use S-mime instead set the smime_is_default variable to yes
+
+set crypt_autosign = yes	# automatically sign all outgoing messages
+#set crypt_replysign		# sign only replies to signed messages
+
+#set crypt_autoencrypt=yes		# automatically encrypt outgoing messages
+#set crypt_replyencrypt=yes 		# encrypt only replies to signed messages
+#set crypt_replysignencrypted=yes	# encrypt and sign replies to encrypted messages
+
+set crypt_verify_sig=yes		# automatically verify the sign of a message when opened

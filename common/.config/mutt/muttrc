@@ -13,23 +13,20 @@
 source /etc/Muttrc.gpg.dist
 
 source ~/.config/mutt/macros
+source ~/.config/mutt/crypto
+source ~/.config/mutt/aliases
 
-# Account settings
-set realname	= "Hugo Osvaldo Barrera"
 set from	= "hugo@osvaldobarrera.com.ar"
-set signature	= ~/.signature
-set user_agent	= yes
 
 set mbox_type	= Maildir
 set folder	= ~/.local/share/maildir/Personal/
 set spoolfile	= +INBOX
-set move	= no			# Don't auto-move read mails
-set folder_format="%2C %N %f" # what I settled on
-
-set postponed = "+Drafts"		# Save Drafts to "Drafts"
+set move	= no
+set folder_format="%2C %N %f"
 
 set copy = yes				# Keep copies of outgoing mail...
 set record = "+INBOX"			# ... and it gets saved in =outbox.
+set postponed = "+Drafts"               # Save Drafts to "Drafts"
 set fcc_attach = yes
 set beep_new = yes			# Beep when new messages arrive
 
@@ -50,43 +47,22 @@ set pager_stop = yes
 set forward_quote=yes	# Quote the email body when forwarding?
 set include=yes		# Quote the email body when replying?
 
-set auto_tag		# Always operate on tagged messages
+set auto_tag				# Always operate on tagged messages
 set alias_file=~/.config/mutt/aliases	# where I keep my aliases
 
-########################
-# DEFAULT CONFIG BELOW #
-########################
-
-set arrow_cursor		# use -> instead of hiliting the whole line
-set autoedit			# go to the editor right away when composing
-set noconfirmappend		# don't ask me if i want to append to mailboxes
-set edit_headers		# let me edit the message header when composing
-set help			# show the help lines
-set hostname="hugoosvaldobarrera.com.ar"	# my DNS domain
-set include			# always include messages when replying
-set nomark_old			# i don't care about whether a message is old
-set mail_check=3		# how often to poll for new mail
-set mbox=+mbox			# where to store read messages
-set print_command=/bin/false	# how to print things (I like to save trees)
-set noprompt_after	# ask me for a command after the external pager exits
-set read_inc=25			# show progress when reading a mailbox
-set reply_to			# always use reply-to if present
-set reverse_name		# use my address as it appears in the message
-set nosave_empty		# remove files when no messages are left
-set sort=threads		# Sort messages into threads
-#set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
-#set status_on_top		# some people prefer the status bar on top
-#set strict_threads		# don't thread by subject
-set tilde			# virtual lines to pad blank lines in the pager
-set nouse_domain		# don't qualify local addresses with $domain
-#set implicit_autoview=yes	# pager shows parts having a mailcap viewer
-set pgp_verify_sig=no		# don't automatically verify message signatures
+set arrow_cursor = yes		# use -> instead of hiliting the whole line
+set autoedit = yes		# go to the editor right away when composing
+set confirmappend = no		# don't ask me if i want to append to mailboxes
+set edit_headers = yes		# let me edit the message header when composing
+set include = yes		# always include messages when replying
+set mark_old = no		# i don't care about whether a message is old
+set mail_check = 3		# how often to poll for new mail
+set read_inc = 25		# show progress when reading a mailbox
+set reply_to = yes		# always use reply-to if present
+set sort = threads		# Sort messages into threads
+set sort_aux = date-received
+set tilde = yes			# virtual lines to pad blank lines in the pager
 set write_inc=25		# show progress while writing mailboxes
-
-# only enable the following IFF you have sendmail 8.8.x or you will not
-# be able to send mail!!!
-#set dsn_notify='failure,delay'	# when to return an error message
-#set dsn_return=hdrs		# what to return in the error message
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
@@ -160,14 +136,6 @@ bind pager G bottom	# just like vi and less
 #macro pager X "<pipe-message> morepgp<Enter>"	# pipe PGP message to a script
 
 #bind editor \cy eol	# make ^Y jump to the end of the line
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# User Defined Headers
-#
-
-#my_hdr X-Useless-Header: Look ma, it's a \# sign! # real comment
-#my_hdr X-Operating-System: `uname -a`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
@@ -277,15 +245,6 @@ lists ^mutt-dev@mutt\\.org$ ^mutt-users@mutt\\.org$
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
-# Automatically use entries from ~/.mailcap to view these MIME types
-#
-#	auto_view <type> [ <type> ... ]
-
-auto_view application/x-gunzip
-auto_view application/x-gzip
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
 # Scoring
 #
 #	score <pattern> <value>
@@ -297,14 +256,3 @@ auto_view application/x-gzip
 #score '~f ^me@cs\.hmc\.edu$' 1000
 #score '~t mutt | ~c mutt' =500
 #score '~f aol\.com$' -9999
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# I use Mutt on several different machines, so I put local config commands
-# in a separate file so I can have the rest of the settings the same on all
-# machines.
-#
-
-# source ~/.muttrc-local	# config commands local to this site
-
-# EOF
