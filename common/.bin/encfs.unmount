@@ -1,2 +1,2 @@
-#!/bin/bash
-fusermount -u "$1" && rm -rf "$1"
+#!/bin/sh
+fusermount -u "$1" && rmdir "$1"

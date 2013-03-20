@@ -1,1 +1,2 @@
-LD_LIBRARY_PATH=/usr/lib/jvm/java-7-openjdk/jre/lib/amd64 java -Xmx2048M -Xms512M -cp ~/.minecraft/minecraft.jar net.minecraft.LauncherFrame hobarrera linenox mc.hugoosvaldobarrera.com.ar
+#!/bin/sh
+LD_LIBRARY_PATH=/usr/lib/jvm/java-7-openjdk/jre/lib/amd64 java -Xmx2048M -Xms512M -cp ~/.minecraft/minecraft.jar net.minecraft.LauncherFrame hobarrera $(cat ~/priv/secrets/minecraft) mc.hugoosvaldobarrera.com.ar

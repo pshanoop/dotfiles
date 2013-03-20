@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if [ `pacman -Qdtq | wc -l` != 0 ]; then
   sudo pacman -Rnscu $(pacman -Qdtq);
 else

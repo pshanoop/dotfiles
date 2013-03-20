@@ -1,2 +1,0 @@
-PSNAME=$1
-kill -s 9 `ps aux | grep $PSNAME | grep -v grep | cut -d ' ' -f7`

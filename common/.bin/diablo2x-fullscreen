@@ -1,1 +1,3 @@
-WINEPREFIX=/home/hugo/wine/prefixes/diablo2x/ wine C:\\Program\ Files\\Diablo\ II\\Diablo\ II.exe
+#!/bin/sh
+export WINEPREFIX=~/wine/prefixes/diablo2x
+wine C:\\Program\ Files\\Diablo\ II\\Diablo\ II.exe

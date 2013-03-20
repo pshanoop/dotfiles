@@ -1,5 +1,0 @@
-#/bin/sh
-while [ 1 ]; do
-  xscreensaver-command -deactivate
-  sleep 30
-done

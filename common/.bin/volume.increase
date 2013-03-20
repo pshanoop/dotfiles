@@ -1,7 +1,0 @@
-#!/bin/bash
-while true;
-do
-  notify-send -i /usr/share/icons/Tango/scalable/status/audio-volume-high.svg "Volume" "Volume set to `amixer set Master 5%+ | grep -ow -m 1 '[0-9]\+%'`"
-  sleep 0.05
-done
-

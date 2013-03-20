@@ -1,1 +1,2 @@
-/usr/bin/streamer -c /dev/video0 -b 16 -o $HOME/Screenshots/Camera/`date +%F_%H%M%S_%N`.jpeg
+#!/bin/sh
+/usr/bin/streamer -c /dev/video0 -b 16 -o ~/screenshots/camera/`date +%F_%H%M%S_%N`.jpeg

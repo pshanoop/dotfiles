@@ -1,9 +1,9 @@
-#/bin/sh
+#!/bin/sh
 
 ELYSION=elysion.ubertech.com.ar
 
 if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
   ssh -fND 9999 ${ELYSION}
 else
-  echo -e "\tPort in use";
+  echo Error: Port in use
 fi

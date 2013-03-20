@@ -1,2 +1,0 @@
-#!/bin/bash
-nc.openbsd -xlocalhost:8080 -X5 $*

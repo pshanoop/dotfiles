@@ -1,1 +1,2 @@
-/usr/bin/Thunar
+#!/bin/sh
+/usr/bin/Thunar $@

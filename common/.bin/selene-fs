@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/selene
+mkdir -p ${MOUNTPATH}
+sshfs user@172.16.9.6:/home/user/ ${MOUNTPATH}

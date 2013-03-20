@@ -1,1 +1,2 @@
+#!/bin/sh
 jhead -rgt $1

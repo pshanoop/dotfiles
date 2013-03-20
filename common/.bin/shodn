@@ -1,0 +1,3 @@
+#!/bin/sh
+export WINEPREFIX=/home/hugo/wine/prefixes/shodn
+wine C:\\Program\ Files\\Super\ House\ of\ Dead\ Ninjas\\SHODN.exe
