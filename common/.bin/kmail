@@ -2,4 +2,6 @@
 # This script get executed them I click on an email address on kaddressbook.
 # It copies "John Doe <john@doe.com>" into the selection clipboard.
 
-echo -en "$(echo "$@" | sed 'y/+/ /; s/%/\\x/g')" | xclip -selection primary
+ESCAPED_TEXT=$(echo -en "$(echo "$@" | sed 'y/+/ /; s/%/\\x/g')")
+NAME_AND_EMAIL=$(echo "$ESCAPED_TEXT" | sed 's/.*://')
+echo $NAME_AND_EMAIL | xclip -selection primary
