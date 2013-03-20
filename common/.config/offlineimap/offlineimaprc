@@ -4,29 +4,26 @@
 [general]
 metadata = ~/.local/share/offlineimap
 accounts = Personal
-maxsyncaccounts = 5
+maxsyncaccounts = 6
 ui = basic
 
 [Account Personal]
 localrepository = LocalPersonal
 remoterepository = RemotePersonal
 autorefresh = 5
-quick = 5
+quick = 2
 postsynchook = /usr/bin/notmuch new
 
 [Repository LocalPersonal]
-# format of the local repository. choose Maildir if you will use Mutt
 type = Maildir
-# location of the email
 localfolders = ~/.local/share/maildir/Personal
-# don't let offlineimap touch the atime of files
 restoreatime = no
 
 [Repository RemotePersonal]
 type = IMAP
 remotehost = imap.ubertech.com.ar
 remoteuser = hugo@osvaldobarrera.com.ar
-remotepass = Axaddwas
+remotepassfile = ~/priv/secrets/imap@elysion
 ssl = yes
 cert_fingerprint = b44acbd24170713c753efbd0afdf02e91dc9dc0f
 idlefolders = ['INBOX', 'INBOX.rss', 'Archives.2013']
