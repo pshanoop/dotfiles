@@ -1,2 +1,5 @@
-#!/bin/sh
-thunderbird $@
+#!/usr/bin/env bash
+# This script get executed them I click on an email address on kaddressbook.
+# It copies "John Doe <john@doe.com>" into the selection clipboard.
+
+echo -en "$(echo "$@" | sed 'y/+/ /; s/%/\\x/g')" | xclip -selection primary
