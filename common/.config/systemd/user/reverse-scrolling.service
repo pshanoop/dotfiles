@@ -2,7 +2,7 @@
 Description=Reverts the scrolling direction
 
 [Service]
-ExecStart=/usr/bin/xmodmap /home/hugo/.config/xmodmap/reverse_scrolling
+ExecStart=/usr/bin/xmodmap %h/.config/xmodmap/reverse_scrolling
 Type=oneshot
 
 [Install]

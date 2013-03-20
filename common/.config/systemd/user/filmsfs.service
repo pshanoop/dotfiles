@@ -2,7 +2,7 @@
 Description=Mount all films in a single mountpoint
 
 [Service]
-ExecStart=/usr/bin/unionfs -f /media/D2/:/media/D3:/home/hugo/downloads/Torrents/_films/ /home/hugo/films/
+ExecStart=/usr/bin/unionfs -f /media/D2/:/media/D3:%h/downloads/Torrents/_films/ %h/films/
 
 [Install]
 WantedBy=desktop.target

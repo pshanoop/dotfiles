@@ -3,7 +3,7 @@ Description=Inverts the Alt_L and Super_L keys
 Before=compiz.service
 
 [Service]
-ExecStart=/usr/bin/xmodmap /home/hugo/.config/xmodmap/invert_alt_super
+ExecStart=/usr/bin/xmodmap %h/.config/xmodmap/invert_alt_super
 Type=oneshot
 
 [Install]
