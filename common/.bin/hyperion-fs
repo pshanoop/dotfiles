@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/hyperion
+mkdir -p ${MOUNTPATH}
+sshfs hyperion.local:/home/hugo ${MOUNTPATH}

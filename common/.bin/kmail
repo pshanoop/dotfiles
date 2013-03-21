@@ -4,4 +4,4 @@
 
 ESCAPED_TEXT=$(echo -en "$(echo "$@" | sed 'y/+/ /; s/%/\\x/g')")
 NAME_AND_EMAIL=$(echo "$ESCAPED_TEXT" | sed 's/.*://')
-echo $NAME_AND_EMAIL | xclip -selection primary
+echo -n $NAME_AND_EMAIL | xclip -selection primary
