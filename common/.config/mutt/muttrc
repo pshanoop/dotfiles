@@ -1,16 +1,8 @@
 # $Id$
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
-# ME's personal .muttrc (Mutt 0.92.5)
+# Hugo's personal .muttrc (Mutt 1.5.21)
 #
-# The format of this file is one command per line.  Everything after a pound
-# sign (#) is a comment, unless a backward slash (\) precedes it.  Note: In
-# folder-hook and send-hook you need to account for two levels of dequoting
-# (see manual).
-#
-
-source /etc/Muttrc.gpg.dist
 
 source ~/.config/mutt/macros
 source ~/.config/mutt/crypto
@@ -22,6 +14,7 @@ set mbox_type	= Maildir
 set folder	= ~/.local/share/maildir/Personal/
 set spoolfile	= +INBOX
 set move	= no
+
 set folder_format="%2C %N %f"
 
 set copy = yes				# Keep copies of outgoing mail...
@@ -60,7 +53,7 @@ set mail_check = 3		# how often to poll for new mail
 set read_inc = 25		# show progress when reading a mailbox
 set reply_to = yes		# always use reply-to if present
 set sort = threads		# Sort messages into threads
-set sort_aux = date-received
+set sort_aux = last-date-received
 set tilde = yes			# virtual lines to pad blank lines in the pager
 set write_inc=25		# show progress while writing mailboxes
 
