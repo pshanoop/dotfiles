@@ -37,10 +37,11 @@ auto_view text/html
 
 set pager_stop = yes
 
-set forward_quote=yes	# Quote the email body when forwarding?
-set include=yes		# Quote the email body when replying?
+set forward_format="Fwd: %s"	# subject to use when forwarding messages
+set forward_quote=yes		# Quote the email body when forwarding?
+set include=yes			# Quote the email body when replying?
 
-set auto_tag				# Always operate on tagged messages
+set auto_tag = yes				# Always operate on tagged messages
 set alias_file=~/.config/mutt/aliases	# where I keep my aliases
 
 set arrow_cursor = yes		# use -> instead of hiliting the whole line
@@ -120,15 +121,7 @@ bind generic \177 last-entry
 
 macro index \cb "<pipe-message> urlview<Enter>"	# simulate the old browse-url function
 
-#macro index \#	"<search>bug<Enter>"	# search for bugs
-#macro index "\""	"<enter-command> set realname=\"real hairy macro\" ?realname<Enter>" # and a comment to boot!
-#macro index f1	"<enter-command>woohoo!"
-
 bind pager G bottom	# just like vi and less
-#macro   pager   \Ck     "<pipe-message> pgp -kaf<Enter>"   # a comment is valid here
-#macro pager X "<pipe-message> morepgp<Enter>"	# pipe PGP message to a script
-
-#bind editor \cy eol	# make ^Y jump to the end of the line
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
@@ -142,110 +135,6 @@ bind pager G bottom	# just like vi and less
 #save-hook aol\\.com$ +spam
 save-hook ^judge +diplomacy
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Multiple spool mailboxes
-#
-#	mbox-hook [!]<pattern> <mbox-mailbox>
-#
-# Read mail in <pattern> is moved to <mbox-mailbox> when <pattern> is
-# closed.
-
-#mbox-hook =mutt-users.in =mutt-users
-#mbox-hook +TEST +inbox
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Change settings based upon message recipient
-#
-#	send-hook [!]<pattern> <command>
-#
-# <command> is executed when sending mail to an address matching <pattern>
-
-#send-hook mutt- 'set signature=~/.sigmutt; my_hdr From: Mutt User <user@example.com>'
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Specify where to save composed messages
-#
-#	fcc-hook [!]<pattern> <mailbox>
-#
-# <pattern> is recipient(s), <mailbox> is where to save a copy
-
-#fcc-hook joe +joe
-#fcc-hook bob +bob
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Change settings based on mailbox
-#
-#	folder-hook [!]<pattern> <command>
-#
-# <command> is executed when opening a mailbox matching <pattern>
-
-#folder-hook .		'set sort=date-sent'
-#folder-hook mutt	'set index_format="%4C %Z %02m/%02N %-20.20F (%4l) %s"'
-#folder-hook =mutt	my_hdr Revolution: \#9 # real comment
-
-#folder-hook .		'set reply_regexp="^re:[ \t]*"'
-
-# this mailing list prepends "[WM]" to all non reply subjects, so set
-# $reply_regexp to ignore it
-# Warning: May break threads for other people.
-#folder-hook +wmaker	'set reply_regexp="^(re:[ \t]*)?\[WM\][ \t]*"'
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Aliases
-#
-#	alias <name> <address> [ , <address> ... ]
-
-#alias exam "\# to annoy michael" <user@host>
-#alias me Michael Elkins <me@mutt.org> # me!
-alias mutt-dev Mutt Development List <mutt-dev@mutt.org> # power users
-alias mutt-users Mutt User List <mutt-users@mutt.org>
-alias mutt-announce Mutt Announcement List <mutt-announce@mutt.org>
-alias wmaker WindowMaker Mailing List <wmaker@eosys.com>
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Mailboxes to watch for new mail
-#
-#	mailboxes <path1> [ <path2> ... ]
-#
-
-mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
-	+drums
-#mailboxes `echo $HOME/Mail/*`
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Specify the order of the headers to appear when displaying a message
-#
-#	hdr_order <hdr1> [ <hdr2> ... ]
-#
-
 unhdr_order *				# forget the previous settings
 hdr_order date from subject to cc
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Identify mailing lists I subscribe to
-#
-#	lists <list-name> [ <list-name> ... ]
-
-lists ^mutt-dev@mutt\\.org$ ^mutt-users@mutt\\.org$
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Scoring
-#
-#	score <pattern> <value>
-#
-# 9999 and -9999 are special values which cause processing of hooks to stop
-# at that entry.  If you prefix the score with an equal sign (=), the score
-# is assigned to the message and processing stops.
-
-#score '~f ^me@cs\.hmc\.edu$' 1000
-#score '~t mutt | ~c mutt' =500
-#score '~f aol\.com$' -9999
