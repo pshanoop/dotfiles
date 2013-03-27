@@ -1,8 +1,0 @@
-[Unit]
-Description=Assia Cisco VPN
-
-[Service]
-ExecStart=/bin/sh %h/.bin/assia-vpn
-
-[Install]
-WantedBy=desktop.target
