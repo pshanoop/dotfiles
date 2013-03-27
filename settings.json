@@ -1,0 +1,19 @@
+{
+	"symlinkedDirectories": [
+		".bin",
+		".config/compiz-1",
+		".config/fontconfig",
+		".config/lxpanel",
+		".config/mutt",
+		".config/offlineimap",
+		".config/systemd"
+		".config/terminator"
+		".config/xbindkeys"
+		".config/xfce4"
+		".config/zathura"
+		".remmina",
+		".mutt",
+		".ssh",
+		".subversion",
+		]
+}
