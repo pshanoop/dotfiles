@@ -1,1 +1,5 @@
 local
+common/.ssh/known_hosts
+common/.ssh/id_dsa*
+common/.subversion/auth
+common/.config/systemd/user/desktop.target.wants/*
