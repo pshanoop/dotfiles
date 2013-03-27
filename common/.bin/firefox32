@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/schroot -p -- firefox --no-remote -P firefox32
