@@ -11,5 +11,7 @@
     <property name="dpms-on-battery-sleep" type="uint" value="1"/>
     <property name="dpms-on-battery-off" type="uint" value="4"/>
     <property name="brightness-level-on-ac" type="uint" value="40"/>
+    <property name="show-tray-icon" type="uint" value="0"/>
+    <property name="dpms-sleep-mode" type="string" value="suspend"/>
   </property>
 </channel>
