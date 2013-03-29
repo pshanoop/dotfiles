@@ -1,1 +1,0 @@
-/home/hugo/workspace/relinker/settings.py
