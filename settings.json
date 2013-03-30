@@ -16,5 +16,11 @@
 		".mutt",
 		".ssh",
 		".subversion"
-		]
+		],
+	"repositories": [
+		{
+			"localPath": "certs",
+			"remotePath": "hyperion.local:~/certs"
+		}
+	]
 }
