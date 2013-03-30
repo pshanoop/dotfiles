@@ -2,7 +2,7 @@
 Description=Lock the screen after 5 minutes
 
 [Service]
-ExecStart=/usr/bin/xautolock -time 5 -locker slock -corners 00-0
+ExecStart=/usr/bin/xautolock -time 5 -corners 00-0 -locker "/usr/bin/i3lock -u"
 
 [Install]
 WantedBy=desktop.target
