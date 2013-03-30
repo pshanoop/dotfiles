@@ -54,6 +54,9 @@ if __name__ == '__main__':
     			pass  # Everything is ok.
     		del(dirnames[:])
     		del(filenames[:])
+        else:
+            if not os.path.exists(home_dirpath):
+                os.makedirs(home_dirpath)
 
     	for filename in filenames:
     		repo_file = os.path.join(dirpath, filename)
