@@ -19,5 +19,3 @@ style "darker-scrollbars"
   GtkScrollbar::stepper_size = 1
 }
 widget_class "*Scrollbar" style "darker-scrollbars"
-
-include ".gtkrc-2.0-gnome-color-chooser"
