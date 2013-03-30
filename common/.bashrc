@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PATH=$HOME/.bin:$HOME/.bin.local:$PATH
+PATH=$(find $HOME/.bin/ -type d -exec printf "{}:" \;):$PATH
 export PATH
 
 export EDITOR="vi"
