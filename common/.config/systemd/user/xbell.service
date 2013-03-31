@@ -1,9 +1,0 @@
-[Unit]
-Description=Change the xbell to a more subtle sound (for ares)
-
-[Service]
-ExecStart=/usr/bin/xset b 4 10000 100 &
-Type=oneshot
-
-[Install]
-WantedBy=desktop.target
