@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=~/wine/prefixes/portal2
-wine C:\\Program\ Files\\Valve\\Portal\ 2\\portal2.exe

@@ -1,0 +1,3 @@
+#!/bin/sh
+export WINEPREFIX=$HOME/wine/prefixes/starcraft
+wine "C:\Program Files\Starcraft\StarCraft.exe"

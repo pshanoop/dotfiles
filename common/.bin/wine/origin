@@ -1,0 +1,3 @@
+#!/bin/sh
+export WINEPREFIX=$HOME/wine/prefixes/origin
+wine "C:\Program Files\Origin\Origin.exe"
