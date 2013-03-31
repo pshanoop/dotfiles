@@ -7,6 +7,7 @@
 # after cloning my home repo, and symlinking everything using homesync.py.
 
 mkdir -p "$HOME/.config/systemd/user/desktop.target.wants"
+mkdir -p "$HOME/.local/share/maildir/Personal"
 
 ln -sf "$HOME/.config/systemd/user/compiz.service" "$HOME/.config/systemd/user/desktop.target.wants/"
 ln -sf "$HOME/.config/systemd/user/gtk-window-decorator.service" "$HOME/.config/systemd/user/desktop.target.wants/"
