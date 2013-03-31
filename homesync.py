@@ -15,6 +15,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
+import subprocess
 import filecmp
 import os
 import sys
@@ -29,6 +30,7 @@ usage = \
 Usage:
   homesync.py symlinks [--repository=<DIRECTORY>]
   homesync.py repositories
+  homesync.py pull
   homesync.py -h | --help
   homesync.py --version
 
@@ -119,3 +121,9 @@ if __name__ == '__main__':
                 print("Created: {}".format(repo_path))
             else:
                 print("Existed: {}".format(repo_path))
+    if arguments["pull"]:
+        proc = subprocess.Popen(["git", "remote"], stdout=subprocess.PIPE)
+        remotes = proc.communicate()[0][:-1]  # Ignore the last \n
+
+        for remote in remotes.split("\n"):
+            os.system("git pull -q {} master".format(remote))
