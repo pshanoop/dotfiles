@@ -110,7 +110,7 @@ if __name__ == '__main__':
                 else:
                     pass  # Everything is ok.
 
-        print references
+        print(references)
     if arguments["repositories"]:
         for repo in settings["repositories"]:
             repo_path = os.path.join(user_home, repo["localPath"])
@@ -123,7 +123,7 @@ if __name__ == '__main__':
                 print("Existed: {}".format(repo_path))
     if arguments["pull"]:
         proc = subprocess.Popen(["git", "remote"], stdout=subprocess.PIPE)
-        remotes = proc.communicate()[0][:-1]  # Ignore the last \n
+        remotes = proc.communicate()[0].decode()[:-1]  # Ignore the last \n
 
-        for remote in remotes.split("\n"):
+        for remote in remotes.splitlines():
             os.system("git pull -q {} master".format(remote))
