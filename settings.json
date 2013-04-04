@@ -22,5 +22,12 @@
 			"localPath": "certs",
 			"remotePath": "hyperion.local:~/certs"
 		}
-	]
+	],
+	"remotes": {
+		"hyperion": "hyperion.local:/home/hugo/.homes",
+		"hermes": "hermes.local:/home/hugo/.homes",
+		"ares": "ares.local:/home/hugo/.homes",
+		"github": "git@github.com:hobarrera/dotfiles.git",
+		"elysion": "elysion:/home/hugo/git/homes.git"
+	}
 }

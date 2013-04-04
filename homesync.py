@@ -25,38 +25,47 @@ from docopt import docopt
 from jinja2 import Environment, FileSystemLoader
 
 usage = \
-"""homesync.py
+"""\
+Usage: homesync.py (symlinks | subrepos | pull | setup | add <file>...)
+       homesync.py -h | --help
+       homesync.py --version
 
-Usage:
-  homesync.py symlinks
-  homesync.py repositories
-  homesync.py pull
-  homesync.py add-remotes
-  homesync.py add <file> ...
-  homesync.py -h | --help
-  homesync.py --version
-
+symlinks          Create symlinks in your home for any missing files, and
+                  show the status of any changes or conflicts.
+                  The first column represents the file type: D (directory)
+                  or F (regular file).
+                  The second column represents the change (or status): S
+                  (symlink created), I (identical file existed, replaced
+                  with symlink) or C (conflict, manual intervention required).
+subrepos          Initialize and update all repos defined in settings.json.
+pull              Pull from all git remotes.  Will also add any missing
+                  remote that is defined in settings.json.
+                  TODO: update changed remotes.
+add <file> ...    Add one or more files into the repository.  This will move
+                  the file from your home into the repository and create a
+                  symlink to it in you home.
 """
 
-references = \
-"""-----
-Refs: 
-  DS: Directory, symlinked
-  DC: Directory, conflict
-  FS: File, symlinked
-  FI: File, was identical, symlinked
-  FC: File, conflict
------
-"""
+class Settings:
 
-class SettingsLoader:
+    def __init__(self, filename="settings.json"):
+        if not os.path.exists(filename):
+            print("Warning: settings.json does not exist. Using defaults.")
+            self.symlinked_directories = []
+            self.repositories = {}
+            self.remotes = {}
+        else:
+            settings_file = open(filename)
+            try:
+                settings = json.load(settings_file)
+            except ValueError as e:
+                print("Error parsing settings.json as json file.")
+                raise
+            settings_file.close()
 
-    @staticmethod
-    def load(settings_filename="settings.json"):
-        settings_file = open(settings_filename)
-        settings = json.load(settings_file)
-        settings_file.close()
-        return settings
+            self.symlinked_directories = settings["symlinkedDirectories"]
+            self.repositories = settings["repositories"]
+            self.remotes = settings["remotes"]
 
 class HomeSyncException(Exception):
     pass
@@ -81,12 +90,29 @@ class Symlink:
 
         #self._update_status()
 
+class Subrepo:
+
+    def __init__(self, local_path, remote_path):
+        self.local_path = local_path
+        self.remote_path = remote_path
+
+    def pull(self):
+        if not os.path.exists(self.local_path):
+            if not os.path.exists(os.path.join(self.local_path, ".git")):
+                print("Not a git repository (but dir exists): {}".format(self.local_path))
+            os.makedirs(self.local_path)
+            os.system("git clone {} {}".format(self.local_path, self.remote_path))
+            print("Created: {}".format(self.local_path))
+        else:
+            os.chdir(self.local_path)
+            os.system("git pull origin master")
+            print("Updated: {}".format(self.local_path))
+
 if __name__ == '__main__':
     arguments = docopt(usage, version='homesync.py 0.1')
 
-    # TODO: handle nonexistand settings.json
-    settings = SettingsLoader().load()
-    symlinked_directories = settings["symlinkedDirectories"]
+    settings = Settings()
+    symlinked_directories = settings.symlinked_directories
 
     repo_root = os.path.join(os.getcwd(), "common")
     if not repo_root.endswith("/"):
@@ -134,21 +160,14 @@ if __name__ == '__main__':
                 else:
                     pass  # Everything is ok.
 
-        print(references)
-    if arguments["repositories"]:
-        for repo in settings["repositories"]:
-            repo_path = os.path.join(user_home, repo["localPath"])
-            if not os.path.exists(repo_path):
-                os.makedirs(repo_path)
-                os.chdir(repo_path)
-                os.system("git clone {} {}".format(repo["remotePath"], repo_path))
-                print("Created: {}".format(repo_path))
-            else:
-                print("Existed: {}".format(repo_path))
+    if arguments["subrepos"]:
+        for repo in settings.repositories:
+            local_path = os.path.join(user_home, repo["localPath"])
+            remote_path = repo["remotePath"]
+            Subrepo(local_path, remote_path).pull()
     if arguments["pull"]:
         proc = subprocess.Popen(["git", "remote"], stdout=subprocess.PIPE)
         remotes = proc.communicate()[0].decode()[:-1]  # Ignore the last \n
-
         for remote in remotes.splitlines():
             os.system("git pull -q {} master".format(remote))
     if arguments["add"]:
@@ -156,4 +175,6 @@ if __name__ == '__main__':
             if os.path.isabs(filename):
                 filename = filename.replace(user_home, "")
             Symlink(repo_root, filename).add_to_repo()
-
+    if arguments["setup"]:
+        for name, location in settings.remotes.items():
+            os.system("git remote add {name} {location}".format(name=name, location=location))
