@@ -28,9 +28,11 @@ usage = \
 """homesync.py
 
 Usage:
-  homesync.py symlinks [--repository=<DIRECTORY>]
+  homesync.py symlinks
   homesync.py repositories
   homesync.py pull
+  homesync.py add-remotes
+  homesync.py add <file> ...
   homesync.py -h | --help
   homesync.py --version
 
@@ -56,6 +58,28 @@ class SettingsLoader:
         settings_file.close()
         return settings
 
+class HomeSyncException(Exception):
+    pass
+
+class Symlink:
+
+    def __init__(self, repository, relative_path):
+        self._repository = repository
+        self._relative_path = relative_path
+        self._symlink_path = os.path.join(os.path.expanduser("~"), relative_path)
+        self._target_path = os.path.join(repository, relative_path)
+
+    def add_to_repo(self):
+        """
+        Add a file present in the user's home to the repository.
+        """
+        if os.path.exists(self._target_path):
+            raise HomeSyncException("A file already exists inside the " + \
+                "repository with that same path");
+        shutil.move(self._symlink_path, self._target_path)
+        os.symlink(self._target_path, self._symlink_path)
+
+        #self._update_status()
 
 if __name__ == '__main__':
     arguments = docopt(usage, version='homesync.py 0.1')
@@ -127,3 +151,9 @@ if __name__ == '__main__':
 
         for remote in remotes.splitlines():
             os.system("git pull -q {} master".format(remote))
+    if arguments["add"]:
+        for filename in arguments["<file>"]:
+            if os.path.isabs(filename):
+                filename = filename.replace(user_home, "")
+            Symlink(repo_root, filename).add_to_repo()
+
