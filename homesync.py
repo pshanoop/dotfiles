@@ -85,8 +85,12 @@ class Symlink:
         if os.path.exists(self._target_path):
             raise HomeSyncException("A file already exists inside the " + \
                 "repository with that same path");
+        parent = os.path.dirname(self._target_path)
+        if not os.path.exists(parent):
+            os.makedirs(parent)
         shutil.move(self._symlink_path, self._target_path)
         os.symlink(self._target_path, self._symlink_path)
+        os.system("git add {}".format(self._target_path))
 
         #self._update_status()
 
@@ -173,7 +177,7 @@ if __name__ == '__main__':
     if arguments["add"]:
         for filename in arguments["<file>"]:
             if os.path.isabs(filename):
-                filename = filename.replace(user_home, "")
+                filename = filename.replace(user_home + "/", "")
             Symlink(repo_root, filename).add_to_repo()
     if arguments["setup"]:
         for name, location in settings.remotes.items():
