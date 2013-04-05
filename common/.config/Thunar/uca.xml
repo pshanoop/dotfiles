@@ -1,0 +1,28 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>Terminal</icon>
+	<name>Open Terminal Here</name>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>locked</icon>
+	<name>Mount cryptfs</name>
+	<command>/home/hugo/.bin/encfs.mount %f</command>
+	<description></description>
+	<patterns>*.enc</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>View images</name>
+	<command>/usr/bin/pqiv &quot;%f&quot;</command>
+	<description>Show images in pqiv</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
