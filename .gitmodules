@@ -1,0 +1,7 @@
+[submodule "common/.config/sublime-text-3/Packages/Package Control"]
+	path = common/.config/sublime-text-3/Packages/Package Control
+	url = https://github.com/wbond/sublime_package_control.git
+	branch = python3
+[submodule "common/.config/sublime-text-3/Packages/CTags"]
+	path = common/.config/sublime-text-3/Packages/CTags
+	url = https://github.com/SublimeText/CTags
