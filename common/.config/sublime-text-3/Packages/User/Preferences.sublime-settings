@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"draw_white_space": "all",
+	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"overlay_scroll_bars": "enabled",
+	"show_tab_close_buttons": false,
+	"trim_trailing_white_space_on_save": true
+}

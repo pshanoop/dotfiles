@@ -1,0 +1,3 @@
+[
+	{ "keys": ["shift+backspace"], "command": "right_delete" }
+]
