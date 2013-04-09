@@ -8,6 +8,7 @@
 		".config/mutt",
 		".config/offlineimap",
 		".config/systemd",
+                ".config/sublime-text-3/Packages",
 		".config/terminator",
 		".config/xbindkeys",
 		".config/xfce4",
