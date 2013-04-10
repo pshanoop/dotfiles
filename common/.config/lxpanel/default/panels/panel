@@ -6,7 +6,7 @@ Global {
     allign=right
     margin=0
     widthtype=pixel
-    width=230
+    width=170
     height=27
     transparent=1
     tintcolor=#272727
@@ -15,11 +15,14 @@ Global {
     heightwhenhidden=2
     setdocktype=1
     setpartialstrut=0
-    usefontcolor=1
+    usefontcolor=0
+    fontsize=10
     fontcolor=#ffffff
+    usefontsize=0
     background=0
     backgroundfile=/usr/share/lxpanel/images/background.png
     iconsize=24
+    loglevel=2
 }
 
 Plugin {
@@ -35,12 +38,9 @@ Plugin {
 }
 
 Plugin {
-    type = dclock
+    type = space
     Config {
-        ClockFmt=%R:%S
-        TooltipFmt=%F (%A) - %T
-        BoldFont=0
-        IconOnly=0
+        Size=4
     }
 }
 
