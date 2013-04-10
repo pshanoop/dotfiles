@@ -49,7 +49,8 @@ color1 gray
 
 TEXT
 ${color}NODE ${color1}$nodename_short \
-${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} \
+${if_existing  /sys/class/power_supply/BAT0}
+${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} $endif\
 ${color}| CPU ${color1}${cpu cpu0}% \
 ${color}| RAM:$color ${color1}$memperc% $mem \
 ${color}| Procs ${color1}$running_processes/$processes \
