@@ -1,0 +1,64 @@
+alignment bottom_left
+gap_x 0
+gap_y 0
+background no
+border_width 0
+cpu_avg_samples 2
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+minimum_size 1920 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+
+# Font
+use_xft yes
+#xftfont DejaVu Sans Mono:size=10
+#xftfont Inconsolata:size=9
+xftfont Bitstream Vera Sans Mono:size=8
+
+# Window type
+own_window yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_colour 111111
+
+double_buffer yes
+short_units yes
+
+stippled_borders 0
+update_interval 1.0
+update_interval_on_battery 3.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+default_bar_size 92 6
+
+# Colours
+default_color white
+color1 gray
+
+TEXT
+${color}NODE ${color1}$nodename_short \
+${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} \
+${color}| CPU ${color1}${cpu cpu0}% \
+${color}| RAM:$color ${color1}$memperc% $mem \
+${color}| Procs ${color1}$running_processes/$processes \
+${color}| VPN ${color1}${if_up tun0}Up${else}Down$endif \
+${color}| Mail ${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX}\
+${alignr}\
+${color}Vol ${color1}${exec amixer get Master| egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% \
+${color}| ${color1}\
+${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ SABE cloud_cover}, \
+${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ SABE temperature}ºC \
+${color}| ${time %T} ${color1}${time %F}
+#${color}Top: ${color1}${top name 1} ${color}cpu/ram:${color1}${top cpu 1}%${top mem 1}%

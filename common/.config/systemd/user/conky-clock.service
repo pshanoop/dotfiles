@@ -1,0 +1,8 @@
+[Unit]
+Description=Conky: the main bottom toolbar
+
+[Service]
+ExecStart=/usr/bin/conky -c %h/.config/conky/clock
+
+[Install]
+WantedBy=desktop.target

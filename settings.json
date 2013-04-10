@@ -2,6 +2,7 @@
 	"symlinkedDirectories": [
 		".bin",
 		".config/compiz-1",
+		".config/conky",
 		".config/fontconfig",
 		".config/gtk-3.0",
 		".config/lxpanel",
