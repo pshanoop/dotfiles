@@ -48,14 +48,14 @@ default_color white
 color1 gray
 
 TEXT
-${color}NODE ${color1}$nodename_short \
-${if_existing  /sys/class/power_supply/BAT0}
-${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} $endif\
+${color}Host ${color1}$nodename_short \
+${if_existing  /sys/class/power_supply/BAT0}${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} $endif\
 ${color}| CPU ${color1}${cpu cpu0}% \
-${color}| RAM:$color ${color1}$memperc% $mem \
+${color}| RAM ${color1}$memperc% $mem \
 ${color}| Procs ${color1}$running_processes/$processes \
 ${color}| VPN ${color1}${if_up tun0}Up${else}Down$endif \
-${color}| Mail ${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX}\
+${color}| Mail ${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX} \
+${if_running mocp}${color}| moc ${color1}${execi 5 mocp -Q "%artist - %song"} $endif\
 ${alignr}\
 ${color}Vol ${color1}${exec amixer get Master| egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% \
 ${color}| ${color1}\
