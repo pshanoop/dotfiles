@@ -1,0 +1,3 @@
+# Restart offlineimap on an hourly basis since it tends to stall every
+# once in a while.
+0	*	*	*	*	/usr/bin/systemctl --user restart offlineimap
