@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Add ~/.bin and all subdirectories to PATH
-PATH=$(find $HOME/.bin/ -type d -exec printf "{}:" \;):$PATH
+PATH=$(find $HOME/.bin/ -type d -exec printf "{}:" \;)$PATH
 export PATH
 
 # This is usually the default, but some (crappy) apps open other editors
