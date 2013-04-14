@@ -27,15 +27,14 @@
   mod4 + f
 "/usr/bin/xfce4-terminal &"
   mod4 + t
-"Terminal -e python &"
+"/usr/bin/xfce4-terminal -e python2 &"
   mod4 + p
-"Terminal -e iddqd &"
+"/usr/bin/xfce4-terminal -e iddqd &"
   mod4 + r
+"/usr/bin/xfce4-terminal --geometry=120x40 -e mutt &"
+  mod4 + m
 "/usr/bin/pavucontrol &"
   mod4 + v
-
-"/usr/bin/purple &"
-  mod4 + l
 
 "/usr/bin/xkill"
   Control + Mod1 + Escape
@@ -68,10 +67,10 @@
 "/usr/bin/mocp --stop"
   XF86AudioStop
 
-"/usr/bin/Terminal -e '/usr/bin/calc -d'"
+"/usr/bin//usr/bin/xfce4-terminal -e '/usr/bin/calc -d'"
   XF86Calculator
 
-"/usr/bin/Terminal -e '/usr/bin/calc -d'"
+"/usr/bin//usr/bin/xfce4-terminal -e '/usr/bin/calc -d'"
   XF86Documents
 
 #########
