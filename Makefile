@@ -1,0 +1,2 @@
+all:
+	rsync -rv files/ /
