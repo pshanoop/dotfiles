@@ -1,2 +1,2 @@
 all:
-	rsync -rv files/ /
+	rsync -lr files/ /
