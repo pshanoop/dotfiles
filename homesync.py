@@ -26,7 +26,7 @@ from jinja2 import Environment, FileSystemLoader
 
 usage = \
 """\
-Usage: homesync.py (symlinks | subrepos | pull | setup | add <file>...)
+Usage: homesync.py (symlinks | subrepos | pull | push | setup | add <file>...)
        homesync.py -h | --help
        homesync.py --version
 
@@ -41,6 +41,7 @@ subrepos          Initialize and update all repos defined in settings.json.
 pull              Pull from all git remotes.  Will also add any missing
                   remote that is defined in settings.json.
                   TODO: update changed remotes.
+push              Push to all git remotes.
 add <file> ...    Add one or more files into the repository.  This will move
                   the file from your home into the repository and create a
                   symlink to it in you home.
@@ -170,15 +171,17 @@ if __name__ == '__main__':
             remote_path = repo["remotePath"]
             Subrepo(local_path, remote_path).pull()
     if arguments["pull"]:
-        proc = subprocess.Popen(["git", "remote"], stdout=subprocess.PIPE)
-        remotes = proc.communicate()[0].decode()[:-1]  # Ignore the last \n
-        for remote in remotes.splitlines():
-            os.system("git pull -q {} master".format(remote))
+        for remote in settings.remotes:
+            os.system("git pull -q {name} master".format(**remote))
+    if arguments["push"]:
+        for remote in settings.remotes:
+            if remote["push"]:
+                os.system("git push -q {name} master".format(**remote))
     if arguments["add"]:
         for filename in arguments["<file>"]:
             if os.path.isabs(filename):
                 filename = filename.replace(user_home + "/", "")
             Symlink(repo_root, filename).add_to_repo()
     if arguments["setup"]:
-        for name, location in settings.remotes.items():
-            os.system("git remote add {name} {location}".format(name=name, location=location))
+        for remote in settings.remotes:
+            os.system("git remote add {name} {path}".format(**remote))
