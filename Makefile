@@ -1,8 +1,9 @@
 package:
 	tar cf sysconfig.tar files Makefile
-	sed -i '$$ d' PKGBUILD
+	cat PKGBUILD.proto > PKGBUILD
 	makepkg -g >> PKGBUILD
+	makepkg -fs
 install:
-	makepkg -fsci
+	makepkg -i
 clean:
-	rm -rf src pkg sysconfig*.tar*
+	rm -rf src pkg sysconfig*.tar* PKGBUILD
