@@ -4,6 +4,7 @@ Description=Synchronize emails
 [Service]
 ExecStart=/usr/bin/offlineimap -c %h/.config/offlineimap/offlineimaprc
 Restart=always
+RestartSec=2
 
 [Install]
 WantedBy=desktop.target

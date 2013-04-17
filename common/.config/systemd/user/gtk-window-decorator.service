@@ -3,6 +3,8 @@ Description=A GTK2-based window decorator
 
 [Service]
 ExecStart=/usr/bin/gtk-window-decorator
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=desktop.target
