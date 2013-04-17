@@ -26,11 +26,31 @@
 			"remotePath": "hyperion.local:~/certs"
 		}
 	],
-	"remotes": {
-		"hyperion": "hyperion.local:/home/hugo/.homes",
-		"hermes": "hermes.local:/home/hugo/.homes",
-		"ares": "ares.local:/home/hugo/.homes",
-		"github": "git@github.com:hobarrera/dotfiles.git",
-		"elysion": "elysion:/home/hugo/git/homes.git"
-	}
+	"remotes": [
+		{
+			"name": "hyperion",
+			"path": "hyperion.local:/home/hugo/.homes",
+			"push": false
+		},
+		{
+			"name": "hermes",
+			"path": "hermes.local:/home/hugo/.homes",
+			"push": false
+		},
+		{
+			"name": "ares",
+			"path": "ares.local:/home/hugo/.homes",
+			"push": false
+		},
+		{
+			"name": "github",
+			"path": "git@github.com:hobarrera/dotfiles.git",
+			"push": true
+		},
+		{
+			"name": "elysion",
+			"path": "elysion:/home/hugo/git/homes.git",
+			"push": true
+		}
+	]
 }

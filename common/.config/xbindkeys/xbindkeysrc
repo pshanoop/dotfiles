@@ -31,7 +31,7 @@
   mod4 + p
 "/usr/bin/xfce4-terminal -e iddqd &"
   mod4 + r
-"/usr/bin/xfce4-terminal --geometry=120x40 -e mutt &"
+"/usr/bin/xfce4-terminal --geometry=120x30 -e mutt &"
   mod4 + m
 "/usr/bin/pavucontrol &"
   mod4 + v

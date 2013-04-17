@@ -7,3 +7,5 @@
 	default = matching
 [color]
 	ui = true
+[diff]
+	tool = meld
