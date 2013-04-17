@@ -113,7 +113,18 @@ class Subrepo:
             os.system("git pull origin master")
             print("Updated: {}".format(self.local_path))
 
+class bcolors:
+    OK = '\033[32m'
+    WARNING = '\033[34m'
+    ERROR = '\033[31m'
+    ENDC = '\033[0m'
+
 if __name__ == '__main__':
+    if not os.path.exists(".git"):
+        print(bcolors.WARNING + "Warning: " + bcolors.ENDC + \
+            "Not in a git repository. Assuming ~/.homes\n")
+        os.chdir(os.path.expanduser("~/.homes"))
+
     arguments = docopt(usage, version='homesync.py 0.1')
 
     settings = Settings()
