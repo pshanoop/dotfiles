@@ -4,6 +4,6 @@ package:
 	makepkg -g >> PKGBUILD
 	makepkg -fs
 install:
-	makepkg -i
+	pacman -U --force sysconfig-*-any.pkg.tar.xz
 clean:
 	rm -rf src pkg sysconfig*.tar* PKGBUILD
