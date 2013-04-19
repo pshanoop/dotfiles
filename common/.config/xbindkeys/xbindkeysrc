@@ -25,14 +25,18 @@
   mod4 + c
 "/usr/bin/firefox &"
   mod4 + f
-"/usr/bin/xfce4-terminal &"
+"/usr/bin/urxvtc &"
   mod4 + t
-"/usr/bin/xfce4-terminal -e python2 &"
+"/usr/bin/urxvtc -e python2 &"
   mod4 + p
-"/usr/bin/xfce4-terminal -e iddqd &"
+"/usr/bin/urxvtc -e iddqd &"
   mod4 + r
-"/usr/bin/xfce4-terminal --geometry=120x30 -e mutt &"
+"/usr/bin/urxvtc --geometry=120x30 -e mutt &"
   mod4 + m
+
+# This is in case urxvtd dies for some reason.
+"/usr/bin/urxvt"
+  mod4 + Return
 "/usr/bin/pavucontrol &"
   mod4 + v
 
@@ -67,10 +71,10 @@
 "/usr/bin/mocp --stop"
   XF86AudioStop
 
-"/usr/bin//usr/bin/xfce4-terminal -e '/usr/bin/calc -d'"
+"/usr/bin//usr/bin/urxvtc -e '/usr/bin/calc -d'"
   XF86Calculator
 
-"/usr/bin//usr/bin/xfce4-terminal -e '/usr/bin/calc -d'"
+"/usr/bin//usr/bin/urxvtc -e '/usr/bin/calc -d'"
   XF86Documents
 
 #########

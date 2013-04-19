@@ -1,0 +1,47 @@
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size:  16
+
+Xft.dpi:       116
+Xft.antialias: true
+Xft.hinting:   true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba:      rgb
+
+URxvt.depth: 32
+URxvt.background:  [80]#000000
+URxvt.foreground:  #FFFFFF
+URxvt.cursorColor: #00FF00
+
+URxvt.scrollstyle: plain
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+
+URxvt.font: xft:Droid Sans Mono:style=Regular:pixelsize=20:antialias=true:hinting=true:hintstyle=hintfull
+
+URxvt.color0: #3f3f3f
+URxvt.color1: #c44444
+URxvt.color2: #3aaf75
+URxvt.color3: #dfaf8f
+URxvt.color4: #9ab8d7
+URxvt.color5: #dc8cc3
+URxvt.color6: #8cd0d3
+URxvt.color7: #dcdcdc
+URxvt.color8: #709080
+URxvt.color9: #dca3a3
+URxvt.color10: #72d5a3
+URxvt.color11: #f0dfaf
+URxvt.color12: #94bff3
+URxvt.color13: #ec93d3
+URxvt.color14: #93e0e3
+URxvt.color15: #ffffff
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    11
+URxvt.tabbed.tab-bg:    0
+
+URxvt.perl-ext-common: default,tabbed,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 3
+URxvt.iconFile: /usr/share/icons/elementary-xfce/apps/128/terminal.svg

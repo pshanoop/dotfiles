@@ -1,0 +1,8 @@
+[Unit]
+Description=urxvt terminal daemon
+
+[Service]
+ExecStart=/usr/bin/urxvtd
+
+[Install]
+WantedBy=desktop.target
