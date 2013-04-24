@@ -30,3 +30,5 @@ set crypt_autosign = yes	# automatically sign all outgoing messages
 #set crypt_replysignencrypted=yes	# encrypt and sign replies to encrypted messages
 
 set crypt_verify_sig=yes		# automatically verify the sign of a message when opened
+
+set pgp_use_gpg_agent = yes
