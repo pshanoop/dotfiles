@@ -51,7 +51,7 @@ color1 gray
 
 TEXT
 ${color}Host ${color1}$nodename_short \
-${if_existing  /sys/class/power_supply/BAT0}${color}| BAT ${color1}${battery_short BAT0} ♥ ${battery_time BAT0} $endif\
+${if_existing  /sys/class/power_supply/BAT0}${color}| BAT ${color1}${battery BAT0}, ${battery_time BAT0} $endif\
 ${color}| CPU ${color1}${cpu cpu0}% \
 ${color}| RAM ${color1}$memperc% $mem \
 ${color}| Disk ${color1}$diskio \
