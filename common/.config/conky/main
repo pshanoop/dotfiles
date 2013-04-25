@@ -89,5 +89,5 @@ ${color}Vol ${color1}${exec amixer get Master| egrep -o "[0-9]+%" | head -1 | eg
 ${color}| ${color1}\
 ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ SABE cloud_cover}, \
 ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ SABE temperature}ºC \
-${color}| ${time %T} ${color1}${time %F}
+${color}| ${time %T} ${color1}${time %F}  
 #${color}Top: ${color1}${top name 1} ${color}cpu/ram:${color1}${top cpu 1}%${top mem 1}%
