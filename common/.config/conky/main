@@ -77,9 +77,14 @@ ${if_running mocp}${color}| ${font Typicons:size=12}*${voffset -5}${font}${color
 ${if_match "${exec mocp -Q %state}" == "PAUSE"}\
 (paused)\
 ${endif}\
+${if_match "${execi 5 mocp -Q "%artist - %song"}" != " - "}\
  ${execi 5 mocp -Q "%artist - %song"} \
 ${endif}\
+${endif}\
 ${alignr}\
+${color}${font Typicons:size=12}\
+${if_match "${exec amixer get Master| egrep "[0-9]+%" | grep off}" != ""}t${else}u${endif}\
+${voffset -5}${font}${color1} \
 ${color}Vol ${color1}${exec amixer get Master| egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% \
 ${color}| ${color1}\
 ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ SABE cloud_cover}, \
