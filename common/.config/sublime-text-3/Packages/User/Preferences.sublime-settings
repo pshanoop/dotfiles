@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 	"draw_white_space": "all",
 	"font_size": 15,
 	"highlight_line": true,
@@ -11,5 +11,7 @@
 	"overlay_scroll_bars": "enabled",
 	"show_tab_close_buttons": false,
 	"trim_trailing_white_space_on_save": true,
-	"file_exclude_patterns": [".tags", ".tags_sorted_by_file", ".gemtags"]
+	"update_check": false,
+	"font_face": "Liberation Mono",
+	"rulers": [80]
 }
