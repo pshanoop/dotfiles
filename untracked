@@ -1,0 +1,4 @@
+# Run `git update-index --assume-unchanged` on these to stop tracking changes
+#
+
+common/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
