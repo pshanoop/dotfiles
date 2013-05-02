@@ -1,0 +1,64 @@
+
+### Terminals ###
+#################
+
+super + t
+  urxvtc
+super + p
+  urxvtc -e python2
+super + m
+  urxvtc --geometry=120x30 -e mutt
+super + w
+  urxvtc -g 90x22 -e wicd-curses
+
+### Unique sequences ###
+########################
+
+super + Return
+  urxvt
+control + alt + Escape
+  xkill
+super + space
+  gmrun
+
+### Screenshots ###
+###################
+
+Print
+  scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
+control + Print
+  screenshot.window
+alt + Print
+  screenshot.active
+
+### Desktop Apps ###
+####################
+
+super + q
+  Thunar
+super + v
+  pavucontrol
+super + b
+  $BROWSER
+
+### Media Keys ###
+##################
+
+XF86AudioPlay
+  mocp --toggle-pause
+XF86AudioPrev
+  mocp --previous
+XF86AudioNext
+  mocp --next
+XF86AudioStop
+  mocp --stop
+XF86Calculator
+  urxvtc -e calc -d
+
+### Mouse ###
+#############
+
+:button9
+  vlc.playPause
+:button8
+  vlc.stop

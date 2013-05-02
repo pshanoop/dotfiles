@@ -2,7 +2,7 @@
 Description=A grabbing keys program for X
 
 [Service]
-ExecStart=/usr/bin/xbindkeys -n -f %h/.config/xbindkeys/xbindkeysrc
+ExecStart=/usr/bin/sxhkd
 KillMode=process
 
 [Install]
