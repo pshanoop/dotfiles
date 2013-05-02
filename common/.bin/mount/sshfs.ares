@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/ares
+mkdir -p ${MOUNTPATH}
+sshfs ares.local:/home/hugo/ ${MOUNTPATH}
