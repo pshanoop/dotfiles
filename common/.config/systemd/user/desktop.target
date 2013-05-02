@@ -1,6 +1,10 @@
 [Unit]
 Description=Compiz-based desktop
-Wants=wm.target
+Wants=compiz.service
+Wants=sxhkd.service
+Wants=thunar.service
+Wants=urxvtd.service
+Wants=gtk-window-decorator.service
 
 [Install]
 Alias=default.target
