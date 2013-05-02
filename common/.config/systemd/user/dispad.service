@@ -1,8 +1,0 @@
-[Unit]
-Description=A daemon for temporarily disabling trackpads on keyboard events.
-
-[Service]
-ExecStart=/usr/bin/dispad -F --config %h/.config/dispad/dispad.conf
-
-[Install]
-WantedBy=desktop.target
