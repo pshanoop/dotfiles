@@ -3,13 +3,11 @@
 #################
 
 super + t
-  urxvtc
-super + p
-  urxvtc -e python2
+  $TERMINAL
 super + m
-  urxvtc --geometry=120x30 -e mutt
+  $TERMINAL --geometry=120x30 -e mutt
 super + w
-  urxvtc -g 90x22 -e wicd-curses
+  $TERINAL -g 90x22 -e wicd-curses
 
 ### Unique sequences ###
 ########################
@@ -38,8 +36,10 @@ super + q
   Thunar
 super + v
   pavucontrol
-super + b
+super + c
   $BROWSER
+super + p
+  pidgin
 
 ### Media Keys ###
 ##################
@@ -53,7 +53,7 @@ XF86AudioNext
 XF86AudioStop
   mocp --stop
 XF86Calculator
-  urxvtc -e calc -d
+  $TERMINAL -e calc -d
 
 ### Mouse ###
 #############
