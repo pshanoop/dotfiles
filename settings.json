@@ -6,6 +6,7 @@
 		".config/cron",
 		".config/fontconfig",
 		".config/gtk-3.0",
+		".config/gummi",
 		".config/lxpanel",
 		".config/mutt",
 		".config/offlineimap",
