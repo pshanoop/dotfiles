@@ -28,6 +28,7 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 # this variable.
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+export TERMINAL=urxvtc
 export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass2
 
