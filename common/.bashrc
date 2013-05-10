@@ -41,3 +41,4 @@ export PS1="[\u@\h \W\[\033[01;32m\]\$(__git_wd)\[\033[0m\]]$\[\033[00m\] "
 . ~/.aliases
 
 export SDL_AUDIODRIVER=alsa
+export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
