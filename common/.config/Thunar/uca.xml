@@ -3,8 +3,9 @@
 <action>
 	<icon>Terminal</icon>
 	<name>Open Terminal Here</name>
+	<unique-id>1367966090449077-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Example for a custom action</description>
+	<description>Open a terminal in the selected directory</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
