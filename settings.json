@@ -12,6 +12,7 @@
 		".config/offlineimap",
 		".config/systemd",
                 ".config/sublime-text-3/Packages",
+		".config/sxhkd",
 		".config/terminator",
 		".config/xbindkeys",
 		".config/xfce4",
