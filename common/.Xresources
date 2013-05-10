@@ -48,4 +48,4 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 3
 URxvt.iconFile: /usr/share/icons/elementary-xfce/apps/128/terminal.svg
 
-URxvt.letterSpace: -2
+URxvt.letterSpace: -3
