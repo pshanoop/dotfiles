@@ -7,7 +7,7 @@ super + t
 super + m
   $TERMINAL --geometry=120x30 -e mutt
 super + w
-  $TERINAL -g 90x22 -e wicd-curses
+  $TERMINAL -g 90x22 -e wicd-curses
 
 ### Unique sequences ###
 ########################
