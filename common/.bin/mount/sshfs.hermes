@@ -2,4 +2,3 @@
 export MOUNTPATH=~/mount/hermes
 mkdir -p ${MOUNTPATH}
 sshfs hermes.local:/home/hugo/ ${MOUNTPATH}
-
