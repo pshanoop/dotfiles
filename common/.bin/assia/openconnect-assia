@@ -1,6 +1,2 @@
 #!/bin/sh
-
-# The tun0 device needs to be created first:
-#  sudo ip tuntap add dev tun0 mode tun user hugo
-
 sudo openconnect secure.assia-inc.com -u hbarrera --passwd-on-stdin -v < ~/priv/secrets/assia-vpn
