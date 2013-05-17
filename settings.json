@@ -35,11 +35,6 @@
 			"push": false
 		},
 		{
-			"name": "hermes",
-			"path": "hermes.local:/home/hugo/.homes",
-			"push": false
-		},
-		{
 			"name": "ares",
 			"path": "ares.local:/home/hugo/.homes",
 			"push": false
