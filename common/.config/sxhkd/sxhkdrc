@@ -41,7 +41,7 @@ alt + Print
 super + q
   Thunar
 super + v
-  pavucontrol
+  pavucontrol -t 3
 super + c
   $BROWSER
 super + p
