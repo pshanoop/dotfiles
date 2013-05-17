@@ -18,6 +18,10 @@ control + alt + Escape
   xkill
 super + space
   gmrun
+XF86HomePage
+  i3lock -u
+XF86Tools
+  kbctl
 
 ### Screenshots ###
 ###################
