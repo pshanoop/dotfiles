@@ -13,6 +13,7 @@ export PATH
 # by default
 export EDITOR="vi"
 export VISUAL="vi"
+export PAGER=less
 
 # Force wine to run in i686 mode (and not amd64).
 export WINEARCH=win32
