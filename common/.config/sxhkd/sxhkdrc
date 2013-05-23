@@ -19,9 +19,9 @@ control + alt + Escape
 super + space
   gmrun
 XF86Launch1
-  i3lock -u
+  lock-screen
 XF86HomePage
-  i3lock -u
+  lock-screen
 XF86Tools
   kbctl
 
