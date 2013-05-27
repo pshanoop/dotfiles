@@ -1,0 +1,3 @@
+#!/bin/sh
+CHROMIUM_PROFILE=$(zenity --list --column=Name Hugo Amy 2>/dev/null | sed -r "s/\|.*//")
+/usr/bin/chromium --user-data-dir=$HOME/.config/chromium/$CHROMIUM_PROFILE
