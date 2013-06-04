@@ -5,7 +5,7 @@
 super + t
   $TERMINAL
 super + m
-  $TERMINAL --geometry=120x30 -e mutt
+  $TERMINAL --geometry 120x30 -e mutt
 super + w
   $TERMINAL -g 90x22 -e wicd-curses
 
