@@ -46,6 +46,8 @@ super + c
   $BROWSER
 super + p
   pidgin
+super + b
+  bitcoin-qt
 
 ### Media Keys ###
 ##################
