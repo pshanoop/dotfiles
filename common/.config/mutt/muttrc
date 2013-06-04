@@ -20,7 +20,7 @@ set move	= no
 
 set realname = "Hugo Osvaldo Barrera"
 
-set folder_format="%2C %N %f"
+set folder_format="%2C %t %f"
 
 set copy = yes				# Keep copies of outgoing mail...
 set fcc_attach = yes
