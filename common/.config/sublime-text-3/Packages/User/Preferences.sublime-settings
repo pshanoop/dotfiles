@@ -1,20 +1,23 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
-    "draw_white_space": "all",
-    "font_size": 15,
-    "highlight_line": true,
-    "highlight_modified_tabs": true,
-    "ignored_packages":
-    [
-        "Vintage"
-    ],
-    "overlay_scroll_bars": "enabled",
-    "show_tab_close_buttons": false,
-    "trim_trailing_white_space_on_save": true,
-    "update_check": false,
-    "font_face": "Liberation Mono",
-    "rulers": [80],
-    "tab_size": 4,
-    "translate_tabs_to_spaces": true,
-    "indent_to_bracket": true
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"draw_white_space": "all",
+	"font_face": "Liberation Mono",
+	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": true,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80
+	],
+	"show_tab_close_buttons": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false
 }
