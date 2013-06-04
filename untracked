@@ -2,3 +2,4 @@
 #
 
 common/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+common/.config/gpicview/gpicview.conf
