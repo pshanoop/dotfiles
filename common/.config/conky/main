@@ -71,8 +71,7 @@ ${color}| Disk ${color1}$diskio \
 #${color}| Procs ${color1}$running_processes/$processes
 ${if_up tun0}${color}| VPN ${color1}Up $endif\
 ${color}| ${font Typicons:size=12}[${voffset -5}\
- ${font}${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX}\
-:${font}${color1}${new_mails /home/hugo/.local/share/maildir/AIGroup/INBOX} \
+ ${font}${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX} \
 # TODO: center this
 ${if_running mocp}${color}| ${font Typicons:size=12}*${voffset -5}${font}${color1}\
 ${if_match "${exec mocp -Q %state}" == "PAUSE"}\

@@ -1,6 +1,6 @@
 [general]
 metadata = ~/.local/share/offlineimap
-accounts = Personal, AIGroup
+accounts = Personal
 maxsyncaccounts = 12
 ui = basic
 
@@ -26,31 +26,6 @@ remotepassfile = ~/priv/secrets/imap@elysion
 ssl = yes
 cert_fingerprint = 7711251bac7fd3ced4a1d6fcda0edc156ecaa2f1
 idlefolders = ['INBOX', 'INBOX.rss', 'Archives.2013']
-maxconnections = 4
-holdconnectionopen = yes
-subscribedonly = no
-
-### AIGroup Account ###
-
-[Account AIGroup]
-localrepository = LocalAIGroup
-remoterepository = RemoteAIGroup
-autorefresh = 5
-quick = 2
-
-[Repository LocalAIGroup]
-type = Maildir
-localfolders = ~/.local/share/maildir/AIGroup
-restoreatime = no
-
-[Repository RemoteAIGroup]
-type = IMAP
-remotehost = imap.gmail.com
-remoteuser = hbarrera@aigroup.com.ar
-remotepassfile = ~/priv/secrets/imap@aigroup
-ssl = yes
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
-idlefolders = ['INBOX']
 maxconnections = 4
 holdconnectionopen = yes
 subscribedonly = no
