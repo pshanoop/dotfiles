@@ -9,13 +9,14 @@ gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-recent-files-max-age=0
-gtk-theme-name="A-New-Hope"
+#gtk-theme-name="A-New-Hope"
+gtk-theme-name="Ambiance"
 
 style "darker-scrollbars"
 {
   bg[NORMAL] = "#515151"
   bg[PRELIGHT] = "#515151"
-  GtkScrollbar::slider_width = 3
+  GtkScrollbar::slider_width = 9
   GtkScrollbar::stepper_size = 1
 }
 widget_class "*Scrollbar" style "darker-scrollbars"
