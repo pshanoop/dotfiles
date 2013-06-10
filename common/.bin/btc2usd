@@ -1,0 +1,8 @@
+#!/usr/bin/env python2
+
+import requests
+import json
+
+r = requests.get("https://data.mtgox.com/api/2/BTCUSD/money/ticker")
+j = json.loads(r.text)
+print(j["data"]["avg"]["display"])

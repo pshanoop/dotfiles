@@ -72,6 +72,7 @@ ${color}| Disk ${color1}$diskio \
 ${if_up tun0}${color}| VPN ${color1}Up $endif\
 ${color}| ${font Typicons:size=12}[${voffset -5}\
  ${font}${color1}${new_mails /home/hugo/.local/share/maildir/Personal/INBOX} \
+${color}| BTC ${color1}${texeci 30 btc2usd } \
 # TODO: center this
 ${if_running mocp}${color}| ${font Typicons:size=12}*${voffset -5}${font}${color1}\
 ${if_match "${exec mocp -Q %state}" == "PAUSE"}\
