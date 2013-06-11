@@ -19,9 +19,9 @@ control + alt + Escape
 super + space
   gmrun
 XF86Launch1
-  lock-screen
+  lockx
 XF86HomePage
-  lock-screen
+  lockx
 XF86Tools
   kbctl
 
