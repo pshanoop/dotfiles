@@ -1,2 +1,1 @@
-#!/bin/sh
-i3lock -u -i ~/.locked.png
+lockx
