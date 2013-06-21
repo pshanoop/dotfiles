@@ -41,7 +41,11 @@ function __hg_wd {
   ruby -e "print (%x{hg branch 2>/dev/null} || '').gsub(/^(.+)$/, ':\1')"
 }
 
-export PS1="[\u@\h \W\[\033[01;32m\]\$(__git_wd)\033[01;34m\]\$(__hg_wd)\[\033[0m\]]$\[\033[00m\] "
+export   GREEN="\[\033[01;32m\]"
+export    BLUE="\[\033[01;34m\]"
+export DEFAULT="\[\033[0m\]]"
+
+export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT$ "
 
 . ~/.aliases
 
