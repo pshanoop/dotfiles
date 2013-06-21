@@ -42,7 +42,7 @@ URxvt.tabbed.tab-fg:    11
 URxvt.tabbed.tab-bg:    0
 
 URxvt.perl-ext-common: default,tabbed,matcher,clipboard
-!URxvt.keysym.Control-c: perl:clipboard:copy
+URxvt.keysym.Control-C: perl:clipboard:copy
 URxvt.keysym.Control-v: perl:clipboard:paste
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 3
