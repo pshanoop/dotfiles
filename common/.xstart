@@ -1,9 +1,3 @@
 #!/bin/sh
 
-urxvt &
-
-for daemon in $HOME/.config/usrc/*; do
-	if [ -x $daemon ]; then
-		$daemon start &
-	fi;
-done;
+usrc startup
