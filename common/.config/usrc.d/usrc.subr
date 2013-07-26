@@ -1,0 +1,175 @@
+# Copyright (c) 2013 Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
+# Copyright (c) 2010, 2011 Antoine Jacoutot <ajacoutot@openbsd.org>
+# Copyright (c) 2010, 2011 Ingo Schwarze <schwarze@openbsd.org>
+# Copyright (c) 2010, 2011 Robert Nagy <robert@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+rc_err() {
+        echo $1 1>&2
+        exit 1
+}
+
+rc_is_supported() {
+        local _enotsup
+        eval _enotsup=\${rc_$1}
+        [ X"${_enotsup}" != X"NO" ]
+}
+
+rc_usage() {
+        local _a _allsup
+        for _a in start stop restart reload check; do
+                rc_is_supported ${_a} && _allsup="${_allsup:+$_allsup|}${_a}"
+        done
+        rc_err "usage: $0 [-df] (${_allsup})"
+}
+
+rc_is_supported() {
+        local _enotsup
+        eval _enotsup=\${rc_$1}
+        [ X"${_enotsup}" != X"NO" ]
+}
+
+rc_wait() {
+        local _i=0 _w=${2:-30}
+        while [ $_i -lt $_w ]; do
+                case "$1" in
+                        reload|start)
+                                rc_do rc_check && return 0
+                                ;;
+                        stop)
+                                rc_do rc_check || return 0
+                                ;;
+                        *)
+                                break
+                                ;;
+                esac
+                sleep 1
+                _i=$((_i+1))
+        done
+        return 1
+}
+
+rc_cmd() {
+	local _bg _n
+
+	[ X"${rc_bg}" = X"YES" ] && _bg="&"
+	[ -n "${_RC_DEBUG}" ] || _n="-n"
+
+	case "$1" in
+	check)
+                rc_do rc_check
+                ;;
+	start)
+		echo $_n "${INRC:+ }${_name}"
+		while true; do  # no real loop, only needed to break
+                        if type rc_pre >/dev/null 2>&1; then
+                                rc_do rc_pre || break
+                        fi
+                        # XXX only checks the status of the return code,
+                        # and _not_ that the daemon is actually running
+                        rc_do rc_start || break
+                        if [ -n "${_bg}" ]; then
+                                sleep 1
+                                rc_do rc_wait start || break
+                        fi
+                        rc_exit ok
+                done
+                # handle failure
+                type rc_post >/dev/null && rc_do rc_post
+                rc_exit failed
+                ;;
+	stop)
+		rc_do rc_check || exit 0
+                echo $_n "${INRC:+ }${_name}"
+                rc_do rc_stop || rc_exit failed
+                rc_do rc_wait stop || rc_exit failed
+                if type rc_post >/dev/null 2>&1; then \
+                        rc_do rc_post || rc_exit failed
+                fi
+                rc_exit ok
+                ;;
+	reload)
+		rc_do rc_check || exit 0
+                echo $_n "${INRC:+ }${_name}"
+                rc_do rc_reload || rc_exit failed
+                rc_do rc_wait reload || rc_exit failed
+                rc_exit ok
+                ;;
+	restart)
+                $0 ${_RC_DEBUG} ${_RC_FORCE} stop &&
+                        $0 ${_RC_DEBUG} ${_RC_FORCE} start
+                ;;
+	*)
+		rc_usage
+		;;
+	esac
+}
+
+rc_start() {
+        /bin/sh -c "${daemon} ${daemon_flags} ${_bg}"
+}
+
+rc_check() {
+        pgrep -f "^${pexp}" > /dev/null
+}
+
+rc_reload() {
+        pkill -HUP -f "^${pexp}"
+}
+
+rc_stop() {
+        pkill -f "^${pexp}"
+}
+
+rc_do() {
+        if [ -n "${_RC_DEBUG}" ]; then
+                echo "doing $@" && "$@"
+        else
+                "$@" >/dev/null 2>&1
+        fi
+}
+
+rc_exit() {
+        local _pfix
+        [ -z "${INRC}" -o X"$1" != X"ok" ] && _pfix="($1)"
+        echo ${INRC:+'-n'} "${_pfix}"
+        [ X"$1" = X"ok" ] && exit 0 || exit 1
+}
+
+. $HOME/.config/usrc/usrc.conf
+
+[ -n "${daemon}" ] || rc_err "$0: daemon is not set"
+
+unset _RC_DEBUG _RC_FORCE
+while getopts "df" c; do
+	case "$c" in
+		d) _RC_DEBUG=-d;;
+		f) _RC_FORCE=-f;;
+		*) rc_usage;;
+	esac
+done
+shift $((OPTIND-1))
+
+_name=$(basename $0)
+
+eval _rcflags=\${${_name}_flags}
+eval _rcuser=\${${_name}_user}
+
+[ -n "${_RC_FORCE}" ] && [ X"${_rcflags}" = X"NO" ] && unset _rcflags
+[ -n "${_rcflags}" ] && daemon_flags=${_rcflags}
+[ -n "${_rcuser}"  ] && daemon_user=${_rcuser}
+
+unset _rcflags _rcuser
+
+pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"

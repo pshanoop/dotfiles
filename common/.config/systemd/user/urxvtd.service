@@ -1,9 +1,0 @@
-[Unit]
-Description=urxvt terminal daemon
-
-[Service]
-ExecStart=/usr/bin/urxvtd
-Environment="RXVT_SOCKET=/home/hugo/.local/share/urxvt/urxvtd-<nodename>"
-
-[Install]
-WantedBy=desktop.target

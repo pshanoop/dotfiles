@@ -1,9 +1,0 @@
-[Unit]
-Description=A grabbing keys program for X
-
-[Service]
-ExecStart=/usr/bin/sxhkd
-KillMode=process
-
-[Install]
-WantedBy=desktop.target

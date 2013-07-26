@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# usrc daemon file
+
+daemon="/usr/bin/conky -c $HOME/.config/conky/clock"
+
+. $HOME/.config/usrc/usrc.subr
+
+rc_bg=YES
+
+rc_cmd $1

@@ -1,9 +1,0 @@
-[Unit]
-Description=Activate the numeric keypad
-
-[Service]
-ExecStart=/usr/bin/numlockx on
-Type=oneshot
-
-[Install]
-WantedBy=desktop.target

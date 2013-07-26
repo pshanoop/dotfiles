@@ -1,8 +1,0 @@
-[Unit]
-Description=A POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway.
-
-[Service]
-ExecStart=/usr/bin/davmail
-
-[Install]
-WantedBy=desktop.target

@@ -1,8 +1,0 @@
-[Unit]
-Description=File Manager
-
-[Service]
-ExecStart=/usr/bin/thunar --daemon
-
-[Install]
-WantedBy=desktop.target

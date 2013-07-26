@@ -1,8 +1,0 @@
-[Unit]
-Description=GTK client for wicd
-
-[Service]
-ExecStart=/usr/bin/wicd-gtk -t
-
-[Install]
-WantedBy=desktop.target

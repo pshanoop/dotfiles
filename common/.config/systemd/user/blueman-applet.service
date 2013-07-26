@@ -1,8 +1,0 @@
-[Unit]
-Description=A tray applet for managing bluetooth
-
-[Service]
-ExecStart=/usr/bin/blueman-applet
-
-[Install]
-WantedBy=desktop.target

@@ -3,8 +3,11 @@
 # ~/.xinitrc
 #
 
-/usr/bin/start-pulseaudio-x11
 /usr/bin/xrdb -merge ~/.Xresources
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)
-dbus-launch /usr/lib/systemd/systemd --user
+
+dbus-launch $HOME/.xstart
+
+# Never give up, never surrender!
+while [ true ]; do sleep 1d; done;
