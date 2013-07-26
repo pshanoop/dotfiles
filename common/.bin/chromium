@@ -3,5 +3,5 @@ PROFILES=$(/bin/ls $HOME/.config/chromium)
 CHROMIUM_PROFILE=$(zenity --list --column=User $PROFILES 2>/dev/null | sed -r "s/\|.*//")
 
 if [ ! -z $CHROMIUM_PROFILE ]; then
-	/usr/bin/chromium --user-data-dir=$HOME/.config/chromium/$CHROMIUM_PROFILE
+	/usr/bin/chromium --user-data-dir=$HOME/.config/chromium/$CHROMIUM_PROFILE $@
 fi;
