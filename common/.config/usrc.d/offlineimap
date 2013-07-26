@@ -2,11 +2,9 @@
 #
 # usrc daemon file
 
-exit
-
 daemon="/usr/bin/offlineimap -c $HOME/.config/offlineimap/offlineimaprc"
 
-. $HOME/.config/usrc/usrc.subr
+. $HOME/.config/usrc.d/usrc.subr
 
 rc_bg=YES
 

@@ -4,7 +4,7 @@
 
 daemon="/usr/bin/thunar --daemon"
 
-. $HOME/.config/usrc/usrc.subr
+. $HOME/.config/usrc.d/usrc.subr
 
 rc_bg=YES
 
