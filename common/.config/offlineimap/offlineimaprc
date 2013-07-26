@@ -17,6 +17,7 @@ postsynchook = /usr/bin/notmuch new
 type = Maildir
 localfolders = ~/.local/share/maildir/Personal
 restoreatime = no
+createfolders = False
 
 [Repository RemotePersonal]
 type = IMAP
@@ -25,7 +26,8 @@ remoteuser = hugo@osvaldobarrera.com.ar
 remotepassfile = ~/priv/secrets/imap@elysion
 ssl = yes
 cert_fingerprint = 7711251bac7fd3ced4a1d6fcda0edc156ecaa2f1
-idlefolders = ['INBOX', 'INBOX.rss', 'Archives.2013']
-maxconnections = 4
+idlefolders = ['INBOX', 'RSS', 'News', 'Archives.2013']
+maxconnections = 5
 holdconnectionopen = yes
 subscribedonly = no
+createfolders = False
