@@ -15,139 +15,170 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+
+# Default functions and variables used by usrc.d scripts.
+
 rc_err() {
-        echo $1 1>&2
-        exit 1
+	echo $1 1>&2
+	exit 1
 }
 
 rc_is_supported() {
-        local _enotsup
-        eval _enotsup=\${rc_$1}
-        [ X"${_enotsup}" != X"NO" ]
+	local _enotsup
+	eval _enotsup=\${rc_$1}
+	[ X"${_enotsup}" != X"NO" ]
 }
 
 rc_usage() {
-        local _a _allsup
-        for _a in start stop restart reload check; do
-                rc_is_supported ${_a} && _allsup="${_allsup:+$_allsup|}${_a}"
-        done
-        rc_err "usage: $0 [-df] (${_allsup})"
+	local _a _allsup
+	for _a in start stop restart reload check; do
+		rc_is_supported ${_a} && _allsup="${_allsup:+$_allsup|}${_a}"
+	done
+	rc_err "usage: $0 [-df] (${_allsup})"
 }
 
-rc_is_supported() {
-        local _enotsup
-        eval _enotsup=\${rc_$1}
-        [ X"${_enotsup}" != X"NO" ]
+rc_write_runfile() {
+	[ -d ${_RC_RUNDIR} ] || mkdir -p ${_RC_RUNDIR} && \
+		echo -n "${pexp}" > ${_RC_RUNFILE}
+}
+
+rc_read_runfile() {
+	local _new_pexp
+	[ -f ${_RC_RUNFILE} ] && _new_pexp=$(< ${_RC_RUNFILE})
+	[ -n "${_new_pexp}" ] && pexp="${_new_pexp}"
+}
+
+rc_rm_runfile() {
+	rm -f ${_RC_RUNFILE}
+}
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} ${_bg}"
+}
+
+rc_check() {
+	pgrep -f "^${pexp}" > /dev/null
+}
+
+rc_reload() {
+	pkill -HUP -f "^${pexp}"
+}
+
+rc_stop() {
+	pkill -f "^${pexp}"
+}
+
+rc_do() {
+	if [ -n "${_RC_DEBUG}" ]; then
+		echo "doing $@" && "$@"
+	else
+		"$@" >/dev/null 2>&1
+	fi
+}
+
+rc_exit() {
+	local _pfix
+	[ -z "${INRC}" -o X"$1" != X"ok" ] && _pfix="($1)"
+	echo ${INRC:+'-n'} "${_pfix}"
+	[ X"$1" = X"ok" ] && exit 0 || exit 1
 }
 
 rc_wait() {
-        local _i=0 _w=${2:-30}
-        while [ $_i -lt $_w ]; do
-                case "$1" in
-                        reload|start)
-                                rc_do rc_check && return 0
-                                ;;
-                        stop)
-                                rc_do rc_check || return 0
-                                ;;
-                        *)
-                                break
-                                ;;
-                esac
-                sleep 1
-                _i=$((_i+1))
-        done
-        return 1
+	local _i=0 _w=${2:-30}
+	while [ $_i -lt $_w ]; do
+		case "$1" in
+			reload|start)
+				rc_do rc_check && return 0
+				;;
+			stop)
+				rc_do rc_check || return 0
+				;;
+			*)
+				break
+				;;
+		esac
+		sleep 1
+		_i=$((_i+1))
+	done
+	return 1
 }
 
 rc_cmd() {
 	local _bg _n
 
+	if ! (rc_is_supported start && rc_is_supported stop); then
+		rc_restart=NO
+	fi
+
+	if ! rc_is_supported $1; then
+		[ -n "${INRC}" ] && exit 1
+		rc_err "$0: $1 is not supported"
+	fi
+
 	[ X"${rc_bg}" = X"YES" ] && _bg="&"
 	[ -n "${_RC_DEBUG}" ] || _n="-n"
 
+	rc_do rc_read_runfile
+
 	case "$1" in
 	check)
-                rc_do rc_check
-                ;;
+		rc_do rc_check
+		;;
 	start)
+		if [ X"${daemon_flags}" = X"NO" ]; then
+			rc_err "$0: no $1 without -f, ${_name}_flags=NO"
+			exit 1
+		fi
+		[ -z "${INRC}" ] && rc_do rc_check && exit 0
 		echo $_n "${INRC:+ }${_name}"
 		while true; do  # no real loop, only needed to break
-                        if type rc_pre >/dev/null 2>&1; then
-                                rc_do rc_pre || break
-                        fi
-                        # XXX only checks the status of the return code,
-                        # and _not_ that the daemon is actually running
-                        rc_do rc_start || break
-                        if [ -n "${_bg}" ]; then
-                                sleep 1
-                                rc_do rc_wait start || break
-                        fi
-                        rc_exit ok
-                done
-                # handle failure
-                type rc_post >/dev/null && rc_do rc_post
-                rc_exit failed
-                ;;
+			if type rc_pre >/dev/null 2>&1; then
+				rc_do rc_pre || break
+			fi
+			# XXX only checks the status of the return code,
+			# and _not_ that the daemon is actually running
+			rc_do rc_start || break
+			if [ -n "${_bg}" ]; then
+				sleep 1
+				rc_do rc_wait start || break
+			fi
+			rc_do rc_write_runfile
+			rc_exit ok
+		done
+		# handle failure
+		type rc_post >/dev/null 2>&1 && rc_do rc_post
+		rc_do rc_rm_runfile
+		rc_exit failed
+		;;
 	stop)
 		rc_do rc_check || exit 0
-                echo $_n "${INRC:+ }${_name}"
-                rc_do rc_stop || rc_exit failed
-                rc_do rc_wait stop || rc_exit failed
-                if type rc_post >/dev/null 2>&1; then \
-                        rc_do rc_post || rc_exit failed
-                fi
-                rc_exit ok
-                ;;
+		echo $_n "${INRC:+ }${_name}"
+		rc_do rc_stop || rc_exit failed
+		rc_do rc_wait stop || rc_exit failed
+		if type rc_post >/dev/null 2>&1; then \
+			rc_do rc_post || rc_exit failed
+		fi
+		rc_do rc_rm_runfile
+		rc_exit ok
+		;;
 	reload)
 		rc_do rc_check || exit 0
-                echo $_n "${INRC:+ }${_name}"
-                rc_do rc_reload || rc_exit failed
-                rc_do rc_wait reload || rc_exit failed
-                rc_exit ok
-                ;;
+		echo $_n "${INRC:+ }${_name}"
+		rc_do rc_reload || rc_exit failed
+		rc_do rc_wait reload || rc_exit failed
+		rc_exit ok
+		;;
 	restart)
-                $0 ${_RC_DEBUG} ${_RC_FORCE} stop &&
-                        $0 ${_RC_DEBUG} ${_RC_FORCE} start
-                ;;
+		$0 ${_RC_DEBUG} ${_RC_FORCE} stop &&
+			$0 ${_RC_DEBUG} ${_RC_FORCE} start
+		;;
 	*)
 		rc_usage
 		;;
 	esac
 }
 
-rc_start() {
-        /bin/sh -c "${daemon} ${daemon_flags} ${_bg}"
-}
-
-rc_check() {
-        pgrep -f "^${pexp}" > /dev/null
-}
-
-rc_reload() {
-        pkill -HUP -f "^${pexp}"
-}
-
-rc_stop() {
-        pkill -f "^${pexp}"
-}
-
-rc_do() {
-        if [ -n "${_RC_DEBUG}" ]; then
-                echo "doing $@" && "$@"
-        else
-                "$@" >/dev/null 2>&1
-        fi
-}
-
-rc_exit() {
-        local _pfix
-        [ -z "${INRC}" -o X"$1" != X"ok" ] && _pfix="($1)"
-        echo ${INRC:+'-n'} "${_pfix}"
-        [ X"$1" = X"ok" ] && exit 0 || exit 1
-}
-
-. $HOME/.config/usrc/usrc.conf
+. $HOME/.config/usrc.d/usrc.conf
 
 [ -n "${daemon}" ] || rc_err "$0: daemon is not set"
 
@@ -162,6 +193,8 @@ done
 shift $((OPTIND-1))
 
 _name=$(basename $0)
+_RC_RUNDIR=$HOME/.cache/usrc.d
+_RC_RUNFILE=${_RC_RUNDIR}/${_name}
 
 eval _rcflags=\${${_name}_flags}
 eval _rcuser=\${${_name}_user}
@@ -173,3 +206,4 @@ eval _rcuser=\${${_name}_user}
 unset _rcflags _rcuser
 
 pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
+rcexec="/bin/sh -c"
