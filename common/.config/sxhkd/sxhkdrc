@@ -48,6 +48,8 @@ super + p
   pidgin
 super + b
   bitcoin-qt
+super + n
+  wicd-gtk
 
 ### Media Keys ###
 ##################
