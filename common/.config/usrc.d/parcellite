@@ -4,7 +4,7 @@
 
 daemon="/usr/bin/parcellite --daemon --no-icon"
 
-. $HOME/.config/usrc.d/usrc.subr
+. /usr/share/usrc.d/usrc.subr
 
 rc_bg=YES
 

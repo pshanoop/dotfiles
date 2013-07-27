@@ -4,7 +4,7 @@
 
 daemon="/usr/bin/caffeine"
 
-. $HOME/.config/usrc.d/usrc.subr
+. /usr/share/usrc.d/usrc.subr
 
 rc_bg=YES
 
