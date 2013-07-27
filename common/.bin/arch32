@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/bin/schroot -p -- bash

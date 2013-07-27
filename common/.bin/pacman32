@@ -1,2 +1,0 @@
-#!/bin/sh
-sudo /usr/bin/pacman --root /opt/arch32 --cachedir /opt/arch32/var/cache/pacman/pkg --config /opt/arch32/pacman.conf $@
