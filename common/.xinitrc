@@ -7,7 +7,11 @@
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
-dbus-launch $HOME/.xstart
+if [ $(hostname) = hyperion.ubertech.com.ar ]; then
+	/usr/bin/numlockx on &
+fi;
+
+dbus-launch usrc startup
 
 # Never give up, never surrender!
 while [ true ]; do sleep 1d; done;
