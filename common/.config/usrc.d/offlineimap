@@ -6,6 +6,8 @@ daemon="/usr/bin/offlineimap -c $HOME/.config/offlineimap/offlineimaprc"
 
 . /usr/share/usrc.d/usrc.subr
 
+pexp="/usr/bin/python2\ /usr/bin/offlineimap\ -c\ $HOME/.config/offlineimap/offlineimaprc"
+
 rc_bg=YES
 
 rc_cmd $1
