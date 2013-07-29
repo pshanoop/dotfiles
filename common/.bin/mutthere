@@ -1,0 +1,5 @@
+#!/bin/sh
+# This wrapper script runs mutt reading it's settings from ~/.config.
+# Just for tidyness. :)
+
+/usr/bin/mutt -F ~/.config/mutt/muttrc $@
