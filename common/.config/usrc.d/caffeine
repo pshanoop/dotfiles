@@ -6,6 +6,8 @@ daemon="/usr/bin/caffeine"
 
 . /usr/share/usrc.d/usrc.subr
 
+pexp="/usr/bin/python2\ /usr/bin/caffeine"
+
 rc_bg=YES
 
 rc_cmd $1
