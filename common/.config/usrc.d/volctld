@@ -6,6 +6,8 @@ daemon="/usr/bin/volctld"
 
 . /usr/share/usrc.d/usrc.subr
 
+pexp="python2 /usr/bin/volctld"
+
 rc_bg=YES
 
 rc_cmd $1
