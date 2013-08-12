@@ -1,6 +1,6 @@
 [general]
 metadata = ~/.local/share/offlineimap
-accounts = Personal, UPCRLabs
+accounts = Personal
 maxsyncaccounts = 12
 ui = basic
 
@@ -31,28 +31,3 @@ maxconnections = 5
 holdconnectionopen = yes
 subscribedonly = no
 createfolders = False
-
-### UPCR-Labs Account ###
-
-[Account UPCRLabs]
-localrepository = UPCRLabsLocal
-remoterepository = UPCRLabsRemote
-autorefresh = 5
-quick = 2
-
-[Repository UPCRLabsLocal]
-type = Maildir
-localfolders = ~/.local/share/maildir/UPCRLabs
-restoreatime = no
-
-[Repository UPCRLabsRemote]
-type = IMAP
-remotehost = imap.gmail.com
-remoteuser = hbarrera@upcr-labs.com.ar
-remotepassfile = ~/priv/secrets/imap@upcr-labs
-ssl = yes
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
-idlefolders = ['INBOX']
-maxconnections = 3
-holdconnectionopen = yes
-subscribedonly = no
