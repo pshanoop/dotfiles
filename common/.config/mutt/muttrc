@@ -4,6 +4,8 @@
 # Hugo's personal .muttrc (Mutt 1.5.21)
 #
 
+set nm_default_uri = notmuch:///home/hugo/.local/share/maildir
+
 source ~/.config/mutt/macros
 source ~/.config/mutt/crypto
 source ~/.config/mutt/aliases
