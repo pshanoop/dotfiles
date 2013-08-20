@@ -3,11 +3,11 @@
 #################
 
 super + t
+  $TERMINAL -e tmux
+super + y
   $TERMINAL
 super + m
   $TERMINAL --geometry 120x30 -e mutt
-super + w
-  $TERMINAL -g 90x22 -e wicd-curses
 
 ### Unique sequences ###
 ########################
@@ -48,8 +48,6 @@ super + p
   pidgin
 super + b
   bitcoin-qt
-super + n
-  wicd-gtk
 
 ### Media Keys ###
 ##################
