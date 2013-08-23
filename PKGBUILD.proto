@@ -1,17 +1,21 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=sysconfig
-pkgver=1.0
+pkgver=0
 pkgrel=1
 pkgdesc="My system-level configuration files."
 arch=(any)
 url=""
 license=('BSD')
+install=sysconfig.install
 source=("sysconfig.tar")
 
-package() {
-  cd "${srcdir}"
-  rsync -plr files/ "${pkgdir}"
+pkgver() {
+  cd srcdir
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
-md5sums=('10b27f5fd4d62009fa881820b601b892')
+package() {
+  cd "$srcdir"
+  rsync -plr files/ "$pkgdir"
+}
