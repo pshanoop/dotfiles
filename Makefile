@@ -6,4 +6,4 @@ package:
 install:
 	pacaur -U --force sysconfig-*-any.pkg.tar.xz
 clean:
-	rm -rf src pkg sysconfig*.tar* PKGBUILD
+	rm -rf src pkg sysconfig*.tar* PKGBUILD *.xz
