@@ -11,7 +11,7 @@ if [ $(hostname) = hyperion.ubertech.com.ar ]; then
 	/usr/bin/numlockx on &
 fi;
 
-dbus-launch usrc startup
+dbus-launch usrc startup >> .Xlog 2>&1
 
 # Never give up, never surrender!
 while [ true ]; do sleep 1d; done;
