@@ -2,10 +2,15 @@
 #
 # usrc daemon file
 
-daemon="/usr/bin/pulseaudio --start --daemonize=false"
+daemon="/usr/bin/pulseaudio"
+daemon_flags="--start --daemonize=false"
 
 . /usr/share/usrc.d/usrc.subr
 
 rc_bg=YES
+
+rc_stop() {
+	$daemon -k
+}
 
 rc_cmd $1
