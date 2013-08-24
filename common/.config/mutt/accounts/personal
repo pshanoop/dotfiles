@@ -4,5 +4,8 @@ color status default green
 set folder	= "~/.local/share/maildir/Personal/"
 
 set from = "hugo@osvaldobarrera.com.ar"
+alternates = "ml@hugoosvaldobarrera.com.ar"
+set reverse_name = yes
+set reverse_realname = no
 set record = "+INBOX"
 set postponed = "+Drafts"
