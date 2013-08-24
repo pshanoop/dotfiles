@@ -33,7 +33,7 @@ set header_cache = ~/.cache/mutt_hcache	# Keep a header cache
 set smtp_url="smtp://localhost"
 
 set date_format="%F %R"
-set index_format="%Z %D  %-30.30F  %s"
+set index_format="%3C %Z %D  %-30.30F %?M?[%M]? %s"
 
 # Auto-open some attachment types
 set mailcap_path = ~/.config/mutt/mailcap
@@ -46,8 +46,8 @@ set forward_format="Fwd: %s"	# subject to use when forwarding messages
 set forward_quote=yes		# Quote the email body when forwarding?
 set include=yes			# Quote the email body when replying?
 
-set auto_tag = yes				# Always operate on tagged messages
-set alias_file=~/.config/mutt/aliases	# where I keep my aliases
+set auto_tag = yes			# Always operate on tagged messages
+set alias_file="~/.config/mutt/aliases"	# where I keep my aliases
 
 set arrow_cursor = yes		# use -> instead of hiliting the whole line
 set autoedit = yes		# go to the editor right away when composing
@@ -59,7 +59,8 @@ set mail_check = 3		# how often to poll for new mail
 set read_inc = 25		# show progress when reading a mailbox
 set reply_to = yes		# always use reply-to if present
 set sort = threads		# Sort messages into threads
-set sort_aux = last-date-received
+#set sort_aux = last-date-received
+set sort_aux = last-date
 set tilde = yes			# virtual lines to pad blank lines in the pager
 set write_inc=25		# show progress while writing mailboxes
 
