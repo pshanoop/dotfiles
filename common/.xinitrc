@@ -3,7 +3,10 @@
 # ~/.xinitrc
 #
 
-/usr/bin/xrdb -merge ~/.Xresources
+if [ -e $HOME/.Xresources ]; then
+  /usr/bin/xrdb -merge $HOME/.Xresources
+fi;
+
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
