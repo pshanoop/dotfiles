@@ -1,7 +1,7 @@
 #!/bin/sh
-PROFILES=$(/bin/ls $HOME/.config/chromium)
+PROFILES=$(/bin/ls $HOME/.config/chromium-profiles)
 CHROMIUM_PROFILE=$(zenity --list --column=User $PROFILES 2>/dev/null | sed -r "s/\|.*//")
 
 if [ ! -z $CHROMIUM_PROFILE ]; then
-	/usr/bin/chromium --disable-gpu --user-data-dir=$HOME/.config/chromium/$CHROMIUM_PROFILE $@
+	/usr/bin/chromium --disable-gpu --user-data-dir=$HOME/.config/chromium-profiles/$CHROMIUM_PROFILE $@
 fi;
