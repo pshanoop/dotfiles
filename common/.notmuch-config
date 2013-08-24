@@ -7,7 +7,7 @@ path=/home/hugo/.local/share/maildir
 [user]
 name=Hugo Osvaldo Barrera
 primary_email=hugo@osvaldobarrera.com.ar
-other_email=hbarrera@aigroup.com.ar;hbarrera@wikilife.org
+other_email=hbarrera@aigroup.com.ar;hbarrera@wikilife.org;hbarrera@assia-inc.com
 
 [new]
 tags=unread;
