@@ -68,5 +68,3 @@ XF86Calculator
 
 :button9
   vlc.playPause
-:button8
-  vlc.stop
