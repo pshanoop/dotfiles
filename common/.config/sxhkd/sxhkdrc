@@ -24,6 +24,10 @@ XF86HomePage
   lockx
 XF86Tools
   kbctl
+super + o
+  arandr
+XF86Display
+  switch-displays
 
 ### Screenshots ###
 ###################
