@@ -17,7 +17,7 @@ ConditionPathExists=/dev/tty0
 
 [Service]
 Environment=TERM=linux
-ExecStart=-/sbin/mingetty --noclear --autologin hugo %I linux
+ExecStart=-/sbin/agetty --noclear --autologin hugo %I linux
 Type=simple
 Restart=always
 RestartSec=1
