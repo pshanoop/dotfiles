@@ -3,3 +3,4 @@ text/html; lynx -display_charset=utf-8 -stdin -dump -force_html -width 100; copi
 application/pdf; zathura %s
 image/*; gpicview %s
 application/*;xdg-open %s
+audio/*; cvlc %s vlc://quit
