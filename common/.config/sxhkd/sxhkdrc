@@ -28,6 +28,14 @@ super + o
   arandr
 XF86Display
   switch-displays
+XF86MonBrightnessDown
+  xbacklight -dec 5
+XF86MonBrightnessUp
+  xbacklight -inc 7
+XF86KbdBrightnessDown
+  kbdlight down
+XF86KbdBrightnessUp
+  kbdlight up
 
 ### Screenshots ###
 ###################
