@@ -70,5 +70,5 @@ XF86Calculator
 ### Mouse ###
 #############
 
-:button9
+button9
   vlc.playPause
