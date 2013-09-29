@@ -1,2 +1,3 @@
 #!/bin/sh
-i3lock -u -i ~/.locked.png
+i3lock -u -i ~/.locked.png &
+sleep 1 && xset s activate
