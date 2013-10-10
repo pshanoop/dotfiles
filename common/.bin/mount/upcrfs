@@ -1,0 +1,2 @@
+#!/bin/sh
+google-drive-ocamlfuse /home/hugo/workspace/UPCR/Drive

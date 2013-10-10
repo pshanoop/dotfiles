@@ -1,0 +1,3 @@
+#!/bin/sh
+sshfs dav@hades.local:/Films /home/hugo/videos/Films
+sshfs dav@hades.local:/Series /home/hugo/videos/Series

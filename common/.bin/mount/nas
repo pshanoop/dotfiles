@@ -1,0 +1,3 @@
+#!/bin/sh
+sshfs dav@hades.ubertech.com.ar:/Films /home/hugo/videos/Films
+sshfs dav@hades.ubertech.com.ar:/Series /home/hugo/videos/Series
