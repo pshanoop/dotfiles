@@ -21,7 +21,9 @@ super + space
 XF86Tools
   kbctl
 XF86Display
-  switch-displays
+  screenswitch
+XF86LaunchB
+  screenswitch
 
 ## Athena specific ##
 
