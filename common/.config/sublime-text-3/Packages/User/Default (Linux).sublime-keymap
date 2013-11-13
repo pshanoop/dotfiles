@@ -1,4 +1,6 @@
 [
     //{ "keys": ["shift+backspace"], "command": "right_delete" },
-    { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } }
+    { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
 ]
