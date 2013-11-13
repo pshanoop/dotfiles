@@ -18,24 +18,28 @@ control + alt + Escape
   xkill
 super + space
   gmrun
+XF86Tools
+  kbctl
+XF86Display
+  switch-displays
+
+## Athena specific ##
+
+{_,super + }XF86MonBrightness{Down,Up}
+  xbacklight -{dec 5,set 0,inc 7,set 100}
+XF86KbdBrightness{Down,Up}
+  kbdlight {down,up}
+
+### Lock Screen ###
+###################
+# Ares, Hyperion and Athena respectively
+
 XF86Launch1
   lockx
 XF86HomePage
   lockx
-XF86Tools
-  kbctl
-super + o
-  arandr
-XF86Display
-  switch-displays
-XF86MonBrightnessDown
-  xbacklight -dec 5
-XF86MonBrightnessUp
-  xbacklight -inc 7
-XF86KbdBrightnessDown
-  kbdlight down
-XF86KbdBrightnessUp
-  kbdlight up
+XF86PowerOff
+  lockx
 
 ### Screenshots ###
 ###################
@@ -60,6 +64,8 @@ super + p
   pidgin
 super + b
   bitcoin-qt
+super + o
+  arandr
 
 ### Media Keys ###
 ##################
