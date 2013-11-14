@@ -1,4 +1,5 @@
 #!/bin/sh
+. nullproxy
 
 ELYSION=elysion.ubertech.com.ar
 
