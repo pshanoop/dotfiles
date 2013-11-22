@@ -51,3 +51,5 @@ export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT$ "
 
 export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
+
+. ~/.cache/ssh-agent

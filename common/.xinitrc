@@ -8,7 +8,8 @@ if [ -e $HOME/.Xresources ]; then
 fi;
 
 eval $(gpg-agent --daemon)
-eval $(ssh-agent)
+ssh-agent | head -n 2 > ~/.cache/ssh-agent
+. ~/.cache/ssh-agent
 
 if [ $(hostname) = hyperion.ubertech.com.ar ]; then
 	/usr/bin/numlockx on &
