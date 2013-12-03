@@ -52,8 +52,15 @@ export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT$ "
 export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
 
+# Fix scrolling with a mouse on GTK3 apps
+export GDK_CORE_DEVICE_EVENTS=1
+
+# makepkg settings
+export PKGDEST=$HOME/workspace/Build/_packages
+export PACKAGER="Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>"
+
+# ssh-agent sharing
 . ~/.cache/ssh-agent
-### Show stuff
 ps aux | grep ssh-agent | grep -v grep | awk '{ print "Found agent: " $2 }'
 $(ssh-add -l > /dev/null)
 if [ $? == 0 ]; then
@@ -63,3 +70,8 @@ else
 fi;
 printf "\n"
 unset agent_status
+
+# OPAM stuff
+if [ -d $HOME/.opam ]; then
+  eval `opam config env`;
+fi;
