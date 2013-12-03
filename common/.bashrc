@@ -53,3 +53,13 @@ export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
 
 . ~/.cache/ssh-agent
+### Show stuff
+ps aux | grep ssh-agent | grep -v grep | awk '{ print "Found agent: " $2 }'
+$(ssh-add -l > /dev/null)
+if [ $? == 0 ]; then
+  ssh-add -l | awk '{ print "Loaded key: " $3 }'
+else
+  ssh-add -l
+fi;
+printf "\n"
+unset agent_status
