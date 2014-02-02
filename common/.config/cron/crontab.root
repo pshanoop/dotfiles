@@ -1,0 +1,4 @@
+# Restart offlineimap on an hourly basis since it tends to stall every
+# once in a while.
+1	*	*	*	*	/usr/bin/chown -R transmission:hugo /home/downloads > /dev/null
+1	*	*	*	*	/usr/bin/chmod -R g+w /home/downloads > /dev/null
