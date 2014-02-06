@@ -1,0 +1,1 @@
+sudo bash -c "date -Is && date -Is -s 1200 && ntpd -s && date -Is && hwclock -w"
