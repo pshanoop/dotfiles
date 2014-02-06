@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/athena
+mkdir -p ${MOUNTPATH}
+sshfs athena.local:/home/hugo/ ${MOUNTPATH}
