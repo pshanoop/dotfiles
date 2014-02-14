@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# usrc daemon file
+
+daemon="/usr/bin/redshift-scheduler"
+#daemon_flags="-l -34.597286:-58.391281"
+
+. /usr/share/usrc.d/usrc.subr
+
+rc_bg=YES
+
+rc_cmd $1
