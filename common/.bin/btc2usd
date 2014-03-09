@@ -3,12 +3,8 @@
 import requests
 import json
 
-r = requests.get("https://data.mtgox.com/api/2/BTCUSD/money/ticker")
-j = json.loads(r.text)
-mtgox = float(j["data"]["avg"]["value"])
-
 r = requests.get("http://api.bitcoinaverage.com/no-mtgox/ticker/USD")
 j = json.loads(r.text)
-nomtgox = (j["ask"]+j["bid"])/2
+value = (j["ask"]+j["bid"])/2
 
-print("${:.2f}/${:.2f}".format(mtgox, nomtgox))
+print("${:.2f}".format(value))
