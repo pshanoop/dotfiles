@@ -21,8 +21,8 @@ createfolders = False
 
 [Repository RemotePersonal]
 type = IMAP
-remotehost = imap.ubertech.com.ar
-remoteuser = hugo@osvaldobarrera.com.ar
+remotehost = imap.barrera.io
+remoteuser = hugo@barrera.io
 remotepassfile = ~/priv/secrets/imap@elysion
 ssl = yes
 cert_fingerprint = 7711251bac7fd3ced4a1d6fcda0edc156ecaa2f1
