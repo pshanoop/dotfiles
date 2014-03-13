@@ -3,9 +3,9 @@ color status default green
 # Set the folder so that record, etc are all relative. :)
 set folder	= "~/.local/share/maildir/Personal/"
 
-set from = "hugo@osvaldobarrera.com.ar"
-alternates = "ml@hugoosvaldobarrera.com.ar"
-set reverse_name = yes
+set from = "hugo@barrera.io"
+alternates = "ml@hugoosvaldobarrera.com.ar|hugo@osvaldobarrera.com.ar"
+#set reverse_name = yes
 set reverse_realname = no
 set record = "+INBOX"
 set postponed = "+Drafts"
