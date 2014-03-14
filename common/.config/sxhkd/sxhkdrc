@@ -46,6 +46,8 @@ XF86PowerOff
 ### Screenshots ###
 ###################
 
+control + alt + super + p
+  scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
 Print
   scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
 control + Print
