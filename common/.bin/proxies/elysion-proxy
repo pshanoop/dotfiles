@@ -1,7 +1,7 @@
 #!/bin/sh
 . nullproxy
 
-ELYSION=elysion.ubertech.com.ar
+ELYSION=elysion.barrera.io
 
 if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
   ssh -fND 9999 ${ELYSION}
