@@ -5,3 +5,16 @@ common/.ssh/mer-qt-creator-rsa*
 common/.subversion/auth
 common/.config/systemd/user/desktop.target.wants/*
 common/.config/sublime-text-3/Packages/User/Package Control.*
+common/.config/caffeine
+common/.config/libreoffice/
+common/.config/pavucontrol.ini
+common/.config/leafpad
+common/.config/google-googletalkplugin
+common/.config/meld
+common/.config/akonadi
+common/.config/chromium
+common/.config/keepassx
+common/.config/Thunar/renamerrc
+common/.config/Trolltech.conf
+common/.config/xarchiver
+common/.config/gtk-2.0/gtkfilechooser.ini
