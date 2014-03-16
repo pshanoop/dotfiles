@@ -26,6 +26,7 @@ set folder_format="%2C %t %f"
 
 set copy = yes				# Keep copies of outgoing mail...
 set fcc_attach = yes
+set attach_charset="utf-8"
 set beep_new = yes			# Beep when new messages arrive
 
 set header_cache = ~/.cache/mutt_hcache	# Keep a header cache
