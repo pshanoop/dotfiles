@@ -13,6 +13,7 @@
 <action>
 	<icon>locked</icon>
 	<name>Mount cryptfs</name>
+	<unique-id>1394810256086182-3</unique-id>
 	<command>/home/hugo/.bin/encfs.mount %f</command>
 	<description></description>
 	<patterns>*.enc</patterns>
@@ -21,6 +22,7 @@
 <action>
 	<icon>image-x-generic</icon>
 	<name>View images</name>
+	<unique-id>1394810256086195-4</unique-id>
 	<command>/usr/bin/pqiv &quot;%f&quot;</command>
 	<description>Show images in pqiv</description>
 	<patterns>*</patterns>
