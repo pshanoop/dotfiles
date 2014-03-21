@@ -43,10 +43,10 @@ function __hg_wd {
 
 export   GREEN="\[\033[01;32m\]"
 export    BLUE="\[\033[01;34m\]"
-export DEFAULT="\[\033[0m\]]"
+export DEFAULT="\[\033[0m\]"
 
-export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT\$ "
-export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT\n\$ "
+export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\$ "
+export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\n\$ $DEFAULT"
 # https://stackoverflow.com/questions/5946873/include-non-0-exit-codes-in-the-subsequent-bash-prompt
 
 . ~/.aliases
