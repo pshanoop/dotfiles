@@ -1,2 +1,0 @@
-#!/bin/sh
-sudo openconnect secure.assia-inc.com -u hbarrera --passwd-on-stdin -v < ~/priv/secrets/assia-vpn
