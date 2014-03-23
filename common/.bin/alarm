@@ -1,0 +1,18 @@
+#!/bin/bash
+
+export BLUE="\033[01;34m"
+export DEFAULT="\033[0m"
+
+if [ -z $1 ]; then
+  printf "Usage: $0 MINUTES\n";
+  exit -1;
+fi;
+
+export TIME=$(calc 60*$1 | sed -e 's/\s*//')
+printf " ${BLUE}>>>${DEFAULT} Will wake you up in ${1}m or ${TIME}s...\n"
+sleep $TIME
+printf " ${BLUE}>>>${DEFAULT} Increasing volume...\n"
+amixer sset Master 30419
+printf " ${BLUE}>>>${DEFAULT} Playing Korn...\n"
+cd "/home/hugo/music/Korn/KoRn Discography/Album/[2002]. Untouchables [Limited Edition]"
+smplayer .
