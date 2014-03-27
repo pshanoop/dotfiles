@@ -1,0 +1,6 @@
+#!/bin/sh
+# WARNING: Sources PKGBUILDs. Only use to upload packages you wrote yourself. :)
+
+makepkg -Sf
+. PKGBUILD
+burp $pkgname-$pkgver-$pkgrel.src.tar.gz
