@@ -59,7 +59,7 @@ export GDK_CORE_DEVICE_EVENTS=1
 
 # makepkg settings
 export PKGDEST=$HOME/workspace/Build/_packages
-export PACKAGER="Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>"
+export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 # ssh-agent sharing
 . ~/.cache/ssh-agent
