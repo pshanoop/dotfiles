@@ -12,7 +12,7 @@ if [ $DISPLAY == :0 ]; then
   ssh-agent | head -n 2 > ~/.cache/ssh-agent
   . ~/.cache/ssh-agent
 
-  if [ $(hostname) = hyperion.ubertech.com.ar ]; then
+  if [ $(hostname) = hyperion.barrera.io ]; then
   	/usr/bin/numlockx on &
   fi;
 
