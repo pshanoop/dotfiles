@@ -31,7 +31,7 @@ own_window_transparent yes
 own_window_hints sticky,skip_taskbar,skip_pager,below
 own_window_colour 111111
 
-double_buffer no
+double_buffer yes
 short_units yes
 
 stippled_borders 0
@@ -50,9 +50,11 @@ default_color white
 color1 gray
 
 TEXT
-${font Conky:size=8}6${voffset -3}${font}${color1} $nodename_short \
+${font Conky:size=8}6${voffset -3}\
+${font}${color1} $nodename_short \
 ${if_existing  /sys/class/power_supply/BAT0}\
-${color}| ${font Conky:size=12}\
+${color}| ${voffset -1}${font Conky:size=12}\
+### Begin battery symbol output
 ${if_match "${exec cat /sys/class/power_supply/BAT0/status}" == "Charging"}5${else}\
 ${if_match ${battery_percent BAT0} <= 10}1${else}\
 ${if_match ${battery_percent BAT0} <= 30}2${else}\
@@ -62,30 +64,22 @@ ${endif}\
 ${endif}\
 ${endif}\
 ${endif}\
-${voffset -5}${font}${color1} \
-${battery_percent BAT0}%, ${battery_time BAT0} \
+### End battery symbol output
+${voffset -3}${font}${color1} ${battery_percent BAT0}%, ${battery_time BAT0} \
 $endif\
 ${color}| CPU ${color1}${cpu cpu0}% \
 ${color}| RAM ${color1}$memperc% $mem \
-${color}| ${font Conky:size=10}7${voffset -3}\
-${font}${color1} $diskio \
+${color}| ${font Conky:size=10}7${voffset -2}\
+${font}${color1} ${execi 10 sudo hddtemp -n /dev/sda}ºC, $diskio \
 #${color}| Procs ${color1}$running_processes/$processes
 ${if_up tun0}${color}| VPN ${color1}Up $endif\
-${color}| ${font Conky:size=10}*${voffset -3}\
+${color}| ${voffset 1}${font Conky:size=10}*${voffset -2}\
 ${font}${color1} ${new_mails /home/hugo/.local/share/maildir/Personal/INBOX} \
-${color}| ${font Conky:size=10}!\
+${color}| ${font Conky:size=10}!${voffset -2}\
 ${font}${color1} ${texeci 30 btc2usd } \
-# TODO: center this
-${if_running mocp}${color}| ${font Conky:size=12}q${voffset -5}${font}${color1}\
-${if_match "${exec mocp -Q %state}" == "PAUSE"}\
-(paused)\
-${endif}\
-${if_match "${execi 5 mocp -Q "%artist - %song"}" != " - "}\
- ${execi 5 mocp -Q "%artist - %song"} \
-${endif}\
-${endif}\
+### Begin right side
 ${alignr}\
-${color}${font Conky:size=10}\
+${voffset 0}${color}${font Conky:size=10}\
 ${if_match "${exec amixer get Master| egrep "[0-9]+%" | grep off}" != ""}w${else}e${endif}\
 ${voffset -1}${font}${color1} \
 ${exec amixer get Master| egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% \
