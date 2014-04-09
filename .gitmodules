@@ -1,7 +1,3 @@
-[submodule "common/.config/sublime-text-3/Packages/Package Control"]
-	path = common/.config/sublime-text-3/Packages/Package Control
-	url = https://github.com/wbond/sublime_package_control.git
-	branch = python3
 [submodule "common/.config/sublime-text-3/Packages/CTags"]
 	path = common/.config/sublime-text-3/Packages/CTags
 	url = https://github.com/SublimeText/CTags
@@ -11,3 +7,6 @@
 [submodule "common/.config/sublime-text-3/Packages/BracketHighlighter"]
 	path = common/.config/sublime-text-3/Packages/BracketHighlighter
 	url = git@github.com:facelessuser/BracketHighlighter.git
+[submodule "common/.config/sublime-text-3/Packages/Anaconda"]
+	path = common/.config/sublime-text-3/Packages/Anaconda
+	url = https://github.com/DamnWidget/anaconda.git
