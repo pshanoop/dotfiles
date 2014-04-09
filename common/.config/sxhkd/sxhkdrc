@@ -3,7 +3,7 @@
 #################
 
 super + t
-  $TERMINAL -e tmux
+  $TERMINAL -e tmux -f $HOME/.config/tmux/tmux.conf
 super + y
   $TERMINAL
 super + m
