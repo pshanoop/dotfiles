@@ -8,3 +8,6 @@
 [submodule "common/.config/sublime-text-3/Packages/LESS"]
 	path = common/.config/sublime-text-3/Packages/LESS
 	url = git://github.com/danro/LESS-sublime.git
+[submodule "common/.config/sublime-text-3/Packages/BracketHighlighter"]
+	path = common/.config/sublime-text-3/Packages/BracketHighlighter
+	url = git@github.com:facelessuser/BracketHighlighter.git
