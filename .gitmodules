@@ -10,3 +10,6 @@
 [submodule "common/.config/sublime-text-3/Packages/Anaconda"]
 	path = common/.config/sublime-text-3/Packages/Anaconda
 	url = https://github.com/DamnWidget/anaconda.git
+[submodule "common/.config/sublime-text-3/Packages/ColorPicker"]
+	path = common/.config/sublime-text-3/Packages/ColorPicker
+	url = git@github.com:weslly/ColorPicker.git
