@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ `pacman -Qdtq | wc -l` != 0 ]; then
-  sudo pacman -Rnscu $(pacman -Qdtq) $@;
+  sudo pacman -Rnsu $(pacman -Qdtq) $@;
 else
   echo "No orphaned dependencies";
 fi;
