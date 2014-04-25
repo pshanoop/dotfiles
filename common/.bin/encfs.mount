@@ -8,5 +8,6 @@ encfs "$1" "$1fs" --extpass="$SSH_ASKPASS Password:"
 
 if [ $? != 0 ]; then
   zenity --info --text "There was some error mounting"
+  rmdir "$1fs"
 fi
 
