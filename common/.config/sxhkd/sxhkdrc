@@ -42,6 +42,8 @@ XF86HomePage
   lockx
 XF86PowerOff
   lockx
+super + XF86PowerOff
+  systemctl hibernate
 
 ### Screenshots ###
 ###################
