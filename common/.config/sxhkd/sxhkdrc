@@ -7,7 +7,7 @@ super + t
 super + y
   $TERMINAL
 super + m
-  $TERMINAL --geometry 120x30 -e mutt
+  mutt-win
 
 ### Unique sequences ###
 ########################
