@@ -36,6 +36,8 @@ set smtp_url="smtp://localhost"
 set date_format="%F %R"
 set index_format="%3C %Z %D  %-30.30F %?M?[%M]? %s"
 
+set pager_index_lines = 7
+
 # Auto-open some attachment types
 set mailcap_path = ~/.config/mutt/mailcap
 alternative_order text/plain text/html
@@ -50,8 +52,8 @@ set include=yes			# Quote the email body when replying?
 set auto_tag = yes			# Always operate on tagged messages
 set alias_file="~/.config/mutt/aliases"	# where I keep my aliases
 
-set arrow_cursor = yes		# use -> instead of hiliting the whole line
-set autoedit = yes		# go to the editor right away when composing
+set arrow_cursor = no		# use -> instead of hiliting the whole line
+set autoedit = no		# go to the editor right away when composing
 set confirmappend = no		# don't ask me if i want to append to mailboxes
 set edit_headers = yes		# let me edit the message header when composing
 set include = yes		# always include messages when replying
@@ -66,14 +68,11 @@ set tilde = yes			# virtual lines to pad blank lines in the pager
 set write_inc=25		# show progress while writing mailboxes
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Header fields I don't normally want to see
+# Headers
 #
 ignore *		# this means "ignore all lines by default"
-
-# I do want to see these fields, though!
 unignore	from: subject to cc mail-followup-to \
-		date x-mailer x-url # this shows how nicely wrap long lines
+		date x-mailer x-url
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
