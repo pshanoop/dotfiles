@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Using this user/key combination automatically attaches to a tmux session
+# running rtorrent, making this script a very simple (yet funcional)
+# rtorrent-remote-control.
+
+ssh -i ~/.ssh/rtorrent.key rtorrent@hades.barrera.io
