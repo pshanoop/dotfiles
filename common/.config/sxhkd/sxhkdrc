@@ -44,6 +44,8 @@ XF86PowerOff
   lockx
 super + XF86PowerOff
   systemctl hibernate
+control + super + XF86PowerOff
+  systemctl poweroff
 
 ### Screenshots ###
 ###################
