@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Echoes the NAT64 translated address for an IPv4 host in a human-readable
+# format.
+
+echo 64:ff9b::$1
