@@ -8,6 +8,8 @@ super + y
   $TERMINAL
 super + m
   mutt-win
+super + r
+  $TERMINAL -e rtorrent-control
 
 ### Unique sequences ###
 ########################
