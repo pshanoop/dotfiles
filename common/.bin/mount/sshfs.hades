@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/hades
+mkdir -p ${MOUNTPATH}
+sshfs hades.barrera.io:/home/hugo ${MOUNTPATH}
