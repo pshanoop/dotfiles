@@ -9,6 +9,9 @@ if [ -z $1 ]; then
 fi;
 
 export TIME=$(calc 60*$1 | sed -e 's/\s*//')
+export NOW=$(date "+%T")
+
+printf " ${BLUE}>>>${DEFAULT} Current time is ${NOW}\n"
 printf " ${BLUE}>>>${DEFAULT} Will wake you up in ${1}m or ${TIME}s...\n"
 sleep $TIME
 printf " ${BLUE}>>>${DEFAULT} Increasing volume...\n"
