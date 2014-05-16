@@ -1,0 +1,3 @@
+#!/bin/sh
+fusermount -u /home/hugo/videos/Films
+fusermount -u /home/hugo/videos/Shows

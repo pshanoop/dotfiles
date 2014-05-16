@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir -p /home/hugo/videos/Films-RW
-sshfs dav@hades.barrera.io:/Films /home/hugo/videos/Films-RW
-mkdir -p /home/hugo/videos/Shows-RW
-sshfs dav@hades.barrera.io:/Shows /home/hugo/videos/Shows-RW
+mkdir -p /home/hugo/videos/Films
+sshfs dav@hades.barrera.io:/Films /home/hugo/videos/Films
+mkdir -p /home/hugo/videos/Shows
+sshfs dav@hades.barrera.io:/Shows /home/hugo/videos/Shows
