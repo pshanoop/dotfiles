@@ -1,0 +1,10 @@
+#!/bin/sh
+. nullproxy
+
+HOST=hades.barrera.io
+
+if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
+  ssh -fND 9999 ${HOST}
+else
+  echo Error: Port in use
+fi
