@@ -1,0 +1,9 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/jolla
+mkdir -p ${MOUNTPATH}
+
+if [ -z $JOLLA ]; then
+  JOLLA=jolla
+fi;
+
+sshfs nemo@${JOLLA}:/home/nemo/ ${MOUNTPATH}
