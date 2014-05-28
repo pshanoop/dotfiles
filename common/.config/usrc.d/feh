@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# usrc daemon file
+
+daemon="/usr/bin/feh"
+daemon_flags="--bg-scale /home/hugo/.wallpapers/1.jpg"
+
+. /usr/share/usrc.d/usrc.subr
+
+rc_bg=YES
+
+rc_cmd $1
