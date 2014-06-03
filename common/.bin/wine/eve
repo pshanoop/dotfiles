@@ -1,3 +1,2 @@
 #!/bin/sh
-export WINEPREFIX=$HOME/wine/prefixes/eve
-wine "C:\Program Files\CCP\EVE\bin\ExeFile.exe"
+. eve-i3 1

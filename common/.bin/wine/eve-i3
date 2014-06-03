@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Runs eve on desktop $1 with an almost-fullscreen-resolution, leaving the i3 status bar visible.
+
+RES=$(xrandr | egrep -o "^\s+\w+" | head -n 1)
+WIDTH=$(echo $RES | egrep -o "^[^x]+")
+HEIGHT=$(echo $RES | egrep -o "[^x]+$")
+HEIGHT=$(calc $HEIGHT-19 | egrep -o "\w+")
+RES=${WIDTH}x${HEIGHT}
+
+export WINEPREFIX=$HOME/wine/prefixes/eve
+wine explorer /desktop=eve$1,$RES "C:\Program Files\CCP\EVE\bin\ExeFile.exe"
