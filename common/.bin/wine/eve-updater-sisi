@@ -1,0 +1,3 @@
+#!/bin/sh
+export WINEPREFIX=$HOME/wine/prefixes/eve
+wine "C:\Program Files\CCP\EVE-Sisi\eve.exe" /server:Singularity
