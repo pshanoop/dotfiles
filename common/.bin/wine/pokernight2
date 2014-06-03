@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=/home/hugo/wine/prefixes/pokernight2
+cd "/home/hugo/wine/prefixes/pokernight2/drive_c/Program Files/Poker Night 2"
+wine "C:\Program Files\Poker Night 2\PokerNight2.exe"
