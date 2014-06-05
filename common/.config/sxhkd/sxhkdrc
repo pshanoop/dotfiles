@@ -26,6 +26,10 @@ XF86Display
   screenswitch
 XF86LaunchB
   screenswitch
+super + shift + t
+  say the time is $(date +%T)
+super + shift + w
+  say $(weather)
 
 ## Athena specific ##
 
