@@ -27,7 +27,7 @@ XF86Display
 XF86LaunchB
   screenswitch
 super + shift + t
-  say the time is $(date +%T)
+  say the time is $(date +%R)
 super + shift + w
   say $(weather)
 
