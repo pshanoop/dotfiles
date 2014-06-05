@@ -2,23 +2,24 @@
 #
 # Reports the local weather for home sweet home.
 
-import requests
 import json
+import os.path
+import requests
+
+from datetime import datetime
 
 r = requests.get("https://api.forecast.io/forecast/" +
                  "5ddb40655ee526795f617679b857536a/" +
                  "-34.597378,-58.389587?units=si")
 j = json.loads(r.text)
 
-#print(json.dumps(j, indent=2))
+t = os.path.expanduser("~/.cache/weather-{}".format(
+                       datetime.now().isoformat()))
+f = open(t, "w")
+f.write(json.dumps(j, indent=2))
+f.close()
 
-print(j["hourly"]["summary"])
-print("Current temperature is {} degrees celsuis.".format(
+print("Current temperature is {} degrees celsius.".format(
       j["currently"]["temperature"]))
-print("Current humidity is {}.".format(j["currently"]["humidity"]))
-print("Current chances of precipitation are {}.".format(
-      j["currently"]["precipIntensity"]))
-print("Current precipitation is {}.".format(
-      j["currently"]["precipProbability"]))
-print("Chances of precipitation today are {}.".format(
-      j["daily"]["data"][0]["precipProbability"]))
+print(j["hourly"]["summary"])
+print(j["daily"]["summary"])
