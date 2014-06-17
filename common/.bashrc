@@ -41,9 +41,11 @@ function __hg_wd {
   ruby -e "print (%x{hg branch 2>/dev/null} || '').gsub(/^(.+)$/, ':\1')"
 }
 
-export   GREEN="\[\033[01;32m\]"
-export    BLUE="\[\033[01;34m\]"
-export DEFAULT="\[\033[0m\]"
+export   GREEN="\033[01;32m"
+export    BLUE="\033[01;34m"
+export  PURPLE="\033[01;35m"
+export     RED="\033[01;31m"
+export DEFAULT="\033[0m"
 
 export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\$ "
 export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\n\$ $DEFAULT"
@@ -73,7 +75,6 @@ fi;
 printf "\n"
 unset agent_status
 
-# OPAM stuff
-if [ -d $HOME/.opam ]; then
-  eval `opam config env`;
-fi;
+if pacman -Qu > /dev/null; then
+  printf "$(pacman -Qu | wc -l) packages are out of date.\n"
+fi
