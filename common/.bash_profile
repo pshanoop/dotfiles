@@ -1,6 +1,7 @@
 #
 # ~/.bash_profile
 #
+# Last reviewed 2014-06-17
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 

@@ -1,6 +1,7 @@
 #
 # ~/.bashrc
 #
+# Last reviewed 2014-06-17
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -26,9 +27,10 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 
 # This is the default, but some non-gtk apps won't use it without setting
-# this variable.
+# this variable. I'm looking at you, eclipse.
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+# Other defaults
 export TERMINAL=urxvtc
 export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass2
@@ -37,6 +39,7 @@ export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass2
 function __git_wd {
   ruby -e "print (%x{git branch 2>/dev/null}.each_line.grep(/^\*/).first || '').gsub(/^\* (.+)$/, ':\1')"
 }
+# Ditto mercurial
 function __hg_wd {
   ruby -e "print (%x{hg branch 2>/dev/null} || '').gsub(/^(.+)$/, ':\1')"
 }
@@ -49,7 +52,6 @@ export DEFAULT="\033[0m"
 
 export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\$ "
 export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\n\$ $DEFAULT"
-# https://stackoverflow.com/questions/5946873/include-non-0-exit-codes-in-the-subsequent-bash-prompt
 
 . ~/.aliases
 
