@@ -1,3 +1,5 @@
 # Restart offlineimap on an hourly basis since it tends to stall every
 # once in a while.
 0	*	*	*	*	/usr/bin/usrc restart offlineimap > /dev/null
+10	*	*	*	*	/bin/sh /home/hugo/accounting/homebank.cron
+0	*	*	*	*	/usr/bin/muttvcardsearch --create-local-cache > /dev/null
