@@ -3,5 +3,6 @@ scrot /tmp/screen_locked.png
 convert /tmp/screen_locked.png -blur 0x4 -blur 0x4 -blur 0x4 -blur 0x4 \
   +matte /tmp/screen_locked2.png
 
-i3lock -u -i /tmp/screen_locked2.png
+killall -SIGUSR1 dunst
+(i3lock -nu -i /tmp/screen_locked2.png && killall -SIGUSR2 dunst) &
 sleep 2 && xset s activate
