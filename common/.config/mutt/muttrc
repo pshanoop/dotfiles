@@ -41,6 +41,7 @@ set pager_index_lines = 7
 # Auto-open some attachment types
 set mailcap_path = ~/.config/mutt/mailcap
 alternative_order text/plain text/html
+set markers = no
 auto_view text/html
 
 set pager_stop = yes
