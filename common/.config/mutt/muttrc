@@ -20,6 +20,8 @@ set folder	= "~/.local/share/maildir/Personal/"
 set spoolfile	= +INBOX # XXX: Do I need this???
 set move	= no
 
+set query_command = "muttvcardsearch '%s'"
+
 set realname = "Hugo Osvaldo Barrera"
 
 set folder_format="%2C %t %f"
