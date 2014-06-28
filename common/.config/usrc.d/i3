@@ -8,4 +8,8 @@ daemon="/usr/bin/i3"
 
 rc_bg=YES
 
+rc_restart() {
+  i3-msg restart
+}
+
 rc_cmd $1
