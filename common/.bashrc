@@ -68,15 +68,15 @@ export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 # ssh-agent sharing
 . ~/.cache/ssh-agent
 ps aux | grep ssh-agent | grep -v grep | awk '{ print "Found agent: " $2 }'
-$(ssh-add -l > /dev/null)
+$(ssh-add -l > /dev/null 2>&1)
 if [ $? == 0 ]; then
   ssh-add -l | awk '{ print "Loaded key: " $3 }'
 else
   ssh-add -l
 fi;
 printf "\n"
-unset agent_status
 
-if pacman -Qu > /dev/null; then
-  printf "$(pacman -Qu | wc -l) packages are out of date.\n"
+_OUTDATED_PACKAGES=$(pacman -Qqu)
+if [ $? == 0 ]; then
+  printf "$(echo ${_OUTDATED_PACKAGES} | wc -w) packages are out of date.\n"
 fi
