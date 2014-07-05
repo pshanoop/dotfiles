@@ -3,10 +3,11 @@
 # ~/.xinitrc
 #
 
-if [ $DISPLAY == :0 ]; then
+if [ -n $DISPLAY ]; then
   if [ -e $HOME/.Xresources ]; then
     /usr/bin/xrdb -merge $HOME/.Xresources
   fi;
+  /usr/bin/xset b 20 6 100
 
   eval $(gpg-agent --daemon)
   ssh-agent | head -n 2 > ~/.cache/ssh-agent
