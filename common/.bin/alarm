@@ -18,4 +18,4 @@ printf " ${BLUE}>>>${DEFAULT} Increasing volume...\n"
 amixer sset Master 30419
 printf " ${BLUE}>>>${DEFAULT} Playing Korn...\n"
 cd "/home/hugo/music/Korn/KoRn Discography/Album/[2002]. Untouchables [Limited Edition]"
-smplayer .
+mpv "01. Here To Stay.flac"
