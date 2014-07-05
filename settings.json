@@ -1,38 +1,16 @@
 {
-	"symlinkedDirectories": [
-		".bin",
-		".config",
-		".remmina",
-		".mutt",
-		".ssh",
-		".subversion"
-		],
-	"repositories": [
-		{
-			"localPath": "certs",
-			"remotePath": "hyperion.local:~/certs"
-		}
-	],
-	"remotes": [
-		{
-			"name": "hyperion",
-			"path": "hyperion.local:/home/hugo/.homes",
-			"push": false
-		},
-		{
-			"name": "ares",
-			"path": "ares.local:/home/hugo/.homes",
-			"push": false
-		},
-		{
-			"name": "github",
-			"path": "git@github.com:hobarrera/dotfiles.git",
-			"push": true
-		},
-		{
-			"name": "elysion",
-			"path": "elysion:/home/hugo/git/homes.git",
-			"push": true
-		}
-	]
+  "symlinked_dirs": [
+    ".bin",
+    ".config",
+    ".remmina",
+    ".ssh",
+    ".subversion"
+  ],
+  "externals": [
+    {
+      "local_path": "priv",
+      "remote_name": "elysion",
+      "remote_path": "git@git.barrera.io:priv"
+    }
+  ]
 }
