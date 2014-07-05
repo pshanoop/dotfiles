@@ -12,20 +12,20 @@
 </action>
 <action>
 	<icon>locked</icon>
-	<name>Mount cryptfs</name>
-	<unique-id>1394810256086182-3</unique-id>
+	<name>Mount</name>
+	<unique-id>1404553363612905-2</unique-id>
 	<command>/home/hugo/.bin/encfs.mount %f</command>
-	<description></description>
+	<description>Mount using cryptfs</description>
 	<patterns>*.enc</patterns>
 	<directories/>
 </action>
 <action>
-	<icon>image-x-generic</icon>
-	<name>View images</name>
-	<unique-id>1394810256086195-4</unique-id>
-	<command>/usr/bin/pqiv &quot;%f&quot;</command>
-	<description>Show images in pqiv</description>
-	<patterns>*</patterns>
+	<icon>locked</icon>
+	<name>Unmount</name>
+	<unique-id>1404553374885005-3</unique-id>
+	<command>/home/hugo/.bin/encfs.unmount %f</command>
+	<description>Unmount cryptfs</description>
+	<patterns>*.encfs</patterns>
 	<directories/>
 </action>
 </actions>
