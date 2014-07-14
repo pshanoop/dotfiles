@@ -11,11 +11,11 @@ fi;
 export TIME=$(calc 60*$1 | sed -e 's/\s*//')
 export NOW=$(date "+%T")
 
-printf " ${BLUE}>>>${DEFAULT} Current time is ${NOW}\n"
-printf " ${BLUE}>>>${DEFAULT} Will wake you up in ${1}m or ${TIME}s...\n"
+printf " ${BLUE}==>${DEFAULT} Current time is ${NOW}.\n"
+printf " ${BLUE}==>${DEFAULT} Will wake you up in ${1}m or ${TIME}s...\n"
 sleep $TIME
-printf " ${BLUE}>>>${DEFAULT} Increasing volume...\n"
-amixer sset Master 30419
-printf " ${BLUE}>>>${DEFAULT} Playing Korn...\n"
+printf " ${BLUE}==>${DEFAULT} Increasing volume.\n"
+amixer -q sset Master 30419
+printf " ${BLUE}==>${DEFAULT} Playing Korn.\n"
 cd "/home/hugo/music/Korn/KoRn Discography/Album/[2002]. Untouchables [Limited Edition]"
-mpv "01. Here To Stay.flac"
+mpv --really-quiet "01. Here To Stay.flac"
