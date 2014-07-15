@@ -8,7 +8,10 @@
 		".hg",
 		"CVS",
 		"build",
-		"node_modules"
+		"node_modules",
+		"__pycache__",
+		"bower_components",
+		"tmp"
 	],
 	"font_face": "Meslo LG S",
 	"font_size": 14,
