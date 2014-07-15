@@ -19,7 +19,7 @@ f = open(t, "w")
 f.write(json.dumps(j, indent=2))
 f.close()
 
-print("Current temperature is {} degrees celsius.".format(
+print("Temperature is {} degrees.".format(
       j["currently"]["temperature"]))
 print(j["hourly"]["summary"])
 print(j["daily"]["summary"])
