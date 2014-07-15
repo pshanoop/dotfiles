@@ -13,3 +13,7 @@
 [submodule "common/.config/sublime-text-3/Packages/ColorPicker"]
 	path = common/.config/sublime-text-3/Packages/ColorPicker
 	url = git@github.com:weslly/ColorPicker.git
+[submodule "common/.config/sublime-text-3/Packages/sass-textmate-bundle"]
+	path = common/.config/sublime-text-3/Packages/sass-textmate-bundle
+	url = git@github.com:nathos/sass-textmate-bundle.git
+	branch = sublime
