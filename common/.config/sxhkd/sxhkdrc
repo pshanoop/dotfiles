@@ -8,8 +8,6 @@ super + y
   $TERMINAL
 super + m
   mutt-win
-#super + r
-#  $TERMINAL -e rtorrent-control
 
 ### Unique sequences ###
 ########################
@@ -18,8 +16,6 @@ super + Return
   urxvt
 control + alt + Escape
   xkill
-#super + space
-#  gmrun
 XF86Tools
   kbctl
 XF86Display
@@ -61,8 +57,6 @@ control + alt + super + p
   scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
 shift + control + alt + super + p
   scrotpush
-
-# These are the normal ones
 Print
   scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
 control + Print
@@ -77,14 +71,10 @@ super + Print
 
 super + q
   Thunar
-#super + v
-#  pavucontrol -t 3
 super + c
   $BROWSER
 super + p
   pidgin
-#super + b
-#  bitcoin-qt
 super + o
   arandr
 
