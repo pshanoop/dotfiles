@@ -57,6 +57,7 @@ set alias_file="~/.config/mutt/aliases"	# where I keep my aliases
 
 set arrow_cursor = no		# use -> instead of hiliting the whole line
 set autoedit = no		# go to the editor right away when composing
+set editor = "vi +7"            # place the cursor below the default headers
 set confirmappend = no		# don't ask me if i want to append to mailboxes
 set edit_headers = yes		# let me edit the message header when composing
 set include = yes		# always include messages when replying
