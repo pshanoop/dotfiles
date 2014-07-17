@@ -1,4 +1,3 @@
 post_upgrade() {
   systemctl enable kexec-load@linux
-  systemctl enable multi-user.target
 }
