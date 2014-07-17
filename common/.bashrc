@@ -10,6 +10,9 @@
 PATH=$(find $HOME/.bin/ -type d -exec printf "{}:" \;)$PATH
 export PATH
 
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
 # This is usually the default, but some (crappy) apps open other editors
 # by default
 export EDITOR="vi"
