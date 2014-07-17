@@ -5,8 +5,8 @@
 RES=$(xrandr | egrep -o "^\s+\w+" | head -n 1)
 WIDTH=$(echo $RES | egrep -o "^[^x]+")
 HEIGHT=$(echo $RES | egrep -o "[^x]+$")
-HEIGHT=$(calc $HEIGHT-19 | egrep -o "\w+")
+HEIGHT=$(calc $HEIGHT-18 | egrep -o "\w+")
 RES=${WIDTH}x${HEIGHT}
 
 export WINEPREFIX=$HOME/wine/prefixes/eve
-wine explorer /desktop=eve$1,$RES "C:\Program Files\CCP\EVE\bin\ExeFile.exe"
+wine explorer /desktop=eve$RANDOM,$RES "C:\Program Files\CCP\EVE\bin\ExeFile.exe"
