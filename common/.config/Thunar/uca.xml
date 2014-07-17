@@ -12,20 +12,29 @@
 </action>
 <action>
 	<icon>locked</icon>
-	<name>Mount</name>
-	<unique-id>1404553363612905-2</unique-id>
-	<command>/home/hugo/.bin/encfs.mount %f</command>
+	<name>Mount decrypted</name>
+	<unique-id>1405626377486792-13</unique-id>
+	<command>mount.encfs %f</command>
 	<description>Mount using cryptfs</description>
 	<patterns>*.enc</patterns>
 	<directories/>
 </action>
 <action>
-	<icon>locked</icon>
+	<icon>media-optical</icon>
+	<name>Mount ISO</name>
+	<unique-id>1405626380363201-14</unique-id>
+	<command>mount.fuseiso %f </command>
+	<description>Mount using fuseiso</description>
+	<patterns>*.iso</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>edit-delete</icon>
 	<name>Unmount</name>
-	<unique-id>1404553374885005-3</unique-id>
-	<command>/home/hugo/.bin/encfs.unmount %f</command>
-	<description>Unmount cryptfs</description>
-	<patterns>*.encfs</patterns>
+	<unique-id>1405626409990654-16</unique-id>
+	<command>fuse.unmount %f</command>
+	<description>Unmount fuse mountpoint</description>
+	<patterns>*.mount</patterns>
 	<directories/>
 </action>
 </actions>

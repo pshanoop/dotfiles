@@ -1,0 +1,12 @@
+#!/bin/sh
+
+MOUNTPOINT="$1.mount"
+mkdir -p "$MOUNTPOINT"
+
+encfs "$1" "$MOUNTPOINT" --extpass="$SSH_ASKPASS Password:"
+
+if [ $? != 0 ]; then
+  zenity --info --text "There was some error mounting"
+  rmdir "$MOUNTPOINT"
+fi
+

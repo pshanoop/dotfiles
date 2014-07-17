@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+export MOUNTPOINT="$1.mount"
+mkdir -p "$MOUNTPOINT"
+fuseiso "$1" "$MOUNTPOINT"
