@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# usrc daemon file
-
-daemon="/usr/bin/xfce4-power-manager"
-
-. /usr/share/usrc.d/usrc.subr
-
-rc_cmd $1
