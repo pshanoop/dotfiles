@@ -1,5 +1,2 @@
 #!/bin/sh
 exec $TERMINAL --geometry 120x30 -e mutt $@ &
-# Wait a bit until the window pops up
-sleep 0.05
-wmctrl -r :ACTIVE: -b add,maximized_horz,maximized_vert
