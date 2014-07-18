@@ -26,7 +26,8 @@
   "overlay_scroll_bars": "enabled",
   "rulers":
   [
-    80
+    80,
+    120
   ],
   "show_tab_close_buttons": false,
   "tab_size": 2,
