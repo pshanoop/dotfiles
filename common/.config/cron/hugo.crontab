@@ -3,3 +3,4 @@
 0	*	*	*	*	/usr/bin/usrc restart offlineimap > /dev/null
 10	*	*	*	*	/bin/sh /home/hugo/accounting/homebank.cron
 0	*	*	*	*	/usr/bin/muttvcardsearch --create-local-cache > /dev/null
+35      5       *       *       *       /bin/sh /home/hugo/.config/cron/backup-photos.sh
