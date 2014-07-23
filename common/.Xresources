@@ -9,7 +9,7 @@ Xft.lcdfilter: lcddefault
 Xft.rgba:      rgb
 
 URxvt.depth: 32
-URxvt.background:  [80]#000000
+URxvt.background:  #000000
 URxvt.foreground:  #FFFFFF
 URxvt.cursorColor: #00FF00
 
