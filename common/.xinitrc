@@ -2,10 +2,14 @@
 #
 # ~/.xinitrc
 #
+# Last reviewed 2014-07-23
 
 if [ -n $DISPLAY ]; then
-  if [ -e $HOME/.Xresources ]; then
-    /usr/bin/xrdb -merge $HOME/.Xresources
+  /usr/bin/xrdb -merge $HOME/.config/Xresources/main
+  # TODO: Have homesync sort these into a single location
+  $LOCAL_RESOURCES=$HOME/.config/Xresources/$(hostname -s)
+  if [ -e $LOCAL_RESOURCES ]; then
+    /usr/bin/xrdb -merge $LOCAL_RESOURCES
   fi;
   /usr/bin/xset b 20 6 100
 
