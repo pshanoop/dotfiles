@@ -8,6 +8,7 @@ common/.config/Trolltech.conf
 common/.config/akonadi
 common/.config/caffeine
 common/.config/chromium
+common/.config/dconf/
 common/.config/google-googletalkplugin
 common/.config/gtk-2.0/gtkfilechooser.ini
 common/.config/inkscape/
@@ -30,3 +31,5 @@ common/.ssh/mer-qt-creator-rsa*
 common/.subversion/README.txt
 common/.subversion/auth
 local
+
+*.cache
