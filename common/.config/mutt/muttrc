@@ -11,6 +11,9 @@ source ~/.config/mutt/crypto
 source ~/.config/mutt/aliases
 source ~/.config/mutt/colours
 
+# Assume personal by default (this is what CLI invocations will use)
+source ~/.config/mutt/accounts/personal
+
 folder-hook "~/.local/share/maildir/Personal/" source ~/.config/mutt/accounts/personal
 folder-hook "~/.local/share/maildir/AIGroup/"  source ~/.config/mutt/accounts/aigroup
 
