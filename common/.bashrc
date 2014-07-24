@@ -78,8 +78,10 @@ else
   ssh-add -l
 fi;
 printf "\n"
+unset agent_status
 
-_OUTDATED_PACKAGES=$(pacman -Qqu)
+outdated_packages=$(pacman -Qqu)
 if [ $? == 0 ]; then
-  printf "$(echo ${_OUTDATED_PACKAGES} | wc -w) packages are out of date.\n"
+  printf "$(echo ${outdated_packages} | wc -w) packages are out of date.\n"
 fi
+unset outdated_packages
