@@ -27,7 +27,7 @@ super + shift + t
 super + shift + w
   say $(weather)
 super + shift + h
-  mpv --fs ~/videos/hypnotoad.mp4
+  mpv --loop=inf --fs ~/videos/hypnotoad.mp4
 
 ## Athena specific ##
 
