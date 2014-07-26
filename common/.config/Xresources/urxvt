@@ -10,13 +10,13 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 
 URxvt.font: \
-    xft:UbuntuMono:size=15,\
+    xft:UbuntuMono:size=13.5,\
     xft:DejaVuSansMono:size=11,\
     xft:DroidSansMono:size=11,\
     xft:Inconsolata:size=12,\
     xft:Symbola:size=9,\
     xft:SourceCodePro:size=12,\
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 !    xft:UbuntuMono:size=13,\
 !URxvt.letterSpace: -2
 
