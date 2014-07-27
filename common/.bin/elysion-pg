@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Opens a tunnel to connect to postgres on elysion.
+
+ssh -fNL 127.0.0.6:5432:localhost:5432 elysion.barrera.io
