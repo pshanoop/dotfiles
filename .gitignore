@@ -11,6 +11,7 @@ common/.config/chromium
 common/.config/dconf/
 common/.config/google-googletalkplugin
 common/.config/gtk-2.0/gtkfilechooser.ini
+common/.config/homebank/
 common/.config/inkscape/
 common/.config/keepassx
 common/.config/leafpad
