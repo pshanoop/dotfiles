@@ -47,3 +47,6 @@ set hlsearch
 set incsearch
 
 " TODO: set iskeyword so as to behave like vi
+
+" This is ignored by severl functions, including ctrlp
+set wildignore+=build,node_modules,bower_components
