@@ -15,3 +15,4 @@ alias diff='colordiff'
 alias less='less -r'
 alias open='xdg-open'
 alias vi=vim
+alias fmt='fmt -w 79'
