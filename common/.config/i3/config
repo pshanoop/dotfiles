@@ -173,6 +173,8 @@ bar {
         status_command i3status
 }
 
+exec_always feh --bg-scale $HOME/.wallpapers/1.jpg
+
 new_window pixel
 hide_edge_borders both
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
