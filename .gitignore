@@ -9,6 +9,7 @@ common/.config/Trolltech.conf
 common/.config/akonadi
 common/.config/caffeine
 common/.config/chromium
+common/.config/configstore/*bower*
 common/.config/dconf/
 common/.config/google-googletalkplugin
 common/.config/gtk-2.0/gtkfilechooser.ini
