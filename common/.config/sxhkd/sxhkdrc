@@ -51,6 +51,15 @@ super + XF86PowerOff
 control + super + XF86PowerOff
   systemctl poweroff
 
+### Autoclick ###
+#################
+
+super + F1
+  xdotool click --repeat 5000 --delay 500 1
+
+super + F2
+  pkill xdotool
+
 ### Screenshots ###
 ###################
 
