@@ -6,11 +6,6 @@
 
 if [ -n $DISPLAY ]; then
   /usr/bin/xrdb -merge $HOME/.config/Xresources/main
-  # TODO: Have homesync sort these into a single location
-  LOCAL_RESOURCES=$HOME/.config/Xresources/$(hostname -s)
-  if [ -e $LOCAL_RESOURCES ]; then
-    /usr/bin/xrdb -merge $LOCAL_RESOURCES
-  fi;
   /usr/bin/xrandr --dpi 106
   /usr/bin/xset b 20 6 100
 
