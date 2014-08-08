@@ -11,6 +11,7 @@ if [ -n $DISPLAY ]; then
   if [ -e $LOCAL_RESOURCES ]; then
     /usr/bin/xrdb -merge $LOCAL_RESOURCES
   fi;
+  /usr/bin/xrandr --dpi 106
   /usr/bin/xset b 20 6 100
 
   eval $(gpg-agent --daemon)
