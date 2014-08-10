@@ -82,7 +82,7 @@ super + Print
 
 super + q
   Thunar
-super + f
+super + c
   $BROWSER
 super + p
   pidgin
