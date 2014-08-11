@@ -2,10 +2,12 @@
 #
 # Runs eve on desktop $1 with an almost-fullscreen-resolution, leaving the i3 status bar visible.
 
+I3_STATUS_SIZE=21
+
 RES=$(xrandr | egrep -o "^\s+\w+" | head -n 1)
 WIDTH=$(echo $RES | egrep -o "^[^x]+")
 HEIGHT=$(echo $RES | egrep -o "[^x]+$")
-HEIGHT=$(calc $HEIGHT-18 | egrep -o "\w+")
+HEIGHT=$(calc $HEIGHT-$I3_STATUS_SIZE | egrep -o "\w+")
 RES=${WIDTH}x${HEIGHT}
 
 export WINEPREFIX=$HOME/wine/prefixes/eve
