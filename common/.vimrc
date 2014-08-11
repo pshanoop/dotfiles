@@ -50,3 +50,6 @@ set incsearch
 
 " This is ignored by severl functions, including ctrlp
 set wildignore+=build,node_modules,bower_components
+
+" Toggle paste mode using F12 (does not try to indent input)
+set pastetoggle=<F12>
