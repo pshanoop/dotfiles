@@ -37,7 +37,7 @@ status.register("disk", path="/", format="{avail}GiB",)
 
 # Unread email count
 inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/Personal/INBOX")
-status.register("mail", backends=[inbox])
+status.register("mail", color_unread="#ffff00", backends=[inbox])
 
 # Public IP
 status.register("network", format_down="", interface="wlan0", format_up="{v6}")
