@@ -1,4 +1,17 @@
-lsof -i :9999 | grep LISTEN > /dev/null
-if [ $? != 1 ]; then
-  kill -KILL $(lsof -i :9999 | grep LISTEN | awk '{ print $2 }')
+#!/bin/sh
+
+if [ -z $1 ]; then
+  echo No port specified
+  exit 1
+fi
+
+PORT=$1
+
+lsof -i :$PORT | grep LISTEN > /dev/null
+if [ $? != 0 ]; then
+  exit 2  # Nobody's listening to this port
 fi;
+
+for p in $(pstree -p $(pgrep -f "autossh.*$PORT") | grep -oE '[0-9]+'); do
+  kill -KILL $p
+done;

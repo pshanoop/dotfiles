@@ -1,10 +1,10 @@
 #!/bin/sh
-. nullproxy
+nullproxy 9999
 
 HOST=hades.barrera.io
 
 if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
-  ssh -fND 9999 ${HOST}
+  autossh -M 9899 -fND 9999 $HOST
 else
-  echo Error: Port in use
+  echo "Error: Port in use (and not by autossh)."
 fi
