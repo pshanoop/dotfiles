@@ -2,11 +2,9 @@
 #
 # usrc daemon file
 
-daemon="/usr/bin/offlineimap -c $HOME/.config/offlineimap/offlineimaprc"
+daemon="/usr/bin/python2 /usr/bin/offlineimap"
 
 . /usr/share/usrc.d/usrc.subr
-
-pexp="/usr/bin/python2\ /usr/bin/offlineimap\ -c\ $HOME/.config/offlineimap/offlineimaprc"
 
 rc_bg=YES
 
