@@ -6,7 +6,7 @@ import subprocess
 from i3pystatus import Status
 from i3pystatus.mail.maildir import MaildirMail
 
-status = Status(standalone=True)
+status = Status(standalone=True, click_events=False)
 
 # Current time
 status.register("clock", format="%Y-%m-%d %X")
