@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Echoes a local globally reachable IPv6 address
+
+ifconfig | grep inet6 | grep global | grep -Eo "[0-9a-f:]{4,40}"
