@@ -4,3 +4,4 @@ Xcursor.size:  16
 Xft.dpi: 106
 
 #include "urxvt"
+#include "xautolock"
