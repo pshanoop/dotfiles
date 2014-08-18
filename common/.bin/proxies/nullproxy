@@ -7,9 +7,9 @@ fi
 
 PORT=$1
 
-lsof -i :$PORT | grep LISTEN > /dev/null
+pgrep -f "autossh.*$PORT" > /dev/null
 if [ $? != 0 ]; then
-  exit 2  # Nobody's listening to this port
+  exit 2  # No autossh running for specified port
 fi;
 
 for p in $(pstree -p $(pgrep -f "autossh.*$PORT") | grep -oE '[0-9]+'); do
