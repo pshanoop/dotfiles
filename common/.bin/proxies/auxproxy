@@ -1,0 +1,3 @@
+#!/bin/sh
+
+autossh -M 9897 -fND  9997 elysion.barrera.io
