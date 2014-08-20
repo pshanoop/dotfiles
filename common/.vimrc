@@ -53,3 +53,11 @@ set wildignore+=build,node_modules,bower_components
 
 " Toggle paste mode using F12 (does not try to indent input)
 set pastetoggle=<F12>
+
+" Autoformatters
+au BufEnter,BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp map <F3> :%!astyle -A2 -s4 -S -N -Y -p -U -H -k3 -xj -xy -z2<CR>
+" -xC79
+
+" Comment blocks with F5
+map <F5> :TComment <CR>
+
