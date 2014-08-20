@@ -17,7 +17,7 @@ postsynchook = /usr/bin/notmuch new
 type = Maildir
 localfolders = ~/.local/share/maildir/Personal
 restoreatime = no
-createfolders = False
+createfolders = True
 
 [Repository RemotePersonal]
 type = IMAP
