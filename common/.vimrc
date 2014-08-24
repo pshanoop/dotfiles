@@ -1,7 +1,7 @@
 "
 " ~/.vimrc
 "
-" Last reviewed 2014-07-24
+" Last reviewed 2014-08-23
 
 source /etc/vimrc
 
@@ -56,8 +56,21 @@ set pastetoggle=<F12>
 
 " Autoformatters
 au BufEnter,BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp map <F3> :%!astyle -A2 -s4 -S -N -Y -p -U -H -k3 -xj -xy -z2<CR>
+" TODO: delete backets around oneline IFs
+" TODO: fix \n being added before EOF indefinitely
 " -xC79
 
-" Comment blocks with F5
+" Comment blocks with F5.
 map <F5> :TComment <CR>
 
+" Reload (source) config file.
+map <F9> :so $HOME/.vimrc <CR>
+
+" Use C++11.
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+
+" Verify C++ header files as well.
+let g:syntastic_cpp_check_header = 1
+
+" Reload header files on every rerun.
+let g:syntastic_cpp_auto_refresh_includes = 1
