@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# Use ssh_command='autossh -M 0' to use autossh instead of plain ssh
+
 mkdir -p /home/hugo/videos/Films
 sshfs dav@hades.barrera.io:/Films /home/hugo/videos/Films
 mkdir -p /home/hugo/videos/Shows
