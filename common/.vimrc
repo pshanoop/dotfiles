@@ -10,7 +10,11 @@ set nocompatible
 
 filetype plugin indent on
 
-colorscheme sand
+" colorscheme sand
+colorscheme jellybeans
+
+" Tell vim that the terminal supports 256 colours.
+:set t_Co=256
 
 " Enable lexical highlighting.
 syntax enable
@@ -41,7 +45,7 @@ set ruler
 set hlsearch
 
 " Remove search highlighting by pressing ESC.
-"nmap <silent> <ESC> :nohlsearch<CR>
+map <F2> :nohlsearch<CR>
 
 " Highlight search results on-the-fly.
 set incsearch
@@ -74,3 +78,17 @@ let g:syntastic_cpp_check_header = 1
 
 " Reload header files on every rerun.
 let g:syntastic_cpp_auto_refresh_includes = 1
+
+" Check files on open.
+let g:syntastic_check_on_open = 1
+
+" Set syntastic errors to red.
+:highlight SyntasticError term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
+:highlight SyntasticErrorSign term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
+:highlight clear SignColumn
+
+" Close location window (aka :Errors) after selecting a location.
+:autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+
+" Close location (aka :Error) window.
+map <F4> :lclose <CR>
