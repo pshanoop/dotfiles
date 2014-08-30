@@ -28,6 +28,7 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
 # Make Java applications use font antialiasing
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
+export _JAVA_OPTIONS="-Dswing.aatext=true"
 
 # This is the default, but some non-gtk apps won't use it without setting
 # this variable. I'm looking at you, eclipse.
