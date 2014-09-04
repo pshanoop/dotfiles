@@ -15,7 +15,8 @@ status.register("clock", format="%Y-%m-%d %X")
 status.register("pulseaudio", format="♪{volume}",)
 
 # CPU temperature
-status.register("temp", format="{temp:.0f}°C",)
+if os.path.exists("/sys/class/thermal/thermal_zone0/temp"):
+    status.register("temp", format="{temp:.0f}°C",)
 
 # Battery status
 status.register("battery",
