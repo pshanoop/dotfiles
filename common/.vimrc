@@ -92,3 +92,6 @@ let g:syntastic_check_on_open = 1
 
 " Close location (aka :Error) window.
 map <F4> :lclose <CR>
+
+" Toggle line numbers.
+map <F7> :set invnumber number?<CR>
