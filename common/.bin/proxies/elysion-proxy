@@ -1,10 +1,4 @@
 #!/bin/sh
-nullproxy 9999
 
-HOST=elysion.barrera.io
+_socksproxy elysion.barrera.io 9999 9900:9901
 
-if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
-  autossh -M 9900:9901 -fND 9999 $HOST
-else
-  echo "Error: Port in use (and not by autossh)."
-fi

@@ -1,10 +1,4 @@
 #!/bin/sh
-nullproxy 9999
 
-HOST=localhost
+_socksproxy localhost 9999 9900:9901
 
-if [ -z "`lsof -i :9999 | grep LISTEN`" ]; then
-  autossh -M 0 -fND 9999 $HOST
-else
-  echo "Error: Port in use (and not by autossh)."
-fi

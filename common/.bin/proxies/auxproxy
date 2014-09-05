@@ -1,3 +1,4 @@
 #!/bin/sh
 
-autossh -M 9700:9701 -fND  9997 elysion.barrera.io
+_socksproxy elysion.barrera.io 9997 9700:9701
+
