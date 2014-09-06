@@ -57,7 +57,7 @@ export DEFAULT="\[\033[0m\]"
 export PS1="[\u@\h \W$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\$ "
 export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\n\$ $DEFAULT"
 
-. ~/.aliases
+. ~/.config/bash/aliases
 
 export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
