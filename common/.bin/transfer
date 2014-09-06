@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Upload a file to transfer.sh. The extra lazy version. ;-)
+
+if [ -z $1 ]; then
+  echo Usage: transfer file
+  exit 1
+fi;
+
+curl --upload-file $1 http://transfer.sh/$(basename $1)
