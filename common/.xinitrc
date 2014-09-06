@@ -17,7 +17,7 @@ if [ -n $DISPLAY ]; then
     numlockx on &
   fi;
 
-  dbus-launch usrc startup >> .Xlog 2>&1;
+  dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"
 fi;
 
 # Never give up, never surrender!

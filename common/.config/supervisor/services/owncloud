@@ -1,0 +1,4 @@
+[program:owncloud]
+command=/usr/bin/owncloud
+autostart=false
+redirect_stderr=true

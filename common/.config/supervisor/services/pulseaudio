@@ -1,0 +1,3 @@
+[program:thunar]
+command=/usr/bin/pulseaudio --start --daemonize=false
+redirect_stderr=true

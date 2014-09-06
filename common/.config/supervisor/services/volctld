@@ -1,0 +1,3 @@
+[program:volctld]
+command=/usr/bin/volctld
+redirect_stderr=true

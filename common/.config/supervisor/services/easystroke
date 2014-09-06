@@ -1,0 +1,4 @@
+[program:easystroke]
+command=/usr/bin/easystroke
+autostart=false
+redirect_stderr=true

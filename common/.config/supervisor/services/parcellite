@@ -1,0 +1,3 @@
+[program:parcellite]
+command=/usr/bin/parcellite --no-icon
+redirect_stderr=true

@@ -1,0 +1,3 @@
+[program:offlineimap]
+command=/usr/bin/offlineimap
+redirect_stderr=true

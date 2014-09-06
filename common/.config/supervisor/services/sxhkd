@@ -1,0 +1,4 @@
+[program:sxhkd]
+command=/usr/bin/sxhkd
+redirect_stderr=true
+environment=TMUX=""
