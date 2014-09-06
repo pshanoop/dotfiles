@@ -1,6 +1,6 @@
 # Restart offlineimap on an hourly basis since it tends to stall every
 # once in a while.
-0	*	*	*	*	/usr/bin/usrc restart offlineimap > /dev/null
+0	*	*	*	*	supervisorctl -c $HOME/.config/supervisor/supervisord.conf restart offlineimap > /dev/null
 0	*	*	*	*	/usr/bin/muttvcardsearch --create-local-cache > /dev/null
 10	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/backup-accounting.sh
 35      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-photos.sh
