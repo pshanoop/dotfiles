@@ -1,13 +1,11 @@
 [user]
 	name = Hugo Osvaldo Barrera
 	email = hugo@barrera.io
-[diff]
-#	external = git-meld
 [push]
 	default = matching
 [color]
 	ui = true
 [diff]
-	tool = meld
+	tool = vimdiff
 [branch]
 	autosetuprebase = always
