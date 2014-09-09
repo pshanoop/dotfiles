@@ -7,4 +7,5 @@ if [ -z $1 ]; then
   exit 1
 fi;
 
-curl --upload-file $1 http://transfer.sh/$(basename $1)
+curl -s --upload-file $1 http://transfer.sh/$(basename $1) | xclip
+xclip -o
