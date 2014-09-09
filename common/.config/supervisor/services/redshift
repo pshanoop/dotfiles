@@ -1,3 +1,4 @@
 [program:redshift]
 command=/usr/bin/redshift-scheduler
+autostart=false
 redirect_stderr=true
