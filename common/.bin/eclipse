@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/bin/eclipse -vmargs -XX:PermSize=128M -XX:MaxPermSize=256M -Xms512M -Xmx1524M $@
