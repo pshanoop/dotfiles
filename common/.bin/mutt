@@ -4,4 +4,4 @@
 
 # cd into ~/transfers so attachments are save there by default
 cd ~/transfers
-/usr/bin/mutt -F ~/.config/mutt/muttrc $@
+mutthere
