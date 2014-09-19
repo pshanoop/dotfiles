@@ -1,7 +1,7 @@
 "
 " ~/.vimrc
 "
-" Last reviewed 2014-08-23
+" Last reviewed 2014-09-19
 
 source /etc/vimrc
 
@@ -81,6 +81,9 @@ let g:syntastic_cpp_auto_refresh_includes = 1
 
 " Check files on open.
 let g:syntastic_check_on_open = 1
+
+" Use flake8 for python files (which also checks pep8).
+let g:syntastic_python_checkers = ['flake8']
 
 " Set syntastic errors to red.
 :highlight SyntasticError term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
