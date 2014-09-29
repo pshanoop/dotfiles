@@ -79,6 +79,9 @@ let g:syntastic_cpp_check_header = 1
 " Reload header files on every rerun.
 let g:syntastic_cpp_auto_refresh_includes = 1
 
+" Include header files from these locations.
+let g:syntastic_cpp_include_dirs = ["/usr/include/qt/QtWidgets/"]
+
 " Check files on open.
 let g:syntastic_check_on_open = 1
 
@@ -98,3 +101,8 @@ map <F4> :lclose <CR>
 
 " Toggle line numbers.
 map <F7> :set invnumber number?<CR>
+
+" Ignore env, the directory where virtualenv is usually set up.
+set wildignore+=env
+
+source $HOME/.completion.vimrc
