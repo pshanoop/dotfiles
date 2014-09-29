@@ -4,4 +4,4 @@
 
 # cd into ~/transfers so attachments are save there by default
 cd ~/transfers
-mutthere
+mutthere $@
