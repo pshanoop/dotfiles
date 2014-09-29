@@ -34,6 +34,9 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 # this variable. I'm looking at you, eclipse.
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+# This is used by qt5.
+export QT_STYLE_OVERRIDE=gtk
+
 # Other defaults
 export TERMINAL=urxvtc
 export BROWSER=firefox
@@ -60,7 +63,7 @@ export PS1="[\u@\h \w$GREEN\$(__git_wd)$BLUE\$(__hg_wd)$DEFAULT]\n\$ $DEFAULT"
 . ~/.config/bash/aliases
 
 export SDL_AUDIODRIVER=alsa
-export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd-<nodename>"
+export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd.sock"
 
 # Fix scrolling with a mouse on GTK3 apps
 export GDK_CORE_DEVICE_EVENTS=1
