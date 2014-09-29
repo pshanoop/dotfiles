@@ -17,6 +17,7 @@ if [ -n $DISPLAY ]; then
     numlockx on &
   fi;
 
+  mkdir -p "$HOME/.cache/supervisor"
   dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"
 fi;
 
