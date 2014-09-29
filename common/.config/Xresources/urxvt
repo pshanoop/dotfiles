@@ -1,5 +1,6 @@
 URxvt.background:  #282828
 URxvt.cursorColor: #83C048
+URxvt.cursorBlink: true
 URxvt.foreground: #EEEEEE
 URxvt.highlightColor: #444444
 URxvt.underlineColor: #999999
@@ -44,9 +45,10 @@ URxvt.tabbed.tab-bg:    0
 
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.keysym.Control-C: perl:clipboard:copy
-URxvt.keysym.Control-v: perl:clipboard:paste
+URxvt.keysym.Control-V: perl:clipboard:paste
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 3
 URxvt.iconFile: /usr/share/icons/elementary-xfce/apps/128/terminal.svg
+URxvt.iso14755 : false
 
 URxvt.urgentOnBell: true
