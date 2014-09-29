@@ -1,6 +1,9 @@
 common/.config/Bitcoin/
 common/.config/ImageMagick/
+common/.config/MonoDevelop-5.0/
+common/.config/MonoDevelop/
 common/.config/Mumble/
+common/.config/NuGet/
 common/.config/Popcorn-Time/
 common/.config/QtProject.conf
 common/.config/ReText project/
