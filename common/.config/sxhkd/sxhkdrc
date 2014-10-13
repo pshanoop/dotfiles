@@ -93,12 +93,12 @@ super + o
 ##################
 
 XF86AudioPlay
-  mocp --toggle-pause
+  rhythmbox-client --play-pause
 XF86AudioPrev
-  mocp --previous
+  rhythmbox-client --previous
 XF86AudioNext
-  mocp --next
+  rhythmbox-client --next
 XF86AudioStop
-  mocp --stop
+  rhythmbox-client --stop
 XF86Calculator
   $TERMINAL -e calc -d
