@@ -102,9 +102,3 @@ XF86AudioStop
   mocp --stop
 XF86Calculator
   $TERMINAL -e calc -d
-
-### Mouse ###
-#############
-
-button9
-  vlc.playPause
