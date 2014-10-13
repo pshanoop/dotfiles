@@ -4,4 +4,10 @@
 # running rtorrent, making this script a very simple (yet funcional)
 # rtorrent-remote-control.
 
-ssh -i ~/.ssh/rtorrent.key rtorrent@hades.barrera.io
+COMMAND="ssh -i $HOME/.ssh/rtorrent.key rtorrent@hades.barrera.io"
+
+if tty -s; then
+  $COMMAND
+else
+  $TERMINAL -e $COMMAND
+fi
