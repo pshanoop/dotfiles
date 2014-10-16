@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+git stash
+git pull -r
+git push
+git stash apply
+git stash drop
