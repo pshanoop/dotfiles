@@ -1,6 +1,27 @@
 #!/bin/sh
-if [ `pacman -Qdtq | wc -l` != 0 ]; then
-  sudo pacman -Rnsu $(pacman -Qdtq) $@;
-else
+#
+# Delete orphaned dependencies EXCEPT those that are optionally required by
+# installed packages.
+
+if [ `pacman -Qdtq | wc -l` == 0 ]; then
   echo "No orphaned dependencies";
+  exit 0;
 fi;
+
+KEEP=$(echo n | sudo pacman -Rnsu $(pacman -Qdtq) 2>/dev/null | \
+  grep requires | awk '{print $5}' | egrep -o "[a-zA-Z0-9\-]+" | sort | uniq)
+
+ORPHANS=$(pacman -Qdtq)
+
+KEEP_FILE=/tmp/$RANDOM.packages
+ORPHANS_FILE=/tmp/$RANDOM.packages
+
+echo $KEEP | tr ' ' '\n' > $KEEP_FILE
+echo $ORPHANS | tr ' ' '\n' > $ORPHANS_FILE
+
+# echo "::: Keeping packages:"
+# echo $KEEP | tr '\n' ' '
+# echo ""
+# echo "::: Deleting orphans."
+
+sudo pacman -Rnscu $(comm -3 $KEEP_FILE $ORPHANS_FILE)
