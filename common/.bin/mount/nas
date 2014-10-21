@@ -2,7 +2,9 @@
 
 # Use ssh_command='autossh -M 0' to use autossh instead of plain ssh
 
+SSHFS="sshfs -o uid=1000,gid=10"
+
 mkdir -p /home/hugo/videos/Films
-sshfs dav@hades.barrera.io:/Films /home/hugo/videos/Films
+$SSHFS dav@hades.barrera.io:/Films /home/hugo/videos/Films
 mkdir -p /home/hugo/videos/Shows
-sshfs dav@hades.barrera.io:/Shows /home/hugo/videos/Shows
+$SSHFS dav@hades.barrera.io:/Shows /home/hugo/videos/Shows
