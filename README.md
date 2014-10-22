@@ -19,8 +19,8 @@ I decided to make these public, for three reasons:
  - The quickly share config files with friends who are curious on how
  I achieved something.
 
-I used ``homesync`` to create the symlinks to files properly (though
-it's still WIP).
+I use [homesick](https://github.com/technicalpickles/homesick) to keep this
+repository in sync with my actual dotfiles using symlinks.
 
 Feel free to reuse these files as you see fit. I don't think most they
 even qualify as "software" for them to actually require a license, if you
