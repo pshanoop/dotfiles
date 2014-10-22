@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# This script parses my card index, and outputs results in a format tha mutt
+# understand (ie: the format it expects out of query_command).
+#
+# Rather that fetching from a server (like muttvcardsearch), this script uses
+# a local storage of vcards.
+
+CARDS=$HOME/.local/share/contacts/cards/
+cd $CARDS
+FILES=$(grep -v PHOTO * | grep $1 | awk '{print $1}' | egrep -o "^[^:]*")
+
+# This line is completely ignored: mutt expects an irrelevant line before the
+# actual content.
+echo "Mutt cards - alpha version"
+
+for card in $FILES; do
+  NAME="$(egrep ^FN $card | egrep -o "[^:]+$")"
+  EMAIL=$(egrep ^EMAIL $card | egrep -o "[^:]+$")
+  for email in $EMAIL; do
+    echo -e "$email\t$NAME"
+  done;
+done;
