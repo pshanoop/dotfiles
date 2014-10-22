@@ -1,19 +1,19 @@
-[submodule "common/.config/sublime-text-3/Packages/CTags"]
-	path = common/.config/sublime-text-3/Packages/CTags
+[submodule "home/.config/sublime-text-3/Packages/CTags"]
+	path = home/.config/sublime-text-3/Packages/CTags
 	url = https://github.com/SublimeText/CTags
-[submodule "common/.config/sublime-text-3/Packages/LESS"]
-	path = common/.config/sublime-text-3/Packages/LESS
+[submodule "home/.config/sublime-text-3/Packages/LESS"]
+	path = home/.config/sublime-text-3/Packages/LESS
 	url = git://github.com/danro/LESS-sublime.git
-[submodule "common/.config/sublime-text-3/Packages/BracketHighlighter"]
-	path = common/.config/sublime-text-3/Packages/BracketHighlighter
+[submodule "home/.config/sublime-text-3/Packages/BracketHighlighter"]
+	path = home/.config/sublime-text-3/Packages/BracketHighlighter
 	url = git@github.com:facelessuser/BracketHighlighter.git
-[submodule "common/.config/sublime-text-3/Packages/Anaconda"]
-	path = common/.config/sublime-text-3/Packages/Anaconda
+[submodule "home/.config/sublime-text-3/Packages/Anaconda"]
+	path = home/.config/sublime-text-3/Packages/Anaconda
 	url = https://github.com/DamnWidget/anaconda.git
-[submodule "common/.config/sublime-text-3/Packages/ColorPicker"]
-	path = common/.config/sublime-text-3/Packages/ColorPicker
+[submodule "home/.config/sublime-text-3/Packages/ColorPicker"]
+	path = home/.config/sublime-text-3/Packages/ColorPicker
 	url = git@github.com:weslly/ColorPicker.git
-[submodule "common/.config/sublime-text-3/Packages/sass-textmate-bundle"]
-	path = common/.config/sublime-text-3/Packages/sass-textmate-bundle
+[submodule "home/.config/sublime-text-3/Packages/sass-textmate-bundle"]
+	path = home/.config/sublime-text-3/Packages/sass-textmate-bundle
 	url = git@github.com:nathos/sass-textmate-bundle.git
 	branch = sublime
