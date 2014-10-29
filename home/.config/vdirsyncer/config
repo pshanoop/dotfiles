@@ -1,0 +1,17 @@
+[general]
+status_path = ~/.local/share/contacts/status/
+passwordeval = ~/.bin/vdirsyncer-pass
+
+[pair contacts]
+a = local
+b = radicale
+
+[storage local]
+type = filesystem
+path = ~/.local/share/contacts/cards/
+fileext = .vcf
+
+[storage radicale]
+type = carddav
+url = https://calendar.barrera.io/hugo/contacts.vcf/
+username = hugo
