@@ -25,8 +25,8 @@ set spoolfile	= +INBOX
 
 # Per-account configurations.
 # Adding accounts merely requires adding a line and creating the configuration file.
-folder-hook "~/.local/share/maildir/Personal/"      source ~/.config/mutt/accounts/personal
-folder-hook "~/.local/share/maildir/minimalistech/" source ~/.config/mutt/accounts/minimalistech
+folder-hook "~/.local/share/maildir/Personal/" source ~/.config/mutt/accounts/personal
+folder-hook "~/.local/share/maildir/AIGroup/"  source ~/.config/mutt/accounts/aigroup
 
 # Composing and replying
 set realname       = "Hugo Osvaldo Barrera" # Name used when composing.
