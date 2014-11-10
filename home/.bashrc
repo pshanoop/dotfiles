@@ -36,6 +36,8 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # This is used by qt5.
 export QT_STYLE_OVERRIDE=gtk
+# This should make qt apps use the gtk icon theme
+export DESKTOP_SESSION=gnome
 
 # Other defaults
 export TERMINAL=urxvtc
