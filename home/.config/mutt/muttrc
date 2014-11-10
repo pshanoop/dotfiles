@@ -1,125 +1,95 @@
-# $Id$
-
 #
-# Hugo's personal .muttrc (Mutt 1.5.21)
+# muttrc (Mutt 1.5.22)
 #
+# Last reviewed 2014-11-10
 
+# Default notmuch database location.
 set nm_default_uri = notmuch:///home/hugo/.local/share/maildir
 
+# Other files with additional configuration.
 source ~/.config/mutt/macros
 source ~/.config/mutt/crypto
 source ~/.config/mutt/aliases
 source ~/.config/mutt/colours
 
-# Assume personal by default (this is what CLI invocations will use)
-source ~/.config/mutt/accounts/personal
+# I use maildir exclusively.
+set mbox_type = Maildir
 
+# Outgoing is relayed via smtpd.
+set smtp_url = "smtp://localhost"
+
+# Go to my personal account by default.
+set folder	= "~/.local/share/maildir/Personal/"
+# Default mailbox.
+set spoolfile	= +INBOX
+
+# Per-account configurations.
+# Adding accounts merely requires adding a line and creating the configuration file.
 folder-hook "~/.local/share/maildir/Personal/" source ~/.config/mutt/accounts/personal
 folder-hook "~/.local/share/maildir/AIGroup/"  source ~/.config/mutt/accounts/aigroup
 
-set mbox_type	= Maildir
-# Go to account personal by default
-set folder	= "~/.local/share/maildir/Personal/"
-set spoolfile	= +INBOX # XXX: Do I need this???
-set move	= no
+# Composing and replying
+set realname       = "Hugo Osvaldo Barrera" # Name used when composing.
+set copy           = yes                    # Keep copies of outgoing mail.
+set move	   = no                     # Keep mails where the are when read.
+set fcc_attach     = yes                    # Keep attachment in local copy.
+set attach_charset = "utf-8"
+set forward_format = "Fwd: %s"              # Prefix to use when forwarding messages.
+set forward_quote  = yes                    # Quote the email body when forwarding.
+set include        = yes                    # Quote the email body when replying.
+set autoedit       = no                     # Go to the editor right away when composing.
+set editor         = "vim +7"               # Place the cursor below the default headers.
+set edit_headers   = yes                    # Let me edit the message header when composing.
+set include        = yes                    # Always include messages when replying.
+set reply_to       = yes                    # Always use reply-to if present.
 
-set query_command = "muttcards '%s'"
+# Integration
+set beep_new = yes			# Beep when new messages arrive.
+set query_command = "muttcards '%s'"    # Use muttcards for email completion.
+set header_cache = ~/.cache/mutt_hcache	# Keep a header cache.
 
-set realname = "Hugo Osvaldo Barrera"
-
+# Display formatting
 set folder_format="%2C %t %f"
-
-set copy = yes				# Keep copies of outgoing mail...
-set fcc_attach = yes
-set attach_charset="utf-8"
-set beep_new = yes			# Beep when new messages arrive
-
-set header_cache = ~/.cache/mutt_hcache	# Keep a header cache
-
-set smtp_url="smtp://localhost"
-
 set date_format="%F %R"
 set index_format="%3C %Z %D  %-30.30F %?M?[%M]? %s"
 
-set pager_index_lines = 7
+# Navigating and reading
+set arrow_cursor  = no        # Use -> instead of hiliting the whole line.
+set confirmappend = no        # Don't ask me if i want to append to mailboxes.
+set mark_old      = no        # I don't care about whether a message is old.
+set mail_check    = 3         # How often to poll for new mail.
+set read_inc      = 25        # Show progress when reading a mailbox.
+set sort          = threads   # Sort messages into threads.
+set sort_aux      = last-date # TODO: make last-date-received work!
+set tilde         = yes	      # Virtual lines to pad blank lines in the pager.
+set markers       = no        # Don't show "+" for wrapped lines.
+set write_inc     = 25        # Show progress while writing mailboxes.
+set pager_index_lines = 7     # Index lines to show when reading.
+set pager_stop    = yes       # Don't jump to next message when scrolling.
+set auto_tag      = yes       # Always operate on tagged messages.
 
-# Auto-open some attachment types
+# Message headers
+ignore      *
+unignore    from subject to cc mail-followup-to date x-mailer x-url
+unhdr_order *
+hdr_order   date from subject to cc
+
+# Attachments and HTML
 set mailcap_path = ~/.config/mutt/mailcap
 alternative_order text/plain text/html
-set markers = no
 auto_view text/html
 
-set pager_stop = yes
+# Open URLs in emails.
+macro index \cb |urlview\n
+macro pager \cb |urlview\n
 
-set forward_format="Fwd: %s"	# subject to use when forwarding messages
-set forward_quote=yes		# Quote the email body when forwarding?
-set include=yes			# Quote the email body when replying?
-
-set auto_tag = yes			# Always operate on tagged messages
-set alias_file="~/.config/mutt/aliases"	# where I keep my aliases
-
-set arrow_cursor = no		# use -> instead of hiliting the whole line
-set autoedit = no		# go to the editor right away when composing
-set editor = "vim +7"            # place the cursor below the default headers
-set confirmappend = no		# don't ask me if i want to append to mailboxes
-set edit_headers = yes		# let me edit the message header when composing
-set include = yes		# always include messages when replying
-set mark_old = no		# i don't care about whether a message is old
-set mail_check = 3		# how often to poll for new mail
-set read_inc = 25		# show progress when reading a mailbox
-set reply_to = yes		# always use reply-to if present
-set sort = threads		# Sort messages into threads
-#set sort_aux = last-date-received
-set sort_aux = last-date
-set tilde = yes			# virtual lines to pad blank lines in the pager
-set write_inc=25		# show progress while writing mailboxes
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Headers
-#
-ignore *		# this means "ignore all lines by default"
-unignore	from: subject to cc mail-followup-to \
-		date x-mailer x-url
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Key bindings
-#
-#	maps:
-#		alias		alias menu
-#		attach		attachment menu
-#		browser		directory browser
-#		compose		compose menu
-#		index		message index
-#		pgp		pgp menu
-#		postpone	postponed message recall menu
-#		generic		generic keymap for all of the above
-#		editor		line editor
-#		pager		text viewer
-#
-
+# Other key bindings
 bind generic "\e<" first-entry	# emacs-like bindings for moving to top/bottom
 bind generic \e> last-entry
 bind generic { top-page
 bind generic } bottom-page
 bind generic \177 last-entry
+bind pager   G bottom
 
-macro index \cb "<pipe-message> urlview<Enter>"	# simulate the old browse-url function
-
-bind pager G bottom	# just like vi and less
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# Specify default filename when saving messages
-#
-#	save-hook [!]<pattern> <mailbox>
-#
-# <mailbox> is provided as default when saving messages from <pattern>
-
-#save-hook mutt- =mutt-mail
-#save-hook aol\\.com$ +spam
-save-hook ^judge +diplomacy
-
-unhdr_order *				# forget the previous settings
-hdr_order date from subject to cc
-
+# Save to the archives by default (provides a sane default).
+save-hook ^ =Archives
