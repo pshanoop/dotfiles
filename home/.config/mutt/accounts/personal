@@ -1,11 +1,16 @@
 color status default green
 
-# Set the folder so that record, etc are all relative. :)
-set folder	= "~/.local/share/maildir/Personal/"
-
-set from = "hugo@barrera.io"
-alternates = "ml@hugoosvaldobarrera.com.ar|hugo@osvaldobarrera.com.ar"
-#set reverse_name = yes
-set reverse_realname = no
-set record = "+INBOX"
+# Set the folder so that record, etc are all relative.
+set folder    = "~/.local/share/maildir/Personal/"
+set record    = "+INBOX"
 set postponed = "+Drafts"
+
+# Set my alternates.
+set from = "hugo@barrera.io"
+alternates = ".*@barrera.io|.*@osvaldobarrera.com.ar|hugo@minimalistech.com"
+
+# Replying.
+set reverse_name = yes    # Reply from alternates automatically.
+set reverse_realname = no # Reply using my real name.
+
+set crypt_autosign = yes  # Sign outgoing messages
