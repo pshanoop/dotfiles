@@ -1,10 +1,10 @@
 [general]
 metadata = ~/.local/share/offlineimap
-accounts = Personal
+accounts = Personal, Minimalistech 
 maxsyncaccounts = 12
 ui = basic
 
-### Personal Account ###
+### personal ###
 
 [Account Personal]
 localrepository = LocalPersonal
@@ -28,6 +28,34 @@ ssl = yes
 cert_fingerprint = e4202832cc90de81ad6d8be476ea646281558514
 idlefolders = ['INBOX', 'RSS', 'News', 'Notifications', 'Archives.2013']
 maxconnections = 6
+holdconnectionopen = yes
+subscribedonly = no
+createfolders = False
+
+### minimalistech ###
+
+[Account Minimalistech]
+localrepository = MinimalistechLocal
+remoterepository = MinimalistechRemote
+autorefresh = 5
+quick = 2
+postsynchook = /usr/bin/notmuch new
+
+[Repository MinimalistechLocal]
+type = Maildir
+localfolders = ~/.local/share/maildir/minimalistech
+restoreatime = no
+createfolders = True
+
+[Repository MinimalistechRemote]
+type = IMAP
+remotehost = imap.1and1.com
+remoteuser = hugo@minimalistech.com
+remotepassfile = ~/priv/secrets/imap@minimalistech
+ssl = yes
+cert_fingerprint = b3ead441c2cc98913c082c71efc9960b38ed0427
+idlefolders = ['INBOX']
+maxconnections = 2
 holdconnectionopen = yes
 subscribedonly = no
 createfolders = False
