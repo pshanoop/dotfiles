@@ -38,6 +38,10 @@ status.register("wireless", interface="wlan0",
 status.register("disk", path="/", format="{avail}GiB",)
 
 # Unread email count
+inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/minimalistech/INBOX")
+status.register("mail", color_unread="#ffffff", backends=[inbox],
+                format="{unread} work email", format_plural="{unread} work emails")
+
 inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/Personal/INBOX")
 status.register("mail", color_unread="#ffff00", backends=[inbox])
 
