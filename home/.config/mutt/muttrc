@@ -28,6 +28,12 @@ set spoolfile	= +INBOX
 folder-hook "~/.local/share/maildir/Personal/" source ~/.config/mutt/accounts/personal
 folder-hook "~/.local/share/maildir/AIGroup/"  source ~/.config/mutt/accounts/aigroup
 
+# Per-account hooks
+send-hook ".*alivecor.com|.*minimalistech.com" set from = "hugo@minimalistech.com"
+send-hook ".*alivecor.com|.*minimalistech.com" set signature = "~/.signature_short"
+send-hook ".*alivecor.com|.*minimalistech.com" set crypt_autosign = no
+# TODO: generate a GPG key for the alternate and use crypt-hook
+
 # Composing and replying
 set realname       = "Hugo Osvaldo Barrera" # Name used when composing.
 set copy           = yes                    # Keep copies of outgoing mail.
