@@ -91,3 +91,7 @@ if [ $? == 0 ]; then
   printf "$(echo ${outdated_packages} | wc -w) packages are out of date.\n"
 fi
 unset outdated_packages
+
+# Needed for webcams to work?
+# https://bbs.archlinux.org/viewtopic.php?pid=1474864
+export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so
