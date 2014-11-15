@@ -1,10 +1,14 @@
 #!/bin/sh
 
-set -e
+MOD_FILES=$(git status --porcelain  | grep -e '^[^\?]' | wc -l)
 
-git stash
-git pull -r
-git push
-# Don't apply if nothing was stashed
-git stash apply
-git stash drop
+if [ $MOD_FILES != 0 ]; then
+  git stash
+fi
+
+git pull -r && git push
+
+if [ $MOD_FILES != 0 ]; then
+  git stash apply
+  git stash drop
+fi
