@@ -1,3 +1,0 @@
-Terminal = eval urxvt
-TermExec = ${Terminal} -e
-URL_http = firefox -remote "openURL(%u, new-window)"
