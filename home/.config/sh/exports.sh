@@ -35,12 +35,6 @@ export TERMINAL=urxvtc
 export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass2
 
-export     RED="\[\033[01;31m\]"
-export   GREEN="\[\033[01;32m\]"
-export    BLUE="\[\033[01;34m\]"
-export  PURPLE="\[\033[01;35m\]"
-export DEFAULT="\[\033[0m\]"
-
 export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd.sock"
 
