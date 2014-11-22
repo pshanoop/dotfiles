@@ -7,10 +7,10 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 # oneline: miloshadzic
-# robbyrussell avit bira trapd00r
+# robbyrussell avit bira fino
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -48,6 +48,7 @@ ZSH_THEME="bira"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git dirhistory pass sprunge sudo gpg-agent)
+# virtualenv? Needs theme support?
 # wd?
 # gpg-agent ?
 
@@ -84,3 +85,7 @@ source $HOME/.config/sh/aliases.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ -z $TMUX ]; then
+  exec tmux -f $HOME/.config/tmux/tmux.conf
+fi
