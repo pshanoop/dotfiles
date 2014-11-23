@@ -12,7 +12,7 @@ alias clock='/usr/bin/tty-clock -s -c -C 7'
 alias readcd='readcd -dev=/dev/sg1 -f '
 alias tree='tree -C'
 alias diff='colordiff'
-alias less='less -r'
+alias less='less -rX'
 alias open='xdg-open'
 alias vi=vim
 alias fmt='fmt -w 79'

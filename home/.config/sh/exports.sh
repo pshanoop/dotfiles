@@ -8,7 +8,7 @@ export HISTFILESIZE=2000
 # Use vim instead of vi.
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=less
+export PAGER="less -rX"
 
 # Force wine to run in i686 mode (and not amd64).
 export WINEARCH=win32
