@@ -47,10 +47,8 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dirhistory pass sprunge sudo gpg-agent)
+plugins=(pass sprunge gpg-agent wd)
 # virtualenv? Needs theme support?
-# wd?
-# gpg-agent ?
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,6 +83,9 @@ source $HOME/.config/sh/aliases.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+autoload zmv
+autoload zcalc
 
 if [ -z $TMUX ]; then
   exec tmux -f $HOME/.config/tmux/tmux.conf
