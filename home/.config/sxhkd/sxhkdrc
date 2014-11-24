@@ -100,3 +100,11 @@ XF86AudioStop
   rhythmbox-client --stop
 XF86Calculator
   $TERMINAL -e calc -d
+
+### Mouse ###
+#############
+
+button10
+  ponymix decrease 3
+button13
+  ponymix increase 3
