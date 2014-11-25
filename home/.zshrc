@@ -88,5 +88,7 @@ autoload zmv
 autoload zcalc
 
 if [ -z $TMUX ]; then
-  exec tmux -f $HOME/.config/tmux/tmux.conf
+  if [ -z $SSH_CLIENT ]; then
+    exec tmux -f $HOME/.config/tmux/tmux.conf
+  fi
 fi
