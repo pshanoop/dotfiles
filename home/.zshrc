@@ -89,8 +89,6 @@ autoload zcalc
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-if [ -z $TMUX ]; then
-  if [ -z $SSH_CLIENT ]; then
-    exec tmux -f $HOME/.config/tmux/tmux.conf
-  fi
+if [[ -z $TMUX && -z $SSH_CLIENT ]]; then
+  exec tmux -f $HOME/.config/tmux/tmux.conf
 fi
