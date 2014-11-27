@@ -87,7 +87,7 @@ set incsearch
 " TODO: set iskeyword so as to behave like vi
 
 " This is ignored by severl functions, including ctrlp
-set wildignore+=build,node_modules,bower_components
+set wildignore+=build,node_modules,bower_components,env,bin,dist
 
 " Toggle paste mode using F12 (does not try to indent input)
 set pastetoggle=<F12>
@@ -135,8 +135,5 @@ map <F4> :lclose <CR>
 
 " Toggle line numbers.
 map <F7> :set invnumber number?<CR>
-
-" Ignore env, the directory where virtualenv is usually set up.
-set wildignore+=env
 
 source $HOME/.completion.vimrc
