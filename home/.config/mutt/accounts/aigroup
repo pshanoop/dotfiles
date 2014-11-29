@@ -1,8 +1,0 @@
-color status black blue
-
-# Set the folder so that record, etc are all relative. :)
-set folder	= "~/.local/share/maildir/AIGroup/"
-
-set from = "hbarrera@aigroup.com.ar"
-set record = "+INBOX"
-set postponed = "+Drafts"

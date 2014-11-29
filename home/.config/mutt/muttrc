@@ -18,15 +18,13 @@ set mbox_type = Maildir
 # Outgoing is relayed via smtpd.
 set smtp_url = "smtp://localhost"
 
-# Go to my personal account by default.
+# Set the root directory for all mailboxes.
 set folder	= "~/.local/share/maildir/Personal/"
 # Default mailbox.
 set spoolfile	= +INBOX
-
-# Per-account configurations.
-# Adding accounts merely requires adding a line and creating the configuration file.
-folder-hook "~/.local/share/maildir/Personal/" source ~/.config/mutt/accounts/personal
-folder-hook "~/.local/share/maildir/AIGroup/"  source ~/.config/mutt/accounts/aigroup
+# Other mailboxes.
+set record    = "+INBOX"
+set postponed = "+Drafts"
 
 # Per-account hooks
 send-hook ".*alivecor.com|.*minimalistech.com" set from = "hugo@minimalistech.com"
@@ -35,7 +33,11 @@ send-hook ".*alivecor.com|.*minimalistech.com" set crypt_autosign = no
 # TODO: generate a GPG key for the alternate and use crypt-hook
 
 # Composing and replying
+set from           = "hugo@barrera.io"      # Default email address.
+alternates           ".*@barrera.io|.*@osvaldobarrera.com.ar|hugo@minimalistech.com"
+set reverse_name   = yes                    # Reply from alternates automatically.
 set realname       = "Hugo Osvaldo Barrera" # Name used when composing.
+set reverse_realname = no                   # Reply using my real name.
 set copy           = yes                    # Keep copies of outgoing mail.
 set move	   = no                     # Keep mails where the are when read.
 set fcc_attach     = yes                    # Keep attachment in local copy.
@@ -48,6 +50,7 @@ set editor         = "vim +7"               # Place the cursor below the default
 set edit_headers   = yes                    # Let me edit the message header when composing.
 set include        = yes                    # Always include messages when replying.
 set reply_to       = yes                    # Always use reply-to if present.
+set crypt_autosign = yes                    # Sign outgoing messages.
 
 # Integration
 set beep_new = yes			# Beep when new messages arrive.
@@ -55,6 +58,7 @@ set query_command = "muttcards '%s'"    # Use muttcards for email completion.
 set header_cache = ~/.cache/mutt_hcache	# Keep a header cache.
 
 # Display formatting
+color status default green
 set folder_format="%2C %t %f"
 set date_format="%F %R"
 set index_format="%3C %Z %D  %-30.30F %?M?[%M]? %s"
