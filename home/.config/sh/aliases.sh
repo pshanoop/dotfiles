@@ -5,7 +5,7 @@
 alias ls='ls -Fh --color=auto'
 alias ll='ls -l --color=tty'
 alias la='ls -la'
-alias grep="grep --color=auto"
+alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 alias sudo='/usr/bin/sudo '
 alias vte='vte --reverse -f "Droid Sans Mono" -D'
 alias clock='/usr/bin/tty-clock -s -c -C 7'
