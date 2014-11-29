@@ -30,7 +30,8 @@ set postponed = "+Drafts"
 send-hook ".*alivecor.com|.*minimalistech.com" set from = "hugo@minimalistech.com"
 send-hook ".*alivecor.com|.*minimalistech.com" set signature = "~/.signature_short"
 send-hook ".*alivecor.com|.*minimalistech.com" set crypt_autosign = no
-# TODO: generate a GPG key for the alternate and use crypt-hook
+# TODO: generate a GPG key for the alternate and use crypt-hook.
+# FIXME: email sent right after the above retain those settings!
 
 # Composing and replying
 set from           = "hugo@barrera.io"      # Default email address.
