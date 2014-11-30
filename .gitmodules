@@ -1,22 +1,3 @@
-[submodule "home/.config/sublime-text-3/Packages/CTags"]
-	path = home/.config/sublime-text-3/Packages/CTags
-	url = https://github.com/SublimeText/CTags
-[submodule "home/.config/sublime-text-3/Packages/LESS"]
-	path = home/.config/sublime-text-3/Packages/LESS
-	url = git://github.com/danro/LESS-sublime.git
-[submodule "home/.config/sublime-text-3/Packages/BracketHighlighter"]
-	path = home/.config/sublime-text-3/Packages/BracketHighlighter
-	url = git@github.com:facelessuser/BracketHighlighter.git
-[submodule "home/.config/sublime-text-3/Packages/Anaconda"]
-	path = home/.config/sublime-text-3/Packages/Anaconda
-	url = https://github.com/DamnWidget/anaconda.git
-[submodule "home/.config/sublime-text-3/Packages/ColorPicker"]
-	path = home/.config/sublime-text-3/Packages/ColorPicker
-	url = git@github.com:weslly/ColorPicker.git
-[submodule "home/.config/sublime-text-3/Packages/sass-textmate-bundle"]
-	path = home/.config/sublime-text-3/Packages/sass-textmate-bundle
-	url = git@github.com:nathos/sass-textmate-bundle.git
-	branch = sublime
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
