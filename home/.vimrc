@@ -136,4 +136,7 @@ map <F4> :lclose <CR>
 " Toggle line numbers.
 map <F7> :set invnumber number?<CR>
 
+" Highlight line breaks in markdown.
+hi link mkdLineBreak Underlined
+
 source $HOME/.completion.vimrc
