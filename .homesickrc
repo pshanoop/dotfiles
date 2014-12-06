@@ -2,3 +2,4 @@
 
 system("git submodule init")
 system("git submodule update")
+system("echo -e ':VundleInstall\n' | vim")
