@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ -z $SELENE ]; then
-	SELENE=172.16.9.6
-fi;
-export MOUNTPATH=~/mount/selene
-mkdir -p ${MOUNTPATH}
-sshfs user@${SELENE}:/home/user/ ${MOUNTPATH}
