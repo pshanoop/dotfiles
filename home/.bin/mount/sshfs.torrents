@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# This mounts the directory that rtorrent monitors for new .torrent files,
-# NOT the download target directory.
-
-export MOUNTPATH=~/mount/torrents
-mkdir -p ${MOUNTPATH}
-sshfs hades.barrera.io:/var/rtorrent/torrents ${MOUNTPATH}

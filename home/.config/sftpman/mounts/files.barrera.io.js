@@ -1,0 +1,1 @@
+{"port": 22, "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "hades.barrera.io", "id": "files.barrera.io", "mountPoint": "/var/www/http/files.barrera.io", "user": "hugo"}

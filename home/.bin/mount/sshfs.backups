@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export MOUNTPATH=~/mount/backups
-mkdir -p ${MOUNTPATH}
-sshfs -o umask=0377 backup@hades.barrera.io:data ${MOUNTPATH}

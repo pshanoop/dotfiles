@@ -1,0 +1,1 @@
+{"sshKey": "/home/hugo/.ssh/id_dsa", "authType": "publickey", "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes"], "user": "hugo", "mountPoint": "/home/hugo/", "host": "hyperion.barrera.io", "port": 22, "beforeMount": "true", "id": "hyperion"}
