@@ -1,0 +1,4 @@
+#!/bin/sh
+export MOUNTPATH=~/mount/meckintosh
+mkdir -p ${MOUNTPATH}
+sshfs -o uid=1000,gid=10 mec@meckintosh.local:/Users/mec/ ${MOUNTPATH}
