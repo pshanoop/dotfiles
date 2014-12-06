@@ -36,6 +36,8 @@ send-hook ".*alivecor.com|.*minimalistech.com" set crypt_autosign = no
 # Composing and replying
 set from           = "hugo@barrera.io"      # Default email address.
 alternates           ".*@barrera.io|.*@osvaldobarrera.com.ar|hugo@minimalistech.com"
+alternates           "hugo87theone@gmail.com|huguito.87@gmail.com"
+alternates           "hugo@interlap.com.ar|hbarrera@hotpop.com"
 set reverse_name   = yes                    # Reply from alternates automatically.
 set realname       = "Hugo Osvaldo Barrera" # Name used when composing.
 set reverse_realname = no                   # Reply using my real name.
@@ -43,6 +45,7 @@ set copy           = yes                    # Keep copies of outgoing mail.
 set move	   = no                     # Keep mails where the are when read.
 set fcc_attach     = yes                    # Keep attachment in local copy.
 set attach_charset = "utf-8"
+
 set forward_format = "Fwd: %s"              # Prefix to use when forwarding messages.
 set forward_quote  = yes                    # Quote the email body when forwarding.
 set include        = yes                    # Quote the email body when replying.
