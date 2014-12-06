@@ -47,7 +47,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pass sprunge gpg-agent wd)
+plugins=(pass sprunge gpg-agent wd virtualenv)
 # virtualenv? Needs theme support?
 
 source $ZSH/oh-my-zsh.sh
