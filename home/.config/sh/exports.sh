@@ -33,7 +33,7 @@ export DESKTOP_SESSION=gnome
 # Other defaults
 export TERMINAL=urxvtc
 export BROWSER=firefox
-export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass2
+export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass
 
 export SDL_AUDIODRIVER=alsa
 export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd.sock"
