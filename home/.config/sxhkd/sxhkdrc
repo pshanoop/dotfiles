@@ -86,6 +86,8 @@ super + p
   pidgin
 super + o
   arandr
+super + g
+  sftpman-gtk
 
 ### Media Keys ###
 ##################
