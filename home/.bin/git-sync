@@ -9,6 +9,5 @@ fi
 git pull -r && git push
 
 if [ $MOD_FILES != 0 ]; then
-  git stash apply
-  git stash drop
+  git stash apply && git stash drop
 fi
