@@ -63,8 +63,10 @@ set expandtab
 " Insert spaces instead of tabs.
 set smarttab
 
-" Show line numbers on margin.
+" Show line number for the current line...
 set number
+" ... and relative line numbers for the rest.
+set relativenumber
 
 " Copy indentation over to new lines.
 set autoindent
