@@ -1,2 +1,11 @@
 #!/bin/sh
-/usr/bin/streamer -q -c /dev/video0 -f rgb24 -r 3 -t 00:30:00 -o ~/screenshots/camera/`date +%F_%H%M%S_%N`.avi
+#
+# Record via the webcam until [q] is hit.
+
+WHERE=$HOME/screenshots/camera
+WHEN=$(date "+%Y-%m-%dT%H%M%S-%s")
+
+mkdir -p $WHERE
+ponymix -t source -d 0 unmute
+ffmpeg -f pulse -i default -f v4l2 -s 1280x720 -i /dev/video0 \
+  -acodec flac $WHERE/$WHEN.mkv

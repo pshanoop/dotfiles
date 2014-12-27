@@ -1,2 +1,8 @@
 #!/bin/sh
-/usr/bin/streamer -c /dev/video0 -b 16 -o ~/screenshots/camera/`date +%F_%H%M%S_%N`.jpeg
+#
+# Take a photo via the webcam.
+
+mkdir -p $HOME/screenshots/camera
+WHEN=$(date "+%Y-%m-%dT%H%M%S-%s")
+/usr/bin/streamer -c /dev/video0 -s 1920x1080 -b 16 -o \
+  $HOME/screenshots/camera/${WHEN}.jpeg
