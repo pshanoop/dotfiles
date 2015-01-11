@@ -1,6 +1,6 @@
 [general]
 status_path = ~/.local/share/contacts/status/
-passwordeval = ~/.bin/vdirsyncer-pass
+password_command = ~/.bin/vdirsyncer-pass
 
 [pair contacts]
 a = local
