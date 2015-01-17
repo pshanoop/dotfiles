@@ -35,7 +35,7 @@ send-hook ".*alivecor.com|.*minimalistech.com" set crypt_autosign = no
 
 # Composing and replying
 set from           = "hugo@barrera.io"      # Default email address.
-alternates           ".*@barrera.io|.*@osvaldobarrera.com.ar|hugo@minimalistech.com"
+alternates           ".{4,}@barrera.io|.*@osvaldobarrera.com.ar|hugo@minimalistech.com"
 alternates           "hugo87theone@gmail.com|huguito.87@gmail.com"
 alternates           "hugo@interlap.com.ar|hbarrera@hotpop.com"
 set reverse_name   = yes                    # Reply from alternates automatically.
