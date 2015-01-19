@@ -13,25 +13,20 @@ set pgp_encrypt_sign_command="pgpewrap gpg --batch --quiet --no-verbose --textmo
 # uid to use when encrypting/signing
 set pgp_sign_as = 0x1BFBED44
 
-# the number of seconds to keep in memory the passpharse used to encrypt/sign
-# the more the less secure it will be
+# The number of seconds to keep in memory the passpharse used to encrypt/sign
+# the more the less secure it will be.
+# Is this relevant when using gpg-agent?
 set pgp_timeout=21600
 
-# it's a regexp used against the GPG output: if it matches some line of the output
-# then mutt considers the message a good signed one (ignoring the GPG exit code)
+# It's a regexp used against the GPG output: if it matches some line of the output
+# then mutt considers the message a good signed one (ignoring the GPG exit code).
 set pgp_good_sign="^gpg: Good signature from"
-#set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
 # mutt uses by default PGP/GPG to sign/encrypt messages
 # if you want to use S-mime instead set the smime_is_default variable to yes
 
-set crypt_autosign = yes	# automatically sign all outgoing messages
-#set crypt_replysign		# sign only replies to signed messages
+set crypt_autosign = yes	      # Automatically sign all outgoing messages.
+set crypt_opportunistic_encrypt = yes # Encrypt email if there's a key for the recipient.
 
-#set crypt_autoencrypt=yes		# automatically encrypt outgoing messages
-#set crypt_replyencrypt=yes 		# encrypt only replies to signed messages
-#set crypt_replysignencrypted=yes	# encrypt and sign replies to encrypted messages
-
-set crypt_verify_sig=yes		# automatically verify the sign of a message when opened
-
-set pgp_use_gpg_agent = yes
+set pgp_show_unusable = no  # Don't show unusable keys.
+set pgp_use_gpg_agent = yes # Use gpg-agent.
