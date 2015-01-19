@@ -8,7 +8,7 @@
 
 CARDS=$HOME/.local/share/contacts/cards/
 cd $CARDS
-FILES=$(grep -v PHOTO * | grep $1 | awk '{print $1}' | egrep -o "^[^:]*")
+FILES=$(grep -v PHOTO * | grep -i $1 | awk '{print $1}' | egrep -o "^[^:]*")
 # One file may have multiple matching lines (maybe a grep flag can avoid that?)
 FILES=$(echo $FILES | tr " " "\n" | uniq)
 
