@@ -1,1 +1,1 @@
-{"port": 22, "mountOptions": ["umask=0377", "follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "hades.barrera.io", "id": "backups", "mountPoint": "/home/backup/data", "user": "backup"}
+{"beforeMount": "true", "port": 22, "authType": "publickey", "user": "backup", "host": "hades.barrera.io", "id": "backups", "sshKey": "/home/hugo/.ssh/id_dsa", "mountOptions": ["umask=0377", "follow_symlinks", "workaround=rename", "big_writes"], "mountPoint": "/var/nas/backups/hob"}
