@@ -2,7 +2,9 @@
 #
 # Take a photo via the webcam.
 
-mkdir -p $HOME/screenshots/camera
+WHERE=$HOME/screenshots/camera
 WHEN=$(date "+%Y-%m-%dT%H%M%S-%s")
+
+mkdir -p $WHERE
 /usr/bin/streamer -c /dev/video0 -s 1920x1080 -b 16 -o \
-  $HOME/screenshots/camera/${WHEN}.jpeg
+  $WHERE/${WHEN}.jpeg
