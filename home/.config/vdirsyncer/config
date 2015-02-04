@@ -1,6 +1,8 @@
 [general]
-status_path = ~/.local/share/contacts/status/
+status_path = ~/.local/share/vdirsyncer/status/
 password_command = ~/.bin/vdirsyncer-pass
+
+##### Contacts ######
 
 [pair contacts]
 a = local
@@ -14,4 +16,52 @@ fileext = .vcf
 [storage radicale]
 type = carddav
 url = https://calendar.barrera.io/hugo/contacts.vcf/
+username = hugo
+
+##### Calendar: Study ######
+
+[pair cal_study]
+a = cal_study_local
+b = cal_study_remote
+
+[storage cal_study_local]
+type = filesystem
+path = ~/.local/share/calendars/study/
+fileext = .ics
+
+[storage cal_study_remote]
+type = caldav
+url = https://calendar.barrera.io/hugo/study/
+username = hugo
+
+##### Calendar: Personal ######
+
+[pair cal_personal]
+a = cal_personal_local
+b = cal_personal_remote
+
+[storage cal_personal_local]
+type = filesystem
+path = ~/.local/share/calendars/personal/
+fileext = .ics
+
+[storage cal_personal_remote]
+type = caldav
+url = https://calendar.barrera.io/hugo/personal/
+username = hugo
+
+##### Calendar: Work ######
+
+[pair cal_work]
+a = cal_work_local
+b = cal_work_remote
+
+[storage cal_work_local]
+type = filesystem
+path = ~/.local/share/calendars/work/
+fileext = .ics
+
+[storage cal_work_remote]
+type = caldav
+url = https://calendar.barrera.io/hugo/work/
 username = hugo
