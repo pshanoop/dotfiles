@@ -88,8 +88,11 @@ set incsearch
 
 " TODO: set iskeyword so as to behave like vi
 
-" This is ignored by severl functions, including ctrlp
+" This is ignored by several functions, including ctrlp
 set wildignore+=build,node_modules,bower_components,env,bin,dist
+
+" These get lower priority for autocomplete:
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
 " Toggle paste mode using F12 (does not try to indent input)
 set pastetoggle=<F12>
