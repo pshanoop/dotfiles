@@ -2,9 +2,6 @@
 " ~/.vimrc
 "
 
-" Read the distribution's settings.
-source /etc/vimrc
-
 " Breaks vi compatibility. This needs to go before everything else.
 " Also required for Vundle.
 set nocompatible
