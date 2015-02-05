@@ -153,4 +153,7 @@ hi link mkdLineBreak Underlined
 vnoremap < <gv
 vnoremap > >gv
 
+" Allow backspacing over line jumps, indent and over the start of an insert.
+set backspace=indent,eol,start
+
 source $HOME/.completion.vimrc
