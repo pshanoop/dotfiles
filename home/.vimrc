@@ -99,6 +99,8 @@ au BufEnter,BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp map <F3> :%!astyle -A2 -s4 -S
 " TODO: delete backets around oneline IFs
 " TODO: fix \n being added before EOF indefinitely
 " -xC79
+" autocmd FileType javascript setlocal equalprg=fixjsstyle
+
 
 " Comment blocks with F5.
 map <F5> :TComment <CR>
@@ -123,6 +125,12 @@ let g:syntastic_check_on_open = 1
 
 " Use flake8 for python files (which also checks pep8).
 let g:syntastic_python_checkers = ['flake8']
+
+let g:syntastic_go_checkers = ['go', 'gofmt']
+
+let g:syntastic_javascript_checkers = ['gjslint']
+
+let g:syntastic_javascript_gjslint_args = '--nojsdoc'
 
 " Set syntastic errors to red.
 :highlight SyntasticError term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
