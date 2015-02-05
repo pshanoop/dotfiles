@@ -149,4 +149,8 @@ map <F7> :set invnumber number?<CR>
 " Highlight line breaks in markdown.
 hi link mkdLineBreak Underlined
 
+" Make < > shifts keep selection.
+vnoremap < <gv
+vnoremap > >gv
+
 source $HOME/.completion.vimrc
