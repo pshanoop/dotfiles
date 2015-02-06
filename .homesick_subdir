@@ -2,3 +2,4 @@
 .config
 .vim/bundle
 .vim
+.gnupg
