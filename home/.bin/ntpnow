@@ -1,1 +1,13 @@
-sudo bash -c "date -Is && date -Is -s 1200 && ntpd -s && date -Is && hwclock -w"
+#!/bin/sh
+#
+# Nasty hack that forces the time to be set *right now*.
+# The first `ntpd -s` is there to make the whole thing bail if ntpd if filtered
+# on the local network.
+
+sudo bash -c " \
+ntpd -s && \
+date -Is && \
+date -Is -s 1200 && \
+ntpd -s && \
+date -Is && \
+hwclock -w"
