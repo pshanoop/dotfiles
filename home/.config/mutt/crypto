@@ -7,11 +7,11 @@ source /etc/Muttrc.gpg.dist
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 
 # Also encrypt messages to myself, so I can read the copy I keep.
-set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x1BFBED44 -- -r %r -- %f"
-set pgp_encrypt_sign_command="pgpewrap gpg --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x1BFBED44 -- -r %r -- %f"
+set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x2B98C0CD -- -r %r -- %f"
+set pgp_encrypt_sign_command="pgpewrap gpg --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x2B98C0CD -- -r %r -- %f"
 
 # uid to use when encrypting/signing
-set pgp_sign_as = 0x1BFBED44
+set pgp_sign_as = 0x2B98C0CD
 
 # The number of seconds to keep in memory the passpharse used to encrypt/sign
 # the more the less secure it will be.
