@@ -47,7 +47,9 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pass sprunge gpg-agent wd virtualenv)
+#
+# zsh-syntax-highlighting needs to be last.
+plugins=(pass sprunge gpg-agent wd virtualenv zsh-syntax-highlighting)
 # virtualenv? Needs theme support?
 
 source $ZSH/oh-my-zsh.sh
@@ -86,8 +88,6 @@ source $HOME/.config/sh/aliases.sh
 
 autoload zmv
 autoload zcalc
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [[ -z $TMUX && -z $SSH_CLIENT ]]; then
   exec tmux -f $HOME/.config/tmux/tmux.conf
