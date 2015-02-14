@@ -1,0 +1,4 @@
+#!/bin/sh
+
+nul1fs ~/mount/null
+echo y | ffmpeg -f v4l2 -s 640x480 -i /dev/video0 -r 1 ~/mount/null/1.mkv
