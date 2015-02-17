@@ -1,24 +1,29 @@
 #!/bin/sh
 #
-# Backs up photos into the fileserver.
+# Backs up photos into tarsnap.
 #
-# Pre-existing files are hardlinked to yesterday's copy, so the size
-# increase equals the size of new files, while keeping daily snapshots.
- 
+# Also keeps a local index of files uploaded on each backup, so finding
+# deletions/moves should be easier. Note that this does not log file
+# modifications.
+
 set -e
+set -u
 
 if [ $(hostname -s) != hyperion ]; then exit 1; fi;
 
-SSH="ssh -i $HOME/.ssh/backup@hades"
-REMOTE=backup@hades.barrera.io
-TODAY=$(date -I)
+FILE_DIR=/home/hugo/photos
+META_DIR=/home/hugo/.local/share/tarsnap/index
+CACHE_DIR=/home/hugo/.local/share/tarsnap/cache
+WHEN=$(date +%Y-%m-%dT%H%M%S%z)
+KEY=/home/hugo/priv/keys/tarsnap/hyperion-w.key
 
-# Using -H is too expensive, and I don't use hardlinks in this directory.
-# Use -x to avoid copying .enc.mount directories (fuse-mounted encrypted
-# data).
+# Update the file index.
+find $FILE_DIR | sort > $META_DIR/photos
+git -C $META_DIR add $META_DIR/photos
+git -C $META_DIR commit -m "Update photos index file for $WHEN." || true
 
-# Sync the files:
-rsync -aqx -e "$SSH" /home/hugo/photos/ $REMOTE:data/photos/$TODAY/ --link-dest=../latest/
-
-# Link today's as latest:
-$SSH $REMOTE "rm data/photos/latest && ln -sf $TODAY data/photos/latest"
+# Perform the backup itself.
+cd $FILE_DIR/..
+tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR -f photos-$WHEN \
+  --exclude Canvas --exclude Unsorted --one-file-system \
+  --print-stats photos
