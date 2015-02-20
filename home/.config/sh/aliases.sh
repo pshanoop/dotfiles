@@ -2,8 +2,12 @@
 # ~/.aliases
 #
 
-alias ls='ls -Fh --color=auto'
-alias ll='ls -l --color=tty'
+if [ ls --color > /dev/null 2>&1 ]; then
+  alias ls='ls -Fh --color=auto'
+else
+  alias ls='ls -Fh'
+fi
+alias ll='ls -l'
 alias la='ls -la'
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 alias sudo='/usr/bin/sudo '
