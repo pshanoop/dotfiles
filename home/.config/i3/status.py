@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import subprocess
 
 from i3pystatus import Status
 from i3pystatus.mail.maildir import MaildirMail
