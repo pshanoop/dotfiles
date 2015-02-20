@@ -10,7 +10,7 @@ from i3pystatus.mail.maildir import MaildirMail
 status = Status(standalone=True, click_events=False)
 
 # Current time
-status.register("clock", format="%Y-%m-%d %X")
+status.register("clock", format="%a %Y-%m-%d %X")
 
 # Volume
 status.register("pulseaudio", format="♪{volume}",)
