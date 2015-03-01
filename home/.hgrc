@@ -1,0 +1,8 @@
+[ui]
+username = Hugo Osvaldo Barrera <hugo@barrera.io>
+
+[extensions]
+color =
+pager =
+mq =
+shelve = 
