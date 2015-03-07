@@ -26,4 +26,4 @@ git -C $META_DIR commit -m "Update photos index file for $WHEN." || true
 cd $FILE_DIR/..
 tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR -f photos-$WHEN \
   --exclude Canvas --exclude Unsorted --one-file-system \
-  --print-stats photos
+  --print-stats --humanize-numbers photos
