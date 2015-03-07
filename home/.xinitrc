@@ -2,14 +2,13 @@
 #
 # ~/.xinitrc
 #
-# Last reviewed 2014-07-23
+# Last reviewed 2015-03-07
 
 if [ -n $DISPLAY ]; then
   xrdb -merge $HOME/.config/Xresources/main
   xrandr --dpi 106
   xset b 20 6 100
 
-  eval $(gpg-agent --daemon)
   ssh-agent | head -n 2 > ~/.cache/ssh-agent
   . ~/.cache/ssh-agent
 
