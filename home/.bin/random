@@ -1,13 +1,10 @@
-function randompass () {
-        local randompassLength
-        if [ $1 ]; then
-                randompassLength=$1
-        else
-                randompassLength=8
-        fi
+#!/bin/sh
 
-        pass=</dev/urandom tr -dc A-Za-z0-9 | head -c $randompassLength
-        echo $pass
-}
+if [ $1 ]; then
+  length=$1
+else
+  length=8
+fi
 
-randompass $1
+random=</dev/urandom tr -dc A-Za-z0-9 | head -c $length
+echo $random

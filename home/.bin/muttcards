@@ -20,6 +20,6 @@ for card in $FILES; do
   NAME="$(egrep ^FN $card | egrep -o "[^:]+$")"
   EMAIL=$(egrep ^EMAIL $card | egrep -o "[^:]+$")
   for email in $EMAIL; do
-    echo -e "$email\t$NAME"
+    printf "$email\t$NAME\n"
   done;
 done;
