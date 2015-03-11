@@ -49,7 +49,7 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 #
 # zsh-syntax-highlighting needs to be last.
-plugins=(pass sprunge gpg-agent wd virtualenv zsh-syntax-highlighting)
+plugins=(pass sprunge gpg-agent ssh-agent wd virtualenv zsh-syntax-highlighting)
 # virtualenv? Needs theme support?
 
 source $ZSH/oh-my-zsh.sh
