@@ -1,5 +1,5 @@
 # Add ~/.bin and all subdirectories to PATH
-PATH=$(find $HOME/.bin/ -type d -exec printf "{}:" \;)$PATH
+PATH=$(find $HOME/.local/bin/ -type d -exec printf "{}:" \;)$PATH
 export PATH
 
 export HISTSIZE=1000
@@ -54,3 +54,6 @@ if [ -x /usr/lib/libv4l/v4l2convert.so ]; then
 fi
 
 export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
+
+# Make pass copy into the primary/default X selection:
+export PASSWORD_STORE_X_SELECTION=primary
