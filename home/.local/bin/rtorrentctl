@@ -6,12 +6,11 @@
 # If an argument is passed, it's used to control rtorrent instead. Valid values
 # are start, stop and restart.
 
-SSH="ssh -i $HOME/.ssh/rtorrent.key"
-COMMAND="$SSH rtorrent@hades.barrera.io"
+COMMAND="ssh -i $HOME/.ssh/rtorrent.key rtorrent@hades.barrera.io"
 
-if [ -z $1 ]; then
-  $SSH /etc/rc.d/rtorrent $1
-else if tty -s; then
+if [ ! -z $1 ]; then
+  ssh root@hades.barrera.io /etc/rc.d/rtorrent $1
+elif tty -s; then
   $COMMAND
 else
   $TERMINAL -e $COMMAND
