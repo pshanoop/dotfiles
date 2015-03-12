@@ -19,8 +19,10 @@ KEY=/home/hugo/priv/keys/tarsnap/hyperion-w.key
 
 # Update the file index.
 find $FILE_DIR | sort > $META_DIR/photos
+# TODO: Only commit if there's changes. Also, do a log --stat.
 git -C $META_DIR add $META_DIR/photos
-git -C $META_DIR commit -m "Update photos index file for $WHEN." || true
+git -C $META_DIR commit -m "Update photos index file for $WHEN." \
+  > /dev/null || true
 
 # Perform the backup itself.
 cd $FILE_DIR/..
