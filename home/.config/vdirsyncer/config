@@ -1,6 +1,6 @@
 [general]
 status_path = ~/.local/share/vdirsyncer/status/
-password_command = ~/.bin/vdirsyncer-pass
+password_command = ~/.local/bin/vdirsyncer-pass
 
 ##### Contacts ######
 
