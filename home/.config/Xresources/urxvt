@@ -11,15 +11,9 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 
 URxvt.font: \
-    xft:UbuntuMono:size=13.5,\
-    xft:DejaVuSansMono:size=11,\
-    xft:DroidSansMono:size=11,\
-    xft:Inconsolata:size=12,\
-    xft:Symbola:size=9,\
-    xft:SourceCodePro:size=12,\
-URxvt.letterSpace: -2
-!    xft:UbuntuMono:size=13,\
-!URxvt.letterSpace: -2
+  xft:Inconsolata:size=13.8,\
+  xft:Symbola:size=10
+URxvt.letterSpace: 0
 
 URxvt.color0: #3f3f3f
 URxvt.color1: #c44444
