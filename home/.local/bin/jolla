@@ -1,5 +1,5 @@
 #!/bin/sh
-export MOUNTPATH=~/mount/jolla
+export MOUNTPATH=$HOME/.local/mnt/jolla
 mkdir -p ${MOUNTPATH}
 
 if [ -z $JOLLA ]; then
