@@ -23,12 +23,15 @@ Plugin 'groenewege/vim-less'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 
+" UI
+Plugin 'Yggdroot/indentLine'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+
 " Misc.
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-
-Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
