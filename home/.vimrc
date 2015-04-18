@@ -132,3 +132,6 @@ source $HOME/.completion.vimrc
 
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 0
+
+" Shows airline all the time:
+set laststatus=2
