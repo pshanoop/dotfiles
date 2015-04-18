@@ -1,1 +1,4 @@
-0	*/6	*	*	*	/usr/bin/pacman -Suwy --noconfirm > /dev/null
+# Download new packges at midnight
+30	0	*	*	*	/usr/bin/pacman -Suwy --noconfirm > /dev/null
+# Update package index hourly
+0	*/1	*	*	*	/usr/bin/pacman -Sy > /dev/null
