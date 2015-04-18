@@ -8,36 +8,8 @@ set nocompatible
 " Required for Vundle.
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage Vundle.
-Plugin 'gmarik/Vundle.vim'
-
-" Essentials.
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-
-" Completion.
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'ervandew/supertab'
-
-" My current theme: jellybeans
-Plugin 'nanotech/jellybeans.vim'
-
-" Syntax highlight.
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'groenewege/vim-less'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
-
-" Misc.
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-
-call vundle#end()
+" Plugins!
+source ~/.vim/plugins.vim
 
 filetype plugin indent on
 
@@ -86,7 +58,7 @@ set incsearch
 " TODO: set iskeyword so as to behave like vi
 
 " This is ignored by several functions, including ctrlp
-set wildignore+=build,node_modules,bower_components,env,bin,dist,*.pyc
+set wildignore+=build,node_modules,bower_components,env,bin,dist,*.pyc,tmp
 
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
@@ -157,3 +129,6 @@ vnoremap > >gv
 set backspace=indent,eol,start
 
 source $HOME/.completion.vimrc
+
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 0
