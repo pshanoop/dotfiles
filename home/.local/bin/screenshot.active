@@ -1,6 +1,0 @@
-#!/bin/sh
-
-activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
-activeWinId=$(printf '%s\n' "$activeWinLine" | cut -c 41-49)
-
-/usr/bin/import -window $activeWinId ~/screenshots/windows/`date -Ins`.jpg

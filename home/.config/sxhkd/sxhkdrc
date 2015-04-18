@@ -61,18 +61,19 @@ super + F2
 ### Screenshots ###
 ###################
 
+Print
+  screenshot
+control + Print
+  screenshot select
+alt + Print
+  screenshot active
+super + Print
+  scrotpush
+
 # These are for PrintScreen-less keyboards
 control + alt + super + p
-  scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
+  screenshot
 shift + control + alt + super + p
-  scrotpush
-Print
-  scrot $HOME/screenshots/fullscreen/'%F-%H%M%S_$wx$h_scrot.png'
-control + Print
-  screenshot.window
-alt + Print
-  screenshot.active
-super + Print
   scrotpush
 
 ### Desktop Apps ###

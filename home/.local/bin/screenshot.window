@@ -1,4 +1,0 @@
-#!/bin/sh
-
-activeWinId=$(xwininfo | grep 'Window id:' |cut -d" " -f4)
-/usr/bin/import -window $activeWinId ~/screenshots/windows/`date -Ins`.jpg
