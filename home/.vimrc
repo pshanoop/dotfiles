@@ -135,3 +135,7 @@ let g:indentLine_color_term = 0
 
 " Shows airline all the time:
 set laststatus=2
+
+" Use :DiffOrig to compare to saved file. Useful when recovering swap files.
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+  \ | wincmd p | diffthis
