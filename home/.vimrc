@@ -135,6 +135,8 @@ let g:indentLine_color_term = 0
 
 " Shows airline all the time:
 set laststatus=2
+" Hide current mode (redundant with airline)
+set noshowmode
 
 " Use :DiffOrig to compare to saved file. Useful when recovering swap files.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
