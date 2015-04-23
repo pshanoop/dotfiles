@@ -12,7 +12,9 @@ URxvt.scrollWithBuffer: true
 
 URxvt.font: \
   xft:Inconsolata:size=13.8,\
+  xft:Symbola:size=9,\
   xft:Symbola:size=10
+! Symbola 9 is required for the zsh theme, Symbola 10 for emoji.
 URxvt.letterSpace: 0
 
 URxvt.color0: #3f3f3f
