@@ -57,3 +57,5 @@ export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
 
 # Make pass copy into the primary/default X selection:
 export PASSWORD_STORE_X_SELECTION=primary
+
+export ANDROID_HOME=/opt/android-sdk
