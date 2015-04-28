@@ -1,1 +1,1 @@
-%wheel ALL = PASSWD: ALL, NOPASSWD: /bin/su, /usr/bin/vi
+%wheel ALL = PASSWD: ALL
