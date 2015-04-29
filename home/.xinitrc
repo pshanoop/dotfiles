@@ -13,6 +13,12 @@ if [ -n $DISPLAY ]; then
 
   mkdir -p "$HOME/.cache/supervisor"
   dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"
+
+  # Run a per-host script for varying configurations.
+  HOST_INIT=$HOME/.config/Xorg/xinit-$(hostname)
+  if [ -x $HOST_INIT ]; then
+    $HOST_INIT
+  fi;
 fi;
 
 # Never give up, never surrender!
