@@ -58,7 +58,10 @@ set incsearch
 " TODO: set iskeyword so as to behave like vi
 
 " This is ignored by several functions, including ctrlp
-set wildignore+=build,node_modules,bower_components,env,bin,dist,*.pyc,tmp,platforms,plugins
+set wildignore+=build,env,bin,dist,*.pyc,tmp
+
+" Use .gitignore to ignore files via ctrlp
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
