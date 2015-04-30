@@ -16,7 +16,7 @@ if [ $(hostname -s) != hyperion ]; then exit 1; fi;
   META_DIR=/home/hugo/.local/share/tarsnap/index
   CACHE_DIR=/home/hugo/.local/share/tarsnap/cache
   WHEN=$(date +%Y-%m-%dT%H%M%S%z)
-  KEY=/home/hugo/priv/keys/tarsnap/hyperion-w.key
+  KEY=/home/hugo/priv/keys/tarsnap/barrera.io/hyperion.w.key
 
   # Update the file index.
   find $FILE_DIR | sort > $META_DIR/photos
@@ -30,4 +30,4 @@ if [ $(hostname -s) != hyperion ]; then exit 1; fi;
   tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR -f photos-$WHEN \
     --exclude Canvas --exclude Unsorted --one-file-system \
     --print-stats --humanize-numbers photos
-) 2>&1 | mail -s "Hyperion daily photo backup" hugo@barrera.io
+) 2>&1 | mail -s "Daily Photo Backup" hugo@barrera.io
