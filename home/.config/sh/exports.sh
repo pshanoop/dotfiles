@@ -53,8 +53,6 @@ if [ -x /usr/lib/libv4l/v4l2convert.so ]; then
   export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so
 fi
 
-export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
-
 # Make pass copy into the primary/default X selection:
 export PASSWORD_STORE_X_SELECTION=primary
 
