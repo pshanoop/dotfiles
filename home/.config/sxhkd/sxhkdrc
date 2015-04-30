@@ -94,13 +94,13 @@ super + g
 ##################
 
 XF86AudioPlay
-  rhythmbox-client --play-pause
+  mpc-secure toggle
 XF86AudioPrev
-  rhythmbox-client --previous
+  mpc-secure prev
 XF86AudioNext
-  rhythmbox-client --next
+  mpc-secure next
 XF86AudioStop
-  rhythmbox-client --stop
+  mpc-secure stop
 XF86Calculator
   $TERMINAL -e calc -d
 
