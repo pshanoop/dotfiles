@@ -27,7 +27,8 @@ status.register("battery",
                 )
 
 # Status of the wired network
-status.register("network", interface="eth0", format_up="{interface}",)
+status.register("network", interface="eth0", format_up="{interface}",
+                format_down="")
 
 # Wireless status/signal
 status.register("wireless", interface="wlan0",
