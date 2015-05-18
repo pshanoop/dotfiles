@@ -30,7 +30,7 @@ super + shift + h
 ## Athena specific ##
 
 {_,super + }XF86MonBrightness{Down,Up}
-  xbacklight -{dec 5,set 0,inc 7,set 100}
+  light -{U 5,S 0,A 7,S 100}
 XF86KbdBrightness{Down,Up}
   kbdlight {down,up}
 
