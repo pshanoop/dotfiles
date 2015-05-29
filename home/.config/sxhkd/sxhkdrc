@@ -44,9 +44,11 @@ XF86HomePage
   lockx
 XF86PowerOff
   lockx
+shift + XF86PowerOff
+  systemctl suspend
 super + XF86PowerOff
   systemctl hibernate
-control + super + XF86PowerOff
+super + shift + XF86PowerOff
   systemctl poweroff
 
 ### Autoclick ###
