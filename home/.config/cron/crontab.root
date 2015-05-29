@@ -1,4 +1,4 @@
 # Download new packges at midnight
-30	0	*	*	*	/usr/bin/pacman -Suwy --noconfirm > /dev/null
+30	0	*	*	*	chronic pacman -Suwy
 # Update package index hourly
-0	*/1	*	*	*	/usr/bin/pacman -Sy > /dev/null
+0	*/1	*	*	*	chronic pacman -Sy
