@@ -1,14 +1,13 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=sysconfig
-pkgver=0
+pkgver=31.5cbbf4c
 pkgrel=1
 pkgdesc="My system-level configuration files."
 arch=(any)
 url=""
 license=('BSD')
 install=sysconfig.install
-source=("sysconfig.tar")
 
 pkgver() {
   cd "$srcdir"
@@ -16,7 +15,7 @@ pkgver() {
 }
 
 package() {
-  cd "$srcdir"
+  cd "$srcdir/.."
   rsync -plr files/ "$pkgdir"
 
   chmod 750 "$pkgdir/etc/sudoers.d/"
