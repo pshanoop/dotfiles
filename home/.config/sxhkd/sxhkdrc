@@ -109,7 +109,26 @@ XF86Calculator
 ### Mouse ###
 #############
 
+# MX thumb buttons
 button10
   ponymix decrease 3
 button13
   ponymix increase 3
+
+# MX side buttons
+button9
+  i3-msg workspace prev_on_output
+button8
+  i3-msg workspace next_on_output
+
+# Trackpad three-finger swipe, vertical
+button18
+  ponymix decrease 3
+button16
+  ponymix increase 3
+
+# Trackpad three-finger swipe, horizontal
+button17
+  i3-msg workspace next_on_output
+button19
+  i3-msg workspace prev_on_output
