@@ -31,8 +31,8 @@ super + shift + h
 
 {_,super + }XF86MonBrightness{Down,Up}
   light -{U 5,S 0,A 7,S 100}
-XF86KbdBrightness{Down,Up}
-  kbdlight {down,up}
+{_,super + }XF86KbdBrightness{Down,Up}
+  kbdlight {down,off,up,max}
 
 ### Lock Screen ###
 ###################
