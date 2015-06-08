@@ -65,6 +65,8 @@ source $HOME/.config/sh/aliases.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Load virtualenvwrapper
+source /usr/bin/virtualenvwrapper_lazy.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
