@@ -1,1 +1,1 @@
-{"port": 22, "mountOptions": ["uid=1000", "gid=10", "follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "meckintosh.local", "id": "meckintosh", "mountPoint": "/Users/mec/", "user": "mec"}
+{"beforeMount": "true", "host": "meckintosh.local", "id": "meckintosh", "port": 22, "authType": "publickey", "mountPoint": "/Users/mec/", "sshKey": "/home/hugo/.ssh/id_dsa", "mountOptions": ["uid=1000", "gid=10", "follow_symlinks", "workaround=rename", "big_writes", "reconnect"], "user": "mec"}

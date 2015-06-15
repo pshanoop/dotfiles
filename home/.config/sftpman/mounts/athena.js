@@ -1,1 +1,1 @@
-{"port": 22, "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "athena.barrera.io", "id": "athena", "mountPoint": "/home/hugo/", "user": "hugo"}
+{"authType": "publickey", "host": "athena.barrera.io", "port": 22, "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes", "reconnect"], "mountPoint": "/home/hugo/", "sshKey": "/home/hugo/.ssh/id_dsa", "id": "athena", "user": "hugo", "beforeMount": "true"}

@@ -1,1 +1,1 @@
-{"port": 22, "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "helios.local", "id": "helios", "mountPoint": "/home/user/", "user": "user"}
+{"beforeMount": "true", "host": "helios.local", "id": "helios", "port": 22, "authType": "publickey", "mountPoint": "/home/user/", "sshKey": "/home/hugo/.ssh/id_dsa", "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes", "reconnect"], "user": "user"}

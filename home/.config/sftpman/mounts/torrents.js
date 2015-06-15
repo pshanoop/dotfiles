@@ -1,1 +1,1 @@
-{"port": 22, "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes"], "authType": "publickey", "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "host": "hades.barrera.io", "id": "torrents", "mountPoint": "/var/rtorrent/torrents", "user": "hugo"}
+{"authType": "publickey", "host": "hades.barrera.io", "mountPoint": "/var/rtorrent/torrents", "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes", "reconnect"], "port": 22, "sshKey": "/home/hugo/.ssh/id_dsa", "beforeMount": "true", "user": "hugo", "id": "torrents"}
