@@ -58,7 +58,7 @@ set crypt_autosign = yes                    # Sign outgoing messages.
 
 # Integration
 set beep_new = yes			# Beep when new messages arrive.
-set query_command = "muttcards '%s'"    # Use muttcards for email completion.
+set query_command = "khard mutt --search '%s'"  # Complete emails from the vcard store.
 set header_cache = ~/.cache/mutt_hcache	# Keep a header cache.
 
 # Display formatting
