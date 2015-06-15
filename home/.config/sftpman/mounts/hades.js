@@ -1,1 +1,16 @@
-{"beforeMount": "true", "host": "hades.barrera.io", "id": "hades", "port": 22, "authType": "publickey", "mountPoint": "/home/hugo/", "sshKey": "/home/hugo/.ssh/id_dsa", "mountOptions": ["follow_symlinks", "workaround=rename", "big_writes", "reconnect"], "user": "hugo"}
+{
+    "authType": "publickey",
+    "beforeMount": "true",
+    "host": "hades.barrera.io",
+    "id": "hades",
+    "mountOptions": [
+        "follow_symlinks",
+        "workaround=rename",
+        "big_writes",
+        "reconnect"
+    ],
+    "mountPoint": "/home/hugo/",
+    "port": 22,
+    "sshKey": "/home/hugo/.ssh/id_dsa",
+    "user": "hugo"
+}
