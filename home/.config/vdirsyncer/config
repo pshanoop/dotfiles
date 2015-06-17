@@ -15,7 +15,7 @@ fileext = .vcf
 
 [storage radicale]
 type = carddav
-url = https://calendar.barrera.io/hugo/contacts.vcf/
+url = https://calendar.barrera.io/hugo/addressbook.vcf/
 username = hugo
 
 ##### Calendar: Study ######
