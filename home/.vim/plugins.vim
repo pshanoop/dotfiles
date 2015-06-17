@@ -34,4 +34,6 @@ Plugin 'tomtom/tcomment_vim'
 
 Plugin 'editorconfig/editorconfig-vim'
 
+Plugin 'terryma/vim-multiple-cursors'
+
 call vundle#end()
