@@ -7,3 +7,5 @@
 35      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-photos.sh
 50      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-bit-wallet.sh
 17	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/arch-db.sh
+# Compact mailbox index weekly
+0	0	*	*	1	notmuch compact
