@@ -23,5 +23,3 @@ alias fmt='fmt -w 79'
 alias sessionctl='echo Please use \`supervisorctl\` instead.'
 alias supervisorctl="/usr/bin/supervisorctl -c $HOME/.config/supervisor/supervisord.conf"
 alias tree='tree -C'
-
-alias env='. env/bin/activate'
