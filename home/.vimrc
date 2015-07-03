@@ -147,3 +147,6 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 " Enable mouse support (which is really just used for scrolling).
 set mouse=a
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
