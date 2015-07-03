@@ -1,10 +1,9 @@
-#color normal white default
 color hdrdefault red default
 color quoted brightblue default
 color signature red default
 color indicator brightyellow red
 color error brightred default
-color status default green
+color status black green
 color tree magenta default      # the thread tree in the index menu
 color tilde magenta default
 color message brightcyan default
@@ -17,6 +16,6 @@ color body green default "(ftp|http|https)://[^ ]+"     # point out URLs
 color body green default [-a-z_0-9.]+@[-a-z_0-9.]+      # e-mail addresses
 color underline brightgreen default
 
-# attributes when using a mono terminal
-#mono header underline ^(From|Subject):
-mono quoted bold
+color index   blue          default   "~F"   # flagged messages
+color index   brightgreen   default   "~U"   # unread messages
+color index   red           default   "~D"   # deleted messages
