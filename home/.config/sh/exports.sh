@@ -57,3 +57,5 @@ fi
 export PASSWORD_STORE_X_SELECTION=primary
 
 export ANDROID_HOME=/opt/android-sdk
+
+export WORKON_HOME=$HOME/.local/share/virtualenvs
