@@ -1,0 +1,3 @@
+#!/bin/sh
+export WINEPREFIX=$HOME/wine/prefixes/starcraft2
+wineserver -k
