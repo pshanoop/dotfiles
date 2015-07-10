@@ -1,3 +1,0 @@
-[program:mailmon]
-command=mailmon
-redirect_stderr=true
