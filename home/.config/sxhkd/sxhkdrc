@@ -117,9 +117,11 @@ button13
 
 # MX side buttons
 button9
-  i3-msg workspace prev_on_output
+  screenshot
+  # i3-msg workspace prev_on_output
 button8
-  i3-msg workspace next_on_output
+  screenshot active
+  # i3-msg workspace next_on_output
 
 # Trackpad three-finger swipe, vertical
 button18
