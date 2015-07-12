@@ -62,7 +62,6 @@ set query_command = "khard mutt --search '%s'"  # Complete emails from the vcard
 set header_cache = ~/.cache/mutt_hcache	# Keep a header cache.
 
 # Display formatting
-color status default green
 set folder_format="%2C %t %f"
 set date_format="%F %R"
 set index_format="%3C %Z %D  %-30.30F %?M?[%M]? %s"
