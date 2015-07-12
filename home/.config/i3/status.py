@@ -38,7 +38,7 @@ status.register("wireless", interface="wlan0",
 status.register("disk", path="/", format="{avail}GiB",)
 
 # Unread email count
-inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/Personal/INBOX")
+inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/INBOX")
 status.register("mail", color_unread="#ffff00", backends=[inbox])
 
 # Public IP

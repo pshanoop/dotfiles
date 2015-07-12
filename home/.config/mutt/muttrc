@@ -19,7 +19,7 @@ set mbox_type = Maildir
 set smtp_url = "smtp://localhost"
 
 # Set the root directory for all mailboxes.
-set folder	= "~/.local/share/maildir/Personal/"
+set folder	= "~/.local/share/maildir/"
 # Default mailbox.
 set spoolfile	= +INBOX
 # Other mailboxes.

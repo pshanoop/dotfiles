@@ -1,6 +1,5 @@
 # Restart offlineimap on an hourly basis since it tends to stall every
 # once in a while.
-0	*	*	*	*	chronic supervisorctl -c $HOME/.config/supervisor/supervisord.conf restart offlineimap
 0	*	*	*	*	chronic vdirsyncer sync
 */5	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/sent-mail.sh
 10	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/backup-accounting.sh
