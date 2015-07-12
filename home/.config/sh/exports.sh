@@ -44,7 +44,7 @@ export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd.sock"
 export GDK_CORE_DEVICE_EVENTS=1
 
 # makepkg settings
-export PKGDEST=$HOME/workspace/Build/_packages
+export PKGDEST=$HOME/workspace/Build/packages
 export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
