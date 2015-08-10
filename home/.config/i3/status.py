@@ -30,19 +30,28 @@ status.register("battery",
 status.register("network", interface="eth0", format_up="{interface}",
                 format_down="")
 
-# Wireless status/signal
-status.register("wireless", interface="wlan0",
-                format_up="{essid} {quality:.0f}%",)
-
 # Free disk space
 status.register("disk", path="/", format="{avail}GiB",)
 
 # Unread email count
 inbox = MaildirMail(directory="/home/hugo/.local/share/maildir/INBOX")
-status.register("mail", color_unread="#ffff00", backends=[inbox])
+status.register(
+    'mail',
+    color_unread='#ffff00',
+    backends=[inbox],
+    format='{unread} new email)',
+    format_plural='{unread} new email',
+)
 
-# Public IP
-status.register("network", format_down="", interface="wlan0", format_up="{v6}")
+# Network and public IP
+status.register(
+    'network',
+    format_down='',
+    interface='wlan0',
+    format_up='{v6} \uf1eb {essid}@{quality}%',
+)
+
+# TODO: eth0 is rather untested for now:
 status.register("network", format_down="", interface="eth0", format_up="{v6}")
 
 status.run()
