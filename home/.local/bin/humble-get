@@ -1,0 +1,4 @@
+#!/bin/sh
+PASSWORD=$(pass games/humblebundle)
+
+/usr/bin/hib-dlagent -u hugo@barrera.io -p $PASSWORD -o $@
