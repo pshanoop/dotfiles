@@ -28,6 +28,6 @@ if [ $(hostname -s) != hyperion ]; then exit 1; fi;
   # Perform the backup itself.
   cd $FILE_DIR/..
   tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR -f photos-$WHEN \
-    --exclude Canvas --exclude Unsorted --one-file-system \
+    --exclude Canvas --exclude Unsorted --exclude Jolla --one-file-system \
     --print-stats --humanize-numbers photos
 ) 2>&1 | mail -s "Daily Photo Backup" hugo@barrera.io
