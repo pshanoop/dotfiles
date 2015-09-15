@@ -1,4 +1,0 @@
-[program:proxy-hades]
-command=autossh -M 9900:9901 -D 9999 hades.barrera.io
-autostart=false
-redirect_stderr=true

@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-_socksproxy elysion.barrera.io 9997 9700:9701
-

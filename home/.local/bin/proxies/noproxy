@@ -1,4 +1,0 @@
-#!/bin/sh
-
-_socksproxy localhost 9999 9900:9901
-

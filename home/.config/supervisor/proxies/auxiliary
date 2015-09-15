@@ -1,4 +1,0 @@
-[program:proxy-auxiliary]
-command=autossh -M 9700:9701 -D 9997 elysion.barrera.io
-autostart=false
-redirect_stderr=true
