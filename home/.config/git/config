@@ -11,3 +11,6 @@
 	autosetuprebase = always
 [log]
 	follow = true
+[merge]
+	commit = no
+	ff = no
