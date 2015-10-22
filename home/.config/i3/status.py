@@ -39,7 +39,7 @@ status.register(
     'mail',
     color_unread='#ffff00',
     backends=[inbox],
-    format='{unread} new email)',
+    format='{unread} new email',
     format_plural='{unread} new email',
 )
 
