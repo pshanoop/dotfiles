@@ -185,3 +185,5 @@ new_window pixel
 hide_edge_borders both
 
 for_window [class="B2g"] floating enable
+
+client.unfocused #3a3a3a #222222 #bbbbbb #292d2e
