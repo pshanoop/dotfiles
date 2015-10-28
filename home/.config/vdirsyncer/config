@@ -1,12 +1,12 @@
 [general]
 status_path = ~/.local/share/vdirsyncer/status/
-password_command = ~/.local/bin/vdirsyncer-pass
 
 ##### Contacts ######
 
 [pair contacts]
 a = local
 b = radicale
+metadata = ["color", "displayname"]
 
 [storage local]
 type = filesystem
@@ -17,12 +17,14 @@ fileext = .vcf
 type = carddav
 url = https://calendar.barrera.io/hugo/addressbook.vcf/
 username = hugo
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "radicale"]
 
 ##### Calendar: Study ######
 
 [pair study]
 a = study_local
 b = study_fastmail
+metadata = ["color", "displayname"]
 
 [storage study_local]
 type = filesystem
@@ -33,12 +35,14 @@ fileext = .ics
 type = caldav
 url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/9bcef3fa-504d-4c6f-b320-fd24257de5a7/
 username = hobarrera@fastmail.com
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 
 ##### Calendar: Personal ######
 
 [pair personal]
 a = personal_local
 b = personal_fastmail
+metadata = ["color", "displayname"]
 
 [storage personal_local]
 type = filesystem
@@ -49,12 +53,14 @@ fileext = .ics
 type = caldav
 url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/502708f4-4b94-4963-b042-f7340c829bdf/
 username = hobarrera@fastmail.com
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 
 ##### Calendar: Work ######
 
 [pair work]
 a = work_local
 b = work_fastmail
+metadata = ["color", "displayname"]
 
 [storage work_local]
 type = filesystem
@@ -65,3 +71,4 @@ fileext = .ics
 type = caldav
 url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/d6aa4f1e-bdf6-4b6b-999d-b89afd62c994/
 username = hobarrera@fastmail.com
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]

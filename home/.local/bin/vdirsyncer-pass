@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $1 = "hobarrera@fastmail.com" ]; then
+if [ $1 = "fastmail" ]; then
   cat $HOME/priv/secrets/hobarrera@fastmail.com
 else
   cat $HOME/priv/secrets/radicale@elysion
