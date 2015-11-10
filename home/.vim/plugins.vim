@@ -10,7 +10,7 @@ Plugin 'scrooloose/syntastic'
 
 " Completion.
 Plugin 'Rip-Rip/clang_complete'
-Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 
 " My current theme: jellybeans
