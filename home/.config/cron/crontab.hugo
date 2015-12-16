@@ -2,6 +2,7 @@
 # once in a while.
 0	*	*	*	*	chronic vdirsyncer sync
 10	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/backup-accounting.sh
+15      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-mailbox.sh
 35      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-photos.sh
 50      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-bit-wallet.sh
 17	*	*	*	*	/bin/sh /home/hugo/.config/cron/scripts/arch-db.sh
