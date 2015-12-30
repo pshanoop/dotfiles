@@ -1,0 +1,3 @@
+[program:solaar]
+command=/usr/bin/solaar
+redirect_stderr=true
