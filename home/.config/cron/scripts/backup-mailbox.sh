@@ -16,6 +16,8 @@ if [ $(hostname -s) != hyperion ]; then exit 1; fi;
 
   cd $PARENT
   tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR -f $FILE-$WHEN \
-    --exclude .notmuch --exclude INBOX.Trash --one-file-system \
-    --print-stats --humanize-numbers $FILE
+    --exclude .notmuch \
+    --exclude INBOX.Trash \
+    --exclude INBOX.IDF \
+    --one-file-system --print-stats --humanize-numbers $FILE
 ) 2>&1 | mail -s "Daily Email Backup" hugo@barrera.io
