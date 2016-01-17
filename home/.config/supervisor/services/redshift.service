@@ -1,0 +1,3 @@
+[program:redshift]
+command=/usr/bin/redshift -v
+redirect_stderr=true
