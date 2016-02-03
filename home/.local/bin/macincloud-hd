@@ -1,3 +1,0 @@
-#!/bin/sh
-
-rdesktop SE090.macincloud.com:6000 -u user29997 -P -a 8 -g 1920x1080
