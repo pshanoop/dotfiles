@@ -1,6 +1,3 @@
 0	*	*	*	*	chronic vdirsyncer sync
-15      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-mailbox.sh
-35      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-photos.sh
-50      5       *       *       *       /bin/sh /home/hugo/.config/cron/scripts/backup-bit-wallet.sh
-# Compact mailbox index weekly
+0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh
 0	0	*	*	1	chronic notmuch compact
