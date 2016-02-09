@@ -9,7 +9,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 
 " Completion.
-Plugin 'Rip-Rip/clang_complete'
+" Plugin 'Rip-Rip/clang_complete'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 
