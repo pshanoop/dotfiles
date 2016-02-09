@@ -11,11 +11,9 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 
 URxvt.font: \
-  xft:Inconsolata:size=13.8,\
-  xft:Symbola:size=9,\
+  xft:DroidSansMono:size=12,\
   xft:Symbola:size=10
-! Symbola 9 is required for the zsh theme, Symbola 10 for emoji.
-URxvt.letterSpace: 0
+URxvt.letterSpace: -1
 
 URxvt.color0: #3f3f3f
 URxvt.color1: #c44444
