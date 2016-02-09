@@ -133,8 +133,14 @@ set backspace=indent,eol,start
 
 source $HOME/.completion.vimrc
 
+set listchars=eol:$,tab:>-,space:·,trail:·,extends:>,precedes:<
+set listchars=tab:>-,space:·,trail:·,extends:>,precedes:<
+set list
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 0
+
+highlight clear SpecialKey
+highlight link SpecialKey Conceal
 
 " Shows airline all the time:
 set laststatus=2
