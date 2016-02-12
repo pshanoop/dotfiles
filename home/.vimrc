@@ -160,3 +160,6 @@ let g:csv_autocmd_arrange_size = 1024*1024*20
 
 " ctrl+h: GoToDefinition
 :noremap <C-h> :YcmCompleter GoToDefinition<CR>
+
+" Auto-close the preview window after selecting a competion.
+let g:ycm_autoclose_preview_window_after_completion = 1
