@@ -131,8 +131,6 @@ vnoremap > >gv
 " Allow backspacing over line jumps, indent and over the start of an insert.
 set backspace=indent,eol,start
 
-source $HOME/.completion.vimrc
-
 set listchars=eol:$,tab:>-,space:·,trail:·,extends:>,precedes:<
 set listchars=tab:>-,space:·,trail:·,extends:>,precedes:<
 set list

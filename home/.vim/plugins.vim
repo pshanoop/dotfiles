@@ -9,9 +9,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 
 " Completion.
-" Plugin 'Rip-Rip/clang_complete'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'ervandew/supertab'
+" This following is installed via Arch's package manager, since manual
+" installation (or via Vundle) is a bit of a pain:
+" Plugin 'Valloric/YouCompleteMe'
 
 " My current theme: jellybeans
 Plugin 'nanotech/jellybeans.vim'
