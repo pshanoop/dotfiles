@@ -27,7 +27,8 @@ Plugin 'chrisbra/csv.vim'
 
 " UI
 Plugin 'Yggdroot/indentLine'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 
 " Misc.
