@@ -157,3 +157,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 let g:csv_autocmd_arrange      = 1
 let g:csv_autocmd_arrange_size = 1024*1024*20
+
+" ctrl+h: GoToDefinition
+:noremap <C-h> :YcmCompleter GoToDefinition<CR>
