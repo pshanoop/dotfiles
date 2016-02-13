@@ -163,3 +163,8 @@ let g:csv_autocmd_arrange_size = 1024*1024*20
 
 " Auto-close the preview window after selecting a competion.
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+let g:vim_markdown_folding_disabled = 1
+
+" This mostly affects markdown tags being concealed:
+set conceallevel=0
