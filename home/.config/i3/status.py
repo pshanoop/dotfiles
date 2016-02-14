@@ -39,6 +39,11 @@ status.register(
     format_plural='{unread} new email',
 )
 
+# Internet connectivity
+status.register(
+    'online',
+)
+
 # Network and public IP
 status.register(
     'network',
