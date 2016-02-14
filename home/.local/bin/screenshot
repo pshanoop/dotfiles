@@ -1,16 +1,14 @@
 #!/bin/sh
 
-DESTINATION=~/screenshots
-
-mkdir -p $DESTINATION
-cd $DESTINATION
+COMMAND="maim --showcursor"
+FILENAME="$HOME/screenshots/$(date -Ins).png"
 
 if [ -z $1 ]; then
-  scrot -q 98 -e 'echo $f' $(date -Ins).png
+  $COMMAND $FILENAME
+  echo $FILENAME
 elif [ $1 = "active" ]; then
-  scrot -u -q 98 -e 'echo $f' $(date -Ins).png
-elif [ $1 =  "select" ]; then
-  scrot -s -q 98 -e 'echo $f' $(date -Ins).png
+  $COMMAND -i $(xdotool getactivewindow) $FILENAME
+  echo $FILENAME
 elif [ $1 = "here" ]; then
-  scrot -cd 5 $@
+  echo "Unknown argument: $1"
 fi;
