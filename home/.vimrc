@@ -168,3 +168,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " This mostly affects markdown tags being concealed:
 set conceallevel=0
+
+" Avoid delay after pressing <Esc>
+set timeoutlen=1000 ttimeoutlen=0
