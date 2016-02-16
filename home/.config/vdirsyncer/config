@@ -6,6 +6,7 @@ status_path = ~/.local/share/vdirsyncer/status/
 [pair contacts]
 a = local
 b = radicale
+collections = null
 metadata = ["color", "displayname"]
 
 [storage local]
@@ -24,6 +25,7 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "radicale"]
 [pair study]
 a = study_local
 b = study_fastmail
+collections = null
 metadata = ["color", "displayname"]
 
 [storage study_local]
@@ -42,6 +44,7 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 [pair personal]
 a = personal_local
 b = personal_fastmail
+collections = null
 metadata = ["color", "displayname"]
 
 [storage personal_local]
@@ -60,6 +63,7 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 [pair work]
 a = work_local
 b = work_fastmail
+collections = null
 metadata = ["color", "displayname"]
 
 [storage work_local]
