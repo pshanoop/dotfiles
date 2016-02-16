@@ -3,22 +3,34 @@ status_path = ~/.local/share/vdirsyncer/status/
 
 ##### Contacts ######
 
-[pair contacts]
-a = local
-b = radicale
+[pair contacts_radicale]
+a = contacts_local
+b = contacts_radicale
 collections = null
 metadata = ["color", "displayname"]
 
-[storage local]
+[pair contacts_fastmail]
+a = contacts_local
+b = contacts_fastmail
+collections = null
+metadata = []
+
+[storage contacts_local]
 type = filesystem
 path = ~/.local/share/contacts/cards/
 fileext = .vcf
 
-[storage radicale]
+[storage contacts_radicale]
 type = carddav
 url = https://calendar.barrera.io/hugo/addressbook.vcf/
 username = hugo
 password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "radicale"]
+
+[storage contacts_fastmail]
+type = carddav
+url = https://carddav.messagingengine.com/dav/addressbooks/user/hobarrera@fastmail.com/Default/
+username = hobarrera@fastmail.com
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 
 ##### Calendar: Study ######
 
