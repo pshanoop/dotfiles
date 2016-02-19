@@ -18,6 +18,11 @@ status.register("pulseaudio", format="♪{volume}",)
 if os.path.exists("/sys/class/thermal/thermal_zone0/temp"):
     status.register("temp", format="{temp:.0f}°C",)
 
+status.register(
+    'solaar',
+    nameOfDevice='Performance Mouse MX'
+)
+
 # Battery status
 status.register("battery",
                 format="{status}/{consumption:.2f}W {percentage:.2f}%" +
