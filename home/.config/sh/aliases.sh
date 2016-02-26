@@ -22,3 +22,4 @@ alias fmt='fmt -w 79'
 alias sessionctl='echo Please use \`supervisorctl\` instead.'
 alias supervisorctl="/usr/bin/supervisorctl -c $HOME/.config/supervisor/supervisord.conf"
 alias tree='tree -C'
+alias irssi='/usr/bin/irssi --home=~/.config/irssi'
