@@ -15,12 +15,6 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -62,14 +56,8 @@ source $HOME/.config/sh/aliases.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Load virtualenvwrapper
 source /usr/bin/virtualenvwrapper_lazy.sh
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 autoload zmv
 autoload zcalc
