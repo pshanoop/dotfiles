@@ -37,16 +37,13 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.config/zsh
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
 # zsh-syntax-highlighting needs to be last.
-plugins=(pass sprunge gpg-agent ssh-agent wd virtualenv zsh-syntax-highlighting tmux)
+plugins=(pass sprunge gpg-agent ssh-agent wd virtualenv zsh-syntax-highlighting)
 # virtualenv? Needs theme support?
 
 source $ZSH/oh-my-zsh.sh
@@ -62,3 +59,4 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 autoload zmv
 autoload zcalc
 
+[ -z $TMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
