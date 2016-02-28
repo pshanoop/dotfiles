@@ -7,6 +7,7 @@
 	ui = true
 [diff]
 	tool = vimdiff
+	algorithm = patience
 [branch]
 	autosetuprebase = always
 [log]
@@ -16,3 +17,7 @@
 	ff = no
 [alias]
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+[pager]
+	log = /usr/share/git/diff-highlight/diff-highlight | less -XFR
+	show = /usr/share/git/diff-highlight/diff-highlight | less -XFR
+	diff = /usr/share/git/diff-highlight/diff-highlight | less -XFR
