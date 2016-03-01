@@ -6,9 +6,8 @@ URxvt.highlightColor: #444444
 URxvt.underlineColor: #999999
 URxvt.colorUL: #4682B4
 
-URxvt.scrollstyle: plain
-URxvt.scrollTtyOutput: false
-URxvt.scrollWithBuffer: true
+URxvt*saveLines:0
+URxvt.scrollBar: false
 
 ! DroidSanMono is the default font for all text
 ! Symbola 9 is required for the zsh theme icons
