@@ -32,59 +32,21 @@ url = https://carddav.messagingengine.com/dav/addressbooks/user/hobarrera@fastma
 username = hobarrera@fastmail.com
 password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
 
-##### Calendar: Study ######
+##### Calendars ######
 
-[pair study]
-a = study_local
-b = study_fastmail
-collections = null
+[pair calendars]
+a = calendars_local
+b = calendars_fastmail
+collections = ["from b"]
 metadata = ["color", "displayname"]
 
-[storage study_local]
+[storage calendars_local]
 type = filesystem
-path = ~/.local/share/calendars/study/
+path = ~/.local/share/calendars/
 fileext = .ics
 
-[storage study_fastmail]
+[storage calendars_fastmail]
 type = caldav
-url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/9bcef3fa-504d-4c6f-b320-fd24257de5a7/
-username = hobarrera@fastmail.com
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
-
-##### Calendar: Personal ######
-
-[pair personal]
-a = personal_local
-b = personal_fastmail
-collections = null
-metadata = ["color", "displayname"]
-
-[storage personal_local]
-type = filesystem
-path = ~/.local/share/calendars/personal/
-fileext = .ics
-
-[storage personal_fastmail]
-type = caldav
-url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/502708f4-4b94-4963-b042-f7340c829bdf/
-username = hobarrera@fastmail.com
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
-
-##### Calendar: Work ######
-
-[pair work]
-a = work_local
-b = work_fastmail
-collections = null
-metadata = ["color", "displayname"]
-
-[storage work_local]
-type = filesystem
-path = ~/.local/share/calendars/work/
-fileext = .ics
-
-[storage work_fastmail]
-type = caldav
-url = https://caldav.messagingengine.com/dav/calendars/user/hobarrera@fastmail.com/d6aa4f1e-bdf6-4b6b-999d-b89afd62c994/
+url = https://caldav.messagingengine.com/
 username = hobarrera@fastmail.com
 password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
