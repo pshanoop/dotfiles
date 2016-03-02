@@ -1,0 +1,3 @@
+[program:ipfs]
+command=/usr/bin/ipfs daemon --mount
+redirect_stderr=true
