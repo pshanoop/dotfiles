@@ -1,3 +1,6 @@
+# Start tmux and exit. If alreay inside tmux, skips this line.
+[ -z $TMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -59,4 +62,3 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 autoload zmv
 autoload zcalc
 
-[ -z $TMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
