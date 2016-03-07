@@ -59,6 +59,8 @@ source $HOME/.config/sh/aliases.sh
 # Load virtualenvwrapper
 source /usr/bin/virtualenvwrapper_lazy.sh
 
+# fzf plugin
+source /etc/profile.d/fzf.zsh
+
 autoload zmv
 autoload zcalc
-
