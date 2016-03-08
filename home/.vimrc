@@ -173,3 +173,10 @@ let g:airline_powerline_fonts = 1
 
 " Avoid delay after pressing <Esc>
 set timeoutlen=1000 ttimeoutlen=0
+
+" Disable arrow keys (the home row is faster, but I have to force myself to get
+" used to it!)
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
