@@ -1,1 +1,1 @@
-set spell spelllang=en_gb,es
+setlocal spell spelllang=en_gb,es
