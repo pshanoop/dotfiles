@@ -12,6 +12,7 @@ Plugin 'scrooloose/syntastic'
 " This following is installed via Arch's package manager, since manual
 " installation (or via Vundle) is a bit of a pain:
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-endwise'
 
 " My current theme: jellybeans
 Plugin 'nanotech/jellybeans.vim'
