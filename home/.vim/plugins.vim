@@ -22,7 +22,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'groenewege/vim-less'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'rust-lang/rust.vim'
 Plugin 'chrisbra/csv.vim'
 
