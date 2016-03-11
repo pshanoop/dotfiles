@@ -76,3 +76,6 @@ settings = {
 };
 chatnets = { "znc.freenode" = { type = "IRC"; }; };
 logs = { };
+history = {
+  scroll_page_count = 1;
+};
