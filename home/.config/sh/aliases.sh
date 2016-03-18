@@ -17,7 +17,6 @@ alias readcd='readcd -dev=/dev/sg1 -f '
 alias tree='tree -C'
 alias less='less -rX'
 alias open='xdg-open'
-alias vi=vim
 alias fmt='fmt -w 79'
 alias sessionctl='echo Please use \`supervisorctl\` instead.'
 alias supervisorctl="/usr/bin/supervisorctl -c $HOME/.config/supervisor/supervisord.conf"
