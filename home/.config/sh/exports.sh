@@ -63,3 +63,6 @@ export ANDROID_HOME=/opt/android-sdk
 export WORKON_HOME=$HOME/.local/share/virtualenvs
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# httpie places it's config in $HOME by default :(
+export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
