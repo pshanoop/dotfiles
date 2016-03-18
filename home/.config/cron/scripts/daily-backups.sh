@@ -46,4 +46,4 @@ WHEN=$(date +%Y-%m-%dT%H%M%S%z)
     --exclude INBOX.IDF \
     $FILE
 
-) 2>&1 | mail -s "Hyperion's Daily Backup" hugo@barrera.io
+) 2>&1 | mail -s "Backup summary for hyperion.barrera.io" hugo@barrera.io
