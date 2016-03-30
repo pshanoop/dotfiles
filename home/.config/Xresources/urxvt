@@ -15,7 +15,7 @@ URxvt.scrollBar: false
 URxvt.font: \
   xft:DroidSansMono:size=12,\
   xft:Droid Sans Mono for Powerline:size=12,style=regular,\
-  xft:Symbola:size=9 \
+  xft:Symbola:size=9,\
   xft:Symbola:size=10
 URxvt.letterSpace: -1
 
