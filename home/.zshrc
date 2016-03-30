@@ -65,6 +65,8 @@ source /etc/profile.d/fzf.zsh
 autoload zmv
 autoload zcalc
 
-export rvm_ignore_gemrc_issues=1
-export PATH="$PATH:$HOME/.rvm/bin"
-source "$HOME/.rvm/scripts/rvm"
+if [ -d $HOME/.rvm ]; then
+  export rvm_ignore_gemrc_issues=1
+  export PATH="$PATH:$HOME/.rvm/bin"
+  source "$HOME/.rvm/scripts/rvm"
+fi
