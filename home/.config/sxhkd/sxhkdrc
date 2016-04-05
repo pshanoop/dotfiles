@@ -38,8 +38,6 @@ super + shift + h
 ###################
 # Ares, Hyperion and Athena respectively
 
-XF86Launch1
-  lockx
 XF86HomePage
   lockx
 XF86PowerOff
