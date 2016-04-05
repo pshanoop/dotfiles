@@ -46,6 +46,8 @@ shift + XF86PowerOff
   systemctl suspend
 super + XF86PowerOff
   systemctl hibernate
+control + XF86PowerOff
+  systemctl poweroff
 super + shift + XF86PowerOff
   systemctl poweroff
 
