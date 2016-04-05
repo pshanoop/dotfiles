@@ -45,6 +45,8 @@ export GDK_CORE_DEVICE_EVENTS=1
 
 # makepkg settings
 export PKGDEST=$HOME/workspace/Build/packages
+export SRCDEST=$HOME/workspace/Build/src
+export AURDEST=$HOME/workspace/Build/aurdata
 export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
