@@ -1,0 +1,29 @@
+zmodload zsh/zprof
+[ -z $TMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
+
+source .local/opt/antigen/antigen.zsh
+
+HISTFILESIZE=2000
+HISTSIZE=1000
+HISTFILE=.zsh_history
+
+bindkey -e
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+
+antigen bundles <<EOBUNDLES
+  zsh-users/zsh-syntax-highlighting
+  /home/hugo/workspace/Antigen/ssh-agent
+  # zsh-users/zsh-autosuggestions
+  # Used for the theme only:
+  robbyrussell/oh-my-zsh lib/
+EOBUNDLES
+
+# antigen theme https://gitlab.com/hobarrera/zhob.git zhob
+antigen theme /home/hugo/.config/zsh/themes hob
+
+antigen apply
+
+# fzf plugin
+source /etc/profile.d/fzf.zsh
+zprof
