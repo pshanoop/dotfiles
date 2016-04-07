@@ -12,7 +12,11 @@ status = Status(standalone=True, click_events=False)
 status.register('clock', format='%a %Y-%m-%d %X')
 
 # Volume
-status.register('pulseaudio', format='♪{volume}',)
+status.register(
+    'pulseaudio',
+    format='🔉 {volume}',
+    format_muted='🔇 {volume}',
+)
 
 # CPU temperature
 if os.path.exists('/sys/class/thermal/thermal_zone0/temp'):
@@ -27,12 +31,12 @@ status.register(
 status.register(
     'battery',
     format=(
-        '{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}'
+        '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
     ),
     status={
-        'DIS': '↓',
-        'CHR': '↑',
-        'FULL': '='
+        'DIS': '\uf243',
+        'CHR': '\uf242',
+        'FULL': '\uf240'
     },
     alert=True,
     alert_percentage=5,
@@ -45,26 +49,36 @@ status.register('disk', path='/', format='{avail}GiB',)
 status.register(
     'mail',
     color_unread='#ffff00',
+    # color_unread='#ffffff',
     backends=[MaildirMail(directory='/home/hugo/.local/share/maildir/INBOX')],
-    format='{unread} new email',
-    format_plural='{unread} new email',
+    format='\uf0e0 {unread}',
+    format_plural='\uf0e0 {unread}',
 )
-
-# Internet connectivity
-status.register('online')
 
 # Network and public IP
 status.register(
     'network',
     format_down='',
     interface='wlan0',
-    format_up='{v6} \uf1eb {essid}@{quality}%',
+    format_up='\uf1eb {essid}',
 )
 status.register(
     'network',
     format_down='',
     interface='eth0',
-    format_up='{v6} @{interface}'
+    format_up='{interface}'
+)
+
+# Internet connectivity
+status.register(
+    'online',
+    hints={
+        'separator': False,
+    },
+    color='#00FF00',
+    format_online='\uf0ac',
+    format_offline='\uf0ac offline',
+
 )
 
 status.run()
