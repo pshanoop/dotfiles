@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if ponymix is-muted; then
+  echo 2
+  MUTE=" (muted)"
+fi
+  
+dunstify -r 53 "Voluem changed" "$(ponymix get-volume)% $MUTE"

@@ -1,3 +1,0 @@
-[program:volume]
-command=/usr/bin/xfce4-volumed-pulse --no-daemon
-redirect_stderr=true
