@@ -8,9 +8,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 
 " Completion.
-" This following is installed via Arch's package manager, since manual
-" installation (or via Vundle) is a bit of a pain:
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'tpope/vim-endwise'
 " Plug 'kana/vim-smartinput'
 
