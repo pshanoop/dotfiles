@@ -1,42 +1,45 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
 " Let Vundle manage Vundle.
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
 " Essentials.
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
 
 " Completion.
 " This following is installed via Arch's package manager, since manual
 " installation (or via Vundle) is a bit of a pain:
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-endwise'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-endwise'
+" Plug 'kana/vim-smartinput'
 
 " My current theme: jellybeans
-Plugin 'nanotech/jellybeans.vim'
+Plug 'nanotech/jellybeans.vim'
 
 " Syntax highlight and file formats
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'groenewege/vim-less'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'rust-lang/rust.vim'
-Plugin 'chrisbra/csv.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-jade'
+Plug 'groenewege/vim-less'
+Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim'
+Plug 'chrisbra/csv.vim'
+Plug 'cespare/vim-toml'
 
 " UI
-Plugin 'Yggdroot/indentLine'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 
 " Misc.
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'  " XXX: Haven't really been using this
+Plug 'tomtom/tcomment_vim'
+Plug 'godlygeek/tabular'
+Plug 'justinmk/vim-sneak'
 
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
-call vundle#end()
+call plug#end()
