@@ -68,3 +68,5 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # httpie places it's config in $HOME by default :(
 export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
+
+export WEECHAT_HOME=$HOME/.config/weechat/
