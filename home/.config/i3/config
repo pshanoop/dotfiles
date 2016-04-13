@@ -176,7 +176,7 @@ bar {
                 background #423F37
         }
 
-        tray_output eDP1
+        tray_output primary
 }
 
 exec_always --no-startup-id feh --bg-scale $HOME/.wallpapers/1.jpg
