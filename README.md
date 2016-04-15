@@ -7,7 +7,7 @@ homesick by running:
     homesick clone git@gitlab.com:hobarrera/dotfiles-vim.git
     homesick link
 
-You should also run `:VundleInstall` to install all vim plugins.
+You should also run `:PlugInstall` to install all vim plugins.
 
 Some additional utilities are required in your `$PATH`:
 
