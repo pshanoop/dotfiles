@@ -2,8 +2,8 @@
 # based >90% on AVIT ZSH Theme
 
 PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
-$(virtualenv_prompt_info)$ '
+$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)$(_virtualenv)
+$ '
 
 PROMPT2='%{$fg[grey]%}>%{$reset_color%} '
 
@@ -36,6 +36,11 @@ function _ruby_version() {
   if {echo $fpath | grep -q "plugins/rvm"}; then
     echo "%{$fg[grey]%}$(rvm_prompt_info)%{$reset_color%}"
   fi
+}
+
+function _virtualenv() {
+  [[ -n ${VIRTUAL_ENV} ]] || return
+  echo "%{$fg[grey]%}(${VIRTUAL_ENV:t})%{$reset_color%}"
 }
 
 # Determine the time since last commit. If branch is clean,
