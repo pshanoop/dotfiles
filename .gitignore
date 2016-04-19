@@ -39,3 +39,4 @@ home/.subversion/README.txt
 home/.subversion/auth
 
 *.cache
+.*.sw?
