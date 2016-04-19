@@ -11,12 +11,37 @@
 
 set $mod Mod4
 
+### colour ###
+
+# set $bg-color            #414959
+# set $inactive-bg-color   #303641
+# set $text-color          #b3bdcb
+# set $inactive-text-color #9da3ad
+# set $urgent-bg-color     #E53935
+
+set $bg-color            #404552
+set $inactive-bg-color   #2f343f
+set $text-color          #b3bdcb
+set $inactive-text-color #9da3ad
+set $urgent-bg-color     #E53935
+set $indicator           #00ff00
+
+# class                 border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $indicator
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator
+
+# client.unfocused #3a3a3a #222222 #bbbbbb #292d2e
+
+### /colours ###
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font pango:Open Sans 8
+# font pango:DejaVu Sans Mono 8
+font pango:Open Sans 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -187,5 +212,3 @@ hide_edge_borders both
 for_window [class="B2g"] floating enable
 
 workspace_auto_back_and_forth yes
-
-client.unfocused #3a3a3a #222222 #bbbbbb #292d2e

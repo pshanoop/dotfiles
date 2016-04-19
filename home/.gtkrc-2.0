@@ -10,7 +10,7 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-recent-files-max-age=0
 #gtk-theme-name="A-New-Hope"
-gtk-theme-name="Ambiance"
+gtk-theme-name="Arc-Darker"
 
 style "darker-scrollbars"
 {
