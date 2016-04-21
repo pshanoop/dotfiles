@@ -5,3 +5,4 @@ Xft.dpi: 106
 
 #include "urxvt"
 #include "xautolock"
+#include "rofi"
