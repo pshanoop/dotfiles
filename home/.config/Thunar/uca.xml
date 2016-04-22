@@ -37,4 +37,13 @@
 	<patterns>*.mount</patterns>
 	<directories/>
 </action>
+<action>
+	<icon>logviewer</icon>
+	<name>Download subtitles</name>
+	<unique-id>1455046950619951-3</unique-id>
+	<command>urxvt -e subliminal download %F -l en</command>
+	<description>Download subtitles for this file</description>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
 </actions>
