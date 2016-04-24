@@ -1,0 +1,3 @@
+#!/bin/sh
+
+toilet -f term -F border $*
