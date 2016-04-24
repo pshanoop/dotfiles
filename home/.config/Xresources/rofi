@@ -16,7 +16,6 @@ rofi.font: Deja Vu Sans Mono 11
 rofi.yoffset: -24
 rofi.autoselect: true
 rofi.hide-scrollbar: true
-rofi.fuzzy: true
 
 rofi.kb-remove-word-back:Control+w
 rofi.kb-cancel:Escape,Control+c
