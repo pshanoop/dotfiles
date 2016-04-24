@@ -12,8 +12,7 @@ rofi.width: 100
 rofi.location: 6
 rofi.lines: 8
 rofi.bw: 0
-rofi.font: Deja Vu Sans Mono 16
-rofi.padding: 30
+rofi.font: Deja Vu Sans Mono 11
 rofi.yoffset: -24
 rofi.autoselect: true
 rofi.hide-scrollbar: true
