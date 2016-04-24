@@ -149,7 +149,7 @@
 
 [frame]
     width = 2
-    color = "#eeeeee"
+    color = "#b3bdcb"
 
 [shortcuts]
 
@@ -173,18 +173,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#4d4d4d"
-    foreground = "#ffffff"
+    background = "#373c48"
+    foreground = "#eeeeee"
     timeout = 20
 
 [urgency_normal]
-    background = "#4d4d4d"
-    foreground = "#ffffff"
+    background = "#373c48"
+    foreground = "#eeeeee"
     timeout = 30
 
 [urgency_critical]
-    background = "#4d4d4d"
-    foreground = "#ffffff"
+    background = "#404552"
+    foreground = "#eeeeee"
     timeout = 0
 
 
