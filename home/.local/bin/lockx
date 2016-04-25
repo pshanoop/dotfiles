@@ -6,7 +6,7 @@ supervisorctl stop caffeine
 killall -SIGUSR1 dunst
 (sleep 2 && xset s activate) &
 
-i3lock -nfe
+i3lock -nfe -c "#2f343f"
 
 wait $(pgrep i3lock)
 killall -SIGUSR2 dunst
