@@ -1,13 +1,12 @@
-
 #!/bin/sh
 #
-# Performs several backup tasks (into tarsnap)
+# Wraps around the actual script that does the backsups, provising common
+# variable and emailing the result.
 
 set -e
 set -u
 
-if [ $(hostname -s) != hyperion ]; then exit 1; fi;
-
+HOSTNAME=$(hostname -s)
 CACHE_DIR=/home/hugo/.local/share/tarsnap/cache
 KEY=/home/hugo/priv/keys/tarsnap/barrera.io/hyperion.w.key
 
@@ -16,34 +15,8 @@ COMMAND="tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR $SHARED_FLAGS"
 
 WHEN=$(date +%Y-%m-%dT%H%M%S%z)
 
-(
-# ~~~Photos~~~
-  echo -e "\n~~~ Photos ~~~"
-  FILE=photos
+REALSCRIPT=$(realpath $(dirname $0))/_daily-backups.sh
 
-  cd $HOME
-  $COMMAND -f photos-$WHEN \
-    --exclude Canvas \
-    --exclude Unsorted \
-    --exclude Jolla \
-    $FILE
+export HOSTNAME CACHE_DIR KEY SHARED_FLAGS COMMAND WHEN
 
-# ~~~Bitcoin~~~
-  echo -e "\n~~~ Bitcoin Wallet ~~~"
-  FILE=wallet.dat
-
-  cd $HOME/.bitcoin/
-  $COMMAND -f bitcoin-$WHEN $FILE
-
-# ~~~Mailbox~~~
-  echo -e "\n~~~ Mailbox ~~~"
-  FILE=maildir
-
-  cd $HOME/.local/share/
-  $COMMAND -f maildir-$WHEN \
-    --exclude .notmuch \
-    --exclude INBOX.Trash \
-    --exclude INBOX.IDF \
-    $FILE
-
-) 2>&1 | mail -s "Backup summary for hyperion.barrera.io" hugo@barrera.io
+sh $REALSCRIPT 2>&1 | mail -s "Backup summary for $(hostname)" hugo@barrera.io
