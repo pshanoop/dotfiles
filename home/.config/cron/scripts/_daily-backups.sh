@@ -39,5 +39,6 @@ if [ $HOSTNAME == hyperion ]; then
     --exclude .notmuch \
     --exclude INBOX.Trash \
     --exclude INBOX.IDF \
+    --exclude INBOX.Lists \
     $FILE
 fi
