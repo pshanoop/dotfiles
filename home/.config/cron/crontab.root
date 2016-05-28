@@ -1,4 +1,2 @@
-# Download new packges at midnight
-30	0	*	*	*	chronic pacman -Suwy --noconfirm
-# Update package index hourly
-0	*/1	*	*	*	chronic pacman -Sy
+# Update package index and download packages hourly
+0	*/1	*	*	*	chronic pacman -Suwy --noconfirm
