@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+MOUSE_ID=$(xinput | grep -Po 'Performance MX\s+id=\K(\d+)')
+MOUSE_PROP=$(xinput list-props $MOUSE_ID | grep "Scrolling Distance" | grep -Po "(\d{3})")
+xinput set-prop $MOUSE_ID $MOUSE_PROP -1 -1 -1

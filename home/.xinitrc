@@ -9,10 +9,7 @@ if [ -n $DISPLAY ]; then
 
   # Natural scrolling:
   # NOTE: requires GNU grep:
-  PERFORMANCE_MX=$(xinput | grep -Po 'Performance MX\s+id=\K(\d+)')
-  if [ $? = 0 ]; then
-    xinput set-button-map $PERFORMANCE_MX 1 2 3 5 4 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-  fi;
+  natural-scrolling || true
 
   if [ $(hostname) = hyperion.barrera.io ]; then
     numlockx on &
