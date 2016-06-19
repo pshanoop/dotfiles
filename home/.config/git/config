@@ -21,3 +21,5 @@
 	log = /usr/share/git/diff-highlight/diff-highlight | less -XFR
 	show = /usr/share/git/diff-highlight/diff-highlight | less -XFR
 	diff = /usr/share/git/diff-highlight/diff-highlight | less -XFR
+[interactive]
+	diffFilter = /usr/share/git/diff-highlight/diff-highlight
