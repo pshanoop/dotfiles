@@ -23,3 +23,5 @@
 	diff = /usr/share/git/diff-highlight/diff-highlight | less -XFR
 [interactive]
 	diffFilter = /usr/share/git/diff-highlight/diff-highlight
+[commit]
+	verbose = true
