@@ -1,3 +1,4 @@
 [program:ipfs]
 command=/usr/bin/ipfs daemon --mount
+autostart=false
 redirect_stderr=true
