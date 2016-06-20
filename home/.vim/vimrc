@@ -83,6 +83,9 @@ map <F5> :TComment <CR>
 " Reload (source) config file.
 map <F9> :so $HOME/.vimrc <CR>
 
+" The default syntastic checkers are listed here:
+" https://github.com/scrooloose/syntastic/blob/master/plugin/syntastic/registry.vim
+
 " Use C++11.
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
