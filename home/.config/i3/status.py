@@ -4,7 +4,6 @@
 import os
 
 from i3pystatus import Status
-from i3pystatus.mail.maildir import MaildirMail
 
 status = Status(standalone=True, click_events=False)
 
@@ -44,16 +43,6 @@ status.register(
 
 # Free disk space
 status.register('disk', path='/', format='{avail}GiB',)
-
-# Unread email count
-status.register(
-    'mail',
-    color_unread='#ffff00',
-    # color_unread='#ffffff',
-    backends=[MaildirMail(directory='/home/hugo/.local/share/maildir/INBOX')],
-    format='\uf0e0 {unread}',
-    format_plural='\uf0e0 {unread}',
-)
 
 # Network and public IP
 status.register(
