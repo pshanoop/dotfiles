@@ -82,7 +82,7 @@ shift + control + alt + super + p
 ####################
 
 super + q
-  Thunar
+  nemo --no-desktop
 super + c
   $BROWSER
 super + p

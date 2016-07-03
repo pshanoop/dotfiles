@@ -1,0 +1,9 @@
+[Nemo Action]
+Name=Download Subtitles
+Comment=Download subtitles using subliminal
+Exec=urxvt -e subliminal download %F -l en
+Icon-Name=logviewer
+Selection=notnone
+Mimetypes=video/*
+Quote=double
+Dependencies=subliminal;

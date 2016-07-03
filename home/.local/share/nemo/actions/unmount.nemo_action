@@ -1,0 +1,9 @@
+[Nemo Action]
+Name=Unmount
+Comment=Mount using cryptfs
+Exec=fuse.unmount %F
+Icon-Name=edit-delete
+Selection=notnone
+Extensions=dir;mount;
+Quote=double
+Dependencies=fuse.unmount;

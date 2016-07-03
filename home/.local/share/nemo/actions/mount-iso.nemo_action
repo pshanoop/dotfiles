@@ -1,0 +1,10 @@
+[Nemo Action]
+Name=Mount ISO
+Comment=Mount using fuseiso
+Exec=mount.fuseiso %F
+Icon-Name=media-optical
+Selection=s
+Extensions=iso;
+# Mimetypes=
+Quote=double
+Dependencies=mount.fuseiso;

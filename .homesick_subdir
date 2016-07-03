@@ -4,4 +4,4 @@
 .gnupg
 .purple
 .config/parcellite
-.local
+.local/share
