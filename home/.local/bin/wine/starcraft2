@@ -1,3 +1,4 @@
 #!/bin/sh
 export WINEPREFIX=$HOME/wine/prefixes/starcraft2
-wine "C:\Program Files\Starcraft II\StarCraft II.exe"
+unset WINEARCH LD_PRELOAD
+wine "C:\Program Files (x86)\Starcraft II\StarCraft II.exe"
