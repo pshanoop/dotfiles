@@ -1,4 +1,4 @@
-file:///mnt/sshfs
-file:///home/hugo/music
-file:///home/hugo/downloads
-file:///home/hugo/pictures
+file:///mnt/sshfs sshfs
+file:///home/hugo/music music
+file:///home/hugo/downloads downloads
+file:///home/hugo/pictures pictures
