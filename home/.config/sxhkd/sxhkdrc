@@ -85,8 +85,6 @@ super + q
   nemo --no-desktop
 super + c
   $BROWSER
-super + p
-  pidgin
 super + o
   arandr
 super + g
