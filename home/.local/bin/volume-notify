@@ -5,4 +5,4 @@ if ponymix is-muted; then
   MUTE=" (muted)"
 fi
   
-dunstify -r 53 "Volume changed" "$(ponymix get-volume)% $MUTE"
+dunstify -u low -r 53 "Volume changed" "$(ponymix get-volume)% $MUTE"
