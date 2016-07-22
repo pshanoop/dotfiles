@@ -20,15 +20,6 @@ if [ $HOSTNAME == hyperion ]; then
     $FILE
 fi;
 
-# ~~~Bitcoin~~~
-if [ $HOSTNAME == hyperion ]; then
-  echo -e "\n~~~ Bitcoin Wallet ~~~"
-  FILE=wallet.dat
-
-  cd $HOME/.bitcoin/
-  $COMMAND -f bitcoin-$WHEN $FILE
-fi
-
 # ~~~Mailbox~~~
 if [ $HOSTNAME == hyperion ]; then
   echo -e "\n~~~ Mailbox ~~~"
