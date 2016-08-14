@@ -1,7 +1,14 @@
 #!/bin/sh
 
-if [ $1 = "fastmail" ]; then
-  cat $HOME/priv/secrets/hobarrera@fastmail.com
-else
+if [ -z $1 ]; then
+  echo "Usage: $0 account"
+  exit 1
+fi
+
+if [ $1 = "fastmail:caldav" ]; then
+  cat $HOME/priv/secrets/hobarrera@fastmail.com/caldav
+elif [ $1 = "fastmail:carddav" ]; then
+  cat $HOME/priv/secrets/hobarrera@fastmail.com/carddav
+elif [ $1 = "radicale" ]; then
   cat $HOME/priv/secrets/radicale@elysion
 fi;

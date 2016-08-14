@@ -30,7 +30,7 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "radicale"]
 type = carddav
 url = https://carddav.messagingengine.com/dav/addressbooks/user/hobarrera@fastmail.com/Default/
 username = hobarrera@fastmail.com
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:carddav"]
 
 ##### Calendars ######
 
@@ -49,4 +49,4 @@ fileext = .ics
 type = caldav
 url = https://caldav.messagingengine.com/
 username = hobarrera@fastmail.com
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail"]
+password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:caldav"]
