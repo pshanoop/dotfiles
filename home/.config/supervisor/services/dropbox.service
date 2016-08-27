@@ -1,5 +1,0 @@
-[program:dropbox]
-command=/usr/bin/dropbox
-redirect_stderr=true
-environment=
-  DISPLAY=""
