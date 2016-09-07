@@ -14,6 +14,9 @@ source ~/.vim/plugins.vim
 filetype plugin indent on
 
 " colorscheme sand
+let g:jellybeans_overrides = {
+\  'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
 colorscheme jellybeans
 
 " Tell vim that the terminal supports 256 colours.
