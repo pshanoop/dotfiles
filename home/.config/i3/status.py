@@ -33,8 +33,8 @@ status.register(
         '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
     ),
     status={
-        'DIS': '\uf243',
-        'CHR': '\uf242',
+        'DIS': '\uf078',
+        'CHR': '\uf077',
         'FULL': '\uf240'
     },
     alert=True,
