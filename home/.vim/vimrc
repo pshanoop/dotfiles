@@ -46,6 +46,9 @@ set autoindent
 " Break lines longer than 79 characters.
 set textwidth=79
 
+" Show a ruler on the 80th column.
+let &colorcolumn=80
+
 " Show the line and column number of the cursor position.
 set ruler
 
