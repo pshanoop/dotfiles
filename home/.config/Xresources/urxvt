@@ -21,7 +21,7 @@ URxvt.letterSpace: -1
 
 URxvt.color0: #3f3f3f
 URxvt.color1: #c44444
-URxvt.color2: #3aaf75
+URxvt.color2: #00cd00
 URxvt.color3: #dfaf8f
 URxvt.color4: #9ab8d7
 URxvt.color5: #dc8cc3
