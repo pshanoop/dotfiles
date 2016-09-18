@@ -13,7 +13,8 @@ source ~/.vim/plugins.vim
 
 filetype plugin indent on
 
-" colorscheme sand
+" colorscheme
+let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
 \  'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
 \}
