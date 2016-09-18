@@ -70,3 +70,7 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
 
 export WEECHAT_HOME=$HOME/.config/weechat/
+
+# Makes mouse scroll work for vim.
+# XXX This IS a hack though and needs to be fixed properly elsewhere.
+[ -z $TMUX ] || export TERM=screen-256color-it
