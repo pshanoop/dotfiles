@@ -195,3 +195,5 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
+
+au BufRead,BufNewFile *.zsh-theme set ft=sh
