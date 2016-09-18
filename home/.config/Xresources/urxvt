@@ -13,7 +13,7 @@ URxvt.scrollBar: false
 ! Symbola 9 is required for the zsh theme icons
 ! Symbola 10 is required for emoji
 URxvt.font: \
-  xft:DroidSansMono:size=12,\
+  xft:FiraMono:size=12,\
   xft:Droid Sans Mono for Powerline:size=12,style=regular,\
   xft:Symbola:size=9,\
   xft:Symbola:size=10
