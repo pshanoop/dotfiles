@@ -8,6 +8,7 @@ a = contacts_local
 b = contacts_fastmail
 collections = null
 metadata = []
+conflict_resolution = ["command", "vimdiff"]
 
 [storage contacts_local]
 type = filesystem
@@ -27,6 +28,7 @@ a = calendars_local
 b = calendars_fastmail
 collections = ["from b"]
 metadata = ["color", "displayname"]
+conflict_resolution = ["command", "vimdiff"]
 
 [storage calendars_local]
 type = filesystem
