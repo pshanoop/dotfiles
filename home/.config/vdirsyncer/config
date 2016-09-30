@@ -3,7 +3,7 @@ status_path = ~/.local/share/vdirsyncer/status/
 
 ##### Contacts ######
 
-[pair contacts_fastmail]
+[pair contacts]
 a = contacts_local
 b = contacts_fastmail
 collections = null
