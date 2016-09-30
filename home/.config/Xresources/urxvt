@@ -5,6 +5,7 @@ URxvt.foreground: #EEEEEE
 URxvt.highlightColor: #444444
 URxvt.underlineColor: #999999
 URxvt.colorUL: #4682B4
+URxvt.internalBorder: 0
 
 URxvt*saveLines:0
 URxvt.scrollBar: false
