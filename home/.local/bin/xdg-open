@@ -6,4 +6,4 @@ if echo "${1}" | egrep -q "^(https?://|www.)"; then
     exit
 fi
 
-thunar "${1}"
+nemo "${1}"
