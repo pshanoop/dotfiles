@@ -16,7 +16,7 @@ if [ $HOSTNAME == hyperion ]; then
   $COMMAND -f photos-$WHEN \
     --exclude Canvas \
     --exclude Unsorted \
-    --exclude Jolla \
+    --exclude iPhotos \
     $FILE
 fi;
 
