@@ -1,0 +1,25 @@
+[options]
+font = Fira Mono for Powerline 12
+audible_bell = yes
+urgent_on_bell = yes
+
+[colors]
+foreground = #eeeeee
+background = #282828
+cursor = #83c048
+color0 = #3f3f3f
+color1 = #c44444
+color2 = #00cd00
+color3 = #dfaf8f
+color4 = #9ab8d7
+color5 = #dc8cc3
+color6 = #8cd0d3
+color7 = #dcdcdc
+color8 = #709080
+color9 = #dca3a3
+color10 = #72d5a3
+color11 = #f0dfaf
+color12 = #94bff3
+color13 = #ec93d3
+color14 = #93e0e3
+color15 = #ffffff

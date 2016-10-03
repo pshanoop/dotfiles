@@ -33,7 +33,7 @@ export QT_STYLE_OVERRIDE=gtk
 export DESKTOP_SESSION=gnome
 
 # Other defaults
-export TERMINAL=urxvtc
+export TERMINAL=termite
 export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass
 

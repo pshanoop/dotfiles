@@ -1,2 +1,5 @@
 dconf dump /org/nemo/ > nemo
+dconf dump /org/cinnamon/desktop/applications/terminal/ > terminal
+
 dconf load /org/nemo/ < nemo
+dconf load /org/cinnamon/desktop/applications/terminal/ < terminal
