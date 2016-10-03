@@ -51,12 +51,6 @@ export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
 
-# Needed for webcams to work?
-# https://bbs.archlinux.org/viewtopic.php?pid=1474864
-if [ -x /usr/lib/libv4l/v4l2convert.so ]; then
-  export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so
-fi
-
 # Make pass copy into the primary/default X selection:
 export PASSWORD_STORE_X_SELECTION=primary
 
