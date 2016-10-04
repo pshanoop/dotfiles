@@ -39,20 +39,6 @@ status.register(
 # Free disk space
 status.register('disk', path='/', format='{avail}GiB',)
 
-# Network and public IP
-status.register(
-    'network',
-    format_down='',
-    interface='wlan0',
-    format_up='\uf1eb {essid}',
-)
-status.register(
-    'network',
-    format_down='',
-    interface='eth0',
-    format_up='{interface}'
-)
-
 # Internet connectivity
 status.register(
     'online',
