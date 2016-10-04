@@ -24,7 +24,7 @@ set $bg-color            #404552
 set $focused-bg-color    #404552
 set $active-bg-color     #373c48
 set $inactive-bg-color   #2f343f
-set $text-color          #b3bdcb
+set $text-color          #c3cddb
 set $inactive-text-color #9da3ad
 set $urgent-bg-color     #E53935
 
@@ -208,7 +208,7 @@ bar {
           #                  border             background         text
           focused_workspace  $focused-bg-color  $focused-bg-color  $text-color
           active_workspace   $focused-bg-color  $active-bg-color   $text-color
-          inactive_workspace $focused-bg-color  $inactive-bg-color $inactive-text-color
+          inactive_workspace $inactive-bg-color  $inactive-bg-color $inactive-text-color
           urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
         }
         separator_symbol "|"
