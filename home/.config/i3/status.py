@@ -21,11 +21,6 @@ status.register(
 if os.path.exists('/sys/class/thermal/thermal_zone0/temp'):
     status.register('temp', format='{temp:.0f}°C',)
 
-status.register(
-    'solaar',
-    nameOfDevice='Performance Mouse MX'
-)
-
 # Battery status
 status.register(
     'battery',
