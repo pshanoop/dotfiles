@@ -1,3 +1,0 @@
-[program:urxvtd]
-command=/usr/bin/urxvtd
-redirect_stderr=true

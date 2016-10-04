@@ -38,7 +38,6 @@ export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass
 
 export SDL_AUDIODRIVER=alsa
-export RXVT_SOCKET="$HOME/.local/share/urxvt/urxvtd.sock"
 
 # Fix scrolling with a mouse on GTK3 apps
 export GDK_CORE_DEVICE_EVENTS=1
