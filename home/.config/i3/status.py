@@ -34,6 +34,7 @@ status.register(
     },
     alert=True,
     alert_percentage=5,
+    not_present_text='',
 )
 
 # Free disk space
