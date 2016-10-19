@@ -25,3 +25,5 @@
 	diffFilter = /usr/share/git/diff-highlight/diff-highlight
 [commit]
 	verbose = true
+[rebase]
+	autoStash = true
