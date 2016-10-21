@@ -1,2 +1,0 @@
-# Update package index and download packages hourly
-0	*/1	*	*	*	chronic pacman -Suwy --noconfirm
