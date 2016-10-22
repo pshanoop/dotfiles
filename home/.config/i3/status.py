@@ -33,7 +33,6 @@ status.register(
         'FULL': '\uf240'
     },
     alert=True,
-    alert_percentage=5,
     not_present_text='',
 )
 
