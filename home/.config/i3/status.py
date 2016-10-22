@@ -22,19 +22,19 @@ if os.path.exists('/sys/class/thermal/thermal_zone0/temp'):
     status.register('temp', format='{temp:.0f}°C',)
 
 # Battery status
-status.register(
-    'battery',
-    format=(
-        '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
-    ),
-    status={
-        'DIS': '\uf078',
-        'CHR': '\uf077',
-        'FULL': '\uf240'
-    },
-    alert=True,
-    not_present_text='',
-)
+if os.path.exists('/sys/class/power_supply/BAT0/'):
+    status.register(
+        'battery',
+        format=(
+            '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
+        ),
+        status={
+            'DIS': '\uf078',
+            'CHR': '\uf077',
+            'FULL': '\uf240'
+        },
+        alert=True,
+    )
 
 # Free disk space
 status.register('disk', path='/', format='{avail}GiB',)
