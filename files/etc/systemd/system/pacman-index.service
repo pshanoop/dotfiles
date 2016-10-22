@@ -1,0 +1,6 @@
+[Unit]
+Description=Update the pacman package index
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/chronic pacman -Suwy --noconfirm
