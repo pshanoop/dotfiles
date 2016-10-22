@@ -47,7 +47,7 @@ status.register(
     },
     color='#00FF00',
     format_online='\uf0ac',
-    format_offline='\uf0ac offline',
+    format_offline='\uf0ac',
 
 )
 
