@@ -1,0 +1,6 @@
+[Unit]
+Description=Auto hibernate if battery is low
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/auto-hibernate
