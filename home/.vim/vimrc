@@ -16,16 +16,17 @@ filetype plugin indent on
 " colorscheme
 let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
-\  'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\  'background': {
+\    'ctermbg': 'none',
+\    '256ctermbg': 'none',
+\    'guibg': '282828'
+\  },
 \}
 colorscheme jellybeans
 
 " This is required for 24-bit colours. Not sure if it's due to tmux or what
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
-
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
 
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
