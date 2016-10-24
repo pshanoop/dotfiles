@@ -29,9 +29,9 @@ if os.path.exists('/sys/class/power_supply/BAT0/'):
             '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
         ),
         status={
-            'DIS': '\uf078',
-            'CHR': '\uf077',
-            'FULL': '\uf240'
+            'DIS': '',
+            'CHR': '',
+            'FULL': ''
         },
         alert=True,
     )
@@ -46,8 +46,8 @@ status.register(
         'separator': False,
     },
     color='#00FF00',
-    format_online='\uf0ac',
-    format_offline='\uf0ac',
+    format_online='',
+    format_offline='',
 
 )
 
