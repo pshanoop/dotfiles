@@ -12,6 +12,7 @@
 	autosetuprebase = always
 [log]
 	follow = true
+	showSignature = true
 [merge]
 	commit = no
 	ff = no
