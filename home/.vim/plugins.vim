@@ -23,6 +23,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
+Plug 'chutzpah/icalendar.vim'
 
 " UI
 Plug 'Yggdroot/indentLine'
