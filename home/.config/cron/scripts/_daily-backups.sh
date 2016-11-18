@@ -28,8 +28,9 @@ if [ $HOSTNAME == hyperion ]; then
   cd $HOME/.local/share/
   $COMMAND -f maildir-$WHEN \
     --exclude .notmuch \
-    --exclude INBOX.Trash \
-    --exclude INBOX.IDF \
+    --exclude "INBOX.Junk Mail" \
     --exclude INBOX.Lists \
+    --exclude RSS \
+    --exclude Trash \
     $FILE
 fi
