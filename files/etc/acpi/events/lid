@@ -1,0 +1,3 @@
+# Pass all events to our one handler script
+event=button/lid
+action=/etc/acpi/actions/lid %e

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+export DISPLAY=:0
+export XUSER=$(ps aux | grep -P "/usr/lib/xorg-server/Xorg.*:0" | grep -v grep | cut -d" " -f1)
+
+if [ $3 == "close" ]; then
+  sudo -u $XUSER xset s activate
+elif [ $3 == "open" ]; then
+  sudo -u $XUSER xset s reset
+fi
