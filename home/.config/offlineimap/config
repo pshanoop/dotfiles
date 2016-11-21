@@ -9,8 +9,6 @@ ui = basic
 [Account Personal]
 localrepository = LocalPersonal
 remoterepository = RemotePersonal
-autorefresh = 5
-quick = 5
 presynchook = date -Is
 postsynchook = /usr/bin/notmuch new
 
