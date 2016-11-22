@@ -1,4 +1,0 @@
-#!/bin/sh
-
-export WINEPREFIX=$HOME/wine/prefixes/eve
-wine "C:/EVE/Launcher/evelauncher.exe"

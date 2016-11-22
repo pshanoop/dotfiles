@@ -2,13 +2,14 @@
 #
 # Runs eve on desktop $1 with an almost-fullscreen-resolution, leaving the i3 status bar visible.
 
-I3_STATUS_SIZE=21
+I3_STATUS_SIZE=24
 
-RES=$(xrandr | egrep -o "^\s+\w+" | head -n 1)
-WIDTH=$(echo $RES | egrep -o "^[^x]+")
-HEIGHT=$(echo $RES | egrep -o "[^x]+$")
-HEIGHT=$(calc $HEIGHT-$I3_STATUS_SIZE | egrep -o "\w+")
+RES=$(xrandr | grep -Po "^\s+\w+" | head -n 1)
+WIDTH=$(echo $RES | grep -Po "^[^x]+")
+HEIGHT=$(echo $RES | grep -Po "[^x]+$")
+HEIGHT=$(calc $HEIGHT-$I3_STATUS_SIZE | grep -Po "\w+")
+
 RES=${WIDTH}x${HEIGHT}
 
 export WINEPREFIX=$HOME/wine/prefixes/eve
-wine explorer /desktop=eve$RANDOM,$RES "C:\Program Files\CCP\EVE\bin\ExeFile.exe"
+wine explorer /desktop=eve$RANDOM,$RES "C:/EVE/Launcher/evelauncher.exe"
