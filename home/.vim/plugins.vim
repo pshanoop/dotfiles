@@ -9,7 +9,9 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
 
 " Completion.
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
+Plug 'Valloric/YouCompleteMe', {
+\  'do': 'python2 install.py --omnisharp-completer --clang-completer --system-libclang'
+\}
 Plug 'tpope/vim-endwise'
 " Plug 'kana/vim-smartinput'
 
