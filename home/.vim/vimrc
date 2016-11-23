@@ -3,15 +3,10 @@
 "
 
 " Breaks vi compatibility. This needs to go before everything else.
-" Also required for Vundle.
 set nocompatible
-" Required for Vundle.
-filetype off
 
 " Plugins!
 source ~/.vim/plugins.vim
-
-filetype plugin indent on
 
 " colorscheme
 let g:jellybeans_use_term_italics = 1
@@ -31,9 +26,6 @@ set t_8b=[48;2;%lu;%lu;%lum
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
 
-" Enable lexical highlighting.
-syntax enable
-
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=2
 
@@ -49,26 +41,17 @@ set number
 " ... and relative line numbers for the rest.
 set relativenumber
 
-" Copy indentation over to new lines.
-set autoindent
-
 " Break lines longer than 79 characters.
 set textwidth=79
 
 " Show a ruler on the 80th column.
 let &colorcolumn=80
 
-" Show the line and column number of the cursor position.
-set ruler
-
 " Highlight all search matches.
 set hlsearch
 
 " Remove search highlighting by pressing ESC.
 map <F2> :nohlsearch<CR>
-
-" Highlight search results on-the-fly.
-set incsearch
 
 " TODO: set iskeyword so as to behave like vi
 
@@ -143,9 +126,6 @@ hi link mkdLineBreak Underlined
 vnoremap < <gv
 vnoremap > >gv
 
-" Allow backspacing over line jumps, indent and over the start of an insert.
-set backspace=indent,eol,start
-
 set listchars=eol:$,tab:>-,space:·,trail:·,extends:>,precedes:<
 set listchars=tab:>-,space:·,trail:·,extends:>,precedes:<
 set list
@@ -155,8 +135,6 @@ let g:indentLine_color_gui = '#666666'
 highlight clear SpecialKey
 highlight SpecialKey guifg='#666666'
 
-" Shows airline all the time:
-set laststatus=2
 " Hide current mode (redundant with airline)
 set noshowmode
 
@@ -191,9 +169,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
 
 let g:airline_powerline_fonts = 1
-
-" Avoid delay after pressing <Esc>
-set timeoutlen=1000 ttimeoutlen=0
 
 " Disable arrow keys (the home row is faster, but I have to force myself to get
 " used to it!)

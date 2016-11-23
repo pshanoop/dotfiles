@@ -6,6 +6,7 @@ Plug 'gmarik/Vundle.vim'
 " Essentials.
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-sensible'
 
 " Completion.
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
