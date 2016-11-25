@@ -4,7 +4,7 @@ call plug#begin()
 Plug 'gmarik/Vundle.vim'
 
 " Essentials.
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
 
