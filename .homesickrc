@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-system("git submodule init")
-system("git submodule update")
+system("git submodule update --init --recursive")
+system("echo -e ':PlugInstall\n' | vim")
