@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Runs mpc with a locally stored password.
-#
-# NOTE: The --host argument is not used since it exposes the password to other
-# local users that can list running processes.
-
-export MPD_HOST=$(cat ~/priv/secrets/mpd@hyperion)@hyperion.barrera.io
-mpc $*

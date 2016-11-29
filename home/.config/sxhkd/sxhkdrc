@@ -94,13 +94,13 @@ super + g
 ##################
 
 XF86AudioPlay
-  mpc-secure toggle
+  playerctl play-pause
 XF86AudioPrev
-  mpc-secure prev
+  playerctl prev
 XF86AudioNext
-  mpc-secure next
+  playerctl next
 XF86AudioStop
-  mpc-secure stop
+  playerctl stop
 XF86Calculator
   $TERMINAL -e calc -d
 
