@@ -1,42 +1,42 @@
 [general]
-status_path = ~/.local/share/vdirsyncer/status/
+status_path = "~/.local/share/vdirsyncer/status/"
 
 ##### Contacts ######
 
 [pair contacts]
-a = contacts_local
-b = contacts_fastmail
+a = "contacts_local"
+b = "contacts_fastmail"
 collections = null
 metadata = []
 conflict_resolution = ["command", "vimdiff"]
 
 [storage contacts_local]
-type = filesystem
-path = ~/.local/share/contacts/cards/
-fileext = .vcf
+type = "filesystem"
+path = "~/.local/share/contacts/cards/"
+fileext = ".vcf"
 
 [storage contacts_fastmail]
-type = carddav
-url = https://carddav.messagingengine.com/dav/addressbooks/user/hobarrera@fastmail.com/Default/
-username = hobarrera@fastmail.com
+type = "carddav"
+url = "https://carddav.messagingengine.com/dav/addressbooks/user/hobarrera@fastmail.com/Default/"
+username = "hobarrera@fastmail.com"
 password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:carddav"]
 
 ##### Calendars ######
 
 [pair calendars]
-a = calendars_local
-b = calendars_fastmail
+a = "calendars_local"
+b = "calendars_fastmail"
 collections = ["from b"]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
 [storage calendars_local]
-type = filesystem
-path = ~/.local/share/calendars/
-fileext = .ics
+type = "filesystem"
+path = "~/.local/share/calendars/"
+fileext = ".ics"
 
 [storage calendars_fastmail]
-type = caldav
-url = https://caldav.messagingengine.com/
-username = hobarrera@fastmail.com
+type = "caldav"
+url = "https://caldav.messagingengine.com/"
+username = "hobarrera@fastmail.com"
 password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:caldav"]
