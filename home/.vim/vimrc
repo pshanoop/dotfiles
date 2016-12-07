@@ -18,6 +18,7 @@ let g:jellybeans_overrides = {
 \  },
 \}
 colorscheme jellybeans
+let g:lightline = { 'colorscheme': 'jellybeans' }
 
 " This is required for 24-bit colours. Not sure if it's due to tmux or what
 set t_8f=[38;2;%lu;%lu;%lum
@@ -167,8 +168,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " Don't conceal markdown
 let g:vim_markdown_conceal = 0
-
-let g:airline_powerline_fonts = 1
 
 " Disable arrow keys (the home row is faster, but I have to force myself to get
 " used to it!)
