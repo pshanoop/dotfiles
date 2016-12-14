@@ -8,6 +8,7 @@
 [diff]
 	tool = vimdiff
 	algorithm = patience
+	compactionHeuristic = true
 [branch]
 	autosetuprebase = always
 [log]
