@@ -46,7 +46,7 @@ ZSH_CUSTOM=~/.config/zsh
 # Add wisely, as too many plugins slow down shell startup.
 #
 # zsh-syntax-highlighting needs to be last.
-plugins=(rvm gpg-agent ssh-agent-simple virtualenv zsh-syntax-highlighting)
+plugins=(rvm ssh-agent-simple virtualenv zsh-syntax-highlighting)
 # virtualenv? Needs theme support?
 
 source $ZSH/oh-my-zsh.sh
