@@ -8,6 +8,9 @@ set nocompatible
 " Plugins!
 source ~/.vim/plugins.vim
 
+" Lightline configurtion is pretty long:
+source ~/.vim/lightline.vim
+
 " colorscheme
 let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
@@ -18,7 +21,6 @@ let g:jellybeans_overrides = {
 \  },
 \}
 colorscheme jellybeans
-let g:lightline = { 'colorscheme': 'jellybeans' }
 
 " This is required for 24-bit colours. Not sure if it's due to tmux or what
 set t_8f=[38;2;%lu;%lu;%lum
