@@ -48,7 +48,6 @@ status.register(
     color='#00FF00',
     format_online='',
     format_offline='',
-
 )
 
 status.run()
