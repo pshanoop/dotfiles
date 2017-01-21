@@ -4,6 +4,6 @@ Comment=Mount using cryptfs
 Exec=mount.encfs %F
 Icon-Name=locked
 Selection=s
-Extensions=dir;enc;
+Extensions=enc;
 Quote=double
 Dependencies=encfs;

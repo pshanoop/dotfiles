@@ -4,6 +4,6 @@ Comment=Mount using cryptfs
 Exec=fuse.unmount %F
 Icon-Name=edit-delete
 Selection=notnone
-Extensions=dir;mount;
+Extensions=mount;
 Quote=double
 Dependencies=fuse.unmount;
