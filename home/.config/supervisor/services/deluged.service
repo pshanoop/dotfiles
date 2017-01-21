@@ -1,4 +1,3 @@
 [program:deluged]
 command=deluged -d
-autostart=false
 redirect_stderr=true

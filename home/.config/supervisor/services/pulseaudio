@@ -1,4 +1,3 @@
 [program:pulseaudio]
 command=/usr/bin/pulseaudio --daemonize=no
-autostart=false
 redirect_stderr=true
