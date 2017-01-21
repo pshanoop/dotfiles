@@ -30,7 +30,7 @@ if [ $HOSTNAME == hyperion ]; then
     --exclude .notmuch \
     --exclude "INBOX.Junk Mail" \
     --exclude INBOX.Lists \
-    --exclude RSS \
+    --exclude INBOX.RSS \
     --exclude Trash \
     $FILE
 fi
