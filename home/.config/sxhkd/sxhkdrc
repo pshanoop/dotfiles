@@ -96,7 +96,7 @@ super + g
 XF86AudioPlay
   playerctl play-pause
 XF86AudioPrev
-  playerctl prev
+  playerctl previous
 XF86AudioNext
   playerctl next
 XF86AudioStop
