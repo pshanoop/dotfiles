@@ -1,5 +1,6 @@
 [options]
-font = Fira Mono for Powerline 12
+# font = Fira Mono for Powerline 12
+font = Ubuntu Mono 14
 audible_bell = yes
 urgent_on_bell = yes
 
