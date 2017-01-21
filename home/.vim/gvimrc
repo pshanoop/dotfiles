@@ -1,7 +1,7 @@
 " set guifont=Inconsolata\ 13
 " set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline\ 11
 " set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 13
+set guifont=Ubuntu\ Mono\ 14
 " set guifont=Ubuntu\ Mono\ 13
 set guioptions-=T
 set guioptions-=r
