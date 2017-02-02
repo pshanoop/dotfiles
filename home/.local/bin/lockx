@@ -2,19 +2,13 @@
 
 set -x
 
-FILE1=$(mktemp --tmpdir lockx-XXXXXXX.png)
-FILE2=$(mktemp --tmpdir lockx-XXXXXXX.png)
-
-scrot $FILE1
-convert $FILE1 -blur 0x5 +matte $FILE2
-
 alias supervisorctl='/usr/bin/supervisorctl -c /home/hugo/.config/supervisor/supervisord.conf'
 
 supervisorctl stop caffeine &
 killall -SIGUSR1 dunst &
 (sleep 2 && xset s activate) &
 
-i3lock -nfe -i $FILE2
+i3lock -nfeul -r 15 -s 15
 
 wait $(pgrep i3lock)
 killall -SIGUSR2 dunst
