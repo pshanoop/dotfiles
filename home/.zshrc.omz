@@ -1,5 +1,5 @@
 # Start tmux and exit. If alreay inside tmux, skips this line.
-[ -z $TMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
+[ -z $TMUX ] && [ -z $NOTMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
