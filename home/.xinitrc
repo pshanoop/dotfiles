@@ -11,10 +11,6 @@ if [ -n $DISPLAY ]; then
   # NOTE: requires GNU grep:
   natural-scrolling || true
 
-  if [ $(hostname) = hyperion.barrera.io ]; then
-    numlockx on &
-  fi;
-
   mkdir -p "$HOME/.cache/supervisor"
   dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"
 
