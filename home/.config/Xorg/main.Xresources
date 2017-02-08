@@ -3,5 +3,5 @@ Xcursor.size:  16
 
 Xft.dpi: 106
 
-#include "xautolock"
-#include "rofi"
+#include "xautolock.Xresources"
+#include "rofi.Xresources"
