@@ -3,7 +3,7 @@
 # ~/.xinitrc
 
 if [ -n $DISPLAY ]; then
-  xrdb -merge $HOME/.config/Xresources/main
+  xrdb -merge $HOME/.config/Xorg/main.Xresources
   xrandr --dpi 106
   xset b 20 6 100
 
