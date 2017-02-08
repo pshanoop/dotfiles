@@ -34,3 +34,10 @@ if [ $HOSTNAME == hyperion ]; then
     --exclude Trash \
     $FILE
 fi
+
+# ~~~Packages~~~
+cd $(mktemp -d)
+pacman -Qeq > explicit-packages.txt
+pacman -Qdq > depends-packages.txt
+$COMMAND -f packages-$HOSTNAME-$WHEN \
+  explicit-packages.txt depends-packages.txt
