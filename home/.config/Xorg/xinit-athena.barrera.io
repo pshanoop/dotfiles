@@ -6,5 +6,4 @@ xrandr --output eDP1 --primary
 xrandr --output eDP1 --dpi 160
 xrdb -merge $HOME/.config/Xorg/athena.barrera.io.Xresources
 
-# < and ª and swapped for some inexplicable reason
-xmodmap athena.xmodmap
+xmodmap $(dirname $0)/athena.xmodmap
