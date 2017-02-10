@@ -90,6 +90,18 @@ map <F9> :so $HOME/.vimrc <CR>
 " The default syntastic checkers are listed here:
 " https://github.com/scrooloose/syntastic/blob/master/plugin/syntastic/registry.vim
 
+" Set syntastic to passive mode. This requies manually triggering it, but
+" lightline will do this for us.
+let g:syntastic_mode_map = {'mode': 'passive'}
+
+" Auto-close the error list when there are no more errors
+let g:syntastic_auto_loc_list = 2
+
+let g:syntastic_error_symbol = '✖'
+let g:syntastic_style_error_symbol = '!'
+let g:syntastic_warning_symbol = '✖'
+let g:syntastic_style_warning_symbol = '!'
+
 " Use C++11.
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
