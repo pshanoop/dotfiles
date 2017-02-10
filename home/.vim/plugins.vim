@@ -24,7 +24,6 @@ Plug 'digitaltoad/vim-jade'
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
-Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
 Plug 'chutzpah/icalendar.vim'
 
