@@ -196,6 +196,4 @@ nnoremap <down> <nop>
 au BufRead,BufNewFile *.zsh-theme set ft=sh
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
-
-" Remember last cursor location when re-opening a file.
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

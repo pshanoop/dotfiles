@@ -31,6 +31,7 @@ Plug 'chutzpah/icalendar.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'dietsche/vim-lastplace'
 
 " Misc.
 Plug 'tpope/vim-surround'  " XXX: Haven't really been using this
