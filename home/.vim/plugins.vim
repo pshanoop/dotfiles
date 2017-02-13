@@ -34,9 +34,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
 
 " Misc.
-Plug 'tpope/vim-surround'  " XXX: Haven't really been using this
 Plug 'tomtom/tcomment_vim'
-Plug 'godlygeek/tabular'
 Plug 'justinmk/vim-sneak'
 
 Plug 'editorconfig/editorconfig-vim'
