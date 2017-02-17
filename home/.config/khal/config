@@ -15,3 +15,6 @@ dateformat = %Y-%m-%d
 
 [default]
 timedelta = 8 days
+
+[view]
+agenda_event_format = "{calendar-color}{start-end-time-style} {title}{repeat-symbol}{reset}"
