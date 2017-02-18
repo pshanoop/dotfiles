@@ -36,6 +36,8 @@ if [ $HOSTNAME == hyperion ]; then
 fi
 
 # ~~~Packages~~~
+echo -e "\n~~~ Packages ~~~"
+
 cd $(mktemp -d)
 pacman -Qeq > explicit-packages.txt
 pacman -Qdq > depends-packages.txt
