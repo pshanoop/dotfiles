@@ -1,17 +1,7 @@
 #!/bin/sh
 
-MOD_FILES=$(git status --porcelain  | grep -e '^[^\?]' | wc -l)
+set -e
 
 git fetch
-
-if [ $MOD_FILES != 0 ]; then
-  git stash
-fi
-
-git rebase
-
-if [ $MOD_FILES != 0 ]; then
-  git stash apply && git stash drop
-fi
-
+git rebase --autostash
 git push
