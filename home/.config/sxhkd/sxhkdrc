@@ -122,9 +122,9 @@ button8
 
 # Trackpad three-finger swipe, vertical
 button18
-  ponymix decrease 3
+  ponymix decrease 3 && volume-notify
 button16
-  ponymix increase 3
+  ponymix increase 3 && volume-notify
 
 # Trackpad three-finger swipe, horizontal
 button17
