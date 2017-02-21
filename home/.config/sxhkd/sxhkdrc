@@ -63,6 +63,8 @@ super + Print
   scrotpush
 
 # These are for PrintScreen-less keyboards
+super + p
+  screenshot active
 control + alt + super + p
   screenshot
 shift + control + alt + super + p
