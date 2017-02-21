@@ -14,16 +14,6 @@ super + Return
 
 control + alt + Escape
   xkill
-XF86Tools
-  kbctl
-XF86Display
-  screenswitch
-XF86LaunchB
-  screenswitch
-super + shift + t
-  say the time is $(date +%R)
-super + shift + w
-  say $(weather)
 super + shift + h
   mpv --loop=inf --fs ~/videos/hypnotoad.mp4
 
@@ -87,8 +77,6 @@ super + c
   $BROWSER
 super + o
   arandr
-super + g
-  sftpman-gtk
 
 ### Media Keys ###
 ##################
