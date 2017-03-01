@@ -8,7 +8,7 @@ set -u
 
 HOSTNAME=$(hostname -s)
 CACHE_DIR=/home/hugo/.local/share/tarsnap/cache
-KEY=/home/hugo/priv/keys/tarsnap/barrera.io/hyperion.w.key
+KEY=/home/hugo/priv/keys/tarsnap/barrera.io/$(hostname -s).w.key
 
 SHARED_FLAGS="--print-stats --humanize-numbers --one-file-system"
 COMMAND="tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR $SHARED_FLAGS"
