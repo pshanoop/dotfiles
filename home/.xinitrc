@@ -19,6 +19,11 @@ if [ -n $DISPLAY ]; then
   if [ -x $HOST_INIT ]; then
     $HOST_INIT
   fi;
+
+  HOST_XRESOURCES=$HOME/.config/Xorg/athena.barrera.io.Xresources
+  if [ -f $HOST_XRESOURCES ]; then
+    xrdb -merge $HOST_XRESOURCES
+  fi;
 fi;
 
 # Never give up, never surrender!
