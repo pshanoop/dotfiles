@@ -1,5 +1,5 @@
 [global]
-    font = Ubuntu 12
+    font = Ubuntu 9
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
