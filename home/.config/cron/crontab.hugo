@@ -4,3 +4,4 @@ MAILTO=hugo@barrera.io
 0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh
 0	0	*	*	1	chronic notmuch compact
 3	*	*	*	*	r2e run
+5-59/15	*	*	*	*	offlineimap
