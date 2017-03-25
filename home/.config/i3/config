@@ -214,8 +214,6 @@ bar {
         tray_output primary
 }
 
-exec_always --no-startup-id feh --bg-scale $HOME/.wallpapers/1.jpg
-
 new_window pixel
 hide_edge_borders both
 

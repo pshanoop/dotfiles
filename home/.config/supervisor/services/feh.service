@@ -1,0 +1,4 @@
+[program:feh]
+command=/usr/bin/feh --bg-scale %(ENV_HOME)s/.wallpapers/1.jpg
+autorestart=false
+redirect_stderr=true
