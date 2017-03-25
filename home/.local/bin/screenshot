@@ -1,6 +1,6 @@
 #!/bin/sh
 
-COMMAND="maim --showcursor"
+COMMAND=maim
 FILENAME="$HOME/screenshots/$(date -Ins).png"
 
 if [ -z $1 ]; then
