@@ -6,9 +6,7 @@ if [ -n $DISPLAY ]; then
   xrdb -merge $HOME/.config/Xorg/main.Xresources
   xset b 20 6 100
 
-  # Natural scrolling:
-  # NOTE: requires GNU grep:
-  natural-scrolling || true
+  natural-scrolling
 
   mkdir -p "$HOME/.cache/supervisor"
   dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"

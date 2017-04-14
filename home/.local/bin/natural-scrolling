@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # Enables natural scrolling (requires using libinput, instead of evdev).
+# Required GNU grep
 
 pointers=$(xinput list | grep -Po 'id=([0-9])+.*pointer' | grep -Po '\d+')
 # echo "Detected pointers: $pointers" | tr '\n' ' '
