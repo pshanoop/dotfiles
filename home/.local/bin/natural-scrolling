@@ -2,18 +2,13 @@
 #
 # Enables natural scrolling (requires using libinput, instead of evdev).
 
-set -e
-set -u
+pointers=$(xinput list | grep -Po 'id=([0-9])+.*pointer' | grep -Po '\d+')
+# echo "Detected pointers: $pointers" | tr '\n' ' '
+# echo ""
 
-# TODO: Actually try and enable this on all "slave pointer" devices that expose
-# the "Natural Scolling" prop.
-
-# Logitech mouse
-MOUSE_ID=$(xinput | grep -Po 'Performance MX\s+id=\K(\d+)')
-MOUSE_PROP=$(xinput list-props $MOUSE_ID | grep "Natural Scrolling Enabled (" | grep -Po "(\d{3})")
-xinput set-prop $MOUSE_ID $MOUSE_PROP 1
-
-# MacBook Touchpad
-MOUSE_ID=$(xinput | grep -Po 'bcm5974\s+id=\K(\d+)')
-MOUSE_PROP=$(xinput list-props $MOUSE_ID | grep "Natural Scrolling Enabled (" | grep -Po "(\d{3})")
-xinput set-prop $MOUSE_ID $MOUSE_PROP 1
+for pointer in $pointers; do
+  xinput set-prop $pointer 'libinput Natural Scrolling Enabled' 1 2> /dev/null
+  if [ $? == 0 ]; then
+    echo "Enabled for $(xinput list --name-only $pointer)"
+  fi
+done
