@@ -4,7 +4,6 @@
 
 if [ -n $DISPLAY ]; then
   xrdb -merge $HOME/.config/Xorg/main.Xresources
-  xrandr --dpi 106
   xset b 20 6 100
 
   # Natural scrolling:
