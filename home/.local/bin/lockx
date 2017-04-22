@@ -6,10 +6,11 @@ alias supervisorctl='/usr/bin/supervisorctl -c /home/hugo/.config/supervisor/sup
 
 supervisorctl stop caffeine &
 killall -SIGUSR1 dunst &
-(sleep 2 && xset s activate) &
+xset dpms force off
+xset dpms 3
 
 i3lock -nfel -r 15 -s 15
 
-wait $(pgrep i3lock)
+xset dpms 120
 killall -SIGUSR2 dunst
 supervisorctl start caffeine
