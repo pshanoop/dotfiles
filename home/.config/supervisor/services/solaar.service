@@ -1,4 +1,0 @@
-[program:solaar]
-command=/usr/bin/solaar
-autostart=false
-redirect_stderr=true

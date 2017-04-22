@@ -1,4 +1,0 @@
-[program:offlineimap]
-command=/usr/bin/offlineimap
-autostart=false
-redirect_stderr=true

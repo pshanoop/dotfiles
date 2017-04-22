@@ -1,4 +1,0 @@
-[program:elysion-proxy]
-command=elysion-proxy
-autostart=false
-redirect_stderr=true

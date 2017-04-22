@@ -1,4 +1,0 @@
-[program:autolock]
-command=/usr/bin/xautolock
-autostart=false
-redirect_stderr=true

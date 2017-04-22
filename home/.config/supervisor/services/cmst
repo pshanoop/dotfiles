@@ -1,4 +1,0 @@
-[program:cmst]
-command=/usr/bin/cmst
-autostart=false
-redirect_stderr=true
