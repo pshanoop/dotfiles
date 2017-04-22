@@ -53,8 +53,13 @@ let &colorcolumn=80
 " Highlight all search matches.
 set hlsearch
 
+" Leader is recommended for user-specifc bindings
+let mapleader = ","
+
+
 " Remove search highlighting by pressing ESC.
 map <F2> :nohlsearch<CR>
+map <Leader>f :nohlsearch<CR>
 
 " TODO: set iskeyword so as to behave like vi
 
@@ -83,6 +88,7 @@ au BufEnter,BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp map <F3> :%!astyle -A2 -s4 -S
 
 " Comment blocks with F5.
 map <F5> :TComment <CR>
+map <Leader>c :TComment<CR>
 
 " Reload (source) config file.
 map <F9> :so $HOME/.vimrc <CR>
