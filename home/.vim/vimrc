@@ -198,6 +198,9 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
+" Same goes for ^D and ^U
+nnoremap <PageDown> <nop>
+nnoremap <PageUp> <nop>
 
 au BufRead,BufNewFile *.zsh-theme set ft=sh
 
