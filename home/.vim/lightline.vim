@@ -20,4 +20,5 @@ augroup END
 function! s:syntastic()
   SyntasticCheck
   call lightline#update()
+  redraw!
 endfunction
