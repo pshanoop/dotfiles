@@ -203,6 +203,7 @@ nnoremap <PageDown> <nop>
 nnoremap <PageUp> <nop>
 
 au BufRead,BufNewFile *.zsh-theme set ft=sh
+au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
