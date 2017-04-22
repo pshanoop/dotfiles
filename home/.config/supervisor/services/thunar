@@ -1,4 +1,0 @@
-[program:thunar]
-command=/usr/bin/thunar --daemon
-autostart=false
-redirect_stderr=true
