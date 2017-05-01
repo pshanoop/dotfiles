@@ -1,4 +1,5 @@
 MAILTO=hugo@barrera.io
+LANG="en_GB.UTF-8"
 
 */20	*	*	*	*	chronic vdirsyncer -v WARNING sync ; khal > /dev/null
 0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh
