@@ -1,7 +1,10 @@
 MAILTO=hugo@barrera.io
 LANG="en_GB.UTF-8"
 
-*/20	*	*	*	*	chronic vdirsyncer -v WARNING sync ; khal > /dev/null
+# Calendars & contacts
+*/20	*	*	*	*	chronic vdirsyncer -v DEBUG sync calendars
+*/20	*	*	*	*	chronic vdirsyncer -v DEBUG sync work_calendars 2> /dev/null > /dev/null
+
 0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh
 0	*/6	*	*	1	chronic notmuch compact
 3	*	*	*	*	[ -x /usr/bin/r2e ] && chronic r2e run
