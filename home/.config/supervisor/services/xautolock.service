@@ -1,0 +1,4 @@
+[program:xautolock]
+command=/usr/bin/xautolock
+environment=DISPLAY=":0"
+redirect_stderr=true

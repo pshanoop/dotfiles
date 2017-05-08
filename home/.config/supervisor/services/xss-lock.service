@@ -1,3 +1,0 @@
-[program:xss-lock]
-command=/usr/bin/xss-lock lockx -v
-redirect_stderr=true
