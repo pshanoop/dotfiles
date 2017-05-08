@@ -1,3 +1,0 @@
-[program:deluged]
-command=deluged -d
-redirect_stderr=true

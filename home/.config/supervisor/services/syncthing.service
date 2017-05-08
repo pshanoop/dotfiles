@@ -1,3 +1,0 @@
-[program:syncthing]
-command=syncthing -no-browser
-redirect_stderr=true

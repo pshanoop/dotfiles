@@ -1,3 +1,0 @@
-[program:syncthing-inotify]
-command=syncthing-inotify
-redirect_stderr=true

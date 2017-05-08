@@ -1,0 +1,8 @@
+[Unit]
+Description=A bitorrent client daemon
+
+[Service]
+ExecStart=/usr/bin/deluged -d
+
+[Install]
+WantedBy=default.target

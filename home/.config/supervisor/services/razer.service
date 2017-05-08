@@ -1,3 +1,0 @@
-[program:razer]
-command=/usr/bin/razer-service -Fv
-redirect_stderr=true
