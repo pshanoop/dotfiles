@@ -6,10 +6,8 @@ if [ -n $DISPLAY ]; then
   xrdb -merge $HOME/.config/Xorg/main.Xresources
   xset b 20 6 100
 
-  natural-scrolling
-
-  mkdir -p "$HOME/.cache/supervisor"
-  dbus-launch supervisord -c "$HOME/.config/supervisor/supervisord.conf"
+  systemctl --user import-environment
+  systemctl --user start xorg.target
 
   # Run a per-host script for varying configurations.
   HOST_INIT=$HOME/.config/Xorg/xinit-$(hostname)
