@@ -1,5 +1,2 @@
-Xautolock.notifier: notify-send Locking screen in 30s
-Xautolock.time: 10
+Xautolock.time: 2
 Xautolock.locker: lockx
-Xautolock.notify: 30
-Xautolock.corners: +-00
