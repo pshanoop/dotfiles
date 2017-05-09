@@ -5,15 +5,13 @@ set -x
 # Never run more than one i3lock instance
 pgrep i3lock && exit
 
-alias supervisorctl='/usr/bin/supervisorctl -c /home/hugo/.config/supervisor/supervisord.conf'
-
-supervisorctl stop caffeine &
+systemctl --user stop caffeine &
 killall -SIGUSR1 dunst &
 xset dpms force off
 xset dpms 3
 
-i3lock -nfel -r 15 -s 15
+systemctl --user start i3lock
 
 xset dpms 120
 killall -SIGUSR2 dunst
-supervisorctl start caffeine
+systemctl --user start caffeine
