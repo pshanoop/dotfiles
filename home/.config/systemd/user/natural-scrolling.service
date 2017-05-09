@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable natural scrolling for all pointers
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=${HOME}/.local/bin/natural-scrolling
+Type=oneshot
+
+[Install]
+WantedBy=xorg.target

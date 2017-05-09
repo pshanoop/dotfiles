@@ -1,0 +1,10 @@
+[Unit]
+Description=A simple X hotkey daemon
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/sxhkd
+
+[Install]
+WantedBy=xorg.target

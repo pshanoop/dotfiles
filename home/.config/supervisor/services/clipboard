@@ -1,3 +1,0 @@
-[program:clipboard]
-command=parcellite --no-icon
-redirect_stderr=true

@@ -47,9 +47,8 @@ access them when composing from mutt.
 
 ### Desktop
 
-I use [supervisord](http://supervisord.org/) (which is designed to control
-daemons and services) to manage my X session. It starts various applications
-(eg: window manager, offlineimap, sxhkd,
+I use systemd to manage my X or Wayland sessions. It starts various
+applications (eg: window manager, offlineimap, sxhkd,
 [caffeine-ng](https://github.com/hobarrera/caffeine-ng)), monitors them, and
 restarts them in case of failure.
 
@@ -62,9 +61,4 @@ I've chosen it due to it's simple configuration syntax, simplicity, and
 lightweightness. I prefer not to use my WM for global keybindings, since using
 something like sxhkd allows me to swich WM easier if I choose to do so.
 
-I use a pretty customized [urxvt](http://software.schmorp.de/pkg/rxvt-unicode)
-as a terminal emulator, which automatically starts
-[tmux](http://tmux.sourceforge.net/) sessions, so all of my terminal windows
-are multiplexed.
-
-Copyright (c) 2013-2014, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
+Copyright (c) 2013-2017, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;

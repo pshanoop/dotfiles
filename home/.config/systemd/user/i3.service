@@ -1,0 +1,10 @@
+[Unit]
+Description=A tiling window manager
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/i3
+
+[Install]
+WantedBy=xorg.target

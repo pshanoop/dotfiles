@@ -1,3 +1,0 @@
-[program:caffeine]
-command=/usr/bin/caffeine
-redirect_stderr=true

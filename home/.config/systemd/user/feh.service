@@ -1,0 +1,11 @@
+[Unit]
+Description=Set a background image
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/feh --bg-scale ${HOME}/.wallpapers/1.jpg
+Type=oneshot
+
+[Install]
+WantedBy=xorg.target

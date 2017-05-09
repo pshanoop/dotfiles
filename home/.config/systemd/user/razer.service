@@ -1,9 +1,9 @@
 [Unit]
 Description=Daemon to manage razer devices in userspace
+ConditionPathExists=/usr/bin/razer-service
 
 [Service]
 ExecStart=/usr/bin/razer-service -Fv
-ConditionPathExists=/usr/bin/razer-service
 
 [Install]
 WantedBy=default.target

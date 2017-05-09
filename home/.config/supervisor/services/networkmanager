@@ -1,3 +1,0 @@
-[program:networkmanager]
-command=/usr/bin/nm-applet
-redirect_stderr=true

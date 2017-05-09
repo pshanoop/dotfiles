@@ -1,0 +1,10 @@
+[Unit]
+Description=Set colour temperature according to the time of the day
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/redshift-scheduler -d
+
+[Install]
+WantedBy=xorg.target

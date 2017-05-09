@@ -1,3 +1,0 @@
-[program:i3]
-command=/usr/bin/i3
-redirect_stderr=true
