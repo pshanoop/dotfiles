@@ -3,3 +3,7 @@ dconf dump /org/cinnamon/desktop/applications/terminal/ > terminal
 
 dconf load /org/nemo/ < nemo
 dconf load /org/cinnamon/desktop/applications/terminal/ < terminal
+
+# blueman-manager will assume an action-capable notification daemon without
+# this
+dconf write /org/blueman/general/notification-daemon false
