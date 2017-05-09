@@ -18,6 +18,4 @@ alias tree='tree -C'
 alias less='less -rX'
 alias open='xdg-open'
 alias fmt='fmt -w 79'
-alias sessionctl='echo Please use \`supervisorctl\` instead.'
-alias supervisorctl="/usr/bin/supervisorctl -c $HOME/.config/supervisor/supervisord.conf"
 alias tree='tree -C'
