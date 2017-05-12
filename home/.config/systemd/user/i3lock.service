@@ -1,5 +1,0 @@
-[Unit]
-Description=An improved screen locker
-
-[Service]
-ExecStart=/usr/bin/i3lock -nfel -r 15 -s 15

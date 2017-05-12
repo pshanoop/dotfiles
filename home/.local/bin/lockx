@@ -10,7 +10,8 @@ killall -SIGUSR1 dunst &
 xset dpms force off
 xset dpms 3
 
-systemctl --user start i3lock
+i3lock -nfel -r 15 -s 15
+# i3lock -nfelo -r 15 -s 15  # <<<--- need new release
 
 xset dpms 120
 killall -SIGUSR2 dunst
