@@ -5,6 +5,3 @@ ConditionPathExists=/usr/bin/r2e
 [Service]
 ExecStart=/usr/bin/r2e run
 Type=simple
-
-[Install]
-WantedBy=default.target

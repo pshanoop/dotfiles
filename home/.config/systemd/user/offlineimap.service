@@ -5,6 +5,3 @@ Description=Synchronize Maildirs
 ExecStart=/usr/bin/offlineimap
 Type=simple
 Restart=on-abnormal
-
-[Install]
-WantedBy=default.target
