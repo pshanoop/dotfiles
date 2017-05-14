@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize Maildir
+
+[Timer]
+OnBootSec=3h
+OnUnitActiveSec=3h
+AccuracySec=1h
+
+[Install]
+WantedBy=timers.target

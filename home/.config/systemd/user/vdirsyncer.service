@@ -1,0 +1,11 @@
+[Unit]
+Description=Synchronize vdirs
+
+[Service]
+ExecStart=/usr/bin/vdirsyncer -v DEBUG sync
+ExecStartPost=khal
+Type=simple
+Restart=on-abnormal
+
+[Install]
+WantedBy=default.target

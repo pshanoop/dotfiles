@@ -1,0 +1,9 @@
+[Unit]
+Description=Compact Maildirs
+
+[Service]
+ExecStart=/usr/bin/notmuch compact
+Type=simple
+
+[Install]
+WantedBy=default.target

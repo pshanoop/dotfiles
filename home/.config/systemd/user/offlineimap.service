@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize Maildirs
+
+[Service]
+ExecStart=/usr/bin/offlineimap
+Type=simple
+Restart=on-abnormal
+
+[Install]
+WantedBy=default.target

@@ -1,16 +1,5 @@
 MAILTO=hugo@barrera.io
 LANG="en_GB.UTF-8"
 
-# Calendars & contacts
-*/20	*	*	*	*	chronic vdirsyncer -v DEBUG sync calendars
-*/20	*	*	*	*	chronic vdirsyncer -v DEBUG sync work_calendars 2> /dev/null > /dev/null
-
 # Backups
 0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh
-
-# Email
-5-59/15	*	*	*	*	chronic offlineimap
-0	*/6	*	*	1	chronic notmuch compact
-
-# RSS
-3	*	*	*	*	[ -x /usr/bin/r2e ] && chronic r2e run
