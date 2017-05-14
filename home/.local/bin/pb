@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Pipe me stuff and I'll give you a link to share it.
+
+curl -F c=@- https://ptpb.pw/
