@@ -19,4 +19,4 @@ REALSCRIPT=$(realpath $(dirname $0))/_daily-backups.sh
 
 export HOSTNAME CACHE_DIR KEY SHARED_FLAGS COMMAND WHEN
 
-sh $REALSCRIPT 2>&1 | mail -s "Backup summary for $(hostname)" hugo@barrera.io
+sh $REALSCRIPT 2>&1 | mail -Ssendwait -s "Backup summary for $(hostname)" hugo@barrera.io

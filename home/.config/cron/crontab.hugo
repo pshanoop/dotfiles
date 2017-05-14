@@ -1,5 +1,0 @@
-MAILTO=hugo@barrera.io
-LANG="en_GB.UTF-8"
-
-# Backups
-0       5       *       *       *       sh /home/hugo/.config/cron/scripts/daily-backups.sh

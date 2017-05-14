@@ -1,0 +1,6 @@
+[Unit]
+Description=Perform off-site backups
+
+[Service]
+ExecStart=/bin/sh ${HOME}/.config/cron/scripts/daily-backups.sh
+;ExecStopPost=/usr/bin/systemd-email $EMAIL %n
