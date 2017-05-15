@@ -9,7 +9,6 @@ set nm_default_uri = notmuch:///home/hugo/.local/share/maildir
 # Other files with additional configuration.
 source ~/.config/mutt/macros
 source ~/.config/mutt/crypto
-source ~/.config/mutt/aliases
 source ~/.config/mutt/colours
 
 # I use maildir exclusively.
