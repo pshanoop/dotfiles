@@ -13,7 +13,7 @@ color search default green      # how to hilite search patterns in the pager
 
 color header brightred default ^(From|Subject):
 color body green default "(ftp|http|https)://[^ ]+"     # point out URLs
-color body green default [-a-z_0-9.]+@[-a-z_0-9.]+      # e-mail addresses
+color body green default "[-a-z_0-9.]+@[-a-z_0-9.]+"    # e-mail addresses
 color underline brightgreen default
 
 color index   blue          default   "~F"   # flagged messages
