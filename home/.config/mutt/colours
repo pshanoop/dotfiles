@@ -19,3 +19,5 @@ color underline brightgreen default
 color index   blue          default   "~F"   # flagged messages
 color index   brightgreen   default   "~U"   # unread messages
 color index   red           default   "~D"   # deleted messages
+
+# vim: ft=muttrc
