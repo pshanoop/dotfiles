@@ -1,8 +1,8 @@
 [Unit]
 Description=Synchronize vdirs
+Requires=khal.service
+Before=khal.service
 
 [Service]
-ExecStart=/usr/bin/vdirsyncer -v DEBUG sync
-ExecStartPost=khal
-Type=simple
-Restart=on-abnormal
+ExecStart=/usr/bin/vdirsyncer sync
+Type=oneshot

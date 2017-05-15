@@ -1,0 +1,7 @@
+[Unit]
+Description=Update khal's cache
+
+[Service]
+ExecStart=/usr/bin/khal
+Type=oneshot
+StandardOutput=null
