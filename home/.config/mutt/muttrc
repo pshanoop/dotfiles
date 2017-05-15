@@ -105,3 +105,5 @@ bind pager   G bottom
 
 # Save to the archives by default (provides a sane default).
 save-hook ^ =Archives
+
+bind index,pager X vfolder-from-query
