@@ -22,12 +22,12 @@ if os.path.exists('/sys/class/power_supply/BAT0/'):
     status.register(
         'battery',
         format=(
-            '{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
+            '{status}{consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
         ),
         status={
-            'DIS': '',
-            'CHR': '',
-            'FULL': ''
+            'DIS': '↓',
+            'CHR': '↑',
+            'FULL': ' '
         },
         alert=True,
     )
