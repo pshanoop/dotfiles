@@ -17,10 +17,6 @@ status.register(
     format_muted='muted',
 )
 
-# CPU temperature
-if os.path.exists('/sys/class/thermal/thermal_zone0/temp'):
-    status.register('temp', format='{temp:.0f}°C',)
-
 # Battery status
 if os.path.exists('/sys/class/power_supply/BAT0/'):
     status.register(
