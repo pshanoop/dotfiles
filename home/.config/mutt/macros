@@ -1,4 +1,4 @@
-macro index,pager y "<save-message>=Archives<enter>"
+macro index,pager y "<save-message>=Archive<enter>"
 
 bind index,pager + entire-thread
 bind index,pager X vfolder-from-query

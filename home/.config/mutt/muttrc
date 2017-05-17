@@ -104,4 +104,4 @@ bind generic \177 last-entry
 bind pager   G bottom
 
 # Save to the archives by default (provides a sane default).
-save-hook ^ =Archives
+save-hook ^ =Archive
