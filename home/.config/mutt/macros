@@ -3,4 +3,22 @@ macro index,pager y "<save-message>=Archive<enter>"
 bind index,pager + entire-thread
 bind index,pager X vfolder-from-query
 
+#------------------------------------------------------------
+# Vi Key Bindings
+# Copied from https://github.com/pigmonkey/dotfiles/commit/ef06f29
+#------------------------------------------------------------
+
+bind attach,browser,index       gg  first-entry
+bind attach,browser,index       G   last-entry
+bind pager                      gg  top
+bind pager                      G   bottom
+bind pager                      k   previous-line
+bind pager                      j   next-line
+
+bind attach,browser,pager,index \Cu half-up
+bind attach,browser,pager,index \Cd half-down
+
+bind pager,index                d  delete-message
+
+
 # vim: ft=muttrc

@@ -95,13 +95,5 @@ auto_view text/html
 macro index \cb |urlview\n
 macro pager \cb |urlview\n
 
-# Other key bindings
-bind generic "\e<" first-entry	# emacs-like bindings for moving to top/bottom
-bind generic \e> last-entry
-bind generic { top-page
-bind generic } bottom-page
-bind generic \177 last-entry
-bind pager   G bottom
-
 # Save to the archives by default (provides a sane default).
 save-hook ^ =Archive
