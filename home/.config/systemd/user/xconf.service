@@ -6,6 +6,7 @@ Requires=xorg.target
 [Service]
 ExecStart=/bin/sh ${HOME}/.config/Xorg/configure.sh
 Type=oneshot
+RemainAfterExit=true
 
 [Install]
 WantedBy=xorg.target

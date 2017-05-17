@@ -14,7 +14,7 @@ status.register('clock', format='%a %Y-%m-%d %X')
 status.register(
     'pulseaudio',
     format='🔉 {volume}',
-    format_muted='🔇',
+    format_muted='muted',
 )
 
 # CPU temperature
