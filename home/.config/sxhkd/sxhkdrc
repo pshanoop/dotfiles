@@ -20,7 +20,7 @@ super + shift + h
 ## Athena specific ##
 
 {_,super + }XF86MonBrightness{Down,Up}
-  light -{U 3,S 0,A 3,S 100}
+  light -{U 1,S 0,A 1,S 18}
 {_,super + }XF86KbdBrightness{Down,Up}
   kbdlight {down,off,up,max}
 
