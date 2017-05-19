@@ -1,7 +1,6 @@
 #!/bin/sh
 
 if ponymix is-muted; then
-  echo 2
   MUTE=" (muted)"
 fi
   
