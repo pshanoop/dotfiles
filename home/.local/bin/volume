@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -x
+set -e
+
+if [ -z $1 ]; then
+  true
+elif [ $1 == decrease ]; then
+  ponymix decrease 3
+elif [ $1 == increase ]; then
+  ponymix increase 3
+elif [ $1 == min ]; then
+  ponymix set-volume 0
+elif [ $1 == max ]; then
+  ponymix set-volume 100
+elif [ $1 == toggle ]; then
+  ponymix toggle
+else
+  echo "Bad argument"
+  exit -1
+fi
+
+volume-notify
