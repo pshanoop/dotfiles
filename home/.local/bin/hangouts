@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/chromium --app="https://hangouts.google.com/hangouts/_/shiftgig.com?authuser=1"
