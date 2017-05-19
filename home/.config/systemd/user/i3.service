@@ -5,6 +5,7 @@ Requires=xorg.target
 
 [Service]
 ExecStart=/usr/bin/i3
+ExecReload=/usr/bin/i3-msg reload
 
 [Install]
 WantedBy=xorg.target

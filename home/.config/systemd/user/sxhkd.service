@@ -5,6 +5,7 @@ Requires=xorg.target
 
 [Service]
 ExecStart=/usr/bin/sxhkd
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
 
 [Install]
 WantedBy=xorg.target

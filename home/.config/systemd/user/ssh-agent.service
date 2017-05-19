@@ -6,6 +6,7 @@ Before=default.target
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.sock
 ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 ExecStartPre=/usr/bin/systemctl --user import-environment SSH_AUTH_SOCK
+ExecReload=/usr/bin/ssh-add -D
 
 [Install]
 WantedBy=default.target
