@@ -1,5 +1,6 @@
 [Unit]
 Description=Maintain clipboard data ownership
+Documentation=man:parcellite(1)
 After=xorg.target
 Requires=xorg.target
 

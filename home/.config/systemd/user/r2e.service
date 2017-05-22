@@ -1,6 +1,7 @@
 [Unit]
 Description=Send RSS feeds via email
 ConditionPathExists=/usr/bin/r2e
+Documentation=https://github.com/wking/rss2email
 
 [Service]
 ExecStart=/usr/bin/r2e run

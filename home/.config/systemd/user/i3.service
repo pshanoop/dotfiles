@@ -1,5 +1,6 @@
 [Unit]
 Description=A tiling window manager
+Documentation=man:i3(1)
 After=xorg.target
 Requires=xorg.target
 

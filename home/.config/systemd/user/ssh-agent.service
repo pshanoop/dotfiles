@@ -1,5 +1,6 @@
 [Unit]
 Description=SSH Authentication Agent
+Documentation=man:ssh-agent(1)
 Before=default.target
 
 [Service]

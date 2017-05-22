@@ -1,5 +1,6 @@
 [Unit]
 Description=Temporarily inhibit screenlocking
+Documentation=man:caffeine(1)
 After=xorg.target
 Requires=xorg.target
 

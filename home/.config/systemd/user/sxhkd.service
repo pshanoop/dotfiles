@@ -1,5 +1,6 @@
 [Unit]
 Description=A simple X hotkey daemon
+Documentation=man:sxhkd(1)
 After=xorg.target
 Requires=xorg.target
 

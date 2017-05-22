@@ -1,5 +1,6 @@
 [Unit]
 Description=Update khal's cache
+Documentation=man:khal(1)
 
 [Service]
 ExecStart=/usr/bin/khal

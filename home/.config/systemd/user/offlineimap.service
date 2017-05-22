@@ -1,5 +1,6 @@
 [Unit]
 Description=Synchronize Maildirs
+Documentation=man:offlineimap(1)
 
 [Service]
 ExecStart=/usr/bin/offlineimap
