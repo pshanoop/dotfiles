@@ -8,7 +8,7 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-ts=$(systemctl --user show -p ActiveEnterTimestamp $1)
+ts=$(systemctl --user show -p ExecMainStartTimestamp $1)
 logs=$(journalctl --user -u $1 --since "$(echo $ts | awk '{print $2 $3}')")
 
 /usr/bin/sendmail -t <<EOF
