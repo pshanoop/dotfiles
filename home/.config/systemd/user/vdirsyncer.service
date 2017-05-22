@@ -1,8 +1,6 @@
 [Unit]
 Description=Synchronize calendars and contacts
 Documentation=https://vdirsyncer.readthedocs.org/
-Requires=khal.service
-Before=khal.service
 
 [Service]
 ExecStart=/usr/bin/vdirsyncer sync

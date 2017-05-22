@@ -1,8 +1,13 @@
 [Unit]
 Description=Update khal's cache
 Documentation=man:khal(1)
+After=vdirsyncer.service
+RefuseManualStart=true
 
 [Service]
 ExecStart=/usr/bin/khal
 Type=oneshot
 StandardOutput=null
+
+[Install]
+WantedBy=vdirsyncer.service
