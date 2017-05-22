@@ -1,0 +1,6 @@
+[Unit]
+Description=Send summary email for %i
+
+[Service]
+ExecStart=/usr/bin/sh %h/.local/bin/systemd-email %i
+Type=oneshot

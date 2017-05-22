@@ -1,11 +1,21 @@
 #!/bin/sh
 #
-# Performs several backup tasks (into tarsnap)
+# Performs several backup tasks (into tarsnap).
 
 set -e
 set -u
 
-echo "Backup summary for backup performed on $(hostname) at $WHEN:"
+HOSTNAME=$(hostname -s)
+CACHE_DIR=/home/hugo/.local/share/tarsnap/cache
+KEY=/home/hugo/priv/keys/tarsnap/barrera.io/$HOSTNAME.w.key
+
+SHARED_FLAGS="--print-stats --humanize-numbers --one-file-system"
+COMMAND="tarsnap -c --keyfile $KEY --cachedir $CACHE_DIR $SHARED_FLAGS"
+
+WHEN=$(date +%Y-%m-%dT%H%M%S%z)
+
+### Begin actual backsup ###
+echo "Backup summary for backup performed on $(hostname) at $WHEN."
 
 # ~~~Photos~~~
 if [ $HOSTNAME == hyperion ]; then
@@ -41,5 +51,4 @@ echo -e "\n~~~ Packages ~~~"
 cd $(mktemp -d)
 pacman -Qeq > explicit-packages.txt
 pacman -Qdq > depends-packages.txt
-$COMMAND -f packages-$HOSTNAME-$WHEN \
-  explicit-packages.txt depends-packages.txt
+$COMMAND -f packages-$HOSTNAME-$WHEN explicit-packages.txt depends-packages.txt
