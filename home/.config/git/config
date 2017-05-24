@@ -28,3 +28,5 @@
 	verbose = true
 [rebase]
 	autoStash = true
+[tag]
+	forceSignAnnotated = true
