@@ -164,7 +164,7 @@
     startup_notification = false
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
@@ -201,8 +201,8 @@
     # Redisplay last message(s)
     history = mod1+i
 
-    # context menu
-    context = mod1+shift+i
+    # Context menu.
+    context = mod4+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
