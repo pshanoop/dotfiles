@@ -19,3 +19,4 @@ rofi.hide-scrollbar: true
 
 rofi.kb-remove-word-back:Control+w
 rofi.kb-cancel:Escape,Control+c
+rofi.kb-row-up:ISO_Left_Tab
