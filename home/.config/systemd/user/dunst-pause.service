@@ -1,0 +1,14 @@
+[Unit]
+Description=Pause dunst showing notifications
+Documentation=man:dunst(1)
+Conflicts=unlock.target
+PartOf=lock.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/killall -SIGUSR1 dunst
+ExecStop=/usr/bin/killall -SIGUSR2 dunst
+RemainAfterExit=true
+
+[Install]
+WantedBy=lock.target

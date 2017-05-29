@@ -1,4 +1,5 @@
 [Unit]
+Conflicts=lock.target
 Description=Temporarily inhibit screenlocking
 Documentation=man:caffeine(1)
 After=xorg.target
@@ -9,3 +10,4 @@ ExecStart=/usr/bin/caffeine
 
 [Install]
 WantedBy=xorg.target
+WantedBy=unlock.target

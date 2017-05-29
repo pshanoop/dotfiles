@@ -1,0 +1,10 @@
+[Unit]
+Description=A simple X screen locker
+Requisite=xorg.target
+
+[Service]
+ExecStart=/usr/bin/slock
+ExecStopPost=/usr/bin/systemctl --user start unlock.target
+
+[Install]
+WantedBy=lock.target

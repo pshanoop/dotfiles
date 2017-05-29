@@ -29,9 +29,9 @@ super + shift + h
 # Ares, Hyperion and Athena respectively
 
 XF86HomePage
-  lockx
+  systemctl --user start lock.target
 XF86PowerOff
-  lockx
+  systemctl --user start lock.target
 shift + XF86PowerOff
   systemctl suspend
 super + XF86PowerOff
