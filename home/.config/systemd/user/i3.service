@@ -3,6 +3,7 @@ Description=A tiling window manager
 Documentation=man:i3(1)
 After=xorg.target
 Requires=xorg.target
+RefuseManualStop=true
 
 [Service]
 ExecStart=/usr/bin/i3
