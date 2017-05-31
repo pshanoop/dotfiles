@@ -3,14 +3,16 @@ metadata = ~/.local/share/offlineimap
 accounts = Personal
 maxsyncaccounts = 12
 ui = basic
+socktimeout = 30
 
 ### Personal Account ###
 
 [Account Personal]
 localrepository = LocalPersonal
 remoterepository = RemotePersonal
-presynchook = date -Is
 postsynchook = /usr/bin/notmuch new
+autorefresh = 5
+quick = 5
 
 [Repository LocalPersonal]
 type = Maildir
@@ -25,6 +27,8 @@ remoteuser = hobarrera@fastmail.com
 remotepassfile = ~/priv/secrets/imap@fastmail
 ssl = yes
 cert_fingerprint = 995d415e2a1000e0574efb30fd01b16709d218ed
-maxconnections = 5
-subscribedonly = no
+maxconnections = 2
 createfolders = False
+idlefolders = ['INBOX']
+
+# vim: ft=dosini
