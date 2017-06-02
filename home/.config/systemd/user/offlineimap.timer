@@ -2,6 +2,7 @@
 Description=Synchronize Maildirs
 
 [Timer]
+OnBootSec=60s
 OnUnitInactiveSec=5m
 
 [Install]
