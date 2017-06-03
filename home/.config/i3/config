@@ -228,7 +228,7 @@ workspace_auto_back_and_forth yes
 
 # Terminals
 bindsym Mod4+T exec termite
-bindsym Mod4+T exec mutt-win
+bindsym Mod4+M exec mutt-win
 
 # Applications
 bindsym Mod4+q exec nemo --no-desktop
