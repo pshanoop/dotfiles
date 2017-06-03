@@ -4,4 +4,4 @@ set -e
 
 git fetch
 git rebase --autostash
-git push
+git push HEAD
