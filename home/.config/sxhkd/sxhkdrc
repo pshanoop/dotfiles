@@ -56,17 +56,6 @@ XF86AudioStop
 XF86Calculator
   $TERMINAL -e calc -d
 
-XF86AudioLowerVolume
-  ponymix decrease 3 && volume-notify
-super + XF86AudioLowerVolume
-  ponymix set-volume 0 && volume-notify
-XF86AudioRaiseVolume
-  ponymix increase 3 && volume-notify
-super + XF86AudioRaiseVolume
-  ponymix set-volume 100 && volume-notify
-XF86AudioMute
-  ponymix toggle && volume-notify
-
 ### Mouse ###
 #############
 

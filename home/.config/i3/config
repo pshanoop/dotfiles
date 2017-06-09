@@ -235,6 +235,13 @@ bindsym Mod4+q exec nemo --no-desktop
 bindsym Mod4+c exec $BROWSER
 bindsym Mod4+o exec arandr
 
+# Volume control
+bindsym XF86AudioMute               exec ponymix toggle && volume-notify
+bindsym XF86AudioLowerVolume        exec ponymix decrease 3 && volume-notify
+bindsym XF86AudioRaiseVolume        exec ponymix increase 3 && volume-notify
+bindsym Mod4 + XF86AudioLowerVolume exec ponymix set-volume 0 && volume-notify
+bindsym Mod4 + XF86AudioRaiseVolume exec ponymix set-volume 100 && volume-notify
+
 # Power management
 bindsym XF86PowerOff exec systemctl --user start lock.target
 bindsym XF86HomePage exec systemctl --user start lock.target
