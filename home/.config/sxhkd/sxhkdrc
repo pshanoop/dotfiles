@@ -3,8 +3,6 @@
 
 control + alt + Escape
   xkill
-super + shift + h
-  mpv --loop=inf --fs ~/videos/hypnotoad.mp4
 
 ## Athena specific ##
 
@@ -53,8 +51,6 @@ XF86AudioNext
   playerctl next
 XF86AudioStop
   playerctl stop
-XF86Calculator
-  $TERMINAL -e calc -d
 
 ### Mouse ###
 #############
