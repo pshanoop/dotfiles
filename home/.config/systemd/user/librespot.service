@@ -1,0 +1,12 @@
+[Unit]
+Description=An open source Spotify client
+Documentation=https://github.com/plietar/librespot
+
+[Service]
+ExecStart=/bin/sh -c 'exec /usr/bin/librespot --name librespot@$(hostname -s)'
+KillMode=control-group
+Restart=always
+RestartSec=12
+
+[Install]
+WantedBy=default.target
