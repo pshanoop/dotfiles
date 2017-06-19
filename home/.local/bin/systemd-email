@@ -10,11 +10,19 @@ fi
 
 ts=$(systemctl --user show -p ExecMainStartTimestamp $1)
 logs=$(journalctl --user -u $1 --since "$(echo $ts | awk '{print $2 $3}')")
+exit_status=$(systemctl --user show -p ExecMainStatus $1)
+exit_code=$(echo $exit_status | tr '=' ' ' | awk '{print $2}')
+
+if [ $exit_code = 0 ]; then
+  result="success"
+else
+  result="failure"
+fi
 
 /usr/bin/sendmail -t <<EOF
 To: $EMAIL
 From: systemd <$USER@$HOSTNAME>
-Subject: $1
+Subject: $1: $result
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain; charset=UTF-8
 
