@@ -1,4 +1,0 @@
-#!/bin/sh
-
-unset GDK_BACKEND
-/usr/bin/nemo "$@"
