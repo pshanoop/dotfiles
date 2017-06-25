@@ -231,7 +231,7 @@ bindsym Mod4+T exec termite
 bindsym Mod4+M exec mutt-win
 
 # Applications
-bindsym Mod4+q exec nemo --no-desktop
+bindsym Mod4+q exec nemo
 bindsym Mod4+c exec $BROWSER
 bindsym Mod4+o exec arandr
 
