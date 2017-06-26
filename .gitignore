@@ -24,6 +24,7 @@ home/.config/keepassx
 home/.config/leafpad
 home/.config/libreoffice/
 home/.config/meld
+home/.config/nvim/plugged/
 home/.config/pavucontrol.ini
 home/.config/pulse
 home/.config/smplayer/

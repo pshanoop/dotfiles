@@ -61,4 +61,9 @@ I've chosen it due to it's simple configuration syntax, simplicity, and
 lightweightness. I prefer not to use my WM for global keybindings, since using
 something like sxhkd allows me to swich WM easier if I choose to do so.
 
-Copyright (c) 2013-2017, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
+### Vim
+
+You should run `:PlugInstall` to install all vim plugins. Some additional
+utilities are required in your `$PATH`, like `flake8` for python, etc.
+
+Copyright (c) 2012-2017, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
