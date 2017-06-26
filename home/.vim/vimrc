@@ -2,9 +2,6 @@
 " ~/.vimrc
 "
 
-" Breaks vi compatibility. This needs to go before everything else.
-set nocompatible
-
 " Plugins!
 source ~/.vim/plugins.vim
 
@@ -36,9 +33,6 @@ set shiftwidth=2
 " To insert a real tab when 'expandtab' is on, use CTRL-V <Tab>.
 set expandtab
 
-" Insert spaces instead of tabs.
-set smarttab
-
 " Show line number for the current line...
 set number
 " ... and relative line numbers for the rest.
@@ -49,9 +43,6 @@ set textwidth=79
 
 " Show a ruler on the 80th column.
 let &colorcolumn=80
-
-" Highlight all search matches.
-set hlsearch
 
 " Leader is recommended for user-specifc bindings
 let mapleader = ","
@@ -168,6 +159,19 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" ========== Vim-specific (non-neovim) ==========
+
+if !has('nvim')
+  " Breaks vi compatibility. This needs to go before everything else.
+  set nocompatible
+
+  " Insert spaces instead of tabs.
+  set smarttab
+
+  " Highlight all search matches.
+  set hlsearch
+endif
 
 " ========== Error checking (Neomake) ==========
 autocmd! BufWritePost,BufEnter * Neomake
