@@ -6,7 +6,6 @@ PartOf=lock.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/xset dpms force off
 ExecStart=/usr/bin/xset dpms 3
 ExecStop=/usr/bin/xset dpms 120
 RemainAfterExit=true
