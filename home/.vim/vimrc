@@ -19,10 +19,6 @@ let g:jellybeans_overrides = {
 \}
 colorscheme jellybeans
 
-" This is required for 24-bit colours. Not sure if it's due to tmux or what
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
-
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
 
@@ -171,6 +167,10 @@ if !has('nvim')
 
   " Highlight all search matches.
   set hlsearch
+
+  " Required to deal with 24-bit colours
+  set t_8f=[38;2;%lu;%lu;%lum
+  set t_8b=[48;2;%lu;%lu;%lum
 endif
 
 " ========== Error checking (Neomake) ==========
