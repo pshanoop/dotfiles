@@ -1,6 +1,5 @@
 .config
 .vim/bundle
-.vim
 .gnupg
 .purple
 .config/parcellite
