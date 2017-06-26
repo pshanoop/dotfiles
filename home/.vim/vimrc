@@ -98,47 +98,6 @@ map <Leader>c :TComment<CR>
 " Reload (source) config file.
 map <F9> :so $HOME/.vimrc <CR>
 
-" The default syntastic checkers are listed here:
-" https://github.com/scrooloose/syntastic/blob/master/plugin/syntastic/registry.vim
-
-" Set syntastic to passive mode. This requies manually triggering it, but
-" lightline will do this for us.
-let g:syntastic_mode_map = {'mode': 'passive'}
-
-" Auto-close the error list when there are no more errors
-let g:syntastic_auto_loc_list = 2
-
-let g:syntastic_error_symbol = '✖'
-let g:syntastic_style_error_symbol = '!'
-let g:syntastic_warning_symbol = '✖'
-let g:syntastic_style_warning_symbol = '!'
-
-" Use C++11.
-let g:syntastic_cpp_compiler_options = '-std=c++11'
-
-" Verify C++ header files as well.
-let g:syntastic_cpp_check_header = 1
-
-" Reload header files on every rerun.
-let g:syntastic_cpp_auto_refresh_includes = 1
-
-" Include header files from these locations.
-let g:syntastic_cpp_include_dirs = ["/usr/include/qt/QtWidgets/"]
-
-" Check files on open.
-let g:syntastic_check_on_open = 1
-
-let g:syntastic_go_checkers = ['go', 'gofmt']
-
-let g:syntastic_javascript_checkers = ['gjslint']
-
-let g:syntastic_javascript_gjslint_args = '--nojsdoc'
-
-" Set syntastic errors to red.
-:highlight SyntasticError term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
-:highlight SyntasticErrorSign term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
-:highlight clear SignColumn
-
 " Close location window (aka :Errors) after selecting a location.
 :autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
 
@@ -209,3 +168,14 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" ========== Error checking (Neomake) ==========
+autocmd! BufWritePost,BufEnter * Neomake
+
+let g:neomake_warning_sign = {'text': '!',   'texthl': 'NeomakeWarningSign'}
+let g:neomake_highlight_columns = 1
+
+:highlight NeomakeErrorSign term=standout guifg=White guibg=Red
+:highlight NeomakeError term=standout guifg=White guibg=Red
+:highlight NeomakeWarningSign term=standout guifg=White guibg=Teal
+:highlight NeomakeWarning term=standout guifg=White guibg=Teal

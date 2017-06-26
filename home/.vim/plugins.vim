@@ -5,7 +5,7 @@ Plug 'gmarik/Vundle.vim'
 
 " Essentials.
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-sensible'
 
 " Completion.

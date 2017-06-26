@@ -1,24 +1,16 @@
 let g:lightline = {
 \ 'colorscheme': 'jellybeans',
 \ 'active': {
-\   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+\   'right': [ [ 'neomake', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 \ },
 \ 'component_expand': {
-\   'syntastic': 'SyntasticStatuslineFlag',
+\     'neomake': 'LightlineNeomake',
 \ },
 \ 'component_type': {
-\   'syntastic': 'error',
+\   'neomake': 'error',
 \ },
 \}
 
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost * call s:syntastic()
-  autocmd BufRead,BufNewFile * call s:syntastic()
-augroup END
-
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-  redraw!
+function LightlineNeomake()
+  return '%{neomake#statusline#LoclistStatus()}'
 endfunction
