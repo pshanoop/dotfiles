@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 
 system("git submodule update --init --recursive")
+system("echo -e ':PlugInstall\n' | nvim")
 system("echo -e ':PlugInstall\n' | vim")
