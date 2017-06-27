@@ -179,7 +179,7 @@ autocmd! BufWritePost,BufEnter * Neomake
 let g:neomake_warning_sign = {'text': '!',   'texthl': 'NeomakeWarningSign'}
 let g:neomake_highlight_columns = 1
 
-:highlight NeomakeErrorSign term=standout guifg=White guibg=Red
-:highlight NeomakeError term=standout guifg=White guibg=Red
-:highlight NeomakeWarningSign term=standout guifg=White guibg=Teal
-:highlight NeomakeWarning term=standout guifg=White guibg=Teal
+highlight NeomakeErrorSign term=standout guifg=White guibg=Red ctermbg=1
+highlight NeomakeError term=standout guifg=White guibg=Red ctermbg=1
+highlight NeomakeWarningSign term=standout guifg=White guibg=Teal ctermbg=1
+highlight NeomakeWarning term=standout guifg=White guibg=Teal ctermbg=1
