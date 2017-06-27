@@ -183,3 +183,5 @@ highlight NeomakeErrorSign term=standout guifg=White guibg=Red ctermbg=1
 highlight NeomakeError term=standout guifg=White guibg=Red ctermbg=1
 highlight NeomakeWarningSign term=standout guifg=White guibg=Teal ctermbg=1
 highlight NeomakeWarning term=standout guifg=White guibg=Teal ctermbg=1
+
+map <Leader>e :lopen<CR>
