@@ -1,0 +1,10 @@
+[Unit]
+Description=Turn redshift on for tomorrow
+
+[Timer]
+OnCalendar=9:30:00
+AccuracySec=30m
+Persistent=true
+
+[Install]
+WantedBy=timers.target
