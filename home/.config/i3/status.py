@@ -46,4 +46,10 @@ status.register(
     format_offline='',
 )
 
+status.register(
+    'shell',
+    command="khal list now -df 'SKIPME' | grep -v SKIPME | head -n 1",
+    interval=300,
+)
+
 status.run()
