@@ -2,14 +2,16 @@
 #
 # Emails the results of the last run of a given script.
 # See https://serverfault.com/a/814467/32648
+#
+# Usage: systemd-email SERVICE-NAME
 
 if [ -z $1 ]; then
   echo No unit provided
   exit 1
 fi
 
-ts=$(systemctl --user show -p ExecMainStartTimestamp $1)
-logs=$(journalctl --user -u $1 --since "$(echo $ts | awk '{print $2 $3}')")
+ts=$(systemctl --user show -p ExecMainStartTimestamp $1 | awk '{print $2 $3}')
+logs=$(journalctl --user -u $1 --since "$(echo $ts)" --output cat)
 exit_status=$(systemctl --user show -p ExecMainStatus $1)
 exit_code=$(echo $exit_status | tr '=' ' ' | awk '{print $2}')
 
