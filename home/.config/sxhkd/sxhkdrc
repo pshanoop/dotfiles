@@ -20,26 +20,6 @@ super + F1
 super + F2
   pkill xdotool
 
-### Screenshots ###
-###################
-
-Print
-  screenshot
-control + Print
-  screenshot select
-alt + Print
-  screenshot active
-super + Print
-  scrotpush
-
-# These are for PrintScreen-less keyboards
-super + p
-  screenshot active
-control + alt + super + p
-  screenshot
-shift + control + alt + super + p
-  scrotpush
-
 ### Media Keys ###
 ##################
 
