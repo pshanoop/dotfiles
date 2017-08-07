@@ -251,3 +251,5 @@ bindsym Mod4 + XF86AudioRaiseVolume exec ponymix set-volume 100 && volume-notify
 # Power management
 bindsym XF86PowerOff exec systemctl --user start lock.target
 bindsym XF86HomePage exec systemctl --user start lock.target
+
+# vim: ft=i3config
