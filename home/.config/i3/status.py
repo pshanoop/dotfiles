@@ -33,7 +33,13 @@ if os.path.exists('/sys/class/power_supply/BAT0/'):
     )
 
 # Free disk space
-status.register('disk', path='/', format='{avail}GiB',)
+status.register(
+    'disk',
+    path='/',
+    display_limit=20,
+    format='{avail}GiB',
+    round_size=1,
+)
 
 # Internet connectivity
 status.register(
