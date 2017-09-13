@@ -1,6 +1,2 @@
-! Swap gt and degree sign since they're mixed up.
-keycode 49 = less greater less greater bar brokenbar bar
-keycode 94 = U000AA degree U000AA degree backslash backslash backslash
-
 ! Disable the Esc key.
 keycode 9  =
