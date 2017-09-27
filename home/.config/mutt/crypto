@@ -7,7 +7,7 @@ set crypt_use_gpgme = yes
 set crypt_autosign = yes	      # Automatically sign all outgoing messages.
 set crypt_opportunistic_encrypt = yes # Encrypt email if there's a key for the recipient.
 
-set pgp_encrypt_self = yes
+set pgp_self_encrypt = yes
 set pgp_show_unusable = no  # Don't show unusable keys.
 
 # vim: ft=muttrc
