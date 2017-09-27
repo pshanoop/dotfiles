@@ -10,9 +10,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -rX"
 
-# Force wine to run in i686 mode (and not amd64).
-export WINEARCH=win32
-
 # Prevent wine from creating Desktop Entry files for wine's
 # notepad/iexplore/etc.
 export WINEDLLOVERRIDES=winemenubuilder.exe=d
