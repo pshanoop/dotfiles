@@ -1,3 +1,5 @@
 #!/bin/sh
 
-/usr/bin/chromium --app="https://hangouts.google.com/hangouts/_/shiftgig.com?authuser=1"
+/usr/bin/chromium \
+  --user-data-dir="$HOME/.config/hangouts" \
+  --app="https://hangouts.google.com/hangouts/_/shiftgig.com?authuser=1"
