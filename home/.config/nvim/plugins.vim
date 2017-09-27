@@ -33,6 +33,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
+Plug 'ryanoasis/vim-devicons'
 
 " Misc.
 Plug 'tomtom/tcomment_vim'

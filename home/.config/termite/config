@@ -1,5 +1,5 @@
 [options]
-font = Operator Mono Semi-Light 12
+font = OperatorMono Nerd Font Semi-Light 12
 audible_bell = yes
 urgent_on_bell = yes
 
