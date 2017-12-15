@@ -3,7 +3,7 @@ Description=A bitorrent client daemon
 Documentation=man:deluged(1)
 
 [Service]
-ExecStart=/usr/bin/deluged -d
+ExecStart=/usr/bin/deluged -d -L info
 
 [Install]
 WantedBy=default.target
