@@ -1,0 +1,13 @@
+[Unit]
+Description=Mine Ethereum
+Documentation=https://ethermine.org/
+Documentation=https://github.com/ethereum-mining/ethminer
+
+[Service]
+#ExecStart=/usr/bin/ethminer -SP 2 -U -S daggerhashimoto.usa.nicehash.com:3353 -O 1BrgYbRAsurFA338qQLzeYmpLaXGWDVWsz.one:x
+Environment=GPU_FORCE_64BIT_PTR=0
+Environment=GPU_MAX_HEAP_SIZE=100
+Environment=GPU_USE_SYNC_OBJECTS=1
+Environment=GPU_MAX_ALLOC_PERCENT=100
+Environment=GPU_SINGLE_ALLOC_PERCENT=100
+ExecStart=/usr/bin/ethminer --farm-recheck 200 -G -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O 0x00324c0Bdbb8a99428E6Bd83c6d6c6044AC6Ddb5.hyperion
