@@ -41,6 +41,15 @@ status.register(
     round_size=1,
 )
 
+status.register(
+    'shell',
+    ignore_empty_stdout=True,
+    command=(
+        "nmcli con show --active | grep wifi | awk '{print $1 }'",
+    ),
+    interval=1,
+)
+
 # Internet connectivity
 status.register(
     'online',
