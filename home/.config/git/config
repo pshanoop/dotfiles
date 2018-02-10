@@ -2,7 +2,7 @@
 	name = Hugo Osvaldo Barrera
 	email = hugo@barrera.io
 [push]
-	default = matching
+	default = current
 [color]
 	ui = true
 [diff]
