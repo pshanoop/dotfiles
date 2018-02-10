@@ -45,7 +45,9 @@ status.register(
     'shell',
     ignore_empty_stdout=True,
     command=(
-        "nmcli con show --active | grep wifi | awk '{print $1 }'",
+        # Note: This trims networks where the name has three consecutive
+        # spaces.
+        "nmcli con show --active | grep wifi | grep -Po '.+?   ' | head -n 1",
     ),
     interval=1,
 )
