@@ -10,6 +10,8 @@
   type = discover
 
 [locale]
+longdatetimeformat = "%m %B %Y, %H:%M"
+datetimeformat = %Y-%m-%d %H:%M
 longdateformat = %a %Y-%m-%d
 dateformat = %Y-%m-%d
 
