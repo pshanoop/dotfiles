@@ -179,15 +179,22 @@ if !has('nvim')
   set t_8b=[48;2;%lu;%lu;%lum
 endif
 
-" ========== Error checking (Neomake) ==========
-autocmd! BufWritePost,BufEnter * Neomake
+" ========== Error checking (ALE) ==========
 
-let g:neomake_warning_sign = {'text': '!',   'texthl': 'NeomakeWarningSign'}
-let g:neomake_highlight_columns = 1
+highlight ALEErrorSign term=standout guifg=White guibg=Red ctermbg=1
+highlight ALEError term=standout guifg=White guibg=Red ctermbg=1
+highlight ALEWarningSign term=standout guifg=White guibg=Teal ctermbg=1
+highlight ALEWarning term=standout guifg=White guibg=Teal ctermbg=1
 
-highlight NeomakeErrorSign term=standout guifg=White guibg=Red ctermbg=1
-highlight NeomakeError term=standout guifg=White guibg=Red ctermbg=1
-highlight NeomakeWarningSign term=standout guifg=White guibg=Teal ctermbg=1
-highlight NeomakeWarning term=standout guifg=White guibg=Teal ctermbg=1
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '!'
 
-map <Leader>e :lopen<CR>
+map <Leader>e :copen<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>a :Autoformat<CR>
+
+" Use quickfix list (rather than loclist).
+let g:ale_set_quickfix = 1
+
+" Keep the quickfix list open when navigating.
+let g:ale_keep_list_window_open = 1

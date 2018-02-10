@@ -5,7 +5,7 @@ Plug 'gmarik/Vundle.vim'
 
 " Essentials.
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-sensible'
 
 " Completion.
@@ -31,6 +31,7 @@ Plug 'mboughaba/i3config.vim'
 " UI
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
 Plug 'ryanoasis/vim-devicons'

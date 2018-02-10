@@ -1,24 +1,35 @@
-let g:lightline = {
-\ 'colorscheme': 'jellybeans',
-\ 'active': {
-\   'right': [ [ 'neomake', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-\ },
-\ 'component_expand': {
-\     'neomake': 'LightlineNeomake',
-\ },
-\ 'component_function': {
-\   'filetype': 'MyFiletype',
-\   'fileformat': 'MyFileformat',
-\   'filename': 'MyFilename',
-\ },
-\ 'component_type': {
-\   'neomake': 'error',
-\ },
-\}
+let g:lightline = {}
 
-function LightlineNeomake()
-  return '%{neomake#statusline#LoclistStatus()}'
-endfunction
+let g:lightline.colorscheme = 'jellybeans'
+
+let g:lightline.component_expand = {
+  \ 'linter_warnings': 'lightline#ale#warnings',
+  \ 'linter_errors': 'lightline#ale#errors',
+  \ 'linter_ok': 'lightline#ale#ok',
+\ }
+
+let g:lightline.component_type = {
+  \ 'linter_warnings': 'warning',
+  \ 'linter_errors': 'error',
+  \ 'linter_ok': 'left',
+\ }
+
+let g:lightline.component_function = {
+  \ 'filetype': 'MyFiletype',
+  \ 'fileformat': 'MyFileformat',
+  \ 'filename': 'MyFilename',
+\ }
+
+let g:lightline.active = {
+  \ 'right': [
+    \ [ 'linter_errors', 'linter_warnings', 'linter_ok', 'lineinfo' ],
+    \ ['percent'],
+    \ [ 'fileformat', 'fileencoding', 'filetype' ]
+  \ ]
+\ }
+
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
