@@ -1,2 +1,6 @@
 .*sw?
 .*@neomake_*
+.tox
+/tags
+.coverage
+__pycache__
