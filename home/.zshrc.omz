@@ -70,9 +70,15 @@ source $HOME/.config/sh/aliases.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Load virtualenvwrapper
-source /usr/bin/virtualenvwrapper_lazy.sh
+source $(which virtualenvwrapper_lazy.sh)
 
 # fzf plugin
-source /usr/share/fzf/key-bindings.zsh
+if [ -x /usr/share/fzf/key-bindings.zsh ]; then
+  # Recommended location
+  source /usr/share/fzf/key-bindings.zsh
+else
+  # macOS
+  source /usr/local/Cellar/fzf/*/shell/key-bindings.zsh
+fi
 
 autoload zmv
