@@ -1,10 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env python
+import random
+import string
+import sys
 
-if [ $1 ]; then
-  length=$1
-else
-  length=8
-fi
+if sys.argv:
+    length = int(sys.argv[1])
+else:
+    length = 10
 
-random=</dev/urandom tr -dc A-Za-z0-9 | head -c $length
-echo $random
+letters = string.ascii_letters + string.digits
+random = ''.join(random.choice(letters) for i in range(length))
+
+print(random)
