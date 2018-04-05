@@ -35,6 +35,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
 Plug 'ryanoasis/vim-devicons'
+Plug 'majutsushi/tagbar'
 
 " Misc.
 Plug 'tomtom/tcomment_vim'
