@@ -5,3 +5,4 @@
 .config/parcellite
 .local/share
 .mozilla/firefox/hugo/chrome
+.ssh
