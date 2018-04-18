@@ -66,4 +66,14 @@ something like sxhkd allows me to swich WM easier if I choose to do so.
 You should run `:PlugInstall` to install all vim plugins. Some additional
 utilities are required in your `$PATH`, like `flake8` for python, etc.
 
+Manual commands
+---------------
+
+The following commands should be run manually *after* symlinking:
+
+```
+echo -e ':PlugInstall\n' | nvim
+chsh -s $(which zsh)
+```
+
 Copyright (c) 2012-2017, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
