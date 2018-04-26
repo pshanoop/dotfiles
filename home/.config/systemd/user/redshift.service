@@ -3,6 +3,7 @@ Description=Set colour temperature according to the time of the day
 Documentation=https://github.com/spantaleev/redshift-scheduler
 After=xorg.target
 Requires=xorg.target
+ConditionPathExists=!/etc/is-vm
 
 [Service]
 ExecStart=/usr/bin/redshift-scheduler -d

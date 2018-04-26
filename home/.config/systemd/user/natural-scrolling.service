@@ -2,6 +2,7 @@
 Description=Enable natural scrolling for all pointers
 After=xorg.target
 Requires=xorg.target
+ConditionPathExists=!/etc/is-vm
 
 [Service]
 ExecStart=/bin/sh ${HOME}/.local/bin/natural-scrolling

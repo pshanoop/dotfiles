@@ -2,6 +2,7 @@
 Description=Lock the screen on inactivity
 After=xorg.target
 Requires=xorg.target
+ConditionPathExists=!/etc/is-vm
 
 [Service]
 ExecStart=/usr/bin/xss-lock -- systemctl --user start lock.target

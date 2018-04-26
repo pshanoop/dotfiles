@@ -1,6 +1,7 @@
 [Unit]
 Description=A simple X screen locker
 Requisite=xorg.target
+ConditionPathExists=!/etc/is-vm
 
 [Service]
 ExecStart=/usr/bin/slock
