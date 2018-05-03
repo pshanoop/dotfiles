@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
+import glob
 
 from i3pystatus import Status
 
@@ -18,7 +18,7 @@ status.register(
 )
 
 # Battery status
-if os.path.exists('/sys/class/power_supply/BAT0/'):
+if glob.glob('/sys/class/power_supply/BAT?/'):
     status.register(
         'battery',
         format=(
