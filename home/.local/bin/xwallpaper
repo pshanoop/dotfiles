@@ -2,7 +2,7 @@
 #
 # Sets a random wallpaper from the current pool
 
-location=$HOME/pictures/wallpapers/Pool/
+location=$HOME/pictures/wallpapers/Pool/$(hostname -s)/
 file=$(/usr/bin/ls -1 $location | sort -R | tail -n 1)
 
 /usr/bin/feh --bg-scale $location/$file
