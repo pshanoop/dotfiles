@@ -73,7 +73,7 @@ source $HOME/.config/sh/aliases.sh
 source $(which virtualenvwrapper_lazy.sh)
 
 # fzf plugin
-if [ -x /usr/share/fzf/key-bindings.zsh ]; then
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
   # Recommended location
   source /usr/share/fzf/key-bindings.zsh
 else
