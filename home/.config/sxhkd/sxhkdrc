@@ -4,13 +4,6 @@
 control + alt + Escape
   xkill
 
-## Athena specific ##
-
-{_,super + }XF86MonBrightness{Down,Up}
-  light -{U 1,S 0,A 1,S 18}
-{_,super + }XF86KbdBrightness{Down,Up}
-  kbdlight {down,off,up,max}
-
 ### Autoclick ###
 #################
 
