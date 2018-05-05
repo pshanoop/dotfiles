@@ -1,4 +1,5 @@
 [Unit]
+ConditionPathExists=/usr/bin/librespot
 Description=An open source Spotify client
 Documentation=https://github.com/plietar/librespot
 
