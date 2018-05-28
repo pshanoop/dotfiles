@@ -235,11 +235,14 @@ bindsym Mod4+q exec nemo
 bindsym Mod4+c exec $BROWSER
 bindsym Mod4+o exec arandr
 
-# Screenshots
-bindsym Print        exec screenshot
+# Screenshots:
+# Cmd+P: Current window
+# Cmd+Shift+p: Select region
+# Cmd+Alt+p Fullscreen
+
 bindsym Mod4+p       exec screenshot active
 bindsym Mod4+Mod1+p  exec screenshot
-bindsym Mod4+Shift+p exec scrotpush
+bindsym Mod4+Shift+p exec screenshot region
 
 # Volume control
 bindsym XF86AudioMute             exec ponymix toggle && volume-notify

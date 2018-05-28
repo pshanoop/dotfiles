@@ -9,6 +9,9 @@ if [ -z $1 ]; then
 elif [ $1 = "active" ]; then
   $COMMAND -i $(xdotool getactivewindow) $FILENAME
   echo $FILENAME
-elif [ $1 = "here" ]; then
+elif [ $1 = "region" ]; then
+  $COMMAND -s $FILENAME
+  echo $FILENAME
+else
   echo "Unknown argument: $1"
 fi;
