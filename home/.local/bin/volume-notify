@@ -1,8 +1,18 @@
 #!/bin/sh
 
-if ponymix is-muted; then
+if ponymix --sink is-muted; then
   MUTE=" (muted)"
+  ICON=audio-volume-muted
+else
+  ICON=audio-volume-medium
 fi
-  
-dunstify -u low -r 53 --hints="int:transient:1" "Volume changed" \
-  "$(ponymix get-volume)% $MUTE"
+
+if ! ponymix --source is-muted; then
+  MUTE2=" (mic: ON)"
+fi
+
+dunstify -u low -r 53 \
+  -i $ICON \
+  --hints="int:transient:1" \
+  "Volume changed" \
+  "$(ponymix get-volume)% $MUTE $MUTE2"
