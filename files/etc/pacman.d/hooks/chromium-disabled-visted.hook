@@ -1,0 +1,12 @@
+# See https://www.reddit.com/r/archlinux/comments/6d2wfq/brute_solution_to_hide_most_visited_section_on/
+#
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/chromium/resources.pak
+
+[Action]
+Description = Hiding most visited sites on tab page...
+When = PostTransaction
+Exec = /usr/bin/sed -i 's/id="most-visited"/id="most-visitod"/g' /usr/lib/chromium/resources.pak
