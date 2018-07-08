@@ -1,0 +1,11 @@
+[Unit]
+Description=Network monitor and control GUI applet
+Documentation=man:nm-applet(1)
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=xorg.target
