@@ -26,7 +26,16 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:carddav"]
 [pair calendars]
 a = "calendars_local"
 b = "calendars_fastmail"
-collections = ["from b"]
+collections = [
+  # personal
+  "502708f4-4b94-4963-b042-f7340c829bdf",
+  # study
+  "9bcef3fa-504d-4c6f-b320-fd24257de5a7",
+  # holidays
+  "9f57caac-df79-4488-8019-51b21648c4a8",
+  # work
+  "d6aa4f1e-bdf6-4b6b-999d-b89afd62c994"
+  ]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
