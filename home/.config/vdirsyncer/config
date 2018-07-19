@@ -46,12 +46,12 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:caldav"]
 [pair work_calendars]
 a = "calendars_local"
 b = "calendars_google"
-collections = ["hbarrera@shiftgig.com"]
+collections = ["hbarrera@medallia.com"]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
 [storage calendars_google]
 type = "google_calendar"
 token_file = "~/.cache/vdirsyncer/google.token"
-client_id = "1066339489224-5v10lce8q2i7d4ivo441bjus5d3178uu.apps.googleusercontent.com"
-client_secret = "8zvNI79MC-Xm6dJAiHIEjwBS"
+client_id = "626568785281-csvs91ad5amq7mo0b3v3oek4c4lhu3gc.apps.googleusercontent.com"
+client_secret = "sMreOEhTsY3ysbaskR6Glo8U"
