@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable numlock
+
+[Service]
+ExecStart=/usr/bin/numlockx
+StandardInput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
