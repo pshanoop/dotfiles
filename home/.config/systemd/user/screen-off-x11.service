@@ -7,7 +7,7 @@ PartOf=lock.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/xset dpms 3
-ExecStop=/usr/bin/xset dpms 120
+ExecStop=/usr/bin/xset -dpms
 RemainAfterExit=true
 
 [Install]
