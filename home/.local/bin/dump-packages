@@ -10,4 +10,5 @@ pacman -Qdqm > dependencies-foreign
 
 git add .
 git commit -m "Auto package list backup."
+git pull -r origin master
 git push origin master
