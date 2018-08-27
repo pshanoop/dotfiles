@@ -1,0 +1,6 @@
+[Unit]
+Description=Dump currently installed packages
+
+[Service]
+ExecStart=/bin/sh %h/.local/bin/dump-packages
+Type=simple
