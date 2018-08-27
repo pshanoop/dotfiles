@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mkdir -p ~/backups/packages/$(hostname)
+cd ~/backups/packages/$(hostname)
+
+pacman -Qeqn > explicit-native
+pacman -Qeqm > explicit-foreign
+pacman -Qdqn > dependencies-native
+pacman -Qdqm > dependencies-foreign
+
+git add .
+git commit -m "Auto package list backup."
+git push origin master
