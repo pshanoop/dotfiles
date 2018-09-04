@@ -1,3 +1,4 @@
 ! Note: Actual MBP DPI is 221
 Xft.dpi: 160
 rofi.dpi: 160
+Xcursor.size: 32
