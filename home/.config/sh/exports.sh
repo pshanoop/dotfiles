@@ -18,7 +18,7 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 export _JAVA_OPTIONS="-Dswing.aatext=true"
 # Groovy/grails requires this:
-export JAVA_HOME=/usr/lib/jvm/java-default-runtime/
+export JAVA_HOME=/usr/lib/jvm/default-runtime/
 
 # This is the default, but some non-gtk apps won't use it without setting
 # this variable. I'm looking at you, eclipse.
