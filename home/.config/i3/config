@@ -254,6 +254,7 @@ bindsym Mod4+XF86AudioRaiseVolume exec volume max
 
 # Power management
 bindsym XF86PowerOff exec systemctl --user start lock.target
+bindsym Shift+XF86PowerOff exec systemctl suspend
 bindsym XF86Eject exec systemctl --user start lock.target
 bindsym Shift+XF86Eject exec systemctl suspend
 
