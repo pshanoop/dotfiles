@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Avoid triggering ssh-askpass (use the unprotected cron key).
+unset SSH_ASKPASS
+
 mkdir -p ~/backups/packages/$(hostname)
 cd ~/backups/packages/$(hostname)
 
