@@ -246,11 +246,11 @@ bindsym Mod4+Mod1+p  exec screenshot
 bindsym Mod4+Shift+p exec screenshot region
 
 # Volume control
-bindsym XF86AudioMute             exec ponymix toggle && volume-notify
-bindsym XF86AudioLowerVolume      exec ponymix decrease 3 && volume-notify
-bindsym XF86AudioRaiseVolume      exec ponymix increase 3 && volume-notify
-bindsym Mod4+XF86AudioLowerVolume exec ponymix set-volume 0 && volume-notify
-bindsym Mod4+XF86AudioRaiseVolume exec ponymix set-volume 100 && volume-notify
+bindsym XF86AudioMute             exec volume toggle
+bindsym XF86AudioLowerVolume      exec volume decrease
+bindsym XF86AudioRaiseVolume      exec volume increase
+bindsym Mod4+XF86AudioLowerVolume exec volume min
+bindsym Mod4+XF86AudioRaiseVolume exec volume max
 
 # Power management
 bindsym XF86PowerOff exec systemctl --user start lock.target
