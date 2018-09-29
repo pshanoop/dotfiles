@@ -7,4 +7,4 @@ StandardInput=tty
 RemainAfterExit=yes
 
 [Install]
-WantedBy=default.target
+WantedBy=xorg.target
