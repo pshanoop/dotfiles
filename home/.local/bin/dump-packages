@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Avoid triggering ssh-askpass (use the unprotected cron key).
 unset SSH_ASKPASS
 
