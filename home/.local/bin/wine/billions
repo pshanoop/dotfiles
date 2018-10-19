@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export WINEPREFIX=/home/hugo/wine/prefixes/billions
+export WINEARCH=win32
+
+cd "$WINEPREFIX/drive_c/Program Files/Steam/steamapps/common/They Are Billions/"
+wine TheyAreBillions_x86.exe
