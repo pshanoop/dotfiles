@@ -1,7 +1,8 @@
 #!/bin/sh
 
 xrandr --output eDP-1 --primary
-xrandr --dpi 160
+# Use 144, 168 or 192
+xrandr --dpi 168
 
 # Enable click-to-tap:
 xinput set-prop "1A586757:00 06CB:8323 Touchpad" "libinput Tapping Enabled" 1
