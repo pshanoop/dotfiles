@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Inspired by https://unix.stackexchange.com/a/120945/1644
+#
+# $1 should be the display name to monitor, eg: DP-1
+
+set -e
+set -u
+
+export MONITOR2=/sys/class/drm/card0-$1/status
+echo "Monitoring $MONITOR2"
+
+while inotifywait -e modify,create,delete,close_write $MONITOR2; do
+  dmode="$(cat $MONITOR2)"
+  echo "Screen change ($dmode): updating wallpaper."
+  systemctl --user start xwallpaper.service
+done
