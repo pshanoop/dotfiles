@@ -1,4 +1,5 @@
 [Unit]
+After=xorg.target
 Description=Enable numlock
 
 [Service]
