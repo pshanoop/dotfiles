@@ -1,0 +1,9 @@
+[Unit]
+Description=Toggle eGPU support
+
+[Service]
+ExecStart=/usr/bin/detect-egpu
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

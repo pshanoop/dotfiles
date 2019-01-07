@@ -1,0 +1,11 @@
+#!/bin/sh
+
+lspci | grep GeForce 2> /dev/null
+
+if [ $? == 0 ]; then
+  echo "Enabling eGPU support"
+  /usr/bin/cp /etc/X11/xorg.conf.d/90-egpu.orig /etc/X11/xorg.conf.d/90-egpu.conf
+else
+  echo "Disabling eGPU support"
+  /usr/bin/rm -f /etc/X11/xorg.conf.d/90-egpu.conf
+fi
