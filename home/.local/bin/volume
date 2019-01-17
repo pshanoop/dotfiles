@@ -6,18 +6,26 @@ set -e
 if [ -z $1 ]; then
   true
 elif [ $1 == decrease ]; then
-  ponymix decrease 3
+  COMMAND="decrease 3"
 elif [ $1 == increase ]; then
-  ponymix increase 3
+  COMMAND="increase 3"
 elif [ $1 == min ]; then
-  ponymix set-volume 0
+  COMMAND="set-volume 0"
 elif [ $1 == max ]; then
-  ponymix set-volume 100
+  COMMAND="set-volume 100"
 elif [ $1 == toggle ]; then
-  ponymix toggle
+  COMMAND="toggle"
 else
   echo "Bad argument"
   exit -1
+fi
+
+if [ -z "$COMMAND" ]; then
+  true  # No command to run
+else
+  for dev in $(ponymix --sink --short list | cut -f 3); do
+    ponymix -d $dev $COMMAND
+  done
 fi
 
 volume-notify
