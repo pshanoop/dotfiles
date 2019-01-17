@@ -3,9 +3,8 @@ After=xorg.target
 Description=Enable numlock
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/numlockx
-StandardInput=tty
-RemainAfterExit=yes
 
 [Install]
 WantedBy=xorg.target
