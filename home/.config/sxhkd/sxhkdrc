@@ -30,9 +30,9 @@ XF86AudioStop
 
 # MX thumb buttons
 button10
-  ponymix decrease 3 && volume-notify
+  volume decrease
 button13
-  ponymix increase 3 && volume-notify
+  volume increase
 
 # MX side buttons
 button9
