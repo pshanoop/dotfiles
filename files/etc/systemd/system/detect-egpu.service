@@ -1,5 +1,6 @@
 [Unit]
 Description=Toggle eGPU support
+Before=multi-user.target
 
 [Service]
 ExecStart=/usr/bin/detect-egpu
