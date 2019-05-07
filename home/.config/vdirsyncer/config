@@ -55,7 +55,7 @@ password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:caldav"]
 [pair work_calendars]
 a = "calendars_local"
 b = "calendars_google"
-collections = ["hbarrera@medallia.com"]
+collections = ["hugo@3dhubs.com"]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
