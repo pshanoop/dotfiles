@@ -14,4 +14,4 @@ xrandr --dpi 144
 xinput set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
 # Increase touchpad sensibility:
-xinput set-prop "1A586757:00 06CB:8323 Touchpad" "Coordinate Transformation Matrix" 2 0 0 0 2 0 0 0 1
+xinput set-prop "DELL08AF:00 06CB:76AF Touchpad" "Coordinate Transformation Matrix" 2 0 0 0 2 0 0 0 1
