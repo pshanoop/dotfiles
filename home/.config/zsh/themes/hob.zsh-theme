@@ -27,9 +27,7 @@ function _user_host() {
 }
 
 function _vi_status() {
-  if {echo $fpath | grep -q "plugins/vi-mode"}; then
-    echo "$(vi_mode_prompt_info)"
-  fi
+  echo "${${VI_KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
 }
 
 function _ruby_version() {
@@ -83,7 +81,7 @@ else
   CARETCOLOR="white"
 fi
 
-MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg[yellow]%}❮❮%{$reset_color%}"
+MODE_INDICATOR="%{$fg[red]%}[NORMAL]%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
