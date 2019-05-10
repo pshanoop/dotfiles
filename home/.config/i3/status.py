@@ -47,7 +47,9 @@ status.register(
     command=(
         # Note: This trims networks where the name has three consecutive
         # spaces.
-        "nmcli con show --active | grep wifi | grep -Po '.+?   ' | head -n 1",
+        "nmcli --fields type,name con show --active | "
+        "grep wifi | "
+        "cut -f 1 -d ' ' --complement",
     ),
     interval=1,
 )
