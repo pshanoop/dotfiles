@@ -5,7 +5,7 @@ if [ -f /etc/X11/xorg.conf.d/90-egpu.conf ]; then
   xrandr --output DP-0 --primary
 else
   # Otherwise, it's the builtin display.
-  xrandr --output eDP-1 --primary --mode 1920x1080
+  xrandr --output eDP1 --primary --mode 1920x1080
 fi
 # Use 144, 168 or 192
 xrandr --dpi 144
