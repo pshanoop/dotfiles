@@ -73,14 +73,17 @@ source $HOME/.config/sh/aliases.sh
 source $(which virtualenvwrapper_lazy.sh)
 
 # Configure the delete key to do it's thing:
+bindkey '^D' delete-char
 bindkey '^[[3~' delete-char
 bindkey -a '^[[3~' delete-char
 
 # Use the partial-matching line-up function
 bindkey "^[OA" up-line-or-beginning-search
 bindkey "^P" up-line-or-beginning-search
+bindkey -a "^P" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
+bindkey -a "^N" down-line-or-beginning-search
 
 # Reduce the timout for ESC
 export KEYTIMEOUT=1
