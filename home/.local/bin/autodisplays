@@ -4,7 +4,7 @@ xrandr | grep -P "^DP1 connected"
 
 if [ $? == 0 ]; then
   xrandr \
-    --output DP1 --mode 2560x1440 --pos 1920x0 \
+    --output DP1 --mode 2560x1440 --pos 1920x1080 \
     --output eDP1 --primary --mode 1920x1080 --pos 0x1440
 else
   xrandr \
