@@ -38,7 +38,7 @@ set relativenumber
 set textwidth=79
 
 " Show a ruler on the 80th column.
-let &colorcolumn=80
+let &colorcolumn="80,120"
 highlight ColorColumn ctermbg=darkgrey guibg=#242424
 
 " Leader is recommended for user-specifc bindings
