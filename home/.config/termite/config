@@ -6,7 +6,7 @@ clickable_url = no
 
 [colors]
 foreground = #eeeeee
-background = #282828
+background = #000000
 cursor = #83c048
 color0 = #3f3f3f
 color1 = #c44444

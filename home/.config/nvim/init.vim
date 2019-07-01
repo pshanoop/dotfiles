@@ -14,7 +14,7 @@ let g:jellybeans_overrides = {
 \  'background': {
 \    'ctermbg': 'none',
 \    '256ctermbg': 'none',
-\    'guibg': '282828'
+\    'guibg': '000000'
 \  },
 \}
 colorscheme jellybeans
@@ -39,6 +39,7 @@ set textwidth=79
 
 " Show a ruler on the 80th column.
 let &colorcolumn=80
+highlight ColorColumn ctermbg=darkgrey guibg=#242424
 
 " Leader is recommended for user-specifc bindings
 let mapleader = ","
