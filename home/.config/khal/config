@@ -14,6 +14,7 @@ longdatetimeformat = "%m %B %Y, %H:%M"
 datetimeformat = %Y-%m-%d %H:%M
 longdateformat = %a %Y-%m-%d
 dateformat = %Y-%m-%d
+timeformat = %H:%M
 
 [default]
 timedelta = 8 days
