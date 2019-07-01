@@ -1,6 +1,3 @@
-# If we-re on macOS, set term to screen-256color, because Apple.
-[ -n $TMUX ] && [ $(uname) = "Darwin" ] && export TERM=screen-256color
-
 # Start tmux and exit. If alreay inside tmux, skips this line.
 [ -z $TMUX ] && [ -z $NOTMUX ] && exec tmux -f ~/.config/tmux/tmux.conf
 
