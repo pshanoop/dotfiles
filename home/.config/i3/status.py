@@ -70,6 +70,7 @@ status.register(
     command=(
         "khal list now -df 'SKIPME' | "  # tag headers as SKIPME
         "grep -v SKIPME | "  # filter out headers
+        "grep -v '\[Lunch\]' | "  # filter out lunch
         "grep -v '^ ' | "  # exclude full-day events
         "head -n 1"  # show just the first
     ),
