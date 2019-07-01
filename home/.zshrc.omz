@@ -69,6 +69,11 @@ source $HOME/.config/sh/aliases.sh
 # Load virtualenvwrapper
 source $(which virtualenvwrapper_lazy.sh)
 
+#Load NVM
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+  source /usr/share/nvm/init-nvm.sh
+fi
+
 # Configure the delete key to do it's thing:
 bindkey '^D' delete-char
 bindkey '^[[3~' delete-char
