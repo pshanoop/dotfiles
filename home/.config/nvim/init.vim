@@ -71,14 +71,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " Toggle paste mode using F12 (does not try to indent input)
 set pastetoggle=<F12>
 
-" Autoformatters
-au BufEnter,BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp map <F3> :%!astyle -A2 -s4 -S -N -Y -p -U -H -k3 -xj -xy -z2<CR>
-" TODO: delete backets around oneline IFs
-" TODO: fix \n being added before EOF indefinitely
-" -xC79
-" autocmd FileType javascript setlocal equalprg=fixjsstyle
-
-
 " Comment blocks with F5.
 map <F5> :TComment <CR>
 map <Leader>c :TComment<CR>
@@ -190,12 +182,20 @@ highlight ALEWarning term=standout guifg=White guibg=Teal ctermbg=1
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
 
+" Show errors and warnings.
 map <Leader>e :copen<CR>
 map <Leader>t :TagbarToggle<CR>
-map <Leader>a :Autoformat<CR>
+
+" Lint and fix code.
+map <Leader>a :ALEFix<CR>
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1
 
 " Keep the quickfix list open when navigating.
 let g:ale_keep_list_window_open = 1
+
+" Previous C settings where `astyle -A2 -s4 -S -N -Y -p -U -H -k3 -xj -xy -z2`
+" TODO: delete backets around oneline IFs
+" TODO: fix \n being added before EOF indefinitely
+" -xC79

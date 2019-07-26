@@ -15,9 +15,6 @@ Plug 'Valloric/YouCompleteMe', {
 Plug 'tpope/vim-endwise'
 " Plug 'kana/vim-smartinput'
 
-" Formatting
-Plug 'Chiel92/vim-autoformat'
-
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
