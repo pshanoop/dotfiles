@@ -178,15 +178,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command python $HOME/.config/i3/status.py
         colors {
-          background $inactive-bg-color
+          background #000000
           separator $separator
-          #                  border             background         text
-          focused_workspace  $focused-bg-color  $focused-bg-color  $text-color
-          active_workspace   $focused-bg-color  $active-bg-color   $text-color
-          inactive_workspace $inactive-bg-color  $inactive-bg-color $inactive-text-color
+          # class            border             background         text
+          focused_workspace  $focused-bg-color  $focused-bg-color  #ffffff
+          active_workspace   $focused-bg-color  #000000            #c3cddb
+          inactive_workspace #000000            #000000            $inactive-text-color
           urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
         }
-        separator_symbol "|"
+        separator_symbol "·"
 
         tray_output primary
 }
