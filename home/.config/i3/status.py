@@ -43,30 +43,6 @@ status.register(
 
 status.register(
     'shell',
-    ignore_empty_stdout=True,
-    command=(
-        # Note: This trims networks where the name has three consecutive
-        # spaces.
-        "nmcli --fields type,name con show --active | "
-        "grep wifi | "
-        "cut -f 1 -d ' ' --complement",
-    ),
-    interval=1,
-)
-
-# Internet connectivity
-status.register(
-    'online',
-    hints={
-        'separator': False,
-    },
-    color='#00FF00',
-    format_online='',
-    format_offline='',
-)
-
-status.register(
-    'shell',
     command=(
         "khal list now -df 'SKIPME' | "  # tag headers as SKIPME
         "grep -v SKIPME | "  # filter out headers
