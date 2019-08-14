@@ -47,9 +47,6 @@ export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
 
-# Make pass copy into the primary/default X selection:
-export PASSWORD_STORE_X_SELECTION=primary
-
 export ANDROID_HOME=/opt/android-sdk
 
 export WORKON_HOME=$HOME/.local/share/virtualenvs
@@ -58,8 +55,6 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # httpie places it's config in $HOME by default :(
 export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
-
-export WEECHAT_HOME=$HOME/.config/weechat/
 
 # Make Qt apps honour DPI settings.
 QT_AUTO_SCREEN_SCALE_FACTOR=1
