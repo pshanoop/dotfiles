@@ -13,12 +13,6 @@ set $mod Mod4
 
 ### colour ###
 
-# set $bg-color            #414959
-# set $inactive-bg-color   #303641
-# set $text-color          #b3bdcb
-# set $inactive-text-color #9da3ad
-# set $urgent-bg-color     #E53935
-
 set $bg-color            #404552
 
 set $focused-bg-color    #404552
