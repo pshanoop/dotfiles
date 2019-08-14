@@ -44,7 +44,7 @@ status.register(
         "khal list now -df 'SKIPME' | "  # tag headers as SKIPME
         "grep -v SKIPME | "  # filter out headers
         "grep -v -P '↦|↔ |⇥' | "  # filter out continuing all day events
-        "grep -v '\[Lunch\]' | "  # filter out lunch
+        r"grep -v '\[Lunch\]' | "  # filter out lunch
         "grep -v '^ ' | "  # exclude full-day events
         "head -n 1"  # show just the first
     ),
