@@ -13,8 +13,6 @@ set $mod Mod4
 
 ### colour ###
 
-set $bg-color            #404552
-
 set $focused-bg-color    #404552
 set $active-bg-color     #373c48
 set $inactive-bg-color   #2f343f
@@ -31,15 +29,12 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $focused-bg-color  $inactive-text-color $indicator
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator
 
-# client.unfocused #3a3a3a #222222 #bbbbbb #292d2e
-
 ### /colours ###
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans Mono 8
 font pango:Ubuntu 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
