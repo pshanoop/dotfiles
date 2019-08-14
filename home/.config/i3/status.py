@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import glob
-
 from i3pystatus import Status
 
 status = Status(standalone=True, click_events=False)
@@ -18,19 +16,18 @@ status.register(
 )
 
 # Battery status
-if glob.glob('/sys/class/power_supply/BAT?/'):
-    status.register(
-        'battery',
-        format=(
-            '{status}{consumption:.2f}W {percentage:.2f}% {remaining:%E%h:%M}'
-        ),
-        status={
-            'DIS': '↓',
-            'CHR': '↑',
-            'FULL': ' '
-        },
-        alert=True,
-    )
+status.register(
+    'battery',
+    format=(
+        '{status}{consumption:.1f}W {percentage:.1f}% {remaining:%E%h:%M}'
+    ),
+    status={
+        'DIS': '↓',
+        'CHR': '↑',
+        'FULL': ' '
+    },
+    alert=True,
+)
 
 # Free disk space
 status.register(
