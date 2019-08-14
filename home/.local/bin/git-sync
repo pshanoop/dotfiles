@@ -3,5 +3,5 @@
 set -e
 
 git fetch
-git rebase --autostash
-git push origin HEAD
+git rebase --autostash origin/$(git branch --show-current)
+git push -u origin $(git branch --show-current)
