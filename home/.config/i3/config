@@ -11,25 +11,11 @@
 
 set $mod Mod4
 
-### colour ###
-
-set $focused-bg-color    #404552
-set $active-bg-color     #373c48
-set $inactive-bg-color   #2f343f
-set $text-color          #c3cddb
-set $inactive-text-color #9da3ad
-set $urgent-bg-color     #E53935
-
-set $indicator           #00ff00
-set $separator           #757575
-
-# class                 border              background         text                 indicator
-client.focused          $focused-bg-color   $focused-bg-color  $text-color          $indicator
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator
-client.focused_inactive $inactive-bg-color  $focused-bg-color  $inactive-text-color $indicator
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator
-
-### /colours ###
+# class                 border   background  text     indicator
+client.focused          #404552  #404552     #c3cddb  #00ff00
+client.unfocused        #2f343f  #2f343f     #9da3ad  #00ff00
+client.focused_inactive #2f343f  #404552     #9da3ad  #00ff00
+client.urgent           #e53935  #e53935     #c3cddb  #00ff00
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -179,12 +165,12 @@ bar {
         status_command python $HOME/.config/i3/status.py
         colors {
           background #000000
-          separator $separator
-          # class            border             background         text
-          focused_workspace  $focused-bg-color  $focused-bg-color  #ffffff
-          active_workspace   $focused-bg-color  #000000            #c3cddb
-          inactive_workspace #000000            #000000            $inactive-text-color
-          urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+          separator  #757575
+          # class            border   background  text
+          focused_workspace  #404552  #404552     #ffffff
+          active_workspace   #404552  #000000     #c3cddb
+          inactive_workspace #000000  #000000     #9da3ad
+          urgent_workspace   #e53935  #e53935     #c3cddb
         }
         separator_symbol "·"
 
