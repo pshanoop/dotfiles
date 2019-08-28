@@ -222,6 +222,4 @@ bindsym Control+XF86PowerOff exec systemctl hibernate
 bindsym XF86Eject exec systemctl --user start lock.target
 bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
-
-bindsym XF86Search exec autodisplays
 # vim: ft=i3config
