@@ -128,9 +128,6 @@ let g:csv_autocmd_arrange_size = 1024*1024*20
 " ctrl+h: GoToDefinition
 :noremap <C-h> :YcmCompleter GoToDefinition<CR>
 
-" Auto-close the preview window after selecting a competion.
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 " Don't auto-fold markdown
 let g:vim_markdown_folding_disabled = 1
 
@@ -199,3 +196,16 @@ let g:ale_keep_list_window_open = 1
 " TODO: delete backets around oneline IFs
 " TODO: fix \n being added before EOF indefinitely
 " -xC79
+
+""""" Autocompletion (deoplete)
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#show_docstring = 1
+
+" Switch between options with Tab (or Shift+Tab)
+inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+
+" Close preview window on leaving the insert mode
+autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
+
+""""" End autocompletion

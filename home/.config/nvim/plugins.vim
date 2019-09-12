@@ -9,9 +9,9 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-sensible'
 
 " Completion.
-Plug 'Valloric/YouCompleteMe', {
-\  'do': 'python2 install.py --omnisharp-completer --clang-completer --system-libclang'
-\}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
+
 Plug 'tpope/vim-endwise'
 " Plug 'kana/vim-smartinput'
 
