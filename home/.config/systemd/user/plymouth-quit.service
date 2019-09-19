@@ -1,0 +1,7 @@
+[Unit]
+Description=Terminate Plymouth Boot Screen
+
+[Service]
+ExecStart=-/usr/bin/sudo /usr/bin/plymouth quit --retain-splash
+Type=oneshot
+TimeoutSec=20
