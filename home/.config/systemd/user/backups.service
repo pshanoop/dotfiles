@@ -1,8 +1,0 @@
-[Unit]
-Description=Perform off-site backups
-Wants=status-email@backups.service
-Before=status-email@backups.service
-
-[Service]
-ExecStart=/bin/sh %h/.local/bin/daily-backups
-Type=oneshot
