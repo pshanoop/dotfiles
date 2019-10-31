@@ -1,2 +1,0 @@
-#!/bin/sh
-exec $TERMINAL --geometry 120x30 -e mutt $@ &

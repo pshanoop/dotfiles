@@ -1,7 +1,0 @@
-text/html; firefox %s;
-text/html; lynx -display_charset=utf-8 -stdin -dump -force_html -width 100; copiousoutput; description=HTML Text; test=type lynx >/dev/null
-application/ics; khal import %s;
-application/pdf; zathura %s
-image/*; sxiv %s
-application/*;xdg-open %s
-audio/*; mpv %s

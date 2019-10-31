@@ -1,7 +1,0 @@
-[Unit]
-Description=Compact Maildirs
-Documentation=man:notmuch(1)
-
-[Service]
-ExecStart=/usr/bin/notmuch compact
-Type=simple

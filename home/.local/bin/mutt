@@ -1,7 +1,0 @@
-#!/bin/sh
-# This wrapper script runs mutt reading it's settings from ~/.config.
-# Just for tidyness. :)
-
-# cd into ~/transfers so attachments are save there by default
-cd ~/transfers
-/usr/bin/neomutt $@
