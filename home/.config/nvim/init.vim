@@ -44,6 +44,8 @@ highlight ColorColumn ctermbg=darkgrey guibg=#242424
 " Leader is recommended for user-specifc bindings
 let mapleader = ","
 
+" Insert ipdb breakpoint with Leader+i
+map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
 
 " Remove search highlighting by pressing ESC.
 map <F2> :nohlsearch<CR>
