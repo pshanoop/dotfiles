@@ -200,11 +200,24 @@ let g:ale_keep_list_window_open = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
 
+" Don't use jedi's autocompletion (we use it for gotodefinition)
+let g:jedi#completions_enabled = 0
+
 " Switch between options with Tab (or Shift+Tab)
 inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Close preview window on leaving the insert mode
-autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Autocomplete emoji for RST (markdown and git-commit are defaults)
+call deoplete#custom#source('emoji', 'filetypes', ['rst'])
+
+" " Use ALE and also some plugin 'foobar' as completion sources for all code.
+" call deoplete#custom#option('sources', {
+" \ '_': ['ale', 'foobar'],
+" \})
+
+let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 """"" End autocompletion
