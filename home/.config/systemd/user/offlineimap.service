@@ -1,9 +1,0 @@
-[Unit]
-Description=Synchronize Maildirs
-Documentation=man:offlineimap(1)
-
-[Service]
-ExecStart=/usr/bin/offlineimap -u basic
-Restart=always
-RestartSec=60
-TimeoutStopSec=12
