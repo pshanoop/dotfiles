@@ -34,6 +34,9 @@ export TERMINAL=termite
 export BROWSER=firefox
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass
 
+# SSH-agent
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.sock
+
 export SDL_AUDIODRIVER=alsa
 
 # Fix scrolling with a mouse on GTK3 apps
