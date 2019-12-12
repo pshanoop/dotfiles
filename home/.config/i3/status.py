@@ -24,7 +24,7 @@ status.register(
     status={
         'DIS': '↓',
         'CHR': '↑',
-        'FULL': ' '
+        'FULL': '⚡ '
     },
     alert=True,
 )
