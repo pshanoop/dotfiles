@@ -8,6 +8,8 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# vim: ft=i3config
 
 set $mod Mod4
 
@@ -222,4 +224,3 @@ bindsym Control+XF86PowerOff exec systemctl hibernate
 bindsym XF86Eject exec systemctl --user start lock.target
 bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
-# vim: ft=i3config
