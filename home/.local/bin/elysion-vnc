@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# Opens a tunnel to use VNC on a local terminal on elysion.
-
-echo "Run vncviewer localhost:5955 to view."
-ssh -fN hugobarrera@console.cust.arpnetworks.com -L 5955:kvr12.arpnetworks.com:5960 -o ControlPath=none

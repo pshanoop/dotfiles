@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/anbox launch --action=android.intent.action.MAIN --package=com.gravity.romNAg --component=com.gravity.romNAg.WWActivity

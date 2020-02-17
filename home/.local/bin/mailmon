@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/bin/wendy -m 384 -f ~/.local/share/maildir/Personal/INBOX/new/ -e notify-send "New mail(s)" "You've new mail in your inbox." -i /usr/share/icons/elementary-xfce/categories/48/applications-mail.svg -t 6000

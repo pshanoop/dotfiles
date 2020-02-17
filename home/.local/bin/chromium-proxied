@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/chromium --proxy-server="socks5://localhost:9997"

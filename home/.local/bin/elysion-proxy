@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-# This loads the ssh-agent started by current zsh sessions
-source $HOME/.oh-my-zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
-ssh -ND 9997 elysion.barrera.io

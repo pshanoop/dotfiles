@@ -1,6 +1,0 @@
-#!/bin/sh
-# 
-# Does something like git difftool FILE.
-# Source: http://mercurial.selenic.com/wiki/UsingVimdiffForSingleDiffs
-
-hg cat $1 | vim - -c  ":vert diffsplit $1" -c "map q :qa\!<CR>";
