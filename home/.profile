@@ -4,7 +4,13 @@
 
 source $HOME/.config/sh/exports.sh
 
-if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
+if [ "$(tty)" = "/dev/tty1" ]; then
   sudo plymouth quit --retain-splash
-  exec startx
+
+  # first import environment variables from the login manager
+  systemctl --user import-environment
+  # then start the service
+  systemctl --wait --user start sway.service
+elif case $(tty) in /dev/tty*) ;; *) false;; esac; then
+  exec bash
 fi
