@@ -60,4 +60,4 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
 
 # Make Qt apps honour DPI settings.
-QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
