@@ -9,6 +9,6 @@ if [ $1 = "fastmail:caldav" ]; then
   cat $HOME/priv/secrets/hobarrera@fastmail.com/caldav
 elif [ $1 = "fastmail:carddav" ]; then
   cat $HOME/priv/secrets/hobarrera@fastmail.com/carddav
-elif [ $1 = "radicale" ]; then
-  cat $HOME/priv/secrets/radicale@elysion
+elif [ $1 = "google" ]; then
+  cat $HOME/priv/secrets/google
 fi;
