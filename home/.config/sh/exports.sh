@@ -61,3 +61,5 @@ export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
 
 # Make Qt apps honour DPI settings.
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+eval "$(starship init zsh)"
