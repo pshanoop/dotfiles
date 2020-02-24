@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Run after autorandr does updates display configuration.
-
-# Remap the touchpad so that it works as expected:
-xinput --map-to-output 'ELAN2934:00 04F3:2934' eDP1
-
-# Reset the background, which gets streched or shit:
-systemctl --user restart xwallpaper.service
