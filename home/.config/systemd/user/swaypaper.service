@@ -1,0 +1,10 @@
+[Unit]
+Description=Set a background image for sway
+After=sway-session.target
+Requires=sway-session.target
+
+[Service]
+ExecStart=/bin/sh ${HOME}/.local/bin/swaypaper
+
+[Install]
+WantedBy=sway-session.target
