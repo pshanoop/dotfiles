@@ -1,17 +1,26 @@
 #!/bin/sh
 
-COMMAND=maim
+set -eo pipefail
+
 FILENAME="$HOME/screenshots/$(date -Ins).png"
 
 if [ -z $1 ]; then
-  $COMMAND $FILENAME
-  echo $FILENAME
+  # Full screen (current screen only)
+  grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $FILENAME
 elif [ $1 = "active" ]; then
-  $COMMAND -i $(xdotool getactivewindow) $FILENAME
-  echo $FILENAME
+  # Current window only
+  ACTIVE=$(swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')
+  grim -g "$ACTIVE" $FILENAME
 elif [ $1 = "region" ]; then
-  $COMMAND -s $FILENAME
-  echo $FILENAME
+  # Specific region (manually selected)
+  grim -g "$(slurp)" "$FILENAME"
+elif [ $1 = "window" ]; then
+  # Specific window (manually selected)
+  WINDOW=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
+  grim -g "$WINDOW" $FILENAME
 else
   echo "Unknown argument: $1"
+  exit -1
 fi;
+
+echo $FILENAME
