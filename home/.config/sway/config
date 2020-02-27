@@ -213,6 +213,12 @@ bindsym XF86AudioRaiseVolume      exec volume increase
 bindsym Mod4+XF86AudioLowerVolume exec volume min
 bindsym Mod4+XF86AudioRaiseVolume exec volume max
 
+# Brightness control
+bindsym XF86MonBrightnessDown exec light -U 3
+bindsym XF86MonBrightnessUp exec light -A 3
+bindsym Mod4+XF86MonBrightnessDown exec light -S 0
+bindsym Mod4+XF86MonBrightnessUp exec light -S 40
+
 # Power management
 bindsym XF86PowerOff exec systemctl --user start lock.target
 bindsym Shift+XF86PowerOff exec systemctl suspend
