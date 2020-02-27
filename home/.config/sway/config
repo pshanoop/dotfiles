@@ -227,18 +227,27 @@ bindsym XF86Eject exec systemctl --user start lock.target
 bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
 
-# sway-specific
-output eDP-1 scale 1.5
-output eDP-1 pos 0 0
-output HDMI-A-1 scale 1
-input * xkb_layout us
-input * xkb_variant intl
+# Screen settings
+output eDP-1 scale 1.5 pos 0 0
+output "Iiyama North America PLX2783H 1155894321321" scale 1.5
+
+# Keyboard settings
+input type:keyboard {
+  xkb_layout us
+  xkb_variant intl
+  xkb_numlock enable
+}
 input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:escape
 input 1133:16399:Logitech_K750 xkb_options caps:escape
-input * xkb_numlock enable
-input * natural_scroll enabled
-input * accel_profile flat
-input * tap enabled
+
+# Mice settings
+input type:mouse {
+  natural_scroll enabled
+  accel_profile flat
+  tap enabled
+}
+input 5426:111:Razer_Razer_Lancehead_Wireless pointer_accel -0.50
+input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
 
 # exec mako
 
