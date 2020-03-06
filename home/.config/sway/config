@@ -227,10 +227,6 @@ bindsym XF86Eject exec systemctl --user start lock.target
 bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
 
-# Screen settings
-output eDP-1 scale 1.5 pos 0 0
-output "Iiyama North America PLX2783H 1155894321321" scale 1.5
-
 # Keyboard settings
 input type:keyboard {
   xkb_layout us
