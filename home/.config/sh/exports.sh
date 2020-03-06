@@ -20,10 +20,6 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 # Groovy/grails requires this:
 export JAVA_HOME=/usr/lib/jvm/default-runtime/
 
-# This is the default, but some non-gtk apps won't use it without setting
-# this variable. I'm looking at you, eclipse.
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
 # This is used by qt5.
 export QT_STYLE_OVERRIDE=gtk
 # This should make qt apps use the gtk icon theme
