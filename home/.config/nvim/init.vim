@@ -148,6 +148,8 @@ au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
+map <Leader>t :TagbarToggle<CR>
+
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -180,7 +182,6 @@ let g:ale_sign_warning = '!'
 
 " Show errors and warnings.
 map <Leader>e :copen<CR>
-map <Leader>t :TagbarToggle<CR>
 
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
