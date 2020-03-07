@@ -12,6 +12,7 @@ Plug 'mileszs/ack.vim'
 " Completion.
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'fszymanski/deoplete-emoji'
 
 Plug 'tpope/vim-endwise'
 " Plug 'kana/vim-smartinput'
