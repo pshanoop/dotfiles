@@ -220,10 +220,10 @@ bindsym Mod4+XF86MonBrightnessDown exec light -S 0
 bindsym Mod4+XF86MonBrightnessUp exec light -S 40
 
 # Power management
-bindsym XF86PowerOff exec systemctl --user start lock.target
+bindsym XF86PowerOff exec lock
 bindsym Shift+XF86PowerOff exec systemctl suspend
 bindsym Control+XF86PowerOff exec systemctl hibernate
-bindsym XF86Eject exec systemctl --user start lock.target
+bindsym XF86Eject exec lock
 bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
 
