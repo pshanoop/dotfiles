@@ -87,13 +87,6 @@ bindkey -a "^N" down-line-or-beginning-search
 # Reduce the timout for ESC
 export KEYTIMEOUT=1
 
-# fzf plugin
-if [ -f /usr/share/fzf/key-bindings.zsh ]; then
-  # Recommended location
-  source /usr/share/fzf/key-bindings.zsh
-else
-  # macOS
-  source /usr/local/Cellar/fzf/*/shell/key-bindings.zsh
-fi
+source /usr/share/fzf/key-bindings.zsh
 
 autoload zmv
