@@ -1,0 +1,14 @@
+#input,
+#window {
+    background-color: #2f343f;
+}
+
+#input {
+    border: none;
+    border-radius: none;
+    border-bottom: 3px dashed #404552;
+}
+
+#inner-box {
+    color: #9da3ad;
+}
