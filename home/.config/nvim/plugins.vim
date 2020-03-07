@@ -7,6 +7,7 @@ Plug 'gmarik/Vundle.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-sensible'
+Plug 'mileszs/ack.vim'
 
 " Completion.
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

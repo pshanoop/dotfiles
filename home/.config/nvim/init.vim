@@ -221,3 +221,6 @@ call deoplete#custom#source('emoji', 'filetypes', ['rst'])
 let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 """"" End autocompletion
+
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
