@@ -228,7 +228,7 @@ bindsym Shift+XF86Eject exec systemctl suspend
 bindsym Control+XF86Eject exec systemctl hibernate
 
 # Keyboard settings
-input type:keyboard {
+input * {
   xkb_layout us
   xkb_variant intl
   xkb_numlock enable
@@ -237,7 +237,7 @@ input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:es
 input 1133:16399:Logitech_K750 xkb_options caps:escape
 
 # Mice settings
-input type:mouse {
+input * {
   natural_scroll enabled
   accel_profile flat
   tap enabled
