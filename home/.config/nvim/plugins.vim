@@ -5,7 +5,7 @@ Plug 'gmarik/Vundle.vim'
 
 " Essentials.
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sensible'
 Plug 'mileszs/ack.vim'
 
