@@ -29,6 +29,9 @@ Plug 'cespare/vim-toml'
 Plug 'chutzpah/icalendar.vim'
 Plug 'mboughaba/i3config.vim'
 
+" Extra language support
+Plug 'davidhalter/jedi-vim'
+
 " UI
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
