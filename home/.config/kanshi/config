@@ -4,7 +4,7 @@
 
 {
   output eDP-1 scale 1.5 position 0,0
-  output "Iiyama North America PLX2783H 1155894321321" position 1280,0 scale 1.5
+  output "Iiyama North America PLX2783H 1155894321321" position 1280,0
 }
 
 {
