@@ -13,9 +13,17 @@ if ! ponymix --source is-muted; then
   MUTE2=" (mic: ON)"
 fi
 
-notify-send.sh -u low \
-  --replace-file=$XDG_RUNTIME_DIR/volume-notification.lock \
+VOLUME=$(ponymix get-volume)
+NOTIFICATION_LOCK=$XDG_RUNTIME_DIR/volume-notification.lock
+
+find $XDG_RUNTIME_DIR/volume-notification.lock -mmin 2 -delete || true
+
+notify-send.sh \
+  --urgency=low \
+  --replace-file=$NOTIFICATION_LOCK \
+  --expire-time=1600 \
   --icon $ICON \
-  --hint="int:transient:1" \
+  --hint=int:transient:1 \
+  --hint=int:value:$VOLUME \
   "Volume changed" \
-  "$(ponymix get-volume)% $MUTE $MUTE2"
+  "$VOLUME% $MUTE $MUTE2"
