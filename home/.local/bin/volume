@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -x
 set -e
 
 if [ -z $1 ]; then
@@ -24,7 +23,7 @@ if [ -z "$COMMAND" ]; then
   true  # No command to run
 else
   for dev in $(ponymix --sink --short list | cut -f 3); do
-    ponymix -d $dev $COMMAND
+    VOL=$(ponymix -d $dev $COMMAND)
   done
 fi
 

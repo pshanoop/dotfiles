@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if ponymix --sink is-muted; then
   MUTE=" (muted)"
   ICON=audio-volume-muted
@@ -11,8 +13,9 @@ if ! ponymix --source is-muted; then
   MUTE2=" (mic: ON)"
 fi
 
-dunstify -u low -r 53 \
-  -i $ICON \
-  --hints="int:transient:1" \
+notify-send.sh -u low \
+  --replace-file=$XDG_RUNTIME_DIR/volume-notification.lock \
+  --icon $ICON \
+  --hint="int:transient:1" \
   "Volume changed" \
   "$(ponymix get-volume)% $MUTE $MUTE2"
