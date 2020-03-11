@@ -82,4 +82,6 @@ input 5426:112:Razer_Razer_Lancehead_Wireless pointer_accel -0.50
 input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
 
 # xwayland disable
-exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+# Export environment to systemd and start services.
+exec "systemctl --user import-environment; systemctl --user start graphical-session.target"

@@ -1,7 +1,8 @@
 [Unit]
 Description=Dynamic display configuration
-After=sway-session.target
-Requires=sway-session.target
+After=graphical-session.target
+Requires=graphical-session.target
+PartOf=graphical-sesison.target
 
 [Service]
 ExecStart=/usr/bin/kanshi
@@ -10,4 +11,4 @@ RestartSec=1
 TimeoutStopSec=10
 
 [Install]
-WantedBy=sway-session.target
+WantedBy=graphical-session.target

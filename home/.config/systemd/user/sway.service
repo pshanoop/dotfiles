@@ -1,7 +1,7 @@
 [Unit]
 Description=sway - SirCmpwn's Wayland window manager
 Documentation=man:sway(5)
-BindsTo=sway-session.target
+BindsTo=graphical-session.target
 Wants=graphical-session-pre.target
 After=graphical-session-pre.target
 
