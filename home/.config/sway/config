@@ -70,6 +70,7 @@ input * {
 }
 input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:escape
 input 1133:16399:Logitech_K750 xkb_options caps:escape
+input 1133:16399:Logitech_K750 xkb_numlock enabled
 
 # Mice settings
 input * {
