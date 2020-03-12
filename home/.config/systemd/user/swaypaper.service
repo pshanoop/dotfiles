@@ -1,6 +1,7 @@
 [Unit]
 Description=Set a background image for sway
 After=graphical-session.target
+After=sway.service
 Requires=graphical-session.target
 PartOf=graphical-sesison.target
 
