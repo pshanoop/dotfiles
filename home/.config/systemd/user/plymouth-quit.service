@@ -5,3 +5,6 @@ Description=Terminate Plymouth Boot Screen
 ExecStart=-/usr/bin/sudo /usr/bin/plymouth quit --retain-splash
 Type=oneshot
 TimeoutSec=20
+
+[Install]
+WantedBy=graphical-session.target

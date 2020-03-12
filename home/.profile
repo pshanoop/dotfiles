@@ -5,8 +5,6 @@
 source $HOME/.config/sh/exports.sh
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-  sudo plymouth quit --retain-splash
-
   # first import environment variables from the login manager
   systemctl --user import-environment
   # then start the service
