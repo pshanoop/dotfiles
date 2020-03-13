@@ -1,0 +1,5 @@
+[binds]
+<Shift+X> = exec trash "$imv_current_file"; next
+n = next
+p = prev
+c = exec wl-copy "$imv_current_file"
