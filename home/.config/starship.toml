@@ -1,0 +1,11 @@
+[character]
+symbol = "➜"
+
+[git_status]
+show_sync_count = true
+
+[python]
+disabled = true
+
+[aws]
+disabled = true
