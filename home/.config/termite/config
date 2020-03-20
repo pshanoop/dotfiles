@@ -3,6 +3,7 @@ font = OperatorMono Nerd Font Semi-Light 12
 audible_bell = yes
 urgent_on_bell = yes
 clickable_url = no
+scrollback_lines = 32768
 
 [colors]
 foreground = #eeeeee
