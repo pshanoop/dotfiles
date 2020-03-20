@@ -81,6 +81,10 @@ input * {
 input 5426:112:Razer_Razer_Lancehead_Wireless pointer_accel -0.50
 input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
 
+output eDP-1 mode 1920x1080 pos 0 960 scale 1.5
+output "Ancor Communications Inc ROG PG348Q K8LMQS109773" mode 3440x1440 pos 1280 0 scale 1.5
+output "Iiyama North America PLX2783H 1155894321321" mode 1920x1080 pos 1280 0 scale 1.2
+
 # xwayland disable
 
 # Export environment to systemd and start services.
