@@ -1,3 +1,0 @@
-#!/bin/sh
-WINEPREFIX=$HOME/wine/prefixes/ut
-wine "C:\UnrealTournament\System\UnrealTournament.exe"
