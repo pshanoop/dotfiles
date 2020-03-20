@@ -1,14 +1,7 @@
 #!/bin/sh
-# Compatible with ranger 1.6.*
 #
 # This script searches image files in a directory, opens them all with sxiv and
-# sets the first argument to the first image displayed by sxiv.
-#
-# This is supposed to be used in rifle.conf as a workaround for the fact that
-# sxiv takes no file name arguments for the first image, just the number.  Copy
-# this file somewhere into your $PATH and add this at the top of rifle.conf:
-#
-#   mime ^image, has sxiv, X, flag f = path/to/this/script -- "$@"
+# sets the first argument to the first image displayed by imv.
 #
 # Implementation notes: this script is quite slow because of POSIX limitations
 # and portability concerns. First calling the shell function 'abspath' is
@@ -42,7 +35,7 @@ target="$(abspath "$1")"
 count="$(listfiles | grep -a -m 1 -ZznF "$target" | cut -d: -f1)"
 
 if [ -n "$count" ]; then
-    listfiles | xargs -0 /usr/bin/imv -n "$count" --
+    listfiles | xargs -0 /usr/bin/imv-wayland -n "$count" --
 else
-    /usr/bin/imv -- "$@" # fallback
+    /usr/bin/imv-wayland -- "$@" # fallback
 fi
