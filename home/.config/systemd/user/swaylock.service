@@ -1,0 +1,10 @@
+[Unit]
+Description=Dynamic display configuration
+PartOf=lock.target
+
+[Service]
+ExecStart=/bin/sh ${HOME}/.local/bin/lock
+
+[Install]
+WantedBy=lock.target
+WantedBy=sleep.target
