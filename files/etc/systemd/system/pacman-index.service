@@ -3,4 +3,4 @@ Description=Update the pacman package index
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/chronic pacman -Suwy --noconfirm
+ExecStart=/usr/bin/pacman -Suwy --noconfirm
