@@ -3,4 +3,5 @@ Description=Update the pacman package index
 
 [Service]
 Type=oneshot
+ExecStart=/usr/bin/reflector --latest 5 --age 12 --sort rate --save /etc/pacman.d/mirrorlist
 ExecStart=/usr/bin/pacman -Suwy --noconfirm
