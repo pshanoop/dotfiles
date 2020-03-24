@@ -20,8 +20,6 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 # Groovy/grails requires this:
 export JAVA_HOME=/usr/lib/jvm/default-runtime/
 
-# This is used by qt5.
-export QT_STYLE_OVERRIDE=gtk
 # This should make qt apps use the gtk icon theme
 export DESKTOP_SESSION=gnome
 
