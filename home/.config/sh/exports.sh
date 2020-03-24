@@ -28,7 +28,6 @@ export DESKTOP_SESSION=gnome
 # Other defaults
 export TERMINAL=termite
 export BROWSER=firefox
-export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 
 # SSH-agent
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.sock
