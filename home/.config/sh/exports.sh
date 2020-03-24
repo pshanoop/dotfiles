@@ -17,8 +17,6 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 # Make Java applications use font antialiasing
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 export _JAVA_OPTIONS="-Dswing.aatext=true"
-# Groovy/grails requires this:
-export JAVA_HOME=/usr/lib/jvm/default-runtime/
 
 # This should make qt apps use the gtk icon theme
 export DESKTOP_SESSION=gnome
@@ -59,3 +57,10 @@ eval "$(starship init zsh)"
 
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
+
+# Required for GPG to actually work
+# https://github.com/keybase/keybase-issues/issues/2798
+# export GPG_TTY=$(tty)
+
+# Haven't tried this much yet
+QT_QPA_PLATFORM=wayland
