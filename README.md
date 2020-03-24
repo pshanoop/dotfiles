@@ -52,10 +52,6 @@ applications (eg: window manager, offlineimap, sxhkd,
 [caffeine-ng](https://github.com/hobarrera/caffeine-ng)), monitors them, and
 restarts them in case of failure.
 
-My WM of choice is [i3](http://i3wm.org/), and I use it along with
-[i3pystatus](https://github.com/enkore/i3pystatus) to keep some useful data on
-my statusbar (along with a view of all my active desktops).  
-
 I use [sxhkd](https://github.com/baskerville/sxhkd) for global keybindings.
 I've chosen it due to it's simple configuration syntax, simplicity, and
 lightweightness. I prefer not to use my WM for global keybindings, since using

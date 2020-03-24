@@ -36,24 +36,6 @@ font pango:Ubuntu 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Run sway-bar
-bar {
-        status_command python $HOME/.config/sway/status.py
-        font pango:Ubuntu 9
-        colors {
-          background #000000
-          separator  #757575
-          # class            border   background  text
-          focused_workspace  #404552  #404552     #ffffff
-          active_workspace   #404552  #000000     #c3cddb
-          inactive_workspace #000000  #000000     #9da3ad
-          urgent_workspace   #e53935  #e53935     #c3cddb
-        }
-        separator_symbol "·"
-
-        tray_output primary
-}
-
 default_border pixel
 hide_edge_borders both
 
