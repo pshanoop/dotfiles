@@ -4,10 +4,10 @@
 
 {
   output eDP-1 scale 1.5 position 0,0
-  output "Iiyama North America PLX2783H 1155894321321" position 1280,0
+  output "Iiyama North America PLX2783H 1155894321321" position 1280,0 scale 1.2
 }
 
 {
   output eDP-1 scale 1.5 position 0,960
-  output "Ancor Communications Inc ROG PG348Q K8LMQS109773" position 1280,0 scale 1.5
+  output "Ancor Communications Inc ROG PG348Q K8LMQS109773" mode 3440x1440 position 1280,0 scale 1.5
 }
