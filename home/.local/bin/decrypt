@@ -2,12 +2,11 @@
 
 MOUNTPOINT=$(realpath "$1.mount")
 ROOTDIR=$(realpath "$1")
+
 mkdir -p "$MOUNTPOINT"
 
-encfs "$ROOTDIR" "$MOUNTPOINT" --extpass="$SSH_ASKPASS Password:"
+encfs "$ROOTDIR" "$MOUNTPOINT" -s
 
 if [ $? != 0 ]; then
-  zenity --info --text "There was some error mounting"
   rmdir "$MOUNTPOINT"
 fi
-
