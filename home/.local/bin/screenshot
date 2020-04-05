@@ -18,6 +18,9 @@ elif [ $1 = "window" ]; then
   # Specific window (manually selected)
   WINDOW=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
   grim -g "$WINDOW" $FILENAME
+elif [ $1 = "output" ]; then
+  OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
+  grim -o "$OUTPUT" $FILENAME
 else
   echo "Unknown argument: $1"
   exit -1
