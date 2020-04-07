@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=$HOME/wine/prefixes/driller
-wine "C:\Program Files\Mr. Driller\driller.exe"

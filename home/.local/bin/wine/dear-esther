@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=$HOME/wine/prefixes/dear-esther
-wine "C:\Program Files\thechineseroom\Dear Esther\dearesther.exe"
