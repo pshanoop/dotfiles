@@ -5,8 +5,8 @@ set -e
 # Avoid triggering ssh-askpass (use the unprotected cron key).
 unset SSH_ASKPASS
 
-mkdir -p ~/backups/packages/$(hostname)
-cd ~/backups/packages/$(hostname)
+mkdir -p ~/backups/packages/$(hostnamectl --static)
+cd ~/backups/packages/$(hostnamectl --static)
 
 pacman -Qeqn > explicit-native
 pacman -Qeqm > explicit-foreign
