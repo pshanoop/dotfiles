@@ -5,7 +5,7 @@ symbol = "➜"
 show_sync_count = true
 
 [python]
-disabled = true
+disabled = false
 
 [aws]
 disabled = true

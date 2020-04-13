@@ -53,8 +53,7 @@ ZSH_CUSTOM=~/.config/zsh
 # Add wisely, as too many plugins slow down shell startup.
 #
 # zsh-syntax-highlighting needs to be last.
-plugins=(virtualenv vi-mode)
-# virtualenv? Needs theme support?
+plugins=(vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
