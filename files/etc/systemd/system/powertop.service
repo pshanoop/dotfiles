@@ -1,8 +1,8 @@
 [Unit]
-Description=Powertop tunings
+Description=Power usage optimisations
 
 [Service]
-ExecStart=/usr/bin/powertop --auto-tune
+ExecStart=/usr/bin/powertop-safe
 RemainAfterExit=true
 
 [Install]
