@@ -22,8 +22,14 @@ fi
 if [ -z "$COMMAND" ]; then
   true  # No command to run
 else
-  for dev in $(ponymix --sink --short list | cut -f 3); do
-    VOL=$(ponymix -d $dev $COMMAND)
+  # Set the volume for bluetooth devices.
+  for dev in $(ponymix --sink --short list | grep bluez | cut -f 3); do
+    ponymix -d $dev $COMMAND > /dev/null
+  done
+  # Keep volume for the builtin speakers mute.
+  for dev in $(ponymix --sink --short list | grep alsa | cut -f 3); do
+    ponymix -d $dev mute > /dev/null
+    ponymix -d $dev set-volume 0 > /dev/null
   done
 fi
 
