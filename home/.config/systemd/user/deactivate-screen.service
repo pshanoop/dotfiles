@@ -1,0 +1,12 @@
+[Unit]
+Description=Screen powersaving mode
+PartOf=lock.target
+
+[Service]
+ExecStart=/usr/bin/swayidle timeout 3 'swaymsg "output * dpms off"' \
+  resume 'swaymsg "output * dpms on"'
+ExecStopPost=/usr/bin/swaymsg "output * dpms on"
+
+[Install]
+WantedBy=lock.target
+WantedBy=sleep.target

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-swaylock -ec 111111 &
-swayidle timeout 3 'swaymsg "output * dpms off"' \
-  resume 'swaymsg "output * dpms on"; pkill -n swayidle'

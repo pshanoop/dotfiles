@@ -1,9 +1,10 @@
 [Unit]
-Description=Dynamic display configuration
+Description=Screen locker for Wayland
 PartOf=lock.target
 
 [Service]
-ExecStart=/bin/sh ${HOME}/.local/bin/lock
+ExecStart=/usr/bin/swaylock -ec 111111
+ExecStopPost=/usr/bin/systemctl --user stop lock.target
 
 [Install]
 WantedBy=lock.target
