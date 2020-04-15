@@ -64,3 +64,5 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 
 # Haven't tried this much yet
 QT_QPA_PLATFORM=wayland
+
+export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
