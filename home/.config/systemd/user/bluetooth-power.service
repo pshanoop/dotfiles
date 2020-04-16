@@ -1,0 +1,13 @@
+[Unit]
+Description=Bluetooth adapter power
+; bluetooth is off my default, and the only way to change this is to alter one
+; of the files belonging to bluez. There's no directory for drop-in scripts or
+; anything alike, so this'll have to do.
+
+[Service]
+ExecStart=/usr/bin/bluetoothctl power on
+Type=oneshot
+RemainAfterExit=True
+
+[Install]
+WantedBy=graphical-session.target
