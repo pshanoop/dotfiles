@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable Absolute Volume via AVRCP
+Documentation=https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/merge_requests/239
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/lib/enable-avrcp
+
+[Install]
+WantedBy=graphical-session.target

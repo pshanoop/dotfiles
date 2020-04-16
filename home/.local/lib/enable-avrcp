@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+#
+# Looks like bluez won't expose Volume methods unless there's player
+# registered. Looks like a bug (link to a mention below), but as a workaround,
+# running this works.
+#
+# https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/merge_requests/239
+
+import time
+
+import dbus
+
+bus = dbus.SystemBus()
+media = dbus.Interface(
+    bus.get_object("org.bluez", "/org/bluez/hci0"),
+    'org.bluez.Media1',
+)
+path = dbus.ObjectPath('/dummy_player')
+media.RegisterPlayer(path, {})
+while True:
+    time.sleep(10000)
