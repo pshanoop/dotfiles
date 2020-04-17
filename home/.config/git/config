@@ -33,3 +33,5 @@
 	forceSignAnnotated = true
 [fetch]
 	prune = true
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
