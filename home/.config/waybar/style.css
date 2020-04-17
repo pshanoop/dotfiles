@@ -35,6 +35,12 @@ window#waybar.firefox {
     border: none;
 }
 
+window#waybar.discord {
+    background-color: #36393f;
+    border: 2px solid #2e3035;
+    color: transparent;
+}
+
 window#waybar.telegramdesktop {
     background-color: #17212b;
     border-top: 1px solid #101921;
