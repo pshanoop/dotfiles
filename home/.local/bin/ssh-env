@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Runs a new shell with a standalone ssh-agent. This is used when
-# agent-forwarding is required, but forwarding all keys is undesirable (eg: the
-# remove server is untrusted).
-
-eval $(ssh-agent)
-ssh-add /home/hugo/.ssh/id_rsa
-exec zsh -i
