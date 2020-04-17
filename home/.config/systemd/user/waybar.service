@@ -4,7 +4,6 @@ Documentation=https://github.com/Alexays/Waybar/wiki/
 PartOf=graphical-session.target
 
 [Service]
-Type=simple
 ExecStart=/usr/bin/waybar
 
 [Install]
