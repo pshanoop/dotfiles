@@ -19,7 +19,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://carddav.messagingengine.com/dav/addressbooks/user/whynothugo@fastmail.com/Default/"
 username = "whynothugo@fastmail.com"
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:carddav"]
+password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail.com/carddav"]
 
 ##### Calendars ######
 
@@ -48,7 +48,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://caldav.messagingengine.com/"
 username = "whynothugo@fastmail.com"
-password.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "fastmail:caldav"]
+password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail.com/caldav"]
 
 ##### Work Calendars #####
 
@@ -63,4 +63,4 @@ conflict_resolution = ["command", "vimdiff"]
 type = "google_calendar"
 token_file = "~/.cache/vdirsyncer/google.token"
 client_id = "14320763029-jpk6n40e8oqu6j10lg9mshk9tc2856v3.apps.googleusercontent.com"
-client_secret.fetch = ["command", "~/.local/bin/vdirsyncer-pass", "google"]
+client_secret.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo.barrera@tiqets.com/caldav"]
