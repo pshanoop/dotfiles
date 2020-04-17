@@ -41,14 +41,9 @@ export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
 
-export ANDROID_HOME=/opt/android-sdk
-
 export WORKON_HOME=$HOME/.local/share/virtualenvs
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
-
-# httpie places it's config in $HOME by default :(
-export HTTPIE_CONFIG_DIR=$HOME/.config/httpie/
 
 # Make Qt apps honour DPI settings.
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -57,10 +52,6 @@ eval "$(starship init zsh)"
 
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
-
-# Required for GPG to actually work
-# https://github.com/keybase/keybase-issues/issues/2798
-# export GPG_TTY=$(tty)
 
 # Haven't tried this much yet
 QT_QPA_PLATFORM=wayland
