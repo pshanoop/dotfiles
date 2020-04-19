@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/bin/espeak "The time is `date +%R`"

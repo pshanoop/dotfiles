@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Run a detached [from tmux] terminal.
-# I need this because all terminals auto-start tmux, but I (very rarely) need a
-# terminal with no tmux (to attach to an existing session).
-
-NOTMUX=yes $TERMINAL

@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# Chromium remembers the last CLI proxy, but I don't want that when I just run
-# `chromium`. This overrides that.
-
-/usr/bin/chromium --no-proxy-server $@
