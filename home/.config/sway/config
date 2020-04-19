@@ -4,8 +4,7 @@
 # vim: ft=i3config
 
 set $mod Mod4
-include keys.conf
-include apps.conf
+include *.conf
 
 # class                 border   background  text     indicator
 client.focused          #404552  #404552     #c3cddb  #00ff00
