@@ -62,6 +62,7 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
+            "speaker": "",
             "headphone": "",
             "hands-free": "",
             "headset": "",
