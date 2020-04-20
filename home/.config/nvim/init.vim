@@ -123,22 +123,6 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" ========== Vim-specific (non-neovim) ==========
-
-if !has('nvim')
-  " Breaks vi compatibility. This needs to go before everything else.
-  set nocompatible
-
-  " Insert spaces instead of tabs.
-  set smarttab
-
-  " Highlight all search matches.
-  set hlsearch
-
-  " Required to deal with 24-bit colours
-  set t_8f=[38;2;%lu;%lu;%lum
-  set t_8b=[48;2;%lu;%lu;%lum
-endif
 " ========== Leader keybindings ===============================================
 
 " Leader is recommended for user-specifc bindings
