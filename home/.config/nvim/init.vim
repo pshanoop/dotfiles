@@ -41,15 +41,6 @@ set textwidth=79
 let &colorcolumn="80,120"
 highlight ColorColumn ctermbg=darkgrey guibg=#242424
 
-" Leader is recommended for user-specifc bindings
-let mapleader = ","
-
-" Insert ipdb breakpoint with Leader+i
-map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
-
-" Remove search highlighting by pressing ESC.
-map <Leader>f :nohlsearch<CR>
-
 " TODO: set iskeyword so as to behave like vi
 
 " This is ignored by several functions, including ctrlp
@@ -69,20 +60,9 @@ let g:ctrlp_prompt_mappings = {
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
-" Toggle paste mode using F12 (does not try to indent input)
-set pastetoggle=<Leader>p
-
-" Comment / uncomment blocks of code.
-map <Leader>c :TComment<CR>
-
-" Reload config file.
-map <Leader>r :so $HOME/.vimrc <CR>
 
 " Close location window (aka :Errors) after selecting a location.
 :autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
-
-" Close location (aka :Error) window.
-map <Leader>w :lclose <CR>
 
 " Make < > shifts keep selection.
 vnoremap < <gv
@@ -141,7 +121,6 @@ au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
-map <Leader>t :TagbarToggle<CR>
 
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -162,8 +141,39 @@ if !has('nvim')
   set t_8f=[38;2;%lu;%lu;%lum
   set t_8b=[48;2;%lu;%lu;%lum
 endif
+" ========== Leader keybindings ===============================================
 
-" ========== Error checking (ALE) ==========
+" Leader is recommended for user-specifc bindings
+let mapleader = ","
+
+" Insert ipdb breakpoint
+map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
+
+" Remove search highlighting by pressing ESC.
+map <Leader>f :nohlsearch<CR>
+
+" Toggle paste mode using F12 (does not try to indent input)
+set pastetoggle=<Leader>p
+
+" Comment / uncomment blocks of code.
+map <Leader>c :TComment<CR>
+
+" Reload config file.
+map <Leader>r :so $HOME/.vimrc <CR>
+
+" Close location (aka :Error) window.
+map <Leader>w :lclose <CR>
+
+" Open tagbar (tree of classes and their attributes)
+map <Leader>t :TagbarToggle<CR>
+
+" Show errors and warnings.
+map <Leader>e :copen<CR>
+
+" Lint and fix code.
+map <Leader>a :ALEFix<CR>
+
+" ========== Error checking (ALE) =============================================
 
 highlight ALEErrorSign term=standout guifg=White guibg=Red ctermbg=1
 highlight ALEError term=standout guifg=White guibg=Red ctermbg=1
@@ -172,12 +182,6 @@ highlight ALEWarning term=standout guifg=White guibg=Teal ctermbg=1
 
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
-
-" Show errors and warnings.
-map <Leader>e :copen<CR>
-
-" Lint and fix code.
-map <Leader>a :ALEFix<CR>
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1
@@ -190,7 +194,7 @@ let g:ale_keep_list_window_open = 1
 " TODO: fix \n being added before EOF indefinitely
 " -xC79
 
-""""" Autocompletion (deoplete)
+" ========== Autocompletion (deoplete) ========================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
 
