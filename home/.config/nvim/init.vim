@@ -106,13 +106,11 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-" Disable arrow keys (the home row is faster, but I have to force myself to get
-" used to it!)
+" Disable arrow keys and PageDown/PageUp
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-" Same goes for ^D and ^U
 nnoremap <PageDown> <nop>
 nnoremap <PageUp> <nop>
 
