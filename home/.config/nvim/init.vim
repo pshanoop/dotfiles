@@ -190,13 +190,10 @@ inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 " Close preview window on leaving the insert mode
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Autocomplete emoji for RST (markdown and git-commit are defaults)
-call deoplete#custom#source('emoji', 'filetypes', ['rst'])
-
-" " Use ALE and also some plugin 'foobar' as completion sources for all code.
-" call deoplete#custom#option('sources', {
-" \ '_': ['ale', 'foobar'],
-" \})
+" Autocomplete emoji for these filetypes
+call deoplete#custom#source('emoji', 'filetypes', ['rst', 'gitcommit', 'markdown', ''])
+" Actually convert text into emojis:
+call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
 
 let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
