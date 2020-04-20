@@ -48,7 +48,6 @@ let mapleader = ","
 map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
 
 " Remove search highlighting by pressing ESC.
-map <F2> :nohlsearch<CR>
 map <Leader>f :nohlsearch<CR>
 
 " TODO: set iskeyword so as to behave like vi
@@ -71,26 +70,19 @@ let g:ctrlp_prompt_mappings = {
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
 " Toggle paste mode using F12 (does not try to indent input)
-set pastetoggle=<F12>
+set pastetoggle=<Leader>p
 
-" Comment blocks with F5.
-map <F5> :TComment <CR>
+" Comment / uncomment blocks of code.
 map <Leader>c :TComment<CR>
 
-" Reload (source) config file.
-map <F9> :so $HOME/.vimrc <CR>
+" Reload config file.
+map <Leader>r :so $HOME/.vimrc <CR>
 
 " Close location window (aka :Errors) after selecting a location.
 :autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
 
 " Close location (aka :Error) window.
-map <F4> :lclose <CR>
-
-" Toggle line numbers.
-map <F7> :set invnumber number?<CR>
-
-" Highlight line breaks in markdown.
-hi link mkdLineBreak Underlined
+map <Leader>w :lclose <CR>
 
 " Make < > shifts keep selection.
 vnoremap < <gv
