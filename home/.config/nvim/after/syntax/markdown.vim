@@ -1,1 +1,2 @@
-set conceallevel=0
+" Highlight line breaks in markdown.
+hi link mkdLineBreak Underlined
