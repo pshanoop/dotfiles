@@ -132,6 +132,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " Don't conceal markdown
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 " Disable arrow keys (the home row is faster, but I have to force myself to get
 " used to it!)
