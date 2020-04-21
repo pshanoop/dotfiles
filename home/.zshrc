@@ -59,5 +59,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.cache/zsh_completion
+# Make completion match at any part of the string (not just the beggining).
+# (Note this isn't fuzzy though; it looks for an exact match).
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 # Shift tab to navigate backwards
 bindkey '^[[Z' reverse-menu-complete
