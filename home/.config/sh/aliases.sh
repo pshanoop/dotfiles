@@ -2,9 +2,11 @@
 # ~/.aliases
 #
 
-alias ls=lsd
-alias ll='ls -l'
-alias la='ls -la'
+alias ls="lsd"
+alias ll="lsd -l"
+alias la="lsd -A"
+alias l="lsd -1"
+
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 alias sudo='/usr/bin/sudo '
 alias tree='tree -C'
