@@ -16,7 +16,6 @@ source $HOME/.config/sh/aliases.sh
 source $(which virtualenvwrapper_lazy.sh)
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Keybindings =================================================================
 
@@ -33,8 +32,13 @@ bindkey "^E" vi-end-of-line
 export KEYTIMEOUT=1
 
 # History navigation
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey '^P' up-line-or-beginning-search
+
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
 
 # Window titles ===============================================================
 precmd () {
