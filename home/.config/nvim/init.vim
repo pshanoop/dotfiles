@@ -69,7 +69,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 set listchars=eol:$,tab:>-,space:·,trail:·,extends:>,precedes:<
-set listchars=tab:>-,space:·,trail:·,extends:>,precedes:<
 set list
 let g:indentLine_char = '│'
 let g:indentLine_color_gui = '#666666'
