@@ -1,0 +1,5 @@
+font=Cantarell 10
+max-icon-size=64
+layer=overlay
+icons=1
+icon-path=/usr/share/icons/Arc
