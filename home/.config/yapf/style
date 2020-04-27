@@ -1,4 +1,5 @@
 [style]
+allow_split_before_dict_value = false
 coalesce_brackets = true
 dedent_closing_brackets = true
 space_between_ending_comma_and_closing_bracket = false
