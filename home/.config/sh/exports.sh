@@ -57,3 +57,9 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 QT_QPA_PLATFORM=wayland
 
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
+
+# Keep the history for some apps out of my home.
+export PSQL_HISTORY=$HOME/.local/share/psql_history
+export LESSHISTFILE=$HOME/.local/share/less_history
+export IPYTHONDIR=$HOME/.local/share/ipython/
+export CARGO_HOME=$HOME/.cache/cargo
