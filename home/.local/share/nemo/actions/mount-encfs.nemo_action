@@ -1,9 +1,0 @@
-[Nemo Action]
-Name=Mount decrypted
-Comment=Mount using cryptfs
-Exec=mount.encfs %F
-Icon-Name=locked
-Selection=s
-Extensions=enc;
-Quote=double
-Dependencies=encfs;
