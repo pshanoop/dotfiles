@@ -12,7 +12,7 @@ set -e
 set -o pipefail
 
 OUTPUTS=$(swaymsg -t get_outputs | jq -c '.[] | {mode: ((.current_mode.width|tostring) + "x" + (.current_mode.height|tostring)), name: .name}')
-BASE_LOCATION=$HOME/pictures/wallpapers/Pool/
+BASE_LOCATION=$HOME/pictures/wallpapers/
 
 COMMAND=/usr/bin/swaybg
 
