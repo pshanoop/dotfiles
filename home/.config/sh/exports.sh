@@ -9,6 +9,7 @@ export HISTFILESIZE=2000
 export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -rX"
+export LESS='--mouse'
 
 # Prevent wine from creating Desktop Entry files for wine's
 # notepad/iexplore/etc.
