@@ -22,7 +22,6 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 export DESKTOP_SESSION=gnome
 
 # Other defaults
-export TERMINAL=termite
 export BROWSER=firefox
 
 # SSH-agent

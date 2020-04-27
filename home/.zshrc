@@ -42,10 +42,10 @@ bindkey '^N' down-line-or-beginning-search
 
 # Window titles ===============================================================
 precmd () {
-  print -Pn "\e]0;$TERMINAL [%~]\a"
+  print -Pn "\e]0;alacritty [%~]\a"
 }
 preexec () {
-  print -Pn "\e]0;$TERMINAL [%~]: $1\a"
+  print -Pn "\e]0;alacritty [%~]: $1\a"
 }
 
 # ls colours ==================================================================
