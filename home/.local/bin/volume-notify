@@ -1,29 +1,46 @@
 #!/bin/sh
+#
+# Displays a notification with volume changes. Eventually, this should be
+# rewritten as a deamon that connects to PA and receives volume notification
+# events.
+#
+# Possible libs for that:
+# https://github.com/jnqnfe/pulse-binding-rust
+# https://pypi.org/project/pulsectl/
+#
+# Waybar also has a module that updates on changes, many the code from there
+# can be reuse for this?
 
-set -e
+set -ex
 
 if ponymix --sink is-muted; then
-  MUTE=" (muted)"
+  VOL_ICON=""
   ICON=audio-volume-muted
 else
+  VOL_ICON=""
   ICON=audio-volume-medium
 fi
-
-if ! ponymix --source is-muted; then
-  MUTE2=" (mic: ON)"
-fi
-
 VOLUME=$(ponymix get-volume)
-NOTIFICATION_LOCK=$XDG_RUNTIME_DIR/volume-notification.lock
+OUTPUT_DEVICE=$(ponymix --short --sink | grep sink | cut -f 4)
 
+if ponymix --source is-muted; then
+  MIC_ICON=""
+else
+  MIC_ICON=""
+fi
+MIC="$MIC_ICON $(ponymix --source get-volume)"
+
+NOTIFICATION_LOCK=$XDG_RUNTIME_DIR/volume-notification.lock
+# This'd be a lot better if we could work with seconds, but that's not the
+# case.
 find $XDG_RUNTIME_DIR/volume-notification.lock -mmin 2 -delete || true
 
 notify-send.sh \
   --urgency=low \
   --replace-file=$NOTIFICATION_LOCK \
-  --expire-time=1600 \
+  --expire-time=1800 \
   --icon $ICON \
   --hint=int:transient:1 \
   --hint=int:value:$VOLUME \
   "Volume changed" \
-  "$VOLUME% $MUTE $MUTE2"
+  "Using $OUTPUT_DEVICE \n$VOL_ICON  $VOLUME% $MIC%"
