@@ -1,6 +1,0 @@
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
-/* Hide 'Show your bookmarks' */
-#bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker {
-  display: none !important;
-}
