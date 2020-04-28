@@ -68,10 +68,10 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 vnoremap < <gv
 vnoremap > >gv
 
-set listchars=eol:$,tab:>-,space:·,trail:·,extends:>,precedes:<
+set listchars=tab:>-,trail:·,extends:>,precedes:<
 set list
 let g:indentLine_char = '│'
-let g:indentLine_color_gui = '#666666'
+let g:indentLine_color_gui = '#333333'
 
 highlight clear SpecialKey
 highlight SpecialKey guifg='#666666'
