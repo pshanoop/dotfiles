@@ -27,6 +27,9 @@ Plug 'tpope/vim-endwise'
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
+" Used together with :w!! to save files with sudo.
+Plug 'lambdalisue/suda.vim'
+
 " Language-specific ===========================================================
 Plug 'kchmck/vim-coffee-script'
 Plug 'digitaltoad/vim-jade'
