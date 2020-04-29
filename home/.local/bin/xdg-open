@@ -1,9 +1,0 @@
-#!/bin/sh
-[ -z "$1" ] && echo "No file specified " && exit 1
-
-if echo "${1}" | egrep -q "^(https?://|www.)"; then
-    firefox "${1}" &
-    exit
-fi
-
-nemo "${1}"
