@@ -3,6 +3,7 @@
 .purple
 .config/parcellite
 .local/share
-.mozilla/firefox/hugo/chrome
 .ssh
 .local
+.mozilla/firefox/default
+.local/share/flatpak

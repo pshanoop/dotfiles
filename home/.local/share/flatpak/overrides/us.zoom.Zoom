@@ -1,0 +1,4 @@
+[Context]
+shared=!ipc;
+filesystems=!home;
+persistent=.config;.zoom;
