@@ -8,6 +8,8 @@ runtime plugins.vim
 " Lightline configurtion is pretty long:
 runtime lightline.vim
 
+" Appearance ==================================================================
+
 " colorscheme
 let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
@@ -22,6 +24,22 @@ colorscheme jellybeans
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
 
+" Show a ruler on the 80th column.
+let &colorcolumn="80,120"
+highlight ColorColumn ctermbg=darkgrey guibg=#242424
+
+set listchars=tab:>-,trail:·,extends:>,precedes:<
+set list
+let g:indentLine_char = '│'
+let g:indentLine_color_gui = '#333333'
+
+" Show line number for the current line...
+set number
+" ... and relative line numbers for the rest.
+set relativenumber
+
+" Indentation =================================================================
+
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=2
 
@@ -29,28 +47,19 @@ set shiftwidth=2
 " To insert a real tab when 'expandtab' is on, use CTRL-V <Tab>.
 set expandtab
 
-" Show line number for the current line...
-set number
-" ... and relative line numbers for the rest.
-set relativenumber
-
 " Break lines longer than 79 characters.
 set textwidth=79
 
-" Show a ruler on the 80th column.
-let &colorcolumn="80,120"
-highlight ColorColumn ctermbg=darkgrey guibg=#242424
-
-" TODO: set iskeyword so as to behave like vi
+" Navigation ==================================================================
 
 " This is ignored by several functions, including ctrlp
 set wildignore+=build,env,bin,dist,*.pyc,tmp
 
 " Use .gitignore to ignore files via ctrlp
 let g:ctrlp_user_command = [
-\ '.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v -P "\.jpe?g$|\.png$|\.mo$"',
-\ 'find %s -type f'
-\]
+      \ '.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v -P "\.jpe?g$|\.png$|\.mo$"',
+      \ 'find %s -type f'
+      \]
 
 let g:ctrlp_prompt_mappings = {
       \ 'ToggleRegex()':   ['<c-R>'],
@@ -60,6 +69,7 @@ let g:ctrlp_prompt_mappings = {
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
+" Kitchen Sink ================================================================
 
 " Close location window (aka :Errors) after selecting a location.
 :autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
@@ -68,16 +78,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 vnoremap < <gv
 vnoremap > >gv
 
-set listchars=tab:>-,trail:·,extends:>,precedes:<
-set list
-let g:indentLine_char = '│'
-let g:indentLine_color_gui = '#333333'
-
 highlight clear SpecialKey
 highlight SpecialKey guifg='#666666'
-
-" Hide current mode (redundant with airline)
-set noshowmode
 
 " Use :DiffOrig to compare to saved file. Useful when recovering swap files.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
