@@ -25,6 +25,9 @@ Plug 'fszymanski/deoplete-emoji'
 " Ands end line in bash/ruby and similar languages.
 Plug 'tpope/vim-endwise'
 
+" Easy tabulation with :Tab
+Plug 'godlygeek/tabular'
+
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
