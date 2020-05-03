@@ -40,5 +40,8 @@ function! MyFileformat()
 endfunction
 
 function! MyFilename()
-  return expand('%:t') !=# '' ? '' . WebDevIconsGetFileTypeSymbol() . '' . expand('%:t') : '[No Name]'
+  return expand('%:t') !=# '' ? '' . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '[No Name]'
 endfunction
+
+" Hide current mode (redundant with lightline)
+set noshowmode
