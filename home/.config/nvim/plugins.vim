@@ -5,6 +5,7 @@ Plug 'gmarik/Vundle.vim'
 
 " Core ========================================================================
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'liuchengxu/vim-which-key'
 
 " Syntax checking and linting.
 Plug 'dense-analysis/ale'

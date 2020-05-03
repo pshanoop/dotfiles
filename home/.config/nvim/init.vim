@@ -156,6 +156,8 @@ map <Leader>e :copen<CR>
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
 
+nnoremap <silent> <leader> :WhichKey ','<CR>
+
 " ========== Error checking (ALE) =============================================
 
 highlight ALEErrorSign term=standout guifg=White guibg=Red ctermbg=1
