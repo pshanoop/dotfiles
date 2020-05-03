@@ -142,7 +142,7 @@ set pastetoggle=<Leader>p
 map <Leader>c :TComment<CR>
 
 " Reload config file.
-map <Leader>r :so $HOME/.vimrc <CR>
+map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 
 " Close location (aka :Error) window.
 map <Leader>w :lclose <CR>
