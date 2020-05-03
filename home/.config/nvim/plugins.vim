@@ -49,7 +49,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
 
 " UI ==========================================================================
+" Show thin vertical lines on each indentation level:
 Plug 'Yggdroot/indentLine'
+" The above doesn't draw anything on empty lines. This does:
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
