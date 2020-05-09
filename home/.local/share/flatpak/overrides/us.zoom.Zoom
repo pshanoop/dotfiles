@@ -1,4 +1,4 @@
 [Context]
-shared=!ipc;
-filesystems=!home;
-persistent=.config;.zoom;
+sockets=wayland
+shared=!ipc
+filesystems=!home
