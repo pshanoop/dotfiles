@@ -4,7 +4,8 @@ call plug#begin()
 Plug 'gmarik/Vundle.vim'
 
 " Core ========================================================================
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key'
 
 " Syntax checking and linting.
@@ -12,10 +13,6 @@ Plug 'dense-analysis/ale'
 
 " A few miscelaneous settings that just make sense.
 Plug 'tpope/vim-sensible'
-
-" Used for searching -- still experimenting with it.
-" FIXME: Why does the window close when I follow a result?
-Plug 'mileszs/ack.vim'
 
 " Completion.
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

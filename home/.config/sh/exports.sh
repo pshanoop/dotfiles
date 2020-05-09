@@ -43,7 +43,8 @@ export EMAIL="hugo@barrera.io"
 
 export WORKON_HOME=$HOME/.local/share/virtualenvs
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# Use ripgrep with fzf (this includes inside Vim)
+export FZF_DEFAULT_COMMAND='rg --files'
 
 # Make Qt apps honour DPI settings.
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -57,6 +58,7 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 QT_QPA_PLATFORM=wayland
 
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 
 # Keep the history for some apps out of my home.
 export PSQL_HISTORY=$HOME/.local/share/psql_history

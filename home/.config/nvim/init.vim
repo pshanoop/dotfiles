@@ -52,22 +52,26 @@ set textwidth=79
 
 " Navigation ==================================================================
 
-" This is ignored by several functions, including ctrlp
+" This is ignored when autocompleting wildcards (eg: `:open pro*`):
 set wildignore+=build,env,bin,dist,*.pyc,tmp
-
-" Use .gitignore to ignore files via ctrlp
-let g:ctrlp_user_command = [
-      \ '.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v -P "\.jpe?g$|\.png$|\.mo$"',
-      \ 'find %s -type f'
-      \]
-
-let g:ctrlp_prompt_mappings = {
-      \ 'ToggleRegex()':   ['<c-R>'],
-      \ 'PrtClearCache()': ['<c-r>'],
-      \}
 
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
+
+function! FindGitRoot()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+nnoremap <silent> <C-p> :execute 'Files ' . FindGitRoot()<CR>
+cnoreabbrev rg Rg
+" FIXME: Why does the results window clocse when I pick one?
+"        Can I somehow get it back?
+
+" TODO: Exclude current file from prompt
+" (Maybe work using this as a base: https://github.com/junegunn/fzf.vim/pull/422/files )
+" TODO: Refresh with c-R? (Might not be necesary since there's less caching)
+" TODO: Some way of switching to regex?
+"       I never really used that, so figure out if I really need that/
 
 " Kitchen Sink ================================================================
 
@@ -201,6 +205,3 @@ call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
 let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 """"" End autocompletion
-
-let g:ackprg = 'ag --vimgrep --smart-case'
-cnoreabbrev ag Ack
