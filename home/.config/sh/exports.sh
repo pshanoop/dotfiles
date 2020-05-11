@@ -53,8 +53,9 @@ eval "$(starship init zsh)"
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
 
-# Haven't tried this much yet
-QT_QPA_PLATFORM=wayland
+# Make Qt apps use wayland by default.
+# Breaks binaries where upstream neglects to build properly.
+export QT_QPA_PLATFORM=wayland
 
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
