@@ -36,7 +36,6 @@ export GDK_CORE_DEVICE_EVENTS=1
 # makepkg settings
 export PKGDEST=$HOME/.cache/makepkg/packages
 export SRCDEST=$HOME/.cache/makepkg/src
-export AURDEST=$HOME/.cache/makepkg/aurdata
 export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
