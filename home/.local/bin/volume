@@ -1,10 +1,10 @@
 #!/bin/sh
 
-set -e
+set -ex
 
-if [ -z $1 ]; then
-  true
-elif [ $1 == decrease ]; then
+DEVICE_TYPES="--sink"
+
+if [ $1 == decrease ]; then
   COMMAND="decrease 3"
 elif [ $1 == increase ]; then
   COMMAND="increase 3"
@@ -14,23 +14,17 @@ elif [ $1 == max ]; then
   COMMAND="set-volume 100"
 elif [ $1 == toggle ]; then
   COMMAND="toggle"
+elif [ $1 == toggle-mic ]; then
+  COMMAND="toggle"
+  DEVICE_TYPES="--source"
 else
   echo "Bad argument"
   exit -1
 fi
 
-if [ -z "$COMMAND" ]; then
-  true  # No command to run
-else
-  # Set the volume for bluetooth devices.
-  for dev in $(ponymix --sink --short list | grep bluez | cut -f 3); do
-    ponymix -d $dev $COMMAND > /dev/null
-  done
-  # Keep volume for the builtin speakers mute.
-  for dev in $(ponymix --sink --short list | grep alsa | cut -f 3); do
-    ponymix -d $dev mute > /dev/null
-    ponymix -d $dev set-volume 0 > /dev/null
-  done
-fi
+# Alter volume for the default device only.
+ponymix -d $dev $COMMAND > /dev/null
+
+# XXX: Todo: if headphones are found, set speaker volume to 0.
 
 volume-notify
