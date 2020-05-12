@@ -40,4 +40,4 @@ else
   exit 4
 fi
 
-echo "All good, network seems functionaly! ✨"
+echo "All good, network seems functional! ✨"
