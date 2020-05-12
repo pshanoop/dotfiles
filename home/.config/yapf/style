@@ -17,6 +17,7 @@ split_arguments_when_comma_terminated = true
 split_all_top_level_comma_separated_values = false
 # Logicals operators go after the newline:
 split_before_logical_operator = true
+split_before_arithmetic_operator = true
 # When breaking a generator, do it before the set:
 split_before_dict_set_generator = true
 # Eg: blank line before class methods:
