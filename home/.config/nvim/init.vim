@@ -14,8 +14,6 @@ runtime lightline.vim
 let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
 \  'background': {
-\    'ctermbg': 'none',
-\    '256ctermbg': 'none',
 \    'guibg': '000000'
 \  },
 \}
@@ -26,7 +24,7 @@ set termguicolors
 
 " Show a ruler on the 80th column.
 let &colorcolumn="80,120"
-highlight ColorColumn ctermbg=darkgrey guibg=#242424
+highlight ColorColumn guibg=#121212
 
 set listchars=tab:>-,trail:·,extends:>,precedes:<
 set list
@@ -160,14 +158,20 @@ map <Leader>e :copen<CR>
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
 
+" Jump to the next error
+map <Leader>n :ALENextWrap<CR>
+
 nnoremap <silent> <leader> :WhichKey ','<CR>
+
+" Jedi misbehaves and highjacks <Leader>n out of the box.
+let g:jedi#usages_command = ""
 
 " ========== Error checking (ALE) =============================================
 
-highlight ALEErrorSign term=standout guifg=White guibg=Red ctermbg=1
-highlight ALEError term=standout guifg=White guibg=Red ctermbg=1
-highlight ALEWarningSign term=standout guifg=White guibg=Teal ctermbg=1
-highlight ALEWarning term=standout guifg=White guibg=Teal ctermbg=1
+highlight ALEErrorSign term=standout guifg=White guibg=Red
+highlight ALEError term=standout guifg=White guibg=Red
+highlight ALEWarningSign term=standout guifg=White guibg=Teal
+highlight ALEWarning term=standout guifg=White guibg=Teal
 
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
