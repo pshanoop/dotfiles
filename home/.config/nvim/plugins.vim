@@ -32,15 +32,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'lambdalisue/suda.vim'
 
 " Language-specific ===========================================================
-Plug 'kchmck/vim-coffee-script'
+Plug 'sheerun/vim-polyglot'
 Plug 'digitaltoad/vim-jade'
-Plug 'groenewege/vim-less'
-Plug 'plasticboy/vim-markdown'
-Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
 Plug 'chutzpah/icalendar.vim'
-Plug 'mboughaba/i3config.vim'
-Plug 'leafgarland/typescript-vim'
 
 " Extra python support
 Plug 'davidhalter/jedi-vim'
