@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = hunspell-de
+
+[Action]
+Description = Drop extra Nederlands dictionaries...
+When = PostTransaction
+Exec = /bin/sh -c 'for alias in de_AT de_BE de_CH de_LI de_LU; do rm /usr/share/hunspell/$alias.{aff,dic}; done;'
