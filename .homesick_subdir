@@ -1,9 +1,9 @@
-.vim/bundle
-.gnupg
-.purple
 .config/parcellite
-.local/share
-.ssh
+.gnupg
 .local
-.mozilla/firefox/default
 .local/share/flatpak
+.mozilla/firefox/default
+.purple
+.ssh
+.vim/bundle
+.local/share
