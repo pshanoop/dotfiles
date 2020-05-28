@@ -2,8 +2,6 @@
 #
 # Show network status, at various layers.
 
-set -e
-
 _CONNS=$(nmcli --fields type,name con show --active | grep wifi)
 WIFI=$(echo $_CONNS | cut -f 1 -d ' ' --complement | grep -Po '\S.*')
 
