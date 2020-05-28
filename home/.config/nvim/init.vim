@@ -129,7 +129,7 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 " ========== Leader keybindings ===============================================
 
 " Leader is recommended for user-specifc bindings
-let mapleader = ","
+let mapleader = " "
 
 " Insert ipdb breakpoint
 map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
