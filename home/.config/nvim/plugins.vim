@@ -34,7 +34,6 @@ Plug 'lambdalisue/suda.vim'
 " Language-specific ===========================================================
 Plug 'sheerun/vim-polyglot'
 Plug 'digitaltoad/vim-jade'
-Plug 'chutzpah/icalendar.vim'
 
 " Extra python support
 Plug 'davidhalter/jedi-vim'
