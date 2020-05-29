@@ -1,0 +1,18 @@
+#/!bin/sh
+#
+# This file is here to work around a bug in nemo.
+# Or rather, a bug in glib, which nemo uses.
+#
+# When opening files, nemo delegates opening to glib, but glib has some
+# hardcoded terminal names, and expect to find one of them.
+#
+# This is in spite of cinnamon having its own setting for terminals. Hard to
+# say which one is at fault here.
+#
+# See https://github.com/linuxmint/cinnamon/issues/9255
+# and https://github.com/linuxmint/nemo/issues/2399
+# 
+# Hopefully, this won't confuse applications and make them think this is X11
+# (given that xterm is used).
+
+exec alacritty -e $@
