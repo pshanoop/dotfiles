@@ -3,10 +3,10 @@
 pkgname=sysconfig
 pkgver=31.5cbbf4c
 pkgrel=1
-pkgdesc="My system-level configuration files."
+pkgdesc="System-side configuration files and tweaks."
 arch=(any)
-url=""
-license=('BSD')
+url="https://gitlab.com/WhyNotHugo/sysconfig"
+license=('ISC')
 install=sysconfig.install
 
 pkgver() {
