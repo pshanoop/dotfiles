@@ -16,7 +16,9 @@ pkgver() {
 
 package() {
   cd "$srcdir/.."
-  rsync -plr files/ "$pkgdir"
+  for dir in usr etc; do
+    rsync -plr $dir "$pkgdir"
+  done;
 
   chmod 750 "$pkgdir/etc/sudoers.d/"
 }
