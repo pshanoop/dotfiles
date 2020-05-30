@@ -327,7 +327,8 @@ user_pref("permissions.delegation.enabled", false);
  * [NOTE] You can set exceptions under site permissions or use an extension
  * [NOTE] Enforcing category to custom ensures ETP related prefs are always honored
  * [SETTING] Privacy & Security>Enhanced Tracking Protection>Custom>Cookies ***/
-user_pref("network.cookie.cookieBehavior", 3);
+// user_pref("network.cookie.cookieBehavior", 3);
+// XXX: Breaks CW
 user_pref("browser.contentblocking.category", "custom");
 
 /* 2702: set third-party cookies (i.e ALL) (if enabled, see 2701) to session-only
