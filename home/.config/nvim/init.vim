@@ -187,6 +187,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1
+" This might not be best: https://stackoverflow.com/questions/20933836/what-is-the-difference-between-location-list-and-quickfix-list-in-vim
 
 " Keep the quickfix list open when navigating.
 let g:ale_keep_list_window_open = 1
