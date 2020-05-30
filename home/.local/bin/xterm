@@ -15,4 +15,4 @@
 # Hopefully, this won't confuse applications and make them think this is X11
 # (given that xterm is used).
 
-exec alacritty -e $@
+exec alacritty $@
