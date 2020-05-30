@@ -1,4 +1,36 @@
 /* global user_pref */
+//
+// This file contains by long-term Firefox settings.
+//
+// While I may fiddle with settings a lot, this files contains settings that I
+// want to retain when reseting the profile. I do a lot of experimenting and
+// many times need to triage bugs (e.g.: figure out if I've found yet-another
+// firefox bug, or it's something else). This requires me to clean up my
+// profile sometimes, or at least understand what state it's in.
+//
+// The general gist is:
+// - This file contains settings I want to keep when re-creating a profile.
+// - This file makes give visibility into which settings I've changed. Firefox
+//   has hundreds of settings, and there's no way to see which ones I've ever
+//   touched.
+// - On top of that, many settings are really user-data (e.g.: timestamps of
+//   last-sync, etc).
+// - I use Firefox Sync to retain History+Addons across resets.
+//
+// Things not here that I've to reset manually each time:
+// - Change search engine to DDG.
+// - Disable the built-in password manager.
+// - Setting default mailto: handler.
+
+// Show the debugger on the right.
+user_pref("devtools.toolbox.host", "right");
+
+// Warn when closing firefox with lots of tabs and windows.
+// Mostly helpful for when I accidentally press Ctrl+Q.
+user_pref("browser.sessionstore.warnOnQuit", true);
+
+// Switch tabs in-order with Ctrl+Tab
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
 user_pref("browser.startup.page", 3);
 
@@ -7,63 +39,33 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtab.preload", false);
 
 // Redundant and unused, that's what the main bar is for:
-user_pref("browser.newtabpage.activity-stream.showSearch");
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
 
+// Pinned link in the home page.
 user_pref(
   "browser.newtabpage.pinned",
-  JSON.parse([
-    {
-      url: "https://www.fastmail.com/",
-      label: "fastmail",
-      customScreenshotURL:
-        "https://www.fastmail.com/images/press/logos/fastmail-icon.png",
-    },
-    { url: "https://news.ycombinator.com/", label: "hn" },
-    { url: "https://www.notion.so/", label: "notion" },
-    {
-      url: "https://web.whatsapp.com/",
-      label: "web.whatsapp",
-      customScreenshotURL:
-        "https://cdn0.iconfinder.com/data/icons/social-media-square-4/1024/whatsapp-512.png",
-    },
-    {
-      url: "https://translate.google.com/",
-      label: "translate.google",
-      customScreenshotURL:
-        "https://www.shareicon.net/data/2017/04/11/883747_text_512x512.png",
-    },
-    {
-      url: "https://stackoverflow.com/",
-      label: "so",
-      customScreenshotURL:
-        "https://cdn3.iconfinder.com/data/icons/inficons/512/stackoverflow.png",
-    },
-    {
-      url: "https://app.slack.com/client/T0ACV8FAN",
-      label: "app.slack",
-      customScreenshotURL:
-        "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png",
-    },
-    {
-      url: "https://calendar.google.com/calendar/r",
-      label: "Calendar",
-      customScreenshotURL:
-        "https://cdn2.iconfinder.com/data/icons/fletro-long-shadow-google-service/512/Google_Calendar.png",
-    },
-  ])
+  '[{"url":"https://www.fastmail.com/","label":"fastmail","customScreenshotURL":"https://www.fastmail.com/images/press/logos/fastmail-icon.png"},{"url":"https://news.ycombinator.com/","label":"hn","customScreenshotURL":"https://news.ycombinator.com/favicon.ico"},{"url":"https://www.notion.so/","label":"notion","customScreenshotURL":"https://www.notion.so/images/logo-ios.png"},{"url":"https://web.whatsapp.com/","label":"web.whatsapp","customScreenshotURL":"https://cdn0.iconfinder.com/data/icons/social-media-square-4/1024/whatsapp-512.png"},{"url":"https://translate.google.com/","label":"translate.google","customScreenshotURL":"https://www.shareicon.net/data/2017/04/11/883747_text_512x512.png"},{"url":"https://stackoverflow.com/","label":"so","customScreenshotURL":"https://cdn3.iconfinder.com/data/icons/inficons/512/stackoverflow.png"},{"url":"https://app.slack.com/client/T0ACV8FAN","label":"app.slack","customScreenshotURL":"https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png"},{"url":"https://calendar.google.com/calendar/r","label":"Calendar","customScreenshotURL":"https://cdn2.iconfinder.com/data/icons/fletro-long-shadow-google-service/512/Google_Calendar.png"}]'
 );
 
-// Warn when closing firefox with lots of tabs and windows.
-// Mostly helpful for when I accidentally press Ctrl+Q.
-user_pref("browser.sessionstore.warnOnQuit", true);
+// Position of UI elements in the toolbar.
+user_pref(
+  "browser.uiCustomization.state",
+  '{"placements":{"widget-overflow-fixed-list":["_1e925dc5-f3e6-40a3-8033-08e3d9fd1254_-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","downloads-button","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","ublock0_raymondhill_net-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["_1e925dc5-f3e6-40a3-8033-08e3d9fd1254_-browser-action","_5caff8cc-3d2e-4110-a88a-003cc85b3858_-browser-action","_b3e677f4-1150-4387-8629-da738260a48e_-browser-action","ublock0_raymondhill_net-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","developer-button"],"dirtyAreaCache":["nav-bar","widget-overflow-fixed-list"],"currentVersion":16,"newElementCount":3}'
+);
 
-/***
+/******************************************************************************
  * The following are all from ghacks-userjs.
  * Extracted this bits I care about from from this version:
  * https://github.com/ghacksuserjs/ghacks-user.js/blob/76.0/user.js
  *
  * Just diff it with the latest to see what's new/changed.
  ***/
+
+/* 0000: disable about:config warning
+ * FF71-72: chrome://global/content/config.xul
+ * FF73+: chrome://global/content/config.xhtml ***/
+user_pref("general.warnOnAboutConfig", false); // XUL/XHTML version
+user_pref("browser.aboutConfig.showWarning", false); // HTML version [FF71+]
 
 /* 0308: disable search engine updates (e.g. OpenSearch)
  * [NOTE] This does not affect Mozilla's built-in or Web Extension search engines
@@ -158,12 +160,6 @@ user_pref("signon.formlessCapture.enabled", false);
  * 2=allow sub-resources to open HTTP authentication credentials dialogs (default)
  * [1] https://www.fxsitecompat.com/en-CA/docs/2015/http-auth-dialog-can-no-longer-be-triggered-by-cross-origin-resources/ ***/
 user_pref("network.auth.subresource-http-auth-allow", 1);
-
-/* 1001: disable disk cache
- * [SETUP-PERF] If you think disk cache may help (heavy tab user, high-res video),
- * or you use a hardened Temporary Containers, then feel free to override this
- * [NOTE] We also clear cache on exiting Firefox (see 2803) ***/
-user_pref("browser.cache.disk.enable", false);
 
 /* 1007: disable media cache from writing to disk in Private Browsing
  * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB */
@@ -335,9 +331,8 @@ user_pref("permissions.delegation.enabled", false);
  * [NOTE] You can set exceptions under site permissions or use an extension
  * [NOTE] Enforcing category to custom ensures ETP related prefs are always honored
  * [SETTING] Privacy & Security>Enhanced Tracking Protection>Custom>Cookies ***/
-// user_pref("network.cookie.cookieBehavior", 3);
-// user_pref("browser.contentblocking.category", "custom");
-// XXX: Breaks logging into Atlassian
+user_pref("network.cookie.cookieBehavior", 3);
+user_pref("browser.contentblocking.category", "custom");
 
 /* 2702: set third-party cookies (i.e ALL) (if enabled, see 2701) to session-only
    and (FF58+) set third-party non-secure (i.e HTTP) cookies to session-only
@@ -369,8 +364,13 @@ user_pref("privacy.clearOnShutdown.siteSettings", false); // Site Preferences
 /* 4001: enable First Party Isolation [FF51+]
  * [SETUP-WEB] May break cross-domain logins and site functionality until perfected
  * [1] https://bugzilla.mozilla.org/1260931 ***/
-// user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.firstparty.isolate", false);
 // XXX: Breaks logging into Atlassian
+// This setting SHOULD be on. Setting it to true is a security risk. However,
+// we use Atlassian at work, and their login is broken and won't work without
+// this set to off. They actually _require_ users to **lower** their browser
+// security for their login to work (as far as I can tell, it's the only
+// website that's managed to implement such a bad login mechanism).
 
 /* 4002: enforce FPI restriction for window.opener [FF54+]
  * [NOTE] Setting this to false may reduce the breakage in 4001
