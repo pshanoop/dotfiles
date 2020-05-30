@@ -19,8 +19,6 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 export _JAVA_OPTIONS="-Dswing.aatext=true"
 
-# This should make qt apps use the gtk icon theme
-export DESKTOP_SESSION=gnome
 
 # Other defaults
 export BROWSER=firefox
