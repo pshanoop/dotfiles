@@ -204,7 +204,7 @@ inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Autocomplete emoji for these filetypes
-call deoplete#custom#source('emoji', 'filetypes', ['rst', 'gitcommit', 'markdown', ''])
+call deoplete#custom#source('emoji', 'filetypes', [])
 " Actually convert text into emojis:
 call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
 
