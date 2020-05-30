@@ -240,7 +240,9 @@ user_pref("security.insecure_connection_text.enabled", true); // [FF60+]
 /* 1603: CROSS ORIGIN: control when to send a referer
  * 0=always (default), 1=only if base domains match, 2=only if hosts match
  * [SETUP-WEB] Known to cause issues with older modems/routers and some sites e.g vimeo, icloud ***/
-user_pref("network.http.referer.XOriginPolicy", 1);
+// user_pref("network.http.referer.XOriginPolicy", 1);
+// XXX: This also breaks logging into Atlassian.
+//      It's possible other things break too; I didn't bother trying further.
 
 /* 1610: ALL: enable the DNT (Do Not Track) HTTP header
  * [NOTE] DNT is enforced with Enhanced Tracking Protection regardless of this pref
