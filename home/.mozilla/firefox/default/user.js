@@ -70,11 +70,6 @@ user_pref(
 user_pref("general.warnOnAboutConfig", false); // XUL/XHTML version
 user_pref("browser.aboutConfig.showWarning", false); // HTML version [FF71+]
 
-/* 0308: disable search engine updates (e.g. OpenSearch)
- * [NOTE] This does not affect Mozilla's built-in or Web Extension search engines
- * [SETTING] General>Firefox Updates>Automatically update search engines ***/
-user_pref("browser.search.update", false);
-
 /* 0320: disable about:addons' Recommendations pane (uses Google Analytics) ***/
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
 
