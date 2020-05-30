@@ -168,13 +168,20 @@ let g:jedi#usages_command = ""
 
 " ========== Error checking (ALE) =============================================
 
-highlight ALEErrorSign term=standout guifg=White guibg=Red
-highlight ALEError term=standout guifg=White guibg=Red
-highlight ALEWarningSign term=standout guifg=White guibg=Teal
-highlight ALEWarning term=standout guifg=White guibg=Teal
+highlight ALEError guifg=White guibg=Red
+highlight ALEWarning guifg=White guibg=Teal
 
-let g:ale_sign_error = '>'
-let g:ale_sign_warning = '!'
+" Clearing these sets them to black, rather than the original gutter color.
+" This colour is copied over from the theme.
+" Using `hi link ALEWarningSign SignColumn` sets the fg to something
+" undesireable.
+highlight ALEErrorSign guifg=White guibg=#333333
+highlight ALEWarningSign guifg=White guibg=#333333
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠ '
+
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1
