@@ -49,7 +49,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
 Plug 'ryanoasis/vim-devicons'
-Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
 
 " Shortcuts ===================================================================
 Plug 'tomtom/tcomment_vim'

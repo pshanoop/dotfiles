@@ -122,6 +122,8 @@ au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
+" Make Vista wider than the default. This seems like a reasonable value.
+let g:vista_sidebar_width = 50
 
 " Remember last cursor location when re-opening a file.
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -149,8 +151,8 @@ map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 " Close location (aka :Error) window.
 map <Leader>w :lclose <CR>
 
-" Open tagbar (tree of classes and their attributes)
-map <Leader>t :TagbarToggle<CR>
+" Open Vista (A symbol/tag navigator)
+map <Leader>v :Vista!!<CR>
 
 " Show errors and warnings.
 map <Leader>e :copen<CR>
