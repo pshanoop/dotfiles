@@ -310,10 +310,6 @@ user_pref("beacon.enabled", false);
  * [1] https://github.com/pyllyukko/user.js/issues/179#issuecomment-246468676 ***/
 user_pref("devtools.chrome.enabled", false);
 
-/* 2608: disable remote debugging
- * [1] https://trac.torproject.org/projects/tor/ticket/16222 ***/
-user_pref("devtools.debugger.remote-enabled", false);
-
 /* 2622: enforce no system colors; they can be fingerprinted
  * [SETTING] General>Language and Appearance>Fonts and Colors>Colors>Use system colors ***/
 user_pref("browser.display.use_system_colors", false); // [DEFAULT: false]
