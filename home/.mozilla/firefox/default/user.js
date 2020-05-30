@@ -352,14 +352,16 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
  * However, this may not always be the case. The interface combines and syncs these
  * prefs when set from there, and the sanitize code may change at any time
  * [SETTING] Privacy & Security>History>Custom Settings>Clear history when Firefox closes>Settings ***/
-// user_pref("privacy.clearOnShutdown.cache", true);
-// user_pref("privacy.clearOnShutdown.cookies", true);
+user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
 user_pref("privacy.clearOnShutdown.downloads", true); // see note above
 user_pref("privacy.clearOnShutdown.formdata", true); // Form & Search History
-// user_pref("privacy.clearOnShutdown.history", true); // Browsing & Download History
+user_pref("privacy.clearOnShutdown.history", false); // Browsing & Download History
 user_pref("privacy.clearOnShutdown.offlineApps", true); // Offline Website Data
 // user_pref("privacy.clearOnShutdown.sessions", true); // Active Logins
 user_pref("privacy.clearOnShutdown.siteSettings", false); // Site Preferences
+// XXX: Explicitly set HISTORY, CACHE and COOKIES to false here!
+//      Otherwise, due to 2802, it falls back to true.
 
 /* 4001: enable First Party Isolation [FF51+]
  * [SETUP-WEB] May break cross-domain logins and site functionality until perfected
