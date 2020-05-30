@@ -1,10 +1,13 @@
 # History =====================================================================
 HISTFILE=~/.cache/zsh_history
-SAVEHIST=10000
-HISTSIZE=10000
-setopt hist_ignore_dups
-setopt share_history
-setopt hist_verify
+SAVEHIST=100000
+HISTSIZE=100000
+setopt inc_append_history  # Write lines as commands are executed.
+setopt hist_ignore_dups  # Collapse two consecutive idential commands.
+setopt hist_find_no_dups  # Ignore duplicates when searching history.
+setopt share_history  # Read lines other shells write too.
+setopt hist_ignore_space  # Lines that begin with space are not recorded.
+setopt hist_verify  # Don't auto-execute selected history entry.
 
 # Additional shell settings (not zsh-specific) ================================
 source $HOME/.config/sh/exports.sh
