@@ -177,11 +177,11 @@ highlight ALEWarning guifg=White guibg=Teal
 " This colour is copied over from the theme.
 " Using `hi link ALEWarningSign SignColumn` sets the fg to something
 " undesireable.
-highlight ALEErrorSign guifg=White guibg=#333333
-highlight ALEWarningSign guifg=White guibg=#333333
+highlight ALEErrorSign guifg=#cf6242 guibg=#333333
+highlight ALEWarningSign guifg=#ffb964 guibg=#333333
 
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠ '
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
