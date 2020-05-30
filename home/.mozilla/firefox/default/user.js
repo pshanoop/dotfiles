@@ -22,6 +22,9 @@
 // - Disable the built-in password manager.
 // - Setting default mailto: handler.
 
+// Disable "smooth" scrolling
+user_pref("general.smoothScroll", false);
+
 // Show the debugger on the right.
 user_pref("devtools.toolbox.host", "right");
 
