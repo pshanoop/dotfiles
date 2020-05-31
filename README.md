@@ -1,43 +1,52 @@
 My dotfiles
 ===========
 
-This repository contains my dotfiles and configurations.
-This repo is used to:
+🏡 My personal dotfiles (i.e.: user-wide configuration for my systems).
 
- - Sync configurations between my machines.
+Having a history of config files also allows me to be bolder when experimenting
+with new features or setups -- if I find anything breaks, it's very simple to
+got back to my previous configuration.
+
+Other uses of this repository include:
+
+ - Sync configurations across machines.
  - Keep a backup of my configurations.
- - Keep old revisions of my configurations.
- - Quickly configure new machines (after installing a certain list of
- packages, syncing this repo should have a new desktop just I like it).
+ - Keep old revisions of my configurations. (Duh!)
+ - Quickly configure new machines. I keep a dump of my installed packages, so
+   installing all of them on a new device, and them cloning this repo in should
+   be enough to get me up and running!
 
-I decided to make these public, for three reasons:
+This repository is public because:
 
- - Some of the applications I use have few examples. Google will surely
-   point users seeking more here.
+ - There's no reason to keep it secret!
+ - It might help other trying to configure things similarly. I document changes
+   (since it's very useful for me to know why I changed something a few
+   weeks/years back), and this should also be useful to others.
  - It's an easy way to share details about my setup, both when being asked for
    tips, as well ask when asking for help debugging something.
- - The quickly share config files with friends who are curious on how I
+ - The quickly share config files with others who are curious on how I
    achieved something.
 
 I use [homesick](https://github.com/technicalpickles/homesick) to keep this
 repository in sync with my actual dotfiles using symlinks.
 
-Feel free to reuse these files as you see fit. I don't think most they
-even qualify as "software" for them to actually require a license, if you
-think they do, feel free to reuse them under the terms of the ISC license.
+I like homesick's approach over all other dotfile managers; I _can_ edit the
+in-place files, and then move them into homesick, and there's no funky renaming
+or template system in place.
 
 Overview
 --------
 
-I use `sway` (i3-like wayland compositor) with `waybar` for my desktop. `Vim`
-is my editor of choice, and the terminal (`termite` + `zsh`) is my IDE.
+I use `sway` (i3-like wayland compositor) with `waybar` for my desktop.
+`Neovim` is my editor of choice, and the terminal (`alacritty` + `zsh`) is my
+IDE.
 
 I try to keep my setup as a reproducible one, so in case of breakage it's
 possible to roll back and forth in time between settings.
 
 ### Vim
 
-You should run `:PlugInstall` to install all vim plugins. Some additional
+You should run `:PlugInstall` to install all Vim plugins. Some additional
 utilities are required in your `$PATH`, like `flake8` for python, etc.
 
 Manual commands
@@ -45,9 +54,13 @@ Manual commands
 
 The following commands should be run manually *after* symlinking:
 
-```
-echo -e ':PlugInstall\n' | nvim
+```sh
+nvim -c "PlugInstall|q|q"
 chsh -s $(which zsh)
 ```
 
+LICENCE
+-------
+
 Copyright (c) 2012-2020, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
+This repository is licensed under the ISC licence. See LICENCE for details.
