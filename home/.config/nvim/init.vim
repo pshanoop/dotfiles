@@ -163,12 +163,22 @@ map <Leader>a :ALEFix<CR>
 " Jump to the next error
 map <Leader>n :ALENextWrap<CR>
 
-nnoremap <silent> <leader> :WhichKey ','<CR>
+" Jump to definition
+map <Leader>d <Plug>(coc-definition)
+
+" Find references
+map <Leader>r <Plug>(coc-references)
+
+nnoremap <Leader>k :call <SID>show_documentation()<CR>
+
+nnoremap <silent> <leader> :WhichKey ' '<CR>
 
 " Jedi misbehaves and highjacks <Leader>n out of the box.
 let g:jedi#usages_command = ""
 
 " ========== Error checking (ALE) =============================================
+" Apparently, coc can handle ale diagnostics. Maybe simplify doing that.
+" See https://github.com/neoclide/coc.nvim/issues/348#issuecomment-454775970
 
 highlight ALEError guifg=White guibg=Red
 highlight ALEWarning guifg=White guibg=Teal
@@ -197,14 +207,49 @@ let g:ale_keep_list_window_open = 1
 " TODO: fix \n being added before EOF indefinitely
 " -xC79
 
-" ========== Autocompletion (deoplete) ========================================
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#show_docstring = 1
+let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
-let g:python3_host_prog = '/usr/bin/python'
+" ========== Autocompletion ===================================================
 
-" Don't use jedi's autocompletion (we use it for gotodefinition)
-let g:jedi#completions_enabled = 0
+" COC itself uses its own config file (which is very annoying).
+" It can be accessed using `:CocConfig` (it's `coc-settings.json`).
+"
+" COC also handles its own packages (WHERE!?), so reconstructing Vim might
+" require manual intervention.
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Hack required for coc-emoji to work.
+" See https://github.com/neoclide/coc-sources/issues/15
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" There's more features that I might want to use, but since I'm only using
+" flake8/black right now, there's nothing to power them.
+" Check them out when I'm working on some non-python project.
+" See https://github.com/neoclide/coc.nvim
+
+highlight CocErrorSign guifg=#cf6242 guibg=#333333
+highlight CocWarningSign guifg=#ffb964 guibg=#333333
 
 " Switch between options with Tab (or Shift+Tab)
 inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -212,12 +257,4 @@ inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Close preview window on leaving the insert mode
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Autocomplete emoji for these filetypes
-call deoplete#custom#source('emoji', 'filetypes', [])
-" Actually convert text into emojis:
-call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
-
-let g:ale_html_beautify_options = '-s 2 -n -w 80'
-
-""""" End autocompletion
+" ========== EOF ==============================================================

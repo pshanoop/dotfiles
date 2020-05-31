@@ -15,12 +15,7 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sensible'
 
 " Completion.
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'fszymanski/deoplete-emoji'
-
-" Ands end line in bash/ruby and similar languages.
-Plug 'tpope/vim-endwise'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Easy tabulation with :Tab
 Plug 'godlygeek/tabular'
@@ -34,9 +29,6 @@ Plug 'lambdalisue/suda.vim'
 " Language-specific ===========================================================
 Plug 'sheerun/vim-polyglot'
 Plug 'digitaltoad/vim-jade'
-
-" Extra python support
-Plug 'davidhalter/jedi-vim'
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:
