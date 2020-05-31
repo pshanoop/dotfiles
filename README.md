@@ -62,5 +62,5 @@ chsh -s $(which zsh)
 LICENCE
 -------
 
-Copyright (c) 2012-2020, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;
+Copyright (c) 2012-2020, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;  
 This repository is licensed under the ISC licence. See LICENCE for details.
