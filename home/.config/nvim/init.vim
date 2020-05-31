@@ -211,11 +211,12 @@ let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 " ========== Autocompletion ===================================================
 
-" COC itself uses its own config file (which is very annoying).
-" It can be accessed using `:CocConfig` (it's `coc-settings.json`).
+" COC has unusual integration into Vim:
+" - It handles its own config file, `coc-settings.json`.
+" - It handles its own subpackages, via `~/.config/coc/extensions/package.json`.
 "
-" COC also handles its own packages (WHERE!?), so reconstructing Vim might
-" require manual intervention.
+" When reinstalling, keep in mind that these packages must be reinstalled as an
+" extra step.
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
