@@ -46,6 +46,9 @@ export FZF_DEFAULT_COMMAND='rg --files'
 # Make Qt apps honour DPI settings.
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
+# Make Qt apps use the GTK3 filepicker.
+export QT_QPA_PLATFORMTHEME=gtk3
+
 eval "$(starship init zsh)"
 
 # Flatpak
