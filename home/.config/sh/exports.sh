@@ -5,9 +5,9 @@ export PATH
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 
-# Use vim instead of vi.
-export EDITOR=vim
-export VISUAL=vim
+# Use neovim instead of vi.
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER="less -rX"
 export LESS='--mouse'
 

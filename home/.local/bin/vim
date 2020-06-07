@@ -1,5 +1,3 @@
 #!/bin/sh
-#
-# Emulate vim
 
-exec nvim "$@"
+echo -e "I think you meant \e[0;34m${bold}v\e[0m${normal}. 🙃"
