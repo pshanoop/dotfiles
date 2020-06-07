@@ -2,5 +2,8 @@
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
   "diagnostic.enableHighlightLineNumber": false,
-  "diagnostic.warningSign": ""
+  "diagnostic.warningSign": "",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
 }
