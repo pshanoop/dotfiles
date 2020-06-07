@@ -211,6 +211,8 @@ let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 " ========== Autocompletion ===================================================
 
+let g:python3_host_prog = '/usr/bin/python'
+
 " COC has unusual integration into Vim:
 " - It handles its own config file, `coc-settings.json`.
 " - It handles its own subpackages, via `~/.config/coc/extensions/package.json`.
