@@ -3,7 +3,8 @@
 # Read `man 5 sway` for a complete reference.
 # vim: ft=i3config
 
-set $mod Mod4
+set $super Mod4
+set $alt Mod1
 include *.conf
 
 # class                 border   background  text     indicator
@@ -24,8 +25,8 @@ font pango:Ubuntu 9
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
 
 # Show borders for windows.
 default_border pixel 1
