@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
 system("git submodule update --init --recursive")
+system("vim -c 'PlugInstall|q|q'")
