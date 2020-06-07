@@ -22,17 +22,17 @@
 // - Disable the built-in password manager.
 // - Setting default mailto: handler.
 
-// Disable "smooth" scrolling
+// Disable "smooth" scrolling (Hint: scrolling is less smooth with this on).
 user_pref("general.smoothScroll", false);
 
-// Show the debugger on the right.
+// Show the debugger on the right (On 21:9, this is the only sane option).
 user_pref("devtools.toolbox.host", "right");
 
 // Warn when closing firefox with lots of tabs and windows.
 // Mostly helpful for when I accidentally press Ctrl+Q.
 user_pref("browser.sessionstore.warnOnQuit", true);
 
-// Switch tabs in-order with Ctrl+Tab
+// Switch tabs in-order with Ctrl+Tab.
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
 // Use about:blank as a "homepage".
