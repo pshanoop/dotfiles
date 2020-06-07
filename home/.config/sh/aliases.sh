@@ -5,7 +5,7 @@
 alias ls="lsd"
 alias ll="lsd -l"
 alias la="lsd -A"
-alias l="lsd -1"
+alias l="lsd -A"
 alias tree='lsd --tree'
 
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
