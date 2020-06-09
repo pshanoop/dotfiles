@@ -49,6 +49,19 @@ possible to roll back and forth in time between settings.
 You should run `:PlugInstall` to install all Vim plugins. Some additional
 utilities are required in your `$PATH`, like `flake8` for python, etc.
 
+### Alacritty
+
+Alacritty is a great terminal emulator. It's super lightweight, very
+responsive, and has all the features I need. It also has extremely good
+defaults.
+
+It's config format is also very readable. Since they provide a sample file, I
+just used `vimdiff` to compare my own to the sample one (which has all the
+defaults commented out).
+
+The diff makes any settings that I've customised stand out very easily, and
+also figuring out if some value is the default or not.
+
 Manual commands
 ---------------
 
