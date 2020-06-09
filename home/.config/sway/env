@@ -1,9 +1,0 @@
-GTK_THEME=Arc-Darker
-# This'll make qt use wayland by default:
-XDG_SESSION_TYPE=wayland
-# Older versions of Qt always show window decorations. To hide them:
-QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-# Some Java AWT apps would not display properly unless you set the following:
-_JAVA_AWT_WM_NONREPARENTING=1
-# Firefox doesn't use wayland by default yet:
-MOZ_ENABLE_WAYLAND=1

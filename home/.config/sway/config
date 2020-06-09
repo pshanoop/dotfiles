@@ -69,4 +69,4 @@ bindswitch --reload lid:off output eDP-1 enable
 # xwayland disable
 
 # Export environment to systemd and start services.
-exec "systemctl --user import-environment; systemctl --user start graphical-session.target"
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"

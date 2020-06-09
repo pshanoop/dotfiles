@@ -3,7 +3,7 @@ Description=Set a background image for sway
 After=graphical-session.target
 After=sway.service
 Requires=graphical-session.target
-PartOf=graphical-sesison.target
+PartOf=graphical-session.target
 
 [Service]
 ExecStart=/bin/sh ${HOME}/.local/lib/swaypaper

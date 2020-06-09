@@ -66,3 +66,18 @@ export PSQL_HISTORY=$HOME/.local/share/psql_history
 export LESSHISTFILE=$HOME/.local/share/less_history
 export IPYTHONDIR=$HOME/.local/share/ipython/
 export CARGO_HOME=$HOME/.cache/cargo
+
+# Wayland/Sway-specific =======================================================
+export GTK_THEME=Arc-Darker
+
+# This'll make qt use wayland by default:
+export XDG_SESSION_TYPE=wayland
+
+# Older versions of Qt always show window decorations. To hide them:
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# Some Java AWT apps would not display properly unless you set the following:
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Firefox doesn't use wayland by default yet:
+export MOZ_ENABLE_WAYLAND=1
