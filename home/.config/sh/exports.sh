@@ -49,8 +49,6 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 # Make Qt apps use the GTK3 filepicker.
 export QT_QPA_PLATFORMTHEME=gtk3
 
-eval "$(starship init zsh)"
-
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
 

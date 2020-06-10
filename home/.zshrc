@@ -15,6 +15,9 @@ source $HOME/.config/sh/aliases.sh
 
 # Shell plugins ===============================================================
 
+# Shell prompt
+eval "$(starship init zsh)"
+
 # Load virtualenvwrapper
 source $(which virtualenvwrapper_lazy.sh)
 source /usr/share/fzf/key-bindings.zsh
