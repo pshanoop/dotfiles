@@ -1,5 +1,5 @@
 # History =====================================================================
-HISTFILE=~/.cache/zsh_history
+HISTFILE=~/.local/share/zsh/history
 SAVEHIST=100000
 HISTSIZE=100000
 setopt inc_append_history  # Write lines as commands are executed.
