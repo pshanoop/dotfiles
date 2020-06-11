@@ -4,6 +4,7 @@
   "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.warningSign": "",
   "python.linting.pylintEnabled": false,
+  "python.jediEnabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true
 }
