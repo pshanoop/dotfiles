@@ -41,7 +41,12 @@ Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
 Plug 'ryanoasis/vim-devicons'
+
+" Sidebar with symbols, tags, etc.
 Plug 'liuchengxu/vista.vim'
+
+" Smooth scrolling
+Plug 'psliwka/vim-smoothie'
 
 " Shortcuts ===================================================================
 Plug 'tomtom/tcomment_vim'
