@@ -169,6 +169,16 @@ map <Leader>d <Plug>(coc-definition)
 " Find references
 map <Leader>r <Plug>(coc-references)
 
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
+
 nnoremap <Leader>k :call <SID>show_documentation()<CR>
 
 nnoremap <silent> <leader> :WhichKey ' '<CR>
