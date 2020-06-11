@@ -172,6 +172,8 @@ map <Leader>r <Plug>(coc-references)
 nnoremap <Leader>k :call <SID>show_documentation()<CR>
 
 nnoremap <silent> <leader> :WhichKey ' '<CR>
+autocmd FileType which_key setlocal nospell
+set timeoutlen=300
 
 " Jedi misbehaves and highjacks <Leader>n out of the box.
 let g:jedi#usages_command = ""
