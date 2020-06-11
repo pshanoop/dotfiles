@@ -2,7 +2,6 @@
 HISTFILE=~/.local/share/zsh/history
 SAVEHIST=100000
 HISTSIZE=100000
-setopt inc_append_history  # Write lines as commands are executed.
 setopt hist_ignore_dups  # Collapse two consecutive idential commands.
 setopt hist_find_no_dups  # Ignore duplicates when searching history.
 setopt share_history  # Read lines other shells write too.
