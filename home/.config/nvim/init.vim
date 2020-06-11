@@ -125,9 +125,6 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 " Make Vista wider than the default. This seems like a reasonable value.
 let g:vista_sidebar_width = 50
 
-" Remember last cursor location when re-opening a file.
-" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 " ========== Leader keybindings ===============================================
 
 " Leader is recommended for user-specifc bindings
