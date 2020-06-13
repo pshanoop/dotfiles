@@ -29,6 +29,7 @@ Plug 'lambdalisue/suda.vim'
 " Language-specific ===========================================================
 Plug 'sheerun/vim-polyglot'
 Plug 'digitaltoad/vim-jade'
+Plug 'neoclide/jsonc.vim'
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:
