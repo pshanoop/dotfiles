@@ -2,9 +2,6 @@
 PATH=$(find $HOME/.local/bin/ -type d -exec printf "{}:" \;)$PATH
 export PATH
 
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-
 # Use neovim instead of vi.
 export EDITOR=nvim
 export VISUAL=nvim
