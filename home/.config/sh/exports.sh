@@ -1,6 +1,4 @@
-# Add ~/.bin and all subdirectories to PATH
-PATH=$(find $HOME/.local/bin/ -type d -exec printf "{}:" \;)$PATH
-export PATH
+export PATH=$HOME/.local/bin/:$PATH
 
 # Use neovim instead of vi.
 export EDITOR=nvim

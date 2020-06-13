@@ -1,3 +1,0 @@
-#!/bin/sh
-export WINEPREFIX=$HOME/wine/prefixes/mspaint
-wine "C:\Program Files\Paint XP\mspaint.exe"
