@@ -1,0 +1,10 @@
+[Unit]
+Description=Flexible Context-aware Input Tool with eXtension
+Documentation=https://wiki.archlinux.org/index.php/Fcitx
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/fcitx -D
+
+[Install]
+WantedBy=graphical-session.target
