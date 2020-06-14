@@ -1,6 +1,11 @@
 {
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
+  // Show errors in the statusbar.
+  // (the default doesn't make sense and covers the text)
+  "diagnostic.messageTarget": "echo",
+  // Handle ALE diagnostics too.
+  "diagnostic.displayByAle": true,
   "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.warningSign": "",
   "python.linting.pylintEnabled": false,
