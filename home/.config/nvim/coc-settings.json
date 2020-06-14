@@ -11,5 +11,15 @@
   "python.linting.pylintEnabled": false,
   "python.jediEnabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  // Ignore errors for imports that pyright can't find. They don't make sense.
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+  },
+  // Disable organising imports; reorder_python_imports does that and does it
+  // better.
+  "pyright.disableOrganizeImports": true,
+  // Disable pyright autocompletion.
+  // coc-python provides richer results via Jedi.
+  "pyright.disableCompletion": true
 }

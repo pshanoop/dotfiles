@@ -2,6 +2,7 @@
   "dependencies": {
     "coc-emoji": ">=1.2.3",
     "coc-json": ">=1.2.6",
+    "coc-pyright": ">=1.1.41",
     "coc-python": ">=1.2.12"
   }
 }
