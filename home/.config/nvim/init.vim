@@ -56,20 +56,15 @@ set wildignore+=build,env,bin,dist,*.pyc,tmp
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
-function! FindGitRoot()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
+" Ctrl-P for file navigation
+nnoremap <silent> <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles')."\<cr>"
+autocmd FileType fzf set noshowmode noruler nospell nonu nornu
 
-nnoremap <silent> <C-p> :execute 'Files ' . FindGitRoot()<CR>
-cnoreabbrev rg Rg
-" FIXME: Why does the results window clocse when I pick one?
-"        Can I somehow get it back?
+" :Ag does what one would expect out of the box.
+" The colorscheme is somehow broken (it's neither Vim's not Ag's).
 
 " TODO: Exclude current file from prompt
-" (Maybe work using this as a base: https://github.com/junegunn/fzf.vim/pull/422/files )
-" TODO: Refresh with c-R? (Might not be necesary since there's less caching)
-" TODO: Some way of switching to regex?
-"       I never really used that, so figure out if I really need that/
+" https://github.com/junegunn/fzf.vim/issues/695
 
 " Kitchen Sink ================================================================
 

@@ -35,8 +35,11 @@ export EMAIL="hugo@barrera.io"
 
 export WORKON_HOME=$HOME/.local/share/virtualenvs
 
-# Use ripgrep with fzf (this includes inside Vim)
-export FZF_DEFAULT_COMMAND='rg --files'
+# Use ag with fzf (this also applies to fzf-vim).
+# This is the command used to generate the list; fzf does the fuzzyness itself.
+export FZF_DEFAULT_COMMAND='ag -g .'
+# Ask upstream: (Why isn't this the same as FZF_DEFAULT_COMMAND?)
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # Make Qt apps honour DPI settings.
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
