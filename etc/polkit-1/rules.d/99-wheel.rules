@@ -1,0 +1,8 @@
+// Allow `wheel` to run any command as root if the user password is provided.
+// This is basically the equivalent of being in sudoers without NOPASSWD.
+
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel")) {
+        return polkit.Result.AUTH_SELF;
+    }
+});
