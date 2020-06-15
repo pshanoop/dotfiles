@@ -174,7 +174,7 @@ nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 nnoremap <Leader>k :call <SID>show_documentation()<CR>
 
 nnoremap <silent> <leader> :WhichKey ' '<CR>
-autocmd FileType which_key setlocal nospell
+autocmd FileType which_key set noruler nospell nonu nornu
 set timeoutlen=300
 
 " Jedi misbehaves and highjacks <Leader>n out of the box.
