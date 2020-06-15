@@ -41,10 +41,6 @@ user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.startup.page", 3);
 
 // Position of UI elements in the toolbar.
-user_pref(
-  "browser.uiCustomization.state",
-  '{"placements":{"widget-overflow-fixed-list":["_1e925dc5-f3e6-40a3-8033-08e3d9fd1254_-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","downloads-button","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","ublock0_raymondhill_net-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["_1e925dc5-f3e6-40a3-8033-08e3d9fd1254_-browser-action","_5caff8cc-3d2e-4110-a88a-003cc85b3858_-browser-action","_b3e677f4-1150-4387-8629-da738260a48e_-browser-action","ublock0_raymondhill_net-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","developer-button"],"dirtyAreaCache":["nav-bar","widget-overflow-fixed-list"],"currentVersion":16,"newElementCount":3}'
-);
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
