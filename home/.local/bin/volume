@@ -23,7 +23,7 @@ else
 fi
 
 # Alter volume for the default device only.
-ponymix -d $dev $COMMAND > /dev/null
+ponymix $DEVICE_TYPES $COMMAND > /dev/null
 
 # XXX: Todo: if headphones are found, set speaker volume to 0.
 
