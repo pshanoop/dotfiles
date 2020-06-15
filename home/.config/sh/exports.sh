@@ -60,6 +60,11 @@ export LESSHISTFILE=$HOME/.local/share/less_history
 export IPYTHONDIR=$HOME/.local/share/ipython/
 export CARGO_HOME=$HOME/.cache/cargo
 
+# CJK input ===================================================================
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
 # Wayland/Sway-specific =======================================================
 
 # Older versions of Qt always show window decorations. To hide them:
