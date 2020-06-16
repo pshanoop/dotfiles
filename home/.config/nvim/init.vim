@@ -26,8 +26,10 @@ set termguicolors
 let &colorcolumn="80,120"
 highlight ColorColumn guibg=#121212
 
+" Show placeholders for these non-visible-characters.
 set listchars=tab:>-,trail:·,extends:>,precedes:<
 set list
+" And also indentation lines.
 let g:indentLine_char = '│'
 let g:indentLine_color_gui = '#333333'
 
@@ -65,6 +67,12 @@ autocmd FileType fzf set noshowmode noruler nospell nonu nornu
 
 " TODO: Exclude current file from prompt
 " https://github.com/junegunn/fzf.vim/issues/695
+
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Kitchen Sink ================================================================
 
