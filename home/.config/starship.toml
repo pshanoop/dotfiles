@@ -1,5 +1,7 @@
 [character]
 symbol = "➜"
+# style_success = "bold #4ee580"
+style_failure = "bold #ee4e4e"
 
 [git_status]
 show_sync_count = true
