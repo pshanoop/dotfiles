@@ -18,11 +18,12 @@
   "python.jediPath": "/usr/lib/python3.8/site-packages/",
   "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingImports": "none",
+    "reportMissingModuleSource": "none",
   },
-  // Disable organising imports; reorder_python_imports does that and does it
-  // better.
+  // By default, pyright shows errors files OTHER than the ones you're editing.
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  // Don't organise imports; reorder_python_imports does that, and does it right.
   "pyright.disableOrganizeImports": true,
-  // Disable pyright autocompletion.
-  // coc-python provides richer results via Jedi.
+  // Disable pyright autocompletion.  coc-python provides richer results via Jedi.
   "pyright.disableCompletion": true
 }
