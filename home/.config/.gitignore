@@ -1,6 +1,16 @@
+# I generally only ignore settings for application which save settings I don't
+# care about. It's fine if they get reset or lost.
+#
+# In most cases, this implies that the defaults are perfectly sane, and
+# just saves last open directory, window size, or stuff like this.
+#
+# Also apps that store setting binary formats.
+
 EVEMon
 Genymobile
 Insomnia
+Popcorn-Time/
+QtProject.conf
 SubDownloader
 Trolltech.conf
 VirtualBox
@@ -9,13 +19,22 @@ configstore
 d-feet
 deluge
 discord
+inkscape/
 l3afpad
 neofetch
 nvim-qt/window-geometry.confim
 nvim/.netrwhist
+nvim/plugged/
+nvim/spell/
+pavucontrol.ini
 poedit
+pulse
 retroarch
 skypeforlinux
 solaar
 spotify
+sublime-text-3/Cache/
+sublime-text-3/Index/
+sublime-text-3/Local/
+sublime-text-3/Packages/User/Package Control.*
 torbrowser
