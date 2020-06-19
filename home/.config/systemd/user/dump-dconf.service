@@ -1,0 +1,6 @@
+[Unit]
+Description=Dump the dconf settings into something easy to track.
+
+[Service]
+ExecStart=/usr/bin/bash %h/.local/lib/dump-dconf
+Type=simple

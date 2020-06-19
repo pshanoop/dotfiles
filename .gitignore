@@ -15,7 +15,6 @@ home/.config/akonadi
 home/.config/caffeine
 home/.config/chromium
 home/.config/configstore/*bower*
-home/.config/dconf/
 home/.config/google-googletalkplugin
 home/.config/gtk-2.0/gtkfilechooser.ini
 home/.config/homebank/

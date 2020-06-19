@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# This dumps dconf settings into an ini file. This file is easy to version, so
+# it's easy to understand what's change (including to find the root of any
+# breakage), or to restore them quickly in case of experimentation.
+#
+# It basically brings all the magic of versioned text files into dconf.
+
+TEMP_FILE=${XDG_CONFIG_HOME:-$HOME/.config}/dconf/dump.tmp
+REAL_FILE=${XDG_CONFIG_HOME:-$HOME/.config}/dconf/dump.ini
+
+dconf dump / > $TEMP_FILE
+# Entries that save window height and width are stripped, since they have to
+# value, and make diffs harder to read.
+sed -i '/width=/d' $TEMP_FILE
+sed -i '/height=/d' $TEMP_FILE
+sed -i '/window-properties=/d' $TEMP_FILE
+sed -i '/window-position=/d' $TEMP_FILE
+sed -i '/window-size=/d' $TEMP_FILE
+sed -i '/window-maximized=/d' $TEMP_FILE
+sed -i '/window-is-maximized=/d' $TEMP_FILE
+sed -i '/is-maximized=/d' $TEMP_FILE
+sed -i '/is-fullscreen=/d' $TEMP_FILE
+sed -i '/geometry=/d' $TEMP_FILE
+sed -i '/maximized=/d' $TEMP_FILE
+# Blueman saves recent devices here, but that's not something appropiate to
+# store here; is case of breakage that needs to be reset.
+sed -i '/^recent-connections=/d' $TEMP_FILE
+
+mv $TEMP_FILE $REAL_FILE
