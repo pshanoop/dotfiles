@@ -21,6 +21,12 @@ eval "$(starship init zsh)"
 source $(which virtualenvwrapper_lazy.sh)
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/emoji-cli/emoji-cli.zsh
+
+# Required for emoji plugin. See:
+# https://github.com/b4b4r07/emoji-cli/issues/20
+# https://unix.stackexchange.com/a/72092/1644
+stty -ixon
 
 # Keybindings =================================================================
 
