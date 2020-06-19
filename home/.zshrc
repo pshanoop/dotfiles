@@ -28,6 +28,9 @@ source /usr/share/zsh/plugins/emoji-cli/emoji-cli.zsh
 # https://unix.stackexchange.com/a/72092/1644
 stty -ixon
 
+# By default, emoji-cli just prints the name of emojis, and not the actual emoji:
+export EMOJI_CLI_USE_EMOJI=🐼
+
 # Keybindings =================================================================
 
 # Configure the delete key to do it's thing:
