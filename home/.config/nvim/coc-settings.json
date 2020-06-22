@@ -10,7 +10,6 @@
   "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.warningSign": "",
   "python.linting.pylintEnabled": false,
-  "python.jediEnabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
   // coc-python uses a virtualenv with a project's depedencies.
