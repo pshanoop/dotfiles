@@ -1,9 +1,10 @@
-.*sw?
 .*@neomake_*
+.*sw?
+.coverage
+.egg-info
+.git
+.mypy_cache
+.pyc
 .tox
 /tags
-.coverage
 __pycache__
-.git
-.pyc
-.mypy_cache
