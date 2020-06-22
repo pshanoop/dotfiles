@@ -33,8 +33,6 @@ export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
 
 export EMAIL="hugo@barrera.io"
 
-export WORKON_HOME=$HOME/.local/share/virtualenvs
-
 # Use ag with fzf (this also applies to fzf-vim).
 # This is the command used to generate the list; fzf does the fuzzyness itself.
 export FZF_DEFAULT_COMMAND='ag -g .'
@@ -54,6 +52,7 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 # Breaks binaries where upstream neglects to build properly.
 export QT_QPA_PLATFORM=wayland
 
+# Data dirs
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 
@@ -61,8 +60,10 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 export PSQL_HISTORY=$HOME/.local/share/psql_history
 export LESSHISTFILE=$HOME/.local/share/less_history
 export IPYTHONDIR=$HOME/.local/share/ipython/
+
+# Disposable data
 export CARGO_HOME=$HOME/.cache/cargo
-export npm_config_cache=$HOME/.cache/npm/
+export WORKON_HOME=$HOME/.cache/virtualenvs
 
 # CJK input ===================================================================
 export GTK_IM_MODULE=fcitx
