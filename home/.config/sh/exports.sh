@@ -62,6 +62,7 @@ export PSQL_HISTORY=$HOME/.local/share/psql_history
 export LESSHISTFILE=$HOME/.local/share/less_history
 export IPYTHONDIR=$HOME/.local/share/ipython/
 export CARGO_HOME=$HOME/.cache/cargo
+export npm_config_cache=$HOME/.cache/npm/
 
 # CJK input ===================================================================
 export GTK_IM_MODULE=fcitx
