@@ -17,7 +17,7 @@ fileext = ".vcf"
 
 [storage contacts_fastmail]
 type = "carddav"
-url = "https://carddav.messagingengine.com/dav/addressbooks/user/whynothugo@fastmail.com/Default/"
+url = "https://carddav.fastmail.com/dav/addressbooks/user/whynothugo@fastmail.com/Default/"
 username = "whynothugo@fastmail.com"
 password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail.com/carddav"]
 
@@ -48,7 +48,7 @@ fileext = ".ics"
 
 [storage calendars_fastmail]
 type = "caldav"
-url = "https://caldav.messagingengine.com/"
+url = "https://caldav.fastmail.com/"
 username = "whynothugo@fastmail.com"
 password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail.com/caldav"]
 
