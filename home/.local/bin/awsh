@@ -20,6 +20,8 @@ set -o pipefail
 PROFILE=idf
 JUMPHOST=ssh.ideasenfoto.com
 SERVICE_NAME=${1:-ideasenfoto-django}
+shift
+COMMAND=${@:-bash}
 
 # Get the ARN of a task for this service:
 TASK_ARN=$(aws ecs --profile $PROFILE list-tasks --cluster production --service-name $SERVICE_NAME| jq -r '.taskArns[0]')
@@ -35,4 +37,4 @@ EC2_INSTANCE=$(aws ecs --profile $PROFILE describe-container-instances --cluster
 # Get the DNS name of that host:
 EC2_NAME=$(aws ec2 --profile $PROFILE describe-instances --instance-ids $EC2_INSTANCE | jq -r ".Reservations[0].Instances[0].PrivateDnsName")
 
-ssh -atJ $JUMPHOST ec2-user@$EC2_NAME docker exec -it $CONTAINER_ID bash
+ssh -atJ $JUMPHOST ec2-user@$EC2_NAME docker exec -it $CONTAINER_ID $COMMAND
