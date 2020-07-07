@@ -4,7 +4,7 @@
 # docker container where a service is running.
 #
 # This is useful for accessing production programatically (e.g.: run `django-admin
-# shell` and use the ORM directly.  
+# shell` and use the ORM directly).
 #
 # Usage:
 #   awsh [SERVICE_NAME]
