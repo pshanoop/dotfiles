@@ -26,4 +26,4 @@ EC2_INSTANCE=$(aws ecs --profile idf describe-container-instances --cluster prod
 # Get the DNS name of that host:
 EC2_NAME=$(aws ec2 --profile idf describe-instances --instance-ids $EC2_INSTANCE | jq -r ".Reservations[0].Instances[0].PrivateDnsName")
 
-ssh -atJ ssh.ideasenfoto.com ec2-user@$EC2_NAME docker exec -it $CONTAINER_ID bash
+ssh -atJ $JUMPHOST ec2-user@$EC2_NAME docker exec -it $CONTAINER_ID bash
