@@ -17,7 +17,7 @@
 set -e
 set -o pipefail
 
-PROFILE=AWS
+PROFILE=idf
 JUMPHOST=ssh.ideasenfoto.com
 SERVICE_NAME=${1:-ideasenfoto-django}
 
