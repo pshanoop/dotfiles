@@ -125,6 +125,8 @@ au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
+let g:polyglot_disabled = ['vue', 'scss']
+
 " Make Vista wider than the default. This seems like a reasonable value.
 let g:vista_sidebar_width = 50
 

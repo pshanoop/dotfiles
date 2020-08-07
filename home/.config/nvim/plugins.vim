@@ -28,8 +28,14 @@ Plug 'lambdalisue/suda.vim'
 
 " Language-specific ===========================================================
 Plug 'sheerun/vim-polyglot'
+" polyglot provides this, but it fails a lot (is it out of date?)
+Plug 'posva/vim-vue'
+" Ditto. Especially on vue files.
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'cespare/vim-toml'
 Plug 'digitaltoad/vim-jade'
 Plug 'neoclide/jsonc.vim'
+Plug 'rust-lang/rust.vim'
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:
@@ -48,6 +54,9 @@ Plug 'liuchengxu/vista.vim'
 
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
+
+" Distraction-free writing.
+Plug 'junegunn/goyo.vim'
 
 " Shortcuts ===================================================================
 Plug 'tomtom/tcomment_vim'
