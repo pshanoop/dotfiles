@@ -1,6 +1,15 @@
+"  _ __   ___  _____   _(_)_ __ ___
+" | '_ \ / _ \/ _ \ \ / / | '_ ` _ \
+" | | | |  __/ (_) \ V /| | | | | | |
+" |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 "
-" ~/.vimrc
+" Brief overview of how it all works:
 "
+" - coc.nvim is the main plugin for linting, autocompletion, and diagnostics.
+" - ALE does some linting too, but coc grabs its output and shows it all together.
+" - ALE does the fixing (e.g.: autoreformat).
+" - coc.nvim renders signatures/docs in some contextual situations.
+
 
 " Plugins!
 runtime plugins.vim
