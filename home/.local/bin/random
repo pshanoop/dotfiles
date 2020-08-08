@@ -9,6 +9,6 @@ else:
     length = 10
 
 letters = string.ascii_letters + string.digits
-random = ''.join(random.choice(letters) for i in range(length))
+random = "".join(random.choice(letters) for _ in range(length))
 
 print(random)
