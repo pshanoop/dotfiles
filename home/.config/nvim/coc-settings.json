@@ -1,17 +1,27 @@
 {
+  // Global settings =========================================================
+  //
   // "null" makes emoji autocomplete work on all filetypes.
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
-  // Show errors in the statusbar.
-  // (the default doesn't make sense and covers the text)
-  "diagnostic.messageTarget": "echo",
-  // Handle ALE diagnostics too.
-  "diagnostic.displayByAle": true,
-  "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.warningSign": "",
+  // Show errors in the statusbar (the default is a popup that hides the code).
+  "diagnostic.messageTarget": "echo",
+  // Show errors for the entire line (defaults to just current char).
+  "diagnostic.checkCurrentLine": true,
+
+  // Use preview windows rather than popups.
+  // Commented since there's a better workaround for this in init.vim.
+  /* "signature.target": "preview", */
+  /* "coc.preferences.hoverTarget": "preview", */
+
+  // Python-specific ==========================================================
+  //
   "python.linting.pylintEnabled": false,
+  "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
+  "python.linting.flake8Path": "/usr/bin/flake8",
+  /* "python.linting.enabled": true, */
   // coc-python uses a virtualenv with a project's depedencies.
   // Use the system jedi, since jedi is not a dependency for most projects.
   "python.jediPath": "/usr/lib/python3.8/site-packages/",
