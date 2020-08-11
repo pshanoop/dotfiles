@@ -28,7 +28,7 @@ function! CocInfos() abort
   if empty(info) | return '' | endif
 
   if get(info, 'information', 0)
-    return '✓ ' . info['information']
+    return ' ' . info['information']
   else
     return ''
   endif
@@ -53,7 +53,7 @@ let g:lightline.component_type = {
   \ 'linter_ok': 'left',
   \ 'coc_errors': 'error',
   \ 'coc_warnings': 'warning',
-  \ 'coc_infos': 'info',
+  \ 'coc_infos': 'warning',
 \ }
 
 let g:lightline.component_function = {
