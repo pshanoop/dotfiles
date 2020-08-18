@@ -1,10 +1,29 @@
-# Config file for sway
+#  _____      ____ _ _   ___      ___ __ ___
+# / __\ \ /\ / / _` | | | \ \ /\ / / '_ ` _ \
+# \__ \\ V  V / (_| | |_| |\ V  V /| | | | | |
+# |___/ \_/\_/ \__,_|\__, | \_/\_/ |_| |_| |_|
+#                    |___/
 #
-# Read `man 5 sway` for a complete reference.
+# Brief overview of how this is structured:
+#
+# - This file contains all global sway settings.
+#
+# - `keys.conf` has all global keybindings. This includes changing focus,
+# moving windows, switching workspaces, resizing, closing, etc.
+#
+# - `apps.conf` contains keybindings for running common applications, and
+# specific per-application settings. Anything that runs external commands is
+# here too.
+#
+# Read `man 5 sway` for a reference on the files' syntax.
 # vim: ft=i3config
 
+# Define these two keys as alias which I understand.
+# `Super` is a generic name to the `Cmd` or `Windows` key.
 set $super Mod4
 set $alt Mod1
+
+# Include all other `.conf` files in the config directory.
 include *.conf
 
 # class                 border   background  text     indicator
@@ -29,9 +48,14 @@ font pango:Ubuntu 9
 floating_modifier $super
 
 # Show borders for windows.
-default_border pixel 1
+default_border pixel 0
 # Hide them if it's the only child in a workspace or container.
 hide_edge_borders --i3 both
+
+# # Show gaps between windows
+# gaps inner 8
+# # Only show gaps if there's more than one child.
+# smart_gaps on
 
 for_window [class="^StepMania$"] fullscreen
 
@@ -47,16 +71,20 @@ input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:es
 input 1133:16399:Logitech_K750 xkb_options caps:escape,compose:rctrl
 input 1133:16399:Logitech_K750 xkb_numlock enabled
 
-# Mice settings
+# For all mice:
+# - Use natural scrolling.
+# - Disable mouse acceleration.
+# - Enable tap-to-click (trackpads/touchpads only).
 input * {
   natural_scroll enabled
   accel_profile flat
   tap enabled
 }
-input 5426:112:Razer_Razer_Lancehead_Wireless pointer_accel -0.50
-input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
-input 1133:16507:Logitech_MX_Vertical pointer_accel -0.3
 
+# Individual "sensitivity" for all my mice and touchpads and stuff:
+input 5426:112:Razer_Razer_Lancehead_Wireless pointer_accel -0.70
+input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
+input 1133:16507:Logitech_MX_Vertical pointer_accel -0.51
 
 output eDP-1 mode 1920x1080 pos 0 960 scale 1.5
 output "Ancor Communications Inc ROG PG348Q K8LMQS109773" mode 3440x1440 pos 1280 0 scale 1.5
@@ -71,7 +99,9 @@ bindswitch --reload lid:off output eDP-1 enable
 # Export environment to systemd and start services.
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 
-# Titlebars get resized when text with a different height gets picked up.
-# This includes emoji and Hangul. This neat hack makes all titlebars higher.
-# See https://github.com/swaywm/sway/issues/4992
+# Titlebars get resized when characters with a different height are used (and
+# this makes the windows flash, especially Firefox).
+#
+# This issue occurs with characters including emoji and Hangul. This neat hack
+# makes all titlebars higher.  See https://github.com/swaywm/sway/issues/4992
 for_window [title=".*"] title_format %title゜
