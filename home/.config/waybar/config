@@ -27,7 +27,8 @@
     },
     "custom/khal": {
         "interval": 10,
-        "exec": "khal-now"
+        "exec": "khal-now",
+        "on-click": "alacritty --hold -e khal list now 24h"
     },
     "clock": {
         "interval": 1,
