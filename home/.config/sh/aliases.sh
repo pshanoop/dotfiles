@@ -2,10 +2,11 @@
 # ~/.aliases
 #
 
+alias l="lsd -A"
 alias ls="lsd"
 alias ll="lsd -l"
-alias la="lsd -A"
-alias l="lsd -A"
+alias la="echo Hint: use 'l'.;lsd -A"
+alias lla="lsd -lA"
 alias tree='lsd --tree'
 
 # Git Directory: Change directory into the current repo's root. Use `popd` to
