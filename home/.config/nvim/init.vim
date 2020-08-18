@@ -15,6 +15,7 @@
 runtime plugins.vim
 
 " Lightline configurtion is pretty long:
+" Lightline is the plugin that renders the colourful statusbar.
 runtime lightline.vim
 
 " Appearance ==================================================================
@@ -68,6 +69,7 @@ set wildignore+=build,env,bin,dist,*.pyc,tmp
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
 " Ctrl-P for file navigation
+" TODO: It'd be great if matches in pwd are weighted higher.
 nnoremap <silent> <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles')."\<cr>"
 autocmd FileType fzf set noshowmode noruler nospell nonu nornu
 
@@ -105,10 +107,10 @@ set mouse=a
 " Copy to PRIMARY selection on mouse selection.
 vnoremap <LeftRelease> "*ygv
 
-" Yank to PRIMARY selection by default.
+" Yank to PRIMARY selection by default (i.e.: This is pasted with mouse2).
 set clipboard=unnamed
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
+" Allow saving of files via sudo.
 cmap w!! w suda://%
 
 let g:csv_autocmd_arrange      = 1
@@ -129,7 +131,6 @@ nnoremap <down> <nop>
 nnoremap <PageDown> <nop>
 nnoremap <PageUp> <nop>
 
-au BufRead,BufNewFile *.zsh-theme set ft=sh
 au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
@@ -172,6 +173,7 @@ map <Leader>e :copen<CR>
 map <Leader>a :ALEFix<CR>
 
 " Jump to the next error
+" XXX: Given that COC is a superset of these, probably best to use that.
 map <Leader>n :ALENextWrap<CR>
 
 " Jump to definition
