@@ -5,6 +5,7 @@
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
   // Show errors in the statusbar (the default is a popup that hides the code).
   "diagnostic.messageTarget": "echo",
   // Show errors for the entire line (defaults to just current char).
