@@ -8,6 +8,10 @@ alias la="lsd -A"
 alias l="lsd -A"
 alias tree='lsd --tree'
 
+# Git Directory: Change directory into the current repo's root. Use `popd` to
+# jump back.
+alias gitd='pushd $(git rev-parse --show-toplevel)'
+
 alias vim="nvim"
 
 alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
