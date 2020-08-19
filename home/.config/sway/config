@@ -105,3 +105,7 @@ exec "systemctl --user import-environment; systemctl --user start sway-session.t
 # This issue occurs with characters including emoji and Hangul. This neat hack
 # makes all titlebars higher.  See https://github.com/swaywm/sway/issues/4992
 for_window [title=".*"] title_format %title゜
+
+# When the right-most window is focused, navigating right wraps to the leftmost
+# one. This disables this behaviour:
+focus_wrapping = no
