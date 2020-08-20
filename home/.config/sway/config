@@ -108,4 +108,4 @@ for_window [title=".*"] title_format %title゜
 
 # When the right-most window is focused, navigating right wraps to the leftmost
 # one. This disables this behaviour:
-focus_wrapping = no
+focus_wrapping no
