@@ -67,8 +67,18 @@ input * {
   xkb_variant intl
   xkb_numlock enable
 }
+# (1) Swap LeftAlt and Super keys: they're physically in the wrong order.
+# (2) Maps CapsLock to Esc: CapsLock is completely useless, Esc is really useful!.
+# (3) Make RightControl compose: A bit tricky sometimes, but I need a compose key SOMEWHERE.
 input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:escape,compose:rctrl
+
+# Use "Menu" key as Compose. Last time I used Menu was in like Windows 98?
+# Also apply (1) and (2) as above:
+input 5426:579:Razer_Razer_Huntsman_Tournament_Edition xkb_options altwin:swap_lalt_lwin,caps:escape,compose:menu
+
+# LeftAlt and Super are fine on the Logitech keyboard, so only apply (1) and (3):
 input 1133:16399:Logitech_K750 xkb_options caps:escape,compose:rctrl
+# ... However, do turn on numlock for it (it has no numlock key).
 input 1133:16399:Logitech_K750 xkb_numlock enabled
 
 # For all mice:
