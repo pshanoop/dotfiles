@@ -75,6 +75,7 @@ input 1:1:AT_Translated_Set_2_keyboard xkb_options altwin:swap_lalt_lwin,caps:es
 # Use "Menu" key as Compose. Last time I used Menu was in like Windows 98?
 # Also apply (1) and (2) as above:
 input 5426:579:Razer_Razer_Huntsman_Tournament_Edition xkb_options altwin:swap_lalt_lwin,caps:escape,compose:menu
+input 2385:5862:Kingston_HyperX_Alloy_Origins_Core xkb_options altwin:swap_lalt_lwin,caps:escape,compose:menu
 
 # LeftAlt and Super are fine on the Logitech keyboard, so only apply (1) and (3):
 input 1133:16399:Logitech_K750 xkb_options caps:escape,compose:rctrl
