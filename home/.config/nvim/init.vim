@@ -73,6 +73,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 nnoremap <silent> <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles')."\<cr>"
 autocmd FileType fzf set noshowmode noruler nospell nonu nornu
 
+" Properly position the fzf prompt (broken upstream via c60ed17)
+let g:fzf_layout = { 'down': '40%' }
+
 " :Ag does what one would expect out of the box.
 " The colorscheme is somehow broken (it's neither Vim's not Ag's).
 
