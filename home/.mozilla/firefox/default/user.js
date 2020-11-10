@@ -22,6 +22,10 @@
 // - Disable the built-in password manager.
 // - Setting default mailto: handler.
 
+// Fixes a huge security issue introduced in Firefox 81.
+// It allows controlling firefox even if the screen is lock:
+user_pref("media.hardwaremediakeys.enabled", false);
+
 // Disable "smooth" scrolling (Hint: scrolling is less smooth with this on).
 user_pref("general.smoothScroll", false);
 
@@ -47,7 +51,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 /******************************************************************************
  * The following are all from ghacks-userjs.
  * Extracted this bits I care about from from this version:
- * https://github.com/ghacksuserjs/ghacks-user.js/blob/76.0/user.js
+ * https://github.com/arkenfox/user.js/blob/v81.0-beta/user.js
  *
  * Just diff it with the latest to see what's new/changed.
  ***/
@@ -57,6 +61,11 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
  * FF73+: chrome://global/content/config.xhtml ***/
 user_pref("general.warnOnAboutConfig", false); // XUL/XHTML version
 user_pref("browser.aboutConfig.showWarning", false); // HTML version [FF71+]
+
+/* 0207: disable region updates
+ * [1] https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html ***/
+user_pref("browser.region.network.url", ""); // [FF78+]
+user_pref("browser.region.update.enabled", false); // [[FF79+]
 
 /* 0320: disable about:addons' Recommendations pane (uses Google Analytics) ***/
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
@@ -72,9 +81,8 @@ user_pref("browser.safebrowsing.downloads.remote.url", "");
 /* 0517: disable Form Autofill
  * [NOTE] Stored data is NOT secure (uses a JSON file)
  * [NOTE] Heuristics controls Form Autofill on forms without @autocomplete attributes
- * [SETTING] Privacy & Security>Forms and Autofill>Autofill addresses (FF74+)
- * [1] https://wiki.mozilla.org/Firefox/Features/Form_Autofill
- * [2] https://www.ghacks.net/2017/05/24/firefoxs-new-form-autofill-is-awesome/ ***/
+ * [SETTING] Privacy & Security>Forms and Autofill>Autofill
+ * [1] https://wiki.mozilla.org/Firefox/Features/Form_Autofill ***/
 user_pref("extensions.formautofill.addresses.enabled", false); // [FF55+]
 user_pref("extensions.formautofill.available", "off"); // [FF56+]
 user_pref("extensions.formautofill.creditCards.enabled", false); // [FF56+]
@@ -133,7 +141,8 @@ user_pref("browser.formfill.enable", false);
 /* 0905: disable auto-filling username & password form fields
  * can leak in cross-site forms *and* be spoofed
  * [NOTE] Username & password is still available when you enter the field
- * [SETTING] Privacy & Security>Logins and Passwords>Autofill logins and passwords ***/
+ * [SETTING] Privacy & Security>Logins and Passwords>Autofill logins and passwords
+ * [1] https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/ ***/
 user_pref("signon.autofillForms", false);
 
 /* 0909: disable formless login capture for Password Manager [FF51+] ***/
@@ -143,14 +152,14 @@ user_pref("signon.formlessCapture.enabled", false);
  * hardens against potential credentials phishing
  * 0=don't allow sub-resources to open HTTP authentication credentials dialogs
  * 1=don't allow cross-origin sub-resources to open HTTP authentication credentials dialogs
- * 2=allow sub-resources to open HTTP authentication credentials dialogs (default)
- * [1] https://www.fxsitecompat.com/en-CA/docs/2015/http-auth-dialog-can-no-longer-be-triggered-by-cross-origin-resources/ ***/
+ * 2=allow sub-resources to open HTTP authentication credentials dialogs (default) ***/
 user_pref("network.auth.subresource-http-auth-allow", 1);
 
 /* 1007: disable media cache from writing to disk in Private Browsing
- * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB */
+ * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB
+ * [SETUP-WEB] ESR78: playback might break on subsequent loading (1650281) ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); // [FF75+]
-user_pref("media.memory_cache_max_size", 16384);
+user_pref("media.memory_cache_max_size", 65536);
 
 /* 1201: require safe negotiation
  * Blocks connections to servers that don't support RFC 5746 [2] as they're potentially
@@ -203,17 +212,22 @@ user_pref("security.OCSP.require", true);
  * [1] https://trac.torproject.org/projects/tor/ticket/16206 ***/
 user_pref("security.cert_pinning.enforcement_level", 2);
 
-/* 1240: disable insecure active content on https pages
- * [1] https://trac.torproject.org/projects/tor/ticket/21323 ***/
+/** MIXED CONTENT ***/
+/* 1240: enforce no insecure active content on https pages
+ * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21323 ***/
 user_pref("security.mixed_content.block_active_content", true); // [DEFAULT: true]
 
 /* 1241: disable insecure passive content (such as images) on https pages [SETUP-WEB] ***/
 user_pref("security.mixed_content.block_display_content", true);
 
-/* 1244: enable https-only-mode [FF76+]
- * [NOTE] This is experimental
- * [1] https://bugzilla.mozilla.org/1613063 */
-// user_pref("dom.security.https_only_mode", true);
+/* 1244: enable HTTPS-Only mode [FF76+]
+ * When "https_only_mode" (all windows) is true, "https_only_mode_pbm" (private windows only) is ignored
+ * [WARNING] This is experimental [1] and you can't set exceptions if FPI is enabled [2] (fixed in FF83)
+ * [SETTING] to add site exceptions: Page Info>Permissions>Use insecure HTTP (FF80+)
+ * [SETTING] Privacy & Security>HTTPS-Only Mode (FF80+ with browser.preferences.exposeHTTPSOnly = true)
+ * [1] https://bugzilla.mozilla.org/1613063 [META]
+ * [2] https://bugzilla.mozilla.org/1647829 ***/
+user_pref("dom.security.https_only_mode", true);
 
 /* 1272: display advanced information on Insecure Connection warning pages
  * only works when it's possible to add an exception
@@ -222,7 +236,7 @@ user_pref("security.mixed_content.block_display_content", true);
 user_pref("browser.xul.error_pages.expert_bad_cert", true);
 
 /* 1273: display "insecure" icon and "Not Secure" text on HTTP sites ***/
-user_pref("security.insecure_connection_icon.enabled", true); // [FF59+] [DEFAULT: true FF70+]
+user_pref("security.insecure_connection_icon.enabled", true); // [FF59+] [DEFAULT: true]
 user_pref("security.insecure_connection_text.enabled", true); // [FF60+]
 
 /* 1603: CROSS ORIGIN: control when to send a referer
@@ -244,17 +258,6 @@ user_pref("privacy.userContext.ui.enabled", true);
 /* 1702: enable Container Tabs [FF50+]
  * [SETTING] General>Tabs>Enable Container Tabs ***/
 user_pref("privacy.userContext.enabled", true);
-
-/* 2201: prevent websites from disabling new window features ***/
-user_pref("dom.disable_window_open_feature.close", true);
-user_pref("dom.disable_window_open_feature.location", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.menubar", true);
-user_pref("dom.disable_window_open_feature.minimizable", true);
-user_pref("dom.disable_window_open_feature.personalbar", true); // bookmarks toolbar
-user_pref("dom.disable_window_open_feature.resizable", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.status", true); // [DEFAULT: true]
-user_pref("dom.disable_window_open_feature.titlebar", true);
-user_pref("dom.disable_window_open_feature.toolbar", true);
 
 /* 2202: prevent scripts from moving and resizing open windows ***/
 user_pref("dom.disable_window_move_resize", true);
@@ -280,7 +283,7 @@ user_pref("browser.link.open_newwindow.restriction", 0);
 user_pref("dom.battery.enabled", false);
 
 /* 2601: prevent accessibility services from accessing your browser [RESTART]
- * [SETTING] Privacy & Security>Permissions>Prevent accessibility services from accessing your browser
+ * [SETTING] Privacy & Security>Permissions>Prevent accessibility services from accessing your browser (FF80 or lower)
  * [1] https://support.mozilla.org/kb/accessibility-services ***/
 user_pref("accessibility.force_disabled", 1);
 
@@ -314,12 +317,11 @@ user_pref("permissions.delegation.enabled", false);
 // XXX: Breaks CW
 user_pref("browser.contentblocking.category", "custom");
 
-/* 2702: set third-party cookies (i.e ALL) (if enabled, see 2701) to session-only
-   and (FF58+) set third-party non-secure (i.e HTTP) cookies to session-only
+/* /* 2702: set third-party cookies (if enabled, see 2701) to session-only
    [NOTE] .sessionOnly overrides .nonsecureSessionOnly except when .sessionOnly=false and
    .nonsecureSessionOnly=true. This allows you to keep HTTPS cookies, but session-only HTTP ones
  * [1] https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/ ***/
-// user_pref("network.cookie.thirdparty.sessionOnly", true);
+user_pref("network.cookie.thirdparty.sessionOnly", true);
 // user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true); // [FF58+]
 
 /* 2802: enable Firefox to clear items on shutdown (see 2803)
@@ -332,32 +334,33 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
  * However, this may not always be the case. The interface combines and syncs these
  * prefs when set from there, and the sanitize code may change at any time
  * [SETTING] Privacy & Security>History>Custom Settings>Clear history when Firefox closes>Settings ***/
-user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.cache", true);
 user_pref("privacy.clearOnShutdown.cookies", false);
 user_pref("privacy.clearOnShutdown.downloads", true); // see note above
 user_pref("privacy.clearOnShutdown.formdata", true); // Form & Search History
 user_pref("privacy.clearOnShutdown.history", false); // Browsing & Download History
-user_pref("privacy.clearOnShutdown.offlineApps", true); // Offline Website Data
-// user_pref("privacy.clearOnShutdown.sessions", true); // Active Logins
+user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
+user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
 user_pref("privacy.clearOnShutdown.siteSettings", false); // Site Preferences
-// XXX: Explicitly set HISTORY, CACHE and COOKIES to false here!
-//      Otherwise, due to 2802, it falls back to true.
+// XXX: The above values are not at their upstream default.
+//      Due to 2802, they all default to true.
 
 /* 4001: enable First Party Isolation [FF51+]
  * [SETUP-WEB] May break cross-domain logins and site functionality until perfected
- * [1] https://bugzilla.mozilla.org/1260931 ***/
+ * [1] https://bugzilla.mozilla.org/1260931
+ * [2] https://bugzilla.mozilla.org/1299996 [META] ***/
 user_pref("privacy.firstparty.isolate", false);
 // XXX: Breaks logging into Atlassian
 // This setting SHOULD be on. Setting it to true is a security risk. However,
 // we use Atlassian at work, and their login is broken and won't work without
 // this set to off. They actually _require_ users to **lower** their browser
-// security for their login to work (as far as I can tell, it's the only
-// website that's managed to implement such a bad login mechanism).
+// security for their login to work (this seems to be the only website I've
+// visited in the last year or so that has this security issue in the login).
 
 /* 4002: enforce FPI restriction for window.opener [FF54+]
  * [NOTE] Setting this to false may reduce the breakage in 4001
  * FF65+ blocks postMessage with targetOrigin "*" if originAttributes don't match. But
- * to reduce breakage it ignores the 1st-party domain (FPD) originAttribute. (see [2],[3])
+ * to reduce breakage it ignores the 1st-party domain (FPD) originAttribute, see [2],[3]
  * The 2nd pref removes that limitation and will only allow communication if FPDs also match.
  * [1] https://bugzilla.mozilla.org/1319773#c22
  * [2] https://bugzilla.mozilla.org/1492607
@@ -372,8 +375,14 @@ user_pref("privacy.firstparty.isolate", false);
  * [1] https://bugzilla.mozilla.org/418986 ***/
 user_pref("privacy.resistFingerprinting", true);
 
+/* 4520: disable chrome animations [FF77+] [RESTART]
+ * [NOTE] pref added in FF63, but applied to chrome in FF77. RFP spoofs this for web content ***/
+user_pref("ui.prefersReducedMotion", 1); // [HIDDEN PREF]
+
 user_pref("toolkit.cosmeticAnimations.enabled", false); // [FF55+]
 
+/*** [SECTION 5000]: PERSONAL ***/
+/* UX FEATURES: disable and hide the icons and menus ***/
 user_pref("extensions.pocket.enabled", false); // Pocket Account [FF46+]
 user_pref("reader.parse-on-load.enabled", false); // Reader View
 
