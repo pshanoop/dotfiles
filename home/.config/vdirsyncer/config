@@ -34,7 +34,7 @@ collections = [
   # holidays
   "0fbb80ab-c476-4a7d-8f5e-332d5421335b",
   # work
-  "d6aa4f1e-bdf6-4b6b-999d-b89afd62c994",
+  # "d6aa4f1e-bdf6-4b6b-999d-b89afd62c994",
   # todo
   "d3665837-f872-4228-90f2-af2922862590"
   ]
@@ -57,12 +57,13 @@ password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail
 [pair work_calendars]
 a = "calendars_local"
 b = "calendars_google"
-collections = ["hugo.barrera@tiqets.com"]
+collections = ["hugo@proctorexam.com"]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
 [storage calendars_google]
 type = "google_calendar"
 token_file = "~/.cache/vdirsyncer/google.token"
-client_id = "14320763029-jpk6n40e8oqu6j10lg9mshk9tc2856v3.apps.googleusercontent.com"
-client_secret.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo.barrera@tiqets.com/caldav"]
+client_id.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo@proctorexam.com/caldav/client_id"]
+client_secret.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo@proctorexam.com/caldav/client_secret"]
+read_only = true
