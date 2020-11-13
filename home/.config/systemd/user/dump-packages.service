@@ -2,5 +2,5 @@
 Description=Dump currently installed packages
 
 [Service]
-ExecStart=/bin/sh %h/.local/bin/dump-packages
+ExecStart=/bin/sh %h/.local/lib/dump-packages
 Type=simple
