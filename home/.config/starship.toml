@@ -10,7 +10,7 @@ show_sync_count = true
 disabled = false
 
 [aws]
-disabled = true
+symbol = "  "
 
 [package]
 disabled = true

@@ -24,3 +24,5 @@ alias p='git push -u origin HEAD'
 alias u='git fetch && git rebase --autostash origin/$(git branch --show-current)'
 alias tmux='/usr/bin/tmux -f ~/.config/tmux/tmux.conf'
 alias calc="ipython"
+
+alias av="aws-vault exec --"
