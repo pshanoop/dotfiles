@@ -16,6 +16,9 @@
   /* "signature.target": "preview", */
   /* "coc.preferences.hoverTarget": "preview", */
 
+  // Swift ====================================================================
+  "sourcekit.commandPath": "/usr/bin/sourcekit-lsp",
+
   // Python-specific ==========================================================
   //
   "python.formatting.provider": "black",
