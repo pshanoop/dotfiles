@@ -25,6 +25,8 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 export _JAVA_OPTIONS="-Dswing.aatext=true"
 
+# xdg-desktop-portal will use the right backed if this is exported:
+export XDG_CURRENT_DESKTOP=sway
 
 # Other defaults
 export BROWSER=firefox
@@ -59,10 +61,6 @@ export QT_QPA_PLATFORMTHEME=gtk3
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
 
-# Make Qt apps use wayland by default.
-# Breaks binaries where upstream neglects to build properly.
-export QT_QPA_PLATFORM=wayland
-
 # Data dirs
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
@@ -83,6 +81,9 @@ export XMODIFIERS=@im=fcitx
 
 # Wayland/Sway-specific =======================================================
 
+# Make Qt apps use wayland by default.
+# Breaks binaries where upstream neglects to build properly.
+export QT_QPA_PLATFORM=wayland
 # Older versions of Qt always show window decorations. To hide them:
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 # Some Java AWT apps would not display properly unless you set the following:
