@@ -28,7 +28,7 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 # xdg-desktop-portal will use the right backed if this is exported:
 # "GNOME" is required for GTK applications to work in flatpak and alike.
 # See https://github.com/flatpak/flatpak/issues/2861#issuecomment-735476004
-export XDG_CURRENT_DESKTOP=sway;GNOME
+export XDG_CURRENT_DESKTOP="sway;GNOME"
 
 # Other defaults
 export BROWSER=firefox
