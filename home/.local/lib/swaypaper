@@ -2,14 +2,15 @@
 #
 # Sets random wallpapres from the pool
 #
-# Wallpapers currently in the pool are split per aspect ratio (inaccurately
-# placed in directories per-resolution, but meh, it works).
+# Wallpapers currently in the pool are split per aspect ratio.
+# Directories take names like "3440x1440.UW-QHD".
 #
-# The script picks one at random for each display, making sure the aspect
-# ratios match, and set them.
+# The script set one at random for each display, making sure the resolution
+# matches.
 
 set -e
 set -o pipefail
+set -x
 
 OUTPUTS=$(swaymsg -t get_outputs | jq -c '.[] | {mode: ((.current_mode.width|tostring) + "x" + (.current_mode.height|tostring)), name: .name}')
 BASE_LOCATION=$HOME/pictures/wallpapers/
@@ -18,12 +19,11 @@ COMMAND=/usr/bin/swaybg
 
 for OUTPUT in $OUTPUTS; do
   NAME=$(echo $OUTPUT | jq -r '.name')
-  LOCATION=$BASE_LOCATION/$(echo $OUTPUT | jq -r '.mode')
+  LOCATION=$BASE_LOCATION/$(echo $OUTPUT | jq -r '.mode')*
   FILE=$(/usr/bin/ls -1 $LOCATION | sort -R | tail -n 1)
   WALLPAPER=$LOCATION/$FILE
 
   COMMAND="$COMMAND -o $NAME -i $WALLPAPER -m fill"
 done
 
-set -x
 $COMMAND
