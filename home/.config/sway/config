@@ -47,8 +47,10 @@ font pango:Ubuntu 9
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
-# Show borders for windows.
+# Hide borders for windows...
 default_border pixel 0
+# ... But show one for flaoting windows (note: this also hides the title).
+default_floating_border pixel 2
 # Hide them if it's the only child in a workspace or container.
 hide_edge_borders --i3 both
 
