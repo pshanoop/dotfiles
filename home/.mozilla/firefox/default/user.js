@@ -48,6 +48,14 @@ user_pref("browser.startup.page", 3);
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Remove the WebRTC indicator
+// After the microphone prompt is confirmed, this prompt steals focus and makes
+// the webcam prompt disappear, forcing me to juggle around to try and get it
+// back.
+// It also doesn't behave as expected in tiling window managers.
+// TODO: report both bugs upstream.
+user_pref("privacy.webrtc.legacyGlobalIndicator", false);
+
 /******************************************************************************
  * The following are all from ghacks-userjs.
  * Extracted this bits I care about from from this version:
