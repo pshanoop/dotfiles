@@ -85,7 +85,7 @@ input 1133:16399:Logitech_K750 xkb_options caps:escape,compose:rctrl
 input 1133:16399:Logitech_K750 xkb_numlock enabled
 
 # For all mice:
-# - Use natural scrolling.
+# - Use natural scrolling (default is inverted, MS-style).
 # - Disable mouse acceleration.
 # - Enable tap-to-click (trackpads/touchpads only).
 input * {
@@ -97,8 +97,13 @@ input * {
 # Individual "sensitivity" for all my mice and touchpads and stuff:
 input 5426:112:Razer_Razer_Lancehead_Wireless pointer_accel -0.70
 input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
-input 1133:16507:Logitech_MX_Vertical pointer_accel -0.51
-input 1133:45088:MX_Vertical_Mouse pointer_accel -0.51
+input 1133:16507:Logitech_MX_Vertical pointer_accel -0.51  # nano receiver
+input 1133:45088:MX_Vertical_Mouse { # bluetooth
+  # This plays nicely with the mouse set to 800 dpi.
+  # That's handled by solaar.
+  pointer_accel 0
+  accel_profile flat
+}
 input 1739:30383:DELL07E6:00_06CB:76AF_Touchpad pointer_accel 1
 
 output eDP-1 mode 3840x2160 pos 0 960 scale 2.5
