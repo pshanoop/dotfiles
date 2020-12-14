@@ -1,2 +1,2 @@
 [Context]
-filesystems=!xdg-pictures;!xdg-music;
+filesystems=!xdg-music:ro;!xdg-pictures:ro
