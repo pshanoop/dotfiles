@@ -43,6 +43,9 @@ Plug 'Yggdroot/indentLine'
 " The above doesn't draw anything on empty lines. This does:
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Show git blame at the end of lines.
+Plug 'APZelos/blamer.nvim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
