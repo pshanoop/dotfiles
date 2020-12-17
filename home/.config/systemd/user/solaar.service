@@ -1,0 +1,20 @@
+# Solaar is both an application and a service.
+# It needs to run on the background to configure the mouse automatically
+# because Logitech mice don't recall their settings after reconnecting
+# (including when rebooting, suspending, etc).
+#
+# I do wish there was a separate binary that didn't load the entire UI.
+#
+# TODO: Is this whole thing event based? Maybe I can spawn it _when_ a mouse
+# connects?
+
+[Unit]
+Description=Manager for Logitech devices
+Documentation=https://pwr-solaar.github.io/Solaar/
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/solaar --window hide
+
+[Install]
+WantedBy=graphical-session.target
