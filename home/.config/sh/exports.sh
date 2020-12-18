@@ -69,6 +69,9 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 
+# Use rootless docker.
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
 # Keep the history for some apps out of my home.
 export PSQL_HISTORY=$HOME/.local/share/psql_history
 export LESSHISTFILE=$HOME/.local/share/less_history
