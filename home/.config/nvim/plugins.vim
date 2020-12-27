@@ -35,6 +35,7 @@ Plug 'cespare/vim-toml'
 Plug 'digitaltoad/vim-jade'
 Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:
