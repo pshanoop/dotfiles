@@ -64,7 +64,7 @@ set nowrap
 set shiftwidth=2
 
 " Use the appropriate number of spaces to insert a <Tab>.
-" To insert a real tab when 'expandtab' is on, use CTRL-V <Tab>.
+" To insert a real tab when 'expandtab' is on, use CTRL-v <Tab>.
 set expandtab
 
 " Break lines longer than 79 characters.
