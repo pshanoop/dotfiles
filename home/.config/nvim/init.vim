@@ -181,16 +181,13 @@ map <Leader>w :lclose <CR>
 map <Leader>v :Vista!!<CR>
 
 " Show errors and warnings.
-map <Leader>e :CocDiagnostics<CR>
-map <Leader>E :copen<CR>
+map <Leader>e :copen<CR>
 
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
 
 " Jump to the next error
-" XXX: Given that COC is a superset of these, probably best to use that.
-map <Leader>n <Plug>(coc-diagnostic-next)
-map <Leader>N :ALENextWrap<CR>
+map <Leader>n :ALENextWrap<CR>
 
 " Jump to definition
 map <Leader>d <Plug>(coc-definition)
@@ -213,9 +210,13 @@ nnoremap <Leader>k :call <SID>show_documentation()<CR>
 " Jedi misbehaves and highjacks <Leader>n out of the box.
 let g:jedi#usages_command = ""
 
-" ========== Error checking (ALE) =============================================
-" Apparently, coc can handle ale diagnostics. Maybe simplify doing that.
-" See https://github.com/neoclide/coc.nvim/issues/348#issuecomment-454775970
+" ========== Diagnostics (errors and linting) =================================
+" Coc sends its errors and diagnostics to ALE (much like any other ALE plugin).
+" As a result, ALE is _the_ one in charge of listing errors, jumping, etc.
+" This allows using both ALE plugins AND Coc plugins.
+"
+" Note that Coc also provides other LSP features, not just error checking.
+" Also note that ALE is not going anywhere anytime soon.
 
 highlight ALEError guifg=White guibg=Red
 highlight ALEWarning guifg=White guibg=Teal
@@ -230,7 +231,7 @@ highlight ALEWarningSign guifg=#ffb964 guibg=#333333
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1
@@ -287,9 +288,6 @@ endif
 " flake8/black right now, there's nothing to power them.
 " Check them out when I'm working on some non-python project.
 " See https://github.com/neoclide/coc.nvim
-
-highlight CocErrorSign guifg=#cf6242 guibg=#333333
-highlight CocWarningSign guifg=#ffb964 guibg=#333333
 
 " Switch between options with Tab (or Shift+Tab)
 inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
