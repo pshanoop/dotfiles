@@ -129,9 +129,6 @@ vnoremap <LeftRelease> "*ygv
 " Yank to PRIMARY selection by default (i.e.: This is pasted with mouse2).
 set clipboard=unnamed
 
-" Allow saving of files via sudo.
-cmap w!! w suda://%
-
 let g:csv_autocmd_arrange      = 1
 let g:csv_autocmd_arrange_size = 1024*1024*20
 
