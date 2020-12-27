@@ -30,9 +30,9 @@ This repository is public because:
 I use [homesick](https://github.com/technicalpickles/homesick) to keep this
 repository in sync with my actual dotfiles using symlinks.
 
-I like homesick's approach over all other dotfile managers; I _can_ edit the
-in-place files, and then move them into homesick, and there's no funky renaming
-or template system in place.
+Having tried a great deal of similar tools, I highly recommend `homesick` and the
+workflow it facilitates. It allows editing config files in-place files, and then move
+them into homesick, and there's no funky renaming or template system in place.
 
 Overview
 --------
