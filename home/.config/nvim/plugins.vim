@@ -6,7 +6,6 @@ Plug 'gmarik/Vundle.vim'
 " Core ========================================================================
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'liuchengxu/vim-which-key'
 
 " Syntax checking and linting.
 Plug 'dense-analysis/ale'
