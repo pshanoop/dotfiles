@@ -49,7 +49,7 @@ set number
 " ... and relative line numbers for the rest.
 set relativenumber
 
-" Show git-blame at the end of the current line:
+" Show git-blame at the end of the current:
 let g:blamer_delay = 0
 let g:blamer_enabled = 1
 let g:blamer_date_format = '%Y-%m-%d'
