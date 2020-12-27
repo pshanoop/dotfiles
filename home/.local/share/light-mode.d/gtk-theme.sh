@@ -1,0 +1,1 @@
+/home/hugo/workspace/Hugo/darkman/light-mode.d/gtk-theme.sh

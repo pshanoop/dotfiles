@@ -44,6 +44,9 @@ IDE.
 I try to keep my setup as a reproducible one, so in case of breakage it's
 possible to roll back and forth in time between settings.
 
+I used [`darkman`](https://gitlab.com/WhyNotHugo/darkman) to auto-switch into
+dark mode on a schedule (based on sundown / sunrise).
+
 ### Vim
 
 You should run `:PlugInstall` to install all Vim plugins. Some additional
