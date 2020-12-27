@@ -54,6 +54,10 @@ let g:blamer_delay = 0
 let g:blamer_enabled = 1
 let g:blamer_date_format = '%Y-%m-%d'
 
+" When a line doesn't fit on-screen, it's rendered wrapped, but not actually
+" wrapped. For code, this reduces readability. This setting disables that:
+set nowrap
+
 " Indentation =================================================================
 
 " Number of spaces to use for each step of (auto)indent.
