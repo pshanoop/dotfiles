@@ -81,6 +81,7 @@ autocmd FileType fzf set noshowmode noruler nospell nonu nornu
 
 " Properly position the fzf prompt (broken upstream via c60ed17)
 let g:fzf_layout = { 'down': '40%' }
+let g:fzf_preview_window = []
 
 " :Ag does what one would expect out of the box.
 " The colorscheme is somehow broken (it's neither Vim's not Ag's).
