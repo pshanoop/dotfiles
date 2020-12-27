@@ -181,14 +181,16 @@ map <Leader>w :lclose <CR>
 map <Leader>v :Vista!!<CR>
 
 " Show errors and warnings.
-map <Leader>e :copen<CR>
+map <Leader>e :CocDiagnostics<CR>
+map <Leader>E :copen<CR>
 
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
 
 " Jump to the next error
 " XXX: Given that COC is a superset of these, probably best to use that.
-map <Leader>n :ALENextWrap<CR>
+map <Leader>n <Plug>(coc-diagnostic-next)
+map <Leader>N :ALENextWrap<CR>
 
 " Jump to definition
 map <Leader>d <Plug>(coc-definition)
