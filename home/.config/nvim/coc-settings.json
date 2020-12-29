@@ -23,6 +23,9 @@
   "sourcekit.commandPath": "/usr/bin/sourcekit-lsp",
 
   // Python-specific ==========================================================
+  // A warning is shown during startup to indicate that everything is okay.
+  // This removes that:
+  "jedi.startupMessage": false,
 
   // FIXME: When jumping to an error, if there's more than one in the line, I
   // get prompted to "press any key to continue". No idea how to work around
