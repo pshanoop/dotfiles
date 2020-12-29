@@ -23,31 +23,8 @@
   "sourcekit.commandPath": "/usr/bin/sourcekit-lsp",
 
   // Python-specific ==========================================================
-  //
-  "python.formatting.provider": "black",
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/usr/bin/flake8",
-  "python.linting.mypyEnabled": true,
-  // Disable pylint. It's on by default, but yields AWFUL results:
-  "python.linting.pylintEnabled": false,
-  /* "python.linting.enabled": true, */
-  // coc-python uses a virtualenv with a project's depedencies.
-  // Use the system jedi, since jedi is not a dependency for most projects.
-  "python.jediPath": "/usr/lib/python3.8/site-packages/",
 
   // FIXME: When jumping to an error, if there's more than one in the line, I
   // get prompted to "press any key to continue". No idea how to work around
   // that.
-
-  // Pytohn (pyright) =========================================================
-  "python.analysis.diagnosticSeverityOverrides": {
-    "reportMissingImports": "none",
-    "reportMissingModuleSource": "none",
-  },
-  // By default, pyright shows errors files OTHER than the ones you're editing.
-  "python.analysis.diagnosticMode": "openFilesOnly",
-  // Don't organise imports; reorder_python_imports does that, and does it right.
-  "pyright.disableOrganizeImports": true,
-  // Disable pyright autocompletion.  coc-python provides richer results via Jedi.
-  "pyright.disableCompletion": true
 }
