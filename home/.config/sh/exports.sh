@@ -1,4 +1,4 @@
-export PATH=$HOME/.local/bin/:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Use neovim instead of vi.
 export EDITOR=nvim
