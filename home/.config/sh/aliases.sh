@@ -24,7 +24,10 @@ alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-di
 alias less='less -rX'
 alias open='xdg-open'
 alias ssh='TERM=xterm-256color ssh'
+alias f='git fetch'
 alias p='git push -u origin HEAD'
+alias p1='git push origin HEAD~:refs/heads/$(git branch --show-current)'
+alias pt='git push -u origin --tags'
 alias u='git fetch && git rebase --autostash origin/$(git branch --show-current)'
 alias tmux='/usr/bin/tmux -f ~/.config/tmux/tmux.conf'
 alias calc="bc -l"
