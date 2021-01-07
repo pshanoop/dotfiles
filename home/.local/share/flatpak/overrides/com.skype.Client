@@ -1,0 +1,4 @@
+[Context]
+sockets=wayland
+filesystems=!home:ro
+persistent=home
