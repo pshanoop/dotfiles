@@ -53,6 +53,8 @@ set relativenumber
 let g:blamer_delay = 0
 let g:blamer_enabled = 1
 let g:blamer_date_format = '%Y-%m-%d'
+" highlight Blamer guifg=#6f6073
+highlight Blamer guifg=#c06371
 
 " When a line doesn't fit on-screen, it's rendered wrapped, but not actually
 " wrapped. For code, this reduces readability. This setting disables that:
