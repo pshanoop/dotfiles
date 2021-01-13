@@ -64,7 +64,7 @@ for_window [class="^StepMania$"] fullscreen
 workspace_auto_back_and_forth yes
 
 # Keyboard settings
-input * {
+input type:keyboard {
   xkb_layout us
   xkb_variant intl
   xkb_numlock enable
