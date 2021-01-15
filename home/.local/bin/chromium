@@ -2,6 +2,6 @@
 #
 # Runs chromium snapshot, since that's the first version to work natively on
 # Linux / Wayland.
-# This script can be dropped once chromium-stable v89 comes out.
+# This script can be dropped once chromium-stable v87 comes out.
 
 chromium-snapshot-bin
