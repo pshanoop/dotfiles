@@ -5,6 +5,7 @@ PartOf=sway-session.target
 
 [Service]
 ExecStart=/usr/bin/waybar
+ExecReload=kill -SIGUSR2 $MAINPID
 
 [Install]
 WantedBy=sway-session.target
