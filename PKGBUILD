@@ -1,7 +1,7 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=sysconfig
-pkgver=31.5cbbf4c
+pkgver=122.6fddc7a
 pkgrel=1
 pkgdesc="System-side configuration files and tweaks."
 arch=(any)
@@ -16,7 +16,7 @@ pkgver() {
 
 package() {
   cd "$srcdir/.."
-  for dir in usr etc; do
+  for dir in usr etc boot; do
     rsync -plr $dir "$pkgdir"
   done;
 
