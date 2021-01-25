@@ -1,12 +1,32 @@
-export PATH=$HOME/.local/bin:$PATH
+#                            _
+#  _____  ___ __   ___  _ __| |_ ___
+# / _ \ \/ / '_ \ / _ \| '__| __/ __|
+#|  __/>  <| |_) | (_) | |  | |_\__ \
+# \___/_/\_\ .__/ \___/|_|   \__|___/
+#          |_|
+#
+# This file contains shell exports that I want on all my interactive shells.
+#
+# This file is sourced when creating a new interactive shell.
+#
+# It's also sourced _before_ starting Wayland, so variables are inhereted from
+# there directly.
+
+# Include my local bin in $PATH:
+export PATH=$HOME/.local/bin:/home/hugo/.gem/ruby/2.7.0/bin:$PATH
 
 # Use neovim instead of vi.
 export EDITOR=nvim
 export VISUAL=nvim
+
+# -r sends control characters so it renders colours and stuff.
+# -X avoids clearing the screen.
 export PAGER="less -rX"
+
+# Enableds mouse scrolling:
 export LESS='--mouse'
 
-# Coloured man page
+# Coloured man pages.
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -17,8 +37,7 @@ man() {
     command man "$@"
 }
 
-# Prevent wine from creating Desktop Entry files for wine's
-# notepad/iexplore/etc.
+# Prevent wine from creating desktop entries for wine's apps (e.g.: notepad).
 export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
 # Make Java applications use font antialiasing
@@ -32,13 +51,11 @@ export _JAVA_OPTIONS="-Dswing.aatext=true"
 # See https://github.com/flatpak/flatpak/issues/2861#issuecomment-735476004
 export XDG_CURRENT_DESKTOP="sway"
 
-# Other defaults
+# Several apps use this. Other use mimeapps.list.
 export BROWSER=firefox
 
 # SSH-agent
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.sock
-
-export SDL_AUDIODRIVER=alsa
 
 # Fix scrolling with a mouse on GTK3 apps
 export GDK_CORE_DEVICE_EVENTS=1
@@ -65,12 +82,16 @@ export QT_QPA_PLATFORMTHEME=gtk3
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
 
+# Use rootless docker.
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+# XDG dirs ====================================================================
+# Many apps don't follow the stadanrd locations for cache and data, and jump
+# dump stuff into $HOME. This settings override this.
+
 # Data dirs
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
-
-# Use rootless docker.
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # Keep the history for some apps out of my home.
 export PSQL_HISTORY=$HOME/.local/share/psql_history
