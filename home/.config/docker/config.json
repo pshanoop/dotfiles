@@ -1,3 +1,7 @@
 {
-	"credsStore": "secretservice"
+	"credsStore": "secretservice",
+	"credHelpers": {
+		"822757335928.dkr.ecr.us-west-2.amazonaws.com": "ecr-login",
+		"532081237890.dkr.ecr.eu-west-1.amazonaws.com": "ecr-login"
+	}
 }
