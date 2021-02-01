@@ -208,6 +208,9 @@ endfunction
 nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
 nnoremap <Leader>k :call <SID>show_documentation()<CR>
+" XXX: Add git root name here?
+" use  system('git rev-parse --show-toplevel 2> /dev/null') and some awk
+nnoremap <Leader>. :echo @%<CR>
 
 " Jedi misbehaves and highjacks <Leader>n out of the box.
 let g:jedi#usages_command = ""
