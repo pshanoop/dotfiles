@@ -86,22 +86,28 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/shar
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # XDG dirs ====================================================================
-# Many apps don't follow the stadanrd locations for cache and data, and jump
-# dump stuff into $HOME. This settings override this.
+# Many apps don't follow the stadanrd locations for cache and data, and just
+# dump stuff into $HOME. This is extremely annoying, since $HOME quickly gets
+# littered with junk (e.g.: cached data, internal app state, etc).
+#
+# These settings override this for applications known to misbehave, so I don't
+# have to dig through junk to find my own files.
 
-# Data dirs
+# Configuration files:
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 
-# Keep the history for some apps out of my home.
+# App data. More "data" than cache, but I find these disposable:
+export CARGO_HOME=$HOME/.cache/cargo
+export RUSTUP_HOME=$HOME/.cache/rustup
+export WORKON_HOME=$HOME/.cache/virtualenvs
+
+# Interactive shell histories:
 export PSQL_HISTORY=$HOME/.local/share/psql_history
 export LESSHISTFILE=$HOME/.local/share/less_history
 export IPYTHONDIR=$HOME/.local/share/ipython/
 
-# Disposable data
-export CARGO_HOME=$HOME/.cache/cargo
-export RUSTUP_HOME=$HOME/.cache/rustup
-export WORKON_HOME=$HOME/.cache/virtualenvs
+# For python: https://gist.github.com/viliampucik/8713b09ff7e4d984b29bfcd7804dc1f4
 
 # CJK input ===================================================================
 export GTK_IM_MODULE=fcitx
