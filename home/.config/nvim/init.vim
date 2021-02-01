@@ -49,13 +49,6 @@ set number
 " ... and relative line numbers for the rest.
 set relativenumber
 
-" Show git-blame at the end of the current:
-let g:blamer_delay = 0
-let g:blamer_enabled = 1
-let g:blamer_date_format = '%Y-%m-%d'
-" highlight Blamer guifg=#6f6073
-highlight Blamer guifg=#c06371
-
 " When a line doesn't fit on-screen, it's rendered wrapped, but not actually
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
@@ -68,6 +61,26 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" ========== Blamer ===========================================================
+" Shows a summary of git-blame at the end of the current line.
+
+let g:blamer_enabled = 1
+
+" Don't have any delay. The delay gives an impression of laggyness.
+let g:blamer_delay = 0
+
+" When in visual mode, this actually slows down Vim noticeably if many lines
+" are selected, so keep don't show it for visual mode.
+" It also honestly doesn't make much sense in visual mode anyway.
+let g:blamer_show_in_visual_modes = 0
+
+" Default date format does not make sense. Wonder if it could be
+" locale-depedent?
+let g:blamer_date_format = '%Y-%m-%d'
+
+" highlight Blamer guifg=#6f6073
+highlight Blamer guifg=#c06371
 
 " Indentation =================================================================
 
