@@ -221,8 +221,6 @@ nnoremap <Leader>k :call <SID>show_documentation()<CR>
 " use  system('git rev-parse --show-toplevel 2> /dev/null') and some awk
 nnoremap <Leader>. :echo @%<CR>
 
-" Jedi misbehaves and highjacks <Leader>n out of the box.
-let g:jedi#usages_command = ""
 
 " ========== Diagnostics (errors and linting) =================================
 " Coc sends its errors and diagnostics to ALE (much like any other ALE plugin).
