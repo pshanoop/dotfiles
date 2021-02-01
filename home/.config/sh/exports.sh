@@ -100,6 +100,7 @@ export IPYTHONDIR=$HOME/.local/share/ipython/
 
 # Disposable data
 export CARGO_HOME=$HOME/.cache/cargo
+export RUSTUP_HOME=$HOME/.cache/rustup
 export WORKON_HOME=$HOME/.cache/virtualenvs
 
 # CJK input ===================================================================
