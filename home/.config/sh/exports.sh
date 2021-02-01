@@ -119,9 +119,12 @@ export XMODIFIERS=@im=fcitx
 # Make Qt apps use wayland by default.
 # Breaks binaries where upstream neglects to build properly.
 export QT_QPA_PLATFORM=wayland
+
 # Older versions of Qt always show window decorations. To hide them:
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
 # Some Java AWT apps would not display properly unless you set the following:
 export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Firefox doesn't use wayland by default yet:
 export MOZ_ENABLE_WAYLAND=1
