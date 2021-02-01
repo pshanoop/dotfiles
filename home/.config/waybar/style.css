@@ -131,6 +131,17 @@ label:focus {
   color: #2a5c45;
 }
 
+#pulseaudio.mic {
+  /* background-color: #df362d; */
+  /* color: #ffffff; */
+  /* The module is shown even if empty. */
+  /* See https://github.com/Alexays/Waybar/issues/699 */
+  /* Once that's fixed, the above settings look best. For now, the following, ugly */
+  /* ones are the only think that'll work. */
+  background-color: transparent;
+  color: #df362d;
+}
+
 #custom-khal {
   /* background-color: #90b1b1; */
 
