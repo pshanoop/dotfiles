@@ -26,16 +26,21 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'lambdalisue/suda.vim'
 
 " Language-specific ===========================================================
-Plug 'sheerun/vim-polyglot'
-" polyglot provides this, but it fails a lot (is it out of date?)
+
+" These are just highlighting:
 Plug 'posva/vim-vue'
-" Ditto. Especially on vue files.
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'cespare/vim-toml'
 Plug 'digitaltoad/vim-jade'
 Plug 'neoclide/jsonc.vim'
+
+" Highlighting and some other features. Not sure I'm actually using those.
 Plug 'rust-lang/rust.vim'
+
+" Highlighting, autocompletion and other LSP features:
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
+
+" Very sophisticated and efficient highlighting for lots of languages:
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:

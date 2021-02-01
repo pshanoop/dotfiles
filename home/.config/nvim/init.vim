@@ -60,6 +60,15 @@ highlight Blamer guifg=#c06371
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
 
+" Syntax highlighting via treesitter:
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+}
+EOF
+
 " Indentation =================================================================
 
 " Number of spaces to use for each step of (auto)indent.
