@@ -76,6 +76,7 @@ window#waybar.telegramdesktop {
   border-bottom: 3px solid #ffffff;
 }
 
+#custom-mic,
 #mode,
 #custom-khal,
 #pulseaudio,
@@ -124,6 +125,7 @@ label:focus {
 
 #pulseaudio {
   background-color: #2980b9;
+  /* background-color: #f1c40f; */
 }
 
 #pulseaudio.muted {
@@ -131,15 +133,14 @@ label:focus {
   color: #2a5c45;
 }
 
-#pulseaudio.mic {
-  /* background-color: #df362d; */
-  /* color: #ffffff; */
-  /* The module is shown even if empty. */
-  /* See https://github.com/Alexays/Waybar/issues/699 */
-  /* Once that's fixed, the above settings look best. For now, the following, ugly */
-  /* ones are the only think that'll work. */
+#custom-mic.muted {
   background-color: transparent;
-  color: #df362d;
+  /* color: #ffffff; */
+}
+
+#custom-mic.not-muted {
+  background-color: #2980b9;
+  color: #ffffff;
 }
 
 #custom-khal {

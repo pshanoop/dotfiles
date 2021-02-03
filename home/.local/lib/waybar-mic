@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Helper for waybar to show current mic status.
+#
+# This shows a small icon with the current microphone status in the taskbar. I
+# use a global hotkey (Super+M) to control the microphone, so I don't have to
+# remember a different muting hotkey for each webapp. It also makes it easier
+# to make sure I'm muted when handling multiple things at once.
+#
+# Waybar's CSS is set so that an open mic is a RED icon, and it's less flashy
+# when the mic is muted.
+#
+# This is somewhat inefficient; it runs on a loop every 300ms. It should be
+# improved to listed to pulseaudio events, and only print if there's been any
+# change. Haven't figured out how to do that yet.
+#
+# It might also be possible to do with the `pulseaudio` module once #699 is
+# fixed: https://github.com/Alexays/Waybar/issues/699
+
+while true; do
+  if ponymix --source is-muted; then
+    CLASS="muted"
+    TEXT=""
+  else
+    CLASS="not-muted"
+    TEXT=" $(ponymix --source get-volume)%"
+  fi
+  echo {\"text\": \"$TEXT\", \"class\": \"$CLASS\", \"percentage\": 70 }
+  sleep 0.3
+done;

@@ -3,7 +3,7 @@
     "position": "bottom",
     "height": 26,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "pulseaudio#mic"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/mic"],
     "modules-center": ["sway/window"],
     "modules-right": ["custom/khal", "battery", "pulseaudio", "clock"],
     // Modules configuration
@@ -21,13 +21,10 @@
             "default": ""
         }
     },
-    "pulseaudio#mic": {
-        "format": "{format_source}",
-        /* Use this one #699 is fixed. */
-        /* "format-source": " {volume}%", */
-        "format-source": "",
-        "format-source-muted": "",
-        "on-click": "volume toggle-mic"
+    "custom/mic": {
+      "exec": "$HOME/.local/lib/waybar-mic",
+      "return-type": "json",
+      "on-click": "volume toggle-mic"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
