@@ -53,14 +53,8 @@ set relativenumber
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
 
-" Syntax highlighting via treesitter:
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
-}
-EOF
+" Configure tree-sitter (uses Lua).
+lua require('tree-sitter')
 
 " ========== Blamer ===========================================================
 " Shows a summary of git-blame at the end of the current line.
