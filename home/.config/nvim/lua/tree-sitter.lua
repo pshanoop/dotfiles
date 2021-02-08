@@ -1,7 +1,11 @@
 -- Enable highlighting for all installed configs.
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
   highlight = {
-    ensure_installed = "maintained",
     enable = true
+  },
+  -- Playground is basically an inspector.
+  playground = {
+    enable = true,
   },
 }

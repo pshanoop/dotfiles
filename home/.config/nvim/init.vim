@@ -213,6 +213,9 @@ map <Leader>d <Plug>(coc-definition)
 " Find references
 map <Leader>r <Plug>(coc-references)
 
+" Open the tree-sitter playground. Used for debugging its queries.
+map <Leader>t :TSPlaygroundToggle<CR>
+
 function! ToggleSpellCheck()
   set spell!
   if &spell
