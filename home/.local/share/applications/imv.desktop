@@ -6,4 +6,4 @@ NoDisplay=true
 Exec=/home/hugo/.local/bin/imv %f
 Name=imv
 Comment=Allow flipping through files with imv
-MimeType=iamge/jpeg;image/png;image/gif
+MimeType=image/jpeg;image/png;image/gif;image/webp
