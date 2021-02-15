@@ -29,7 +29,6 @@ Plug 'lambdalisue/suda.vim'
 
 " These are just highlighting:
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'digitaltoad/vim-jade'
 
 " Highlighting and some other features. Not sure I'm actually using those.
 Plug 'rust-lang/rust.vim'
