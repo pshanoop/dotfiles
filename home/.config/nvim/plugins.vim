@@ -28,10 +28,8 @@ Plug 'lambdalisue/suda.vim'
 " Language-specific ===========================================================
 
 " These are just highlighting:
-Plug 'posva/vim-vue'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'digitaltoad/vim-jade'
-Plug 'neoclide/jsonc.vim'
 
 " Highlighting and some other features. Not sure I'm actually using those.
 Plug 'rust-lang/rust.vim'
