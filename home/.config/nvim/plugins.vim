@@ -39,6 +39,7 @@ Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build'
 
 " Very sophisticated and efficient highlighting for lots of languages:
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 " UI ==========================================================================
 " Show thin vertical lines on each indentation level:
