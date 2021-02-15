@@ -4,4 +4,4 @@
 # Linux / Wayland.
 # This script can be dropped once chromium-stable v87 comes out.
 
-chromium-snapshot-bin
+chromium-snapshot-bin $@
