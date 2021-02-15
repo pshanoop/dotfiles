@@ -9,6 +9,7 @@
 	tool = vimdiff
 	algorithm = patience
 	compactionHeuristic = true
+	colorMoved = default
 [branch]
 	autosetuprebase = always
 [log]
