@@ -6,11 +6,15 @@
 #
 # Also apps that store setting binary formats.
 
+1Password
+AtomZombieData
 EVEMon
 Genymobile
 Insomnia
+MuseScore
 Popcorn-Time
 QtProject.conf
+Signal*
 SubDownloader
 Trolltech.conf
 VirtualBox
