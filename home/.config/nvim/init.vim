@@ -53,10 +53,6 @@ set relativenumber
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
 
-lua require('tree-sitter')
-lua require('lsp')
-lua require('completion')
-
 " ========== Blamer ===========================================================
 " Shows a summary of git-blame at the end of the current line.
 
@@ -274,7 +270,11 @@ let g:ale_keep_list_window_open = 1
 
 let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
-" ========== Autocompletion ===================================================
+" ========== Highlighting and Autocompletion ==================================
+
+lua require('tree-sitter')
+lua require('lsp')
+lua require('completion')
 
 let g:python3_host_prog = '/usr/bin/python'
 
