@@ -223,10 +223,10 @@ function! ToggleSpellCheck()
   else
     echo "Spellcheck OFF"
   endif
+
 endfunction
 nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
-nnoremap <Leader>k :call <SID>show_documentation()<CR>
 " XXX: Add git root name here?
 " use  system('git rev-parse --show-toplevel 2> /dev/null') and some awk
 nnoremap <Leader>. :echo @%<CR>
@@ -295,14 +295,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
 endfunction
 
 " Hack required for coc-emoji to work.
