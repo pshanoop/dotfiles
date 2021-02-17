@@ -16,9 +16,6 @@ Plug 'tpope/vim-sensible'
 " Completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Easy tabulation with :Tab
-Plug 'godlygeek/tabular'
-
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
