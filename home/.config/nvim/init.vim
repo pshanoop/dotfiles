@@ -53,8 +53,9 @@ set relativenumber
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
 
-" Configure tree-sitter (uses Lua).
 lua require('tree-sitter')
+lua require('lsp')
+lua require('completion')
 
 " ========== Blamer ===========================================================
 " Shows a summary of git-blame at the end of the current line.

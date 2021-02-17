@@ -14,13 +14,16 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sensible'
 
 " Completion.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'hrsh7th/nvim-compe'
 
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
 " Used together with :w!! to save files with sudo.
 Plug 'lambdalisue/suda.vim'
+
+" Configuration for various LSP servers.
+:Plug 'neovim/nvim-lspconfig'
 
 " Language-specific ===========================================================
 
@@ -29,9 +32,6 @@ Plug 'cakebaker/scss-syntax.vim'
 
 " Highlighting and some other features. Not sure I'm actually using those.
 Plug 'rust-lang/rust.vim'
-
-" Highlighting, autocompletion and other LSP features:
-Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
 
 " Very sophisticated and efficient highlighting for lots of languages:
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
