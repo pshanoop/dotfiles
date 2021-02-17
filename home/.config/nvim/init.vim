@@ -231,6 +231,10 @@ nnoremap <Leader>k :call <SID>show_documentation()<CR>
 " use  system('git rev-parse --show-toplevel 2> /dev/null') and some awk
 nnoremap <Leader>. :echo @%<CR>
 
+" This only works on the current directory, and not the entire project.
+" However, this does show git-untracked files.
+" TODO: Ideally, I'd want this to be the git-directory to the current file.
+map <Leader>p :Files<CR>
 
 " ========== Diagnostics (errors and linting) =================================
 " Coc sends its errors and diagnostics to ALE (much like any other ALE plugin).
