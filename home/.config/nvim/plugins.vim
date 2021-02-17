@@ -19,7 +19,7 @@ Plug 'hrsh7th/nvim-compe'
 " My current theme: jellybeans
 Plug 'nanotech/jellybeans.vim'
 
-" Used together with :w!! to save files with sudo.
+" Save files using sudo via !SudaWrite.
 Plug 'lambdalisue/suda.vim'
 
 " Configuration for various LSP servers.
