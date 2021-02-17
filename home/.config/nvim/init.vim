@@ -236,17 +236,14 @@ nnoremap <Leader>k :call <SID>show_documentation()<CR>
 nnoremap <Leader>. :echo @%<CR>
 
 " This only works on the current directory, and not the entire project.
-" However, this does show git-untracked files.
 " TODO: Ideally, I'd want this to be the git-directory to the current file.
+" TODO: Should also show git-untracked files.
 map <Leader>p :Files<CR>
 
 " ========== Diagnostics (errors and linting) =================================
-" Coc sends its errors and diagnostics to ALE (much like any other ALE plugin).
-" As a result, ALE is _the_ one in charge of listing errors, jumping, etc.
-" This allows using both ALE plugins AND Coc plugins.
-"
-" Note that Coc also provides other LSP features, not just error checking.
-" Also note that ALE is not going anywhere anytime soon.
+" ALE does a lot of diagnostics.
+" LSPs do the rest. They don't [yet] fully match in style. Ideally, one should
+" feed the other so that a single error list can be maintained, etc.
 
 highlight ALEError guifg=White guibg=Red
 highlight ALEWarning guifg=White guibg=Teal
