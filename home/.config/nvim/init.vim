@@ -13,7 +13,7 @@
 let g:polyglot_disabled = ['vue', 'scss']
 
 " Plugins!
-runtime plugins.vim
+lua require('plugins')
 
 " Lightline configurtion is pretty long:
 " Lightline is the plugin that renders the colourful statusbar.
