@@ -10,8 +10,6 @@
 " - ALE does the fixing (e.g.: autoreformat).
 " - coc.nvim renders signatures/docs in some contextual situations.
 
-let g:polyglot_disabled = ['vue', 'scss']
-
 " Plugins!
 lua require('plugins')
 
@@ -129,11 +127,6 @@ highlight SpecialKey guifg='#666666'
 " Use :DiffOrig to compare to saved file. Useful when recovering swap files.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
-
-" Re-enable swap files.
-" vim-polyglot has some feature creep that changes the default. This brings in
-" a few, highly-breaking bugs:
-set swapfile
 
 " Enable mouse support (which is really just used for scrolling).
 set mouse=a
