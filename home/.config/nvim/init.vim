@@ -226,40 +226,10 @@ lua require('keymap')
 
 let g:python3_host_prog = '/usr/bin/python'
 
-" COC has unusual integration into Vim:
-" - It handles its own config file, `coc-settings.json`.
-" - It handles its own subpackages, via `~/.config/coc/extensions/package.json`.
-"
-" When reinstalling, keep in mind that these packages must be reinstalled as an
-" extra step.
-
-" Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Hack required for coc-emoji to work.
-" See https://github.com/neoclide/coc-sources/issues/15
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" There's more features that I might want to use, but since I'm only using
-" flake8/black right now, there's nothing to power them.
-" Check them out when I'm working on some non-python project.
-" See https://github.com/neoclide/coc.nvim
-
 " Switch between options with Tab (or Shift+Tab)
 inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
-" Close preview window on leaving the insert mode
+" Close autocompletion popup when leaving insert mode:
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " ========== EOF ==============================================================
