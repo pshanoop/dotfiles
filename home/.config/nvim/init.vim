@@ -22,7 +22,7 @@ runtime lightline.vim
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
 
-" Show a ruler on the 80th column.
+" Show a ruler on the 80th and 120th columns.
 let &colorcolumn="80,120"
 highlight ColorColumn guibg=#121212
 
