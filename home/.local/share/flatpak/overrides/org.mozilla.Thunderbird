@@ -1,3 +1,4 @@
 [Context]
+sockets=!pulseaudio;!x11
 filesystems=!~/.gnupg;!xdg-run/gnupg:ro;!xdg-download
-persistent=xdg-run/gnupg;~/.gnupg
+persistent=.gnupg;xdg-run/gnupg
