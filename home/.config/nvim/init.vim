@@ -232,4 +232,8 @@ inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Close autocompletion popup when leaving insert mode:
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Don't spellcheck quickfix window, and use absolute line numbers on it.
+autocmd FileType qf set nospell nu nornu wrap
+" TODO: For the above filetype: configure Leader+e to close it.
 " ========== EOF ==============================================================
