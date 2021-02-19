@@ -59,20 +59,6 @@ set wildignore+=build,env,bin,dist,*.pyc,tmp
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
-" Ctrl-P for file navigation
-" TODO: It'd be great if matches in pwd are weighted higher.
-nnoremap <silent> <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles')."\<cr>"
-autocmd FileType fzf set noshowmode noruler nospell nonu nornu
-
-" Properly position the fzf prompt (broken upstream via c60ed17)
-let g:fzf_layout = { 'down': '40%' }
-let g:fzf_preview_window = []
-
-" :Ag does what one would expect out of the box.
-" The colorscheme is somehow broken (it's neither Vim's not Ag's).
-
-" TODO: Exclude current file from prompt
-" https://github.com/junegunn/fzf.vim/issues/695
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -236,6 +222,7 @@ let g:ale_html_beautify_options = '-s 2 -n -w 80'
 lua require('tree-sitter')
 lua require('lsp')
 lua require('completion')
+lua require('keymap')
 
 let g:python3_host_prog = '/usr/bin/python'
 
