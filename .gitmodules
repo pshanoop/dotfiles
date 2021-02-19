@@ -4,6 +4,3 @@
 [submodule "home/.config/zsh/plugins/zsh-syntax-highlighting"]
 	path = home/.config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "home/.config/nvim/autoload"]
-	path = home/.config/nvim/autoload
-	url = https://github.com/junegunn/vim-plug.git
