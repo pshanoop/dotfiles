@@ -47,12 +47,29 @@ require('packer').startup(function()
 
   -- UI ==========================================================================
   -- Show thin vertical lines on each indentation level:
-  use 'Yggdroot/indentLine'
+  use { 'Yggdroot/indentLine', config = function()
+    vim.g.indentLine_char = '│'
+    vim.g.indentLine_color_gui = '#333333'
+  end}
   -- The above doesn't draw anything on empty lines. This does:
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- Show git blame at the end of lines.
-  use 'APZelos/blamer.nvim'
+  use { 'APZelos/blamer.nvim', config = function()
+    vim.g.blamer_enabled = 1
+
+    -- Don't have any delay. The delay gives an impression of laggyness.
+    vim.g.blamer_delay = 0
+
+    -- In visual mode it's visually annoying AND slows down Vim A LOT.
+    vim.g.blamer_show_in_visual_modes = 0
+
+    -- Default date format does not make sense.
+    -- Can upstream make it localed-dependant?
+    vim.g.blamer_date_format = '%Y-%m-%d'
+
+    vim.cmd('highlight Blamer guifg=#c06371')
+  end}
 
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'

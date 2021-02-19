@@ -38,9 +38,6 @@ highlight ColorColumn guibg=#121212
 " Show placeholders for these non-visible-characters.
 set listchars=tab:>-,trail:·,extends:>,precedes:<
 set list
-" And also indentation lines.
-let g:indentLine_char = '│'
-let g:indentLine_color_gui = '#333333'
 
 " Show line number for the current line...
 set number
@@ -50,26 +47,6 @@ set relativenumber
 " When a line doesn't fit on-screen, it's rendered wrapped, but not actually
 " wrapped. For code, this reduces readability. This setting disables that:
 set nowrap
-
-" ========== Blamer ===========================================================
-" Shows a summary of git-blame at the end of the current line.
-
-let g:blamer_enabled = 1
-
-" Don't have any delay. The delay gives an impression of laggyness.
-let g:blamer_delay = 0
-
-" When in visual mode, this actually slows down Vim noticeably if many lines
-" are selected, so keep don't show it for visual mode.
-" It also honestly doesn't make much sense in visual mode anyway.
-let g:blamer_show_in_visual_modes = 0
-
-" Default date format does not make sense. Wonder if it could be
-" locale-depedent?
-let g:blamer_date_format = '%Y-%m-%d'
-
-" highlight Blamer guifg=#6f6073
-highlight Blamer guifg=#c06371
 
 " Indentation =================================================================
 
