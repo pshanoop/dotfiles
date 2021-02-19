@@ -19,15 +19,6 @@ runtime lightline.vim
 
 " Appearance ==================================================================
 
-" colorscheme
-let g:jellybeans_use_term_italics = 1
-let g:jellybeans_overrides = {
-\  'background': {
-\    'guibg': '000000'
-\  },
-\}
-colorscheme jellybeans
-
 " Tell vim that the terminal supports 24-bit colours.
 set termguicolors
 

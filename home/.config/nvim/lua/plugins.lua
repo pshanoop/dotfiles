@@ -25,7 +25,12 @@ require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
 
   -- My current theme: jellybeans
-  use 'nanotech/jellybeans.vim'
+  use { 'nanotech/jellybeans.vim', config = function()
+    vim.g.jellybeans_use_term_italics = 1
+    vim.g.jellybeans_overrides = { background = { guibg= '000000' } }
+
+    vim.cmd 'colorscheme jellybeans'
+  end}
 
   -- Save files using sudo via !SudaWrite.
   use 'lambdalisue/suda.vim'
