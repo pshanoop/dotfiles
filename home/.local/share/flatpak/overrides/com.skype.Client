@@ -1,3 +1,8 @@
 [Context]
 sockets=wayland
 filesystems=!home:ro
+
+[System Bus Policy]
+org.freedesktop.NetworkManager=none
+org.freedesktop.login1=none
+org.bluez=none
