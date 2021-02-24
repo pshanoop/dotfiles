@@ -1,6 +1,8 @@
 " Not using `coc_status`, since it's not really helpful.
 " It just shows the current language, version, and CPU architecture.
 
+" TODO: Should show ALE and LSP
+
 function! CocErrors() abort
   let info = get(b:, 'coc_diagnostic_info', {})
   if empty(info) | return '' | endif

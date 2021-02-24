@@ -188,20 +188,7 @@ map <Leader>p :Files<CR>
 " LSPs do the rest. They don't [yet] fully match in style. Ideally, one should
 " feed the other so that a single error list can be maintained, etc.
 
-highlight ALEError guifg=White guibg=Red
-highlight ALEWarning guifg=White guibg=Teal
-
-" Clearing these sets them to black, rather than the original gutter color.
-" This colour is copied over from the theme.
-" Using `hi link ALEWarningSign SignColumn` sets the fg to something
-" undesireable.
-highlight ALEErrorSign guifg=#cf6242 guibg=#333333
-highlight ALEWarningSign guifg=#ffb964 guibg=#333333
-
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-
-let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
+" TODO: configure LSP highlighting!
 
 " Use quickfix list (rather than loclist).
 let g:ale_set_quickfix = 1

@@ -34,7 +34,20 @@ require('packer').startup(function()
   end }
 
   -- Syntax checking and linting.
-  use 'dense-analysis/ale'
+  use { 'dense-analysis/ale', config = function()
+    vim.cmd('highlight ALEError guifg=White guibg=Red')
+    vim.cmd('highlight ALEWarning guifg=White guibg=Teal')
+
+    -- Clearing these two sets them to black, rather than the original gutter color.
+    -- I've copy-pasted this colour is copied over from the theme.
+    vim.cmd('highlight ALEErrorSign guifg=#cf6242 guibg=#333333')
+    vim.cmd('highlight ALEWarningSign guifg=#ffb964 guibg=#333333')
+
+    vim.g.ale_sign_error = ''
+    vim.g.ale_sign_warning = ''
+
+    vim.g.ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
+  end}
 
   -- A few miscelaneous settings that just make sense.
   use 'tpope/vim-sensible'
