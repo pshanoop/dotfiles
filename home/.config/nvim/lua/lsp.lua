@@ -15,7 +15,7 @@ end
 -- keybindings when the language server attaches:
 local servers = {
   "jedi_language_server",
-  "rust_analyzer",
+  "rls",
   "tsserver",
   "vuels",
 }
