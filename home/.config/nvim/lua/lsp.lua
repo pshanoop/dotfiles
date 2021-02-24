@@ -24,4 +24,5 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+-- See https://github.com/neovim/nvim-lspconfig/pull/757/
 nvim_lsp.terraformls.setup{ on_attach = on_attach, filetypes = { "terraform", "tf" }}
