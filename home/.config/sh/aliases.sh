@@ -20,7 +20,7 @@ alias 🐼=neofetch
 # Memory muscle. Also "nvim" is too long.
 alias vim="nvim"
 
-alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
+alias grep="grep --color=auto --exclude-dir=.git"
 alias less='less -rX'
 alias open='xdg-open'
 alias ssh='TERM=xterm-256color ssh'
