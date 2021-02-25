@@ -1,0 +1,11 @@
+--- /etc/pipewire/media-session.d/media-session.conf.orig	2021-02-25 10:45:47.665486112 +0100
++++ /etc/pipewire/media-session.d/media-session.conf	2021-02-25 10:40:20.239483305 +0100
+@@ -71,7 +71,7 @@
+         #libcamera              # libcamera udev detection
+         suspend-node            # suspend inactive nodes
+         policy-node             # configure and link nodes
+-        #metadata               # export metadata API
++        metadata               # export metadata API
+         #default-nodes          # restore default nodes
+         #default-profile        # restore default profiles
+         #default-routes         # restore default route

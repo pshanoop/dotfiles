@@ -1,0 +1,11 @@
+# https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/768
+
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = pipewire
+
+[Action]
+Description = Patching pipewire
+When = PostTransaction
+Exec = /usr/bin/patch -p0 /etc/pipewire/media-session.d/media-session.conf < /etc/pacman.d/hooks/pipewire.patch
