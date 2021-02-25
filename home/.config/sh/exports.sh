@@ -106,11 +106,6 @@ export IPYTHONDIR=$HOME/.local/share/ipython/
 
 # For python: https://gist.github.com/viliampucik/8713b09ff7e4d984b29bfcd7804dc1f4
 
-# CJK input ===================================================================
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
 # Wayland/Sway-specific =======================================================
 
 # Make Qt apps use wayland by default.
