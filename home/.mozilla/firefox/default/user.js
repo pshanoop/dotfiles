@@ -57,7 +57,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("privacy.webrtc.legacyGlobalIndicator", false);
 
 // Enable web rendered, which uses GPU acceleration for rendering.
-userpref("gfx.webrender.all", true);
+user_pref("gfx.webrender.all", true);
 
 /******************************************************************************
  * The following are all from ghacks-userjs.
