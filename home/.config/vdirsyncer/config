@@ -62,6 +62,6 @@ conflict_resolution = ["command", "vimdiff"]
 [storage calendars_google]
 type = "google_calendar"
 token_file = "~/.cache/vdirsyncer/google.token"
-client_id.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo@proctorexam.com/caldav/client_id"]
-client_secret.fetch = ["command", "keyring", "get", "vdirsyncer", "hugo@proctorexam.com/caldav/client_secret"]
+client_id.fetch = ["command", "keyring", "get", "vdirsyncer", "HBarrera@turnitin.com/caldav/client_id"]
+client_secret.fetch = ["command", "keyring", "get", "vdirsyncer", "HBarrera@turnitin.com/caldav/client_secret"]
 read_only = true
