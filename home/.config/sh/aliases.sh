@@ -29,6 +29,7 @@ alias calc="bc -l"
 
 # Git
 alias f='git fetch'
+alias s='git status'
 alias p='git push -u origin HEAD'
 alias p1='git push origin HEAD~:refs/heads/$(git branch --show-current)'
 alias pt='git push -u origin --tags'
