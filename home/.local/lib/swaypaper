@@ -19,11 +19,16 @@ COMMAND=/usr/bin/swaybg
 
 for OUTPUT in $OUTPUTS; do
   NAME=$(echo $OUTPUT | jq -r '.name')
-  LOCATION=$BASE_LOCATION/$(echo $OUTPUT | jq -r '.mode')*
-  FILE=$(/usr/bin/ls -1 $LOCATION | sort -R | tail -n 1)
-  WALLPAPER=$LOCATION/$FILE
+  MODE=$(echo $OUTPUT | jq -r '.mode')
 
-  COMMAND="$COMMAND -o $NAME -i $WALLPAPER -m fill"
+  # Skip displays that seem to be inactive.
+  if [ $MODE != "nullxnull" ]; then
+    LOCATION=$BASE_LOCATION/${MODE}*
+    FILE=$(/usr/bin/ls -1 $LOCATION | sort -R | tail -n 1)
+    WALLPAPER=$LOCATION/$FILE
+
+    COMMAND="$COMMAND -o $NAME -i $WALLPAPER -m fill"
+  fi
 done
 
 $COMMAND
