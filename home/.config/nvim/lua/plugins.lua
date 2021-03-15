@@ -72,7 +72,9 @@ require('packer').startup(function()
   -- Language-specific ===========================================================
 
   -- These are just highlighting:
-  use 'cakebaker/scss-syntax.vim'
+  use 'cakebaker/scss-syntax.vim'  -- Highlighting.
+  use 'keith/swift.vim'  -- Syntax and indent files.
+  use 'b4b4r07/vim-hcl'  -- Highlighting and sets the right filetype.
 
   -- Highlighting and some other features. Not sure I'm actually using those.
   use 'rust-lang/rust.vim'
