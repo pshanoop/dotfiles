@@ -107,19 +107,16 @@ require('packer').startup(function()
     vim.g.blamer_date_format = '%Y-%m-%d'
 
     vim.cmd('highlight Blamer guifg=#c06371')
+    -- let g:blamer_enabled = 1
   end}
 
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'
-  use 'airblade/vim-gitgutter'
+  use 'airblade/vim-gitgutter'  -- Shows git status in the gutter.
   use 'dietsche/vim-lastplace'
   use 'ryanoasis/vim-devicons'
-
-  -- Sidebar with symbols, tags, etc.
-  use 'liuchengxu/vista.vim'
-
-  -- Smooth scrolling
-  use 'psliwka/vim-smoothie'
+  use 'liuchengxu/vista.vim'  -- Sidebar with symbols, tags, etc.
+  use 'psliwka/vim-smoothie'  -- Smooth scrolling
 
   -- Distraction-free writing.
   use 'junegunn/goyo.vim'
