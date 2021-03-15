@@ -67,7 +67,7 @@ require('packer').startup(function()
   use 'lambdalisue/suda.vim'
 
   -- Configuration for various LSP servers.
-  use 'neovim/nvim-lspconfig'
+  use { 'neovim/nvim-lspconfig', config = [[require('lsp')]]}
 
   -- Language-specific ===========================================================
 
@@ -80,7 +80,7 @@ require('packer').startup(function()
   use 'rust-lang/rust.vim'
 
   -- Very sophisticated and efficient highlighting for lots of languages:
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = [[require('tree-sitter')]] }
   use 'nvim-treesitter/playground'
 
   -- UI ==========================================================================

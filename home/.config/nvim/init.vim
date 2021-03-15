@@ -206,8 +206,6 @@ let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 " ========== Highlighting and Autocompletion ==================================
 
-lua require('tree-sitter')
-lua require('lsp')
 lua require('completion')
 lua require('keymap')
 
