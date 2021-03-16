@@ -89,26 +89,12 @@ require('packer').startup(function()
     vim.g.indentLine_char = '│'
     vim.g.indentLine_color_gui = '#333333'
   end}
+  -- XXX: The below doesn't always work. Do I need to enforce a loading order?
   -- The above doesn't draw anything on empty lines. This does:
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- Show git blame at the end of lines.
-  use { 'APZelos/blamer.nvim', config = function()
-    vim.g.blamer_enabled = 1
-
-    -- Don't have any delay. The delay gives an impression of laggyness.
-    vim.g.blamer_delay = 0
-
-    -- In visual mode it's visually annoying AND slows down Vim A LOT.
-    vim.g.blamer_show_in_visual_modes = 0
-
-    -- Default date format does not make sense.
-    -- Can upstream make it localed-dependant?
-    vim.g.blamer_date_format = '%Y-%m-%d'
-
-    vim.cmd('highlight Blamer guifg=#c06371')
-    -- let g:blamer_enabled = 1
-  end}
+  use { 'APZelos/blamer.nvim', config = [[require('config.blamer')]] }
 
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'
