@@ -1,10 +1,6 @@
-vim.cmd('highlight ALEError guifg=White guibg=Red')
-vim.cmd('highlight ALEWarning guifg=White guibg=Teal')
-
--- Clearing these two sets them to black, rather than the original gutter color.
--- I've copy-pasted this colour is copied over from the theme.
-vim.cmd('highlight ALEErrorSign guifg=#cf6242 guibg=#333333')
-vim.cmd('highlight ALEWarningSign guifg=#ffb964 guibg=#333333')
+-- Modularising this code is hard. Should ALE-specific settings be in this
+-- file, or in the theme's config file? It's in the theme. Otherwise the theme
+-- would overwrite it.
 
 vim.g.ale_sign_error = ''
 vim.g.ale_sign_warning = ''

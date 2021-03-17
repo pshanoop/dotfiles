@@ -29,12 +29,7 @@ require('packer').startup(function()
   use { 'hrsh7th/nvim-compe', config = [[require('_compe')]]}
 
   -- My current theme: jellybeans
-  use { 'nanotech/jellybeans.vim', config = function()
-    vim.g.jellybeans_use_term_italics = 1
-    vim.g.jellybeans_overrides = { background = { guibg= '000000' } }
-
-    vim.cmd 'colorscheme jellybeans'
-  end}
+  use { 'nanotech/jellybeans.vim', config = [[require('_theme')]]}
 
   -- Save files using sudo via !SudaWrite.
   use 'lambdalisue/suda.vim'
@@ -57,14 +52,9 @@ require('packer').startup(function()
   use 'nvim-treesitter/playground'
 
   -- UI ==========================================================================
+
   -- Show thin vertical lines on each indentation level:
-  use { 'Yggdroot/indentLine', config = function()
-    vim.g.indentLine_char = '│'
-    vim.g.indentLine_color_gui = '#333333'
-  end}
-  -- XXX: The below doesn't always work. Do I need to enforce a loading order?
-  -- The above doesn't draw anything on empty lines. This does:
-  use 'lukas-reineke/indent-blankline.nvim'
+  use { 'lukas-reineke/indent-blankline.nvim', branch='lua', config = [[require('_indentlines')]] }
 
   -- Show git blame at the end of lines.
   use { 'APZelos/blamer.nvim', config = [[require('_blamer')]] }
