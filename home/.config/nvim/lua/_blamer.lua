@@ -10,8 +10,6 @@ vim.g.blamer_show_in_visual_modes = 0
 -- Can upstream make it localed-dependant?
 vim.g.blamer_date_format = '%Y-%m-%d'
 
-vim.cmd('highlight Blamer guifg=#c06371')
-
 vim.api.nvim_set_keymap(
   'n',
   '<Leader>b',

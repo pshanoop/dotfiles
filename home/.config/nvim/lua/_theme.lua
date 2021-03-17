@@ -11,5 +11,7 @@ vim.cmd('highlight ALEWarning guifg=White guibg=Teal')
 vim.cmd('highlight ALEErrorSign guifg=#cf6242 guibg=#333333')
 vim.cmd('highlight ALEWarningSign guifg=#ffb964 guibg=#333333')
 
+vim.cmd('highlight Blamer guifg=#c06371')
+
 vim.cmd('highlight IndentSpace guifg=#333333')
 vim.cmd('highlight IndentLine guifg=#606060')
