@@ -159,12 +159,6 @@ map <Leader>a :ALEFix<CR>
 " Jump to the next error
 map <Leader>n :ALENextWrap<CR>
 
-" Jump to definition
-map <Leader>d <Plug>(coc-definition)
-
-" Find references
-map <Leader>r <Plug>(coc-references)
-
 " Open the tree-sitter playground. Used for debugging its queries.
 map <Leader>t :TSPlaygroundToggle<CR>
 
@@ -175,8 +169,8 @@ function! ToggleSpellCheck()
   else
     echo "Spellcheck OFF"
   endif
-
 endfunction
+
 nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
 " XXX: Add git root name here?
@@ -187,13 +181,6 @@ nnoremap <Leader>. :echo @%<CR>
 " TODO: Ideally, I'd want this to be the git-directory to the current file.
 " TODO: Should also show git-untracked files.
 map <Leader>p :Files<CR>
-
-" ========== Diagnostics (errors and linting) =================================
-" ALE does a lot of diagnostics.
-" LSPs do the rest. They don't [yet] fully match in style. Ideally, one should
-" feed the other so that a single error list can be maintained, etc.
-
-" TODO: configure LSP highlighting!
 
 " ========== Highlighting and Autocompletion ==================================
 
