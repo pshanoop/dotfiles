@@ -73,9 +73,6 @@ map <C-l> <C-w>l
 
 " Kitchen Sink ================================================================
 
-" Close location window (aka :Errors) after selecting a location.
-:autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
-
 " Make < > shifts keep selection.
 vnoremap < <gv
 vnoremap > >gv
@@ -144,14 +141,11 @@ map <Leader>c :TComment<CR>
 " Reload config file.
 map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 
-" Close location (aka :Error) window.
-map <Leader>w :lclose <CR>
-
 " Open Vista (A symbol/tag navigator)
 map <Leader>v :Vista!!<CR>
 
 " Show errors and warnings.
-map <Leader>e :copen<CR>
+map <Leader>e :lopen<CR>
 
 " Lint and fix code.
 map <Leader>a :ALEFix<CR>
