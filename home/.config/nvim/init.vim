@@ -5,10 +5,15 @@
 "
 " Brief overview of how it all works:
 "
-" - coc.nvim is the main plugin for linting, autocompletion, and diagnostics.
-" - ALE does some linting too, but coc grabs its output and shows it all together.
-" - ALE does the fixing (e.g.: autoreformat).
-" - coc.nvim renders signatures/docs in some contextual situations.
+" - nvim-lspconfig sets up language servers which do a lot of heavy lifting.
+" - nvim-treesitter configures tree sitters which do highlighting.
+" - nvim-compe handles automplete. It uses many sources, including LSP at TS.
+" - ale handles diagnostics. It doesn't fully integrate with LSP yet, so
+"   unifying all diagnostics is still WIP.
+" - ale does the fixing (e.g.: autoreformat).
+"
+" TODO: Configure Leader<h> to show "Hover info", like COC did.
+" TODO: Gutter icons have bad colour (ALE? LSP?)
 
 " Plugins!
 lua require('plugins')
