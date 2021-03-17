@@ -190,20 +190,6 @@ map <Leader>p :Files<CR>
 
 " TODO: configure LSP highlighting!
 
-" Use quickfix list (rather than loclist).
-let g:ale_set_quickfix = 1
-" This might not be best: https://stackoverflow.com/questions/20933836/what-is-the-difference-between-location-list-and-quickfix-list-in-vim
-
-" Keep the quickfix list open when navigating.
-let g:ale_keep_list_window_open = 1
-
-" Previous C settings where `astyle -A2 -s4 -S -N -Y -p -U -H -k3 -xj -xy -z2`
-" TODO: delete backets around oneline IFs
-" TODO: fix \n being added before EOF indefinitely
-" -xC79
-
-let g:ale_html_beautify_options = '-s 2 -n -w 80'
-
 " ========== Highlighting and Autocompletion ==================================
 
 lua require('keymap')
