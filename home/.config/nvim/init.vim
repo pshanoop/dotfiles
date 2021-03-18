@@ -206,7 +206,6 @@ let g:ale_html_beautify_options = '-s 2 -n -w 80'
 
 " ========== Highlighting and Autocompletion ==================================
 
-lua require('completion')
 lua require('keymap')
 
 let g:python3_host_prog = '/usr/bin/python'

@@ -15,7 +15,7 @@ require('packer').startup(function()
   use {
     'junegunn/fzf.vim',
     requires = { 'junegunn/fzf' },
-    config = [[require('config/fzf')]]
+    config = [[require('_fzf')]]
   }
 
 
@@ -39,7 +39,7 @@ require('packer').startup(function()
   use 'tpope/vim-sensible'
 
   -- Completion.
-  use 'hrsh7th/nvim-compe'
+  use { 'hrsh7th/nvim-compe', config = [[require('_compe')]]}
 
   -- My current theme: jellybeans
   use { 'nanotech/jellybeans.vim', config = function()
@@ -80,7 +80,7 @@ require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- Show git blame at the end of lines.
-  use { 'APZelos/blamer.nvim', config = [[require('config.blamer')]] }
+  use { 'APZelos/blamer.nvim', config = [[require('_blamer')]] }
 
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'
