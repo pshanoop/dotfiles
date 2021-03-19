@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 MOUNTPOINT=$(realpath "$1.mount")
 ROOTDIR=$(realpath "$1")
 
