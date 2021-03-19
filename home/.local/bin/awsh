@@ -7,33 +7,27 @@
 # shell` and use the ORM directly).
 #
 # Usage:
-#   awsh [SERVICE_NAME]
+#   awsh [SERVICE_NAME] [COMMAND]
 #
 # Requirements:
-#   aws (also set up properly)
+#   aws-cli >= 1.19.32-1 (also set up properly)
+#   aws-session-manager-plugin >= 1.2.54.0
 #   jq
-#   ssh (make sure you can ssh into the jumphost and into the EC2 host first)
 
 set -e
 set -o pipefail
 
-JUMPHOST=ssh.ideasenfoto.com
 SERVICE_NAME=${1:-ideasenfoto-django}
 shift
 COMMAND=${@:-bash}
 
 # Get the ARN of a task for this service:
 TASK_ARN=$(aws ecs list-tasks --cluster production --service-name $SERVICE_NAME| jq -r '.taskArns[0]')
+TASK_ID=${TASK_ARN##*/}
 
-# Get ECS instance data:
-ECS_INSTANCE=$(aws ecs describe-tasks --cluster production --tasks $TASK_ARN)
-# Extract the ARN of the ECS container instance:
-HOST_ARN=$(echo $ECS_INSTANCE | jq -r '.tasks[0].containerInstanceArn')
-CONTAINER_ID=$(echo $ECS_INSTANCE | jq -r ".tasks[0].containers[0].runtimeId")
-
-# Get the ARN of the ECS instance (it's basically another id for the same host as above):
-EC2_INSTANCE=$(aws ecs describe-container-instances --cluster production --container-instances $HOST_ARN | jq -r '.containerInstances[0].ec2InstanceId')
-# Get the DNS name of that host:
-EC2_NAME=$(aws ec2 describe-instances --instance-ids $EC2_INSTANCE | jq -r ".Reservations[0].Instances[0].PrivateDnsName")
-
-ssh -atJ $JUMPHOST ec2-user@$EC2_NAME docker exec -it $CONTAINER_ID $COMMAND
+aws ecs execute-command \
+  --cluster production \
+  --task $TASK_ID \
+  --container django \
+  --command $COMMAND \
+  --interactive
