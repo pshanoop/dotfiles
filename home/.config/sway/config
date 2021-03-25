@@ -16,7 +16,6 @@
 # here too.
 #
 # Read `man 5 sway` for a reference on the files' syntax.
-# vim: ft=i3config
 
 # Define these two keys as alias which I understand.
 # `Super` is a generic name to the `Cmd` or `Windows` key.
