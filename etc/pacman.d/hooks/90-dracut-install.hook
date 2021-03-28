@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = linux
+
+[Action]
+Description = Updating linux initcpios (with dracut!)...
+When = PostTransaction
+Exec = /usr/local/bin/dracut-install.sh
+Depends = dracut
