@@ -1,0 +1,11 @@
+#!/bin/sh
+
+figlet housekeeping
+
+set -xo pipefail
+
+paru -Syu --devel
+flatpak update
+
+paru -Sc --noconfirm
+[ `pacman -Qdtq | wc -l` != 0 ] && sudo pacman -Rnscu $(pacman -Qdtq)
