@@ -23,3 +23,7 @@ Check out my [dotfiles][dotfiles] repository if you're interested in those.
 
 [homesick]: https://github.com/technicalpickles/homesick
 [dotfiles]: https://gitlab.com/WhyNotHugo/dotfiles
+
+# Other notes
+
+`$USER` needs to be in group `video` to be able to control laptop backlight.
