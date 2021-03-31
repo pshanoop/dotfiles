@@ -33,4 +33,4 @@ listfiles () {
 
 target="$(abspath "$1")"
 
-listfiles | xargs -0 /usr/bin/imv -n "$target" --
+listfiles | xargs -0 imv -n "$target" --
