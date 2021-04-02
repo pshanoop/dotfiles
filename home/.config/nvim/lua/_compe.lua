@@ -5,6 +5,7 @@ require'compe'.setup {
   autocomplete = true;
   debug = false;
   min_length = 1;
+  preselect = 'disable';
 
   source = {
     path = true;
