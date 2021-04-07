@@ -121,6 +121,9 @@ let g:vista_sidebar_width = 50
 " Smart-detect unwriteable files and handle them with SudaWrite.
 let g:suda_smart_edit = 1
 
+" Open files unfolded. See https://stackoverflow.com/a/23672376
+lua vim.cmd("autocmd BufWinEnter * silent! :%foldopen!")
+
 " ========== Leader keybindings ===============================================
 
 " Leader is recommended for user-specifc bindings
