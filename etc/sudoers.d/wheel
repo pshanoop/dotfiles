@@ -1,2 +1,5 @@
 %wheel ALL = PASSWD: ALL
 %wheel ALL = NOPASSWD: /usr/bin/plymouth quit --retain-splash
+
+# Allow wheel users to fiddle with backlighting:
+%wheel ALL = NOPASSWD: /usr/bin/ddcutil setvcp 10 *
