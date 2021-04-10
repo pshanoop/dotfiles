@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Script to quickly share with a publicly accessible URL.
+
+set -e
+
+# TODO: add flag "-z" that, if there are multiple files, zips them and uses
+# that.
+# $@ = as separate args
+# $* = as a single arg
+
+if [ -z $1 ]; then
+  echo Bad usage.
+  exit -1
+fi
+
+BUCKET=terraform-20210410103357570100000001
+
+UUID=$(uuidgen)
+KEY=$UUID/$(basename $1)
+
+aws-vault exec whynothugo -- aws s3 cp --quiet $1 s3://$BUCKET/$KEY
+
+echo https://share.whynothugo.nl/$KEY
