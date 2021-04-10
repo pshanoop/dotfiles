@@ -44,4 +44,17 @@ alias swaylogs="journalctl --user --identifier sway"
 # Brew needs this to work on Big Sur:
 alias brew="arch -x86_64 /usr/local/bin/brew "
 
-# === End macOS specific
+# === NVM
+# Things like NVM have a werid design where they're designed to run every time
+# you spawn a new shell, and continuously run different hooks. This is terrible
+# design and terrible for performance wise, and also messes up how the shell
+# NORMALLY works.
+#
+# This function is a workaround so that `nvm` can be run explicitly when
+# needed, but doesn't bother when not explicitly invoken. Like any other tool.
+
+function nvm-on {
+  export NVM_DIR=$HOME/.cache/nvm
+  source /usr/share/nvm/init-nvm.sh
+  nvm use
+}
