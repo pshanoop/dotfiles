@@ -27,12 +27,8 @@ This repository is public because:
  - The quickly share config files with others who are curious on how I
    achieved something.
 
-I use [homesick](https://github.com/technicalpickles/homesick) to keep this
-repository in sync with my actual dotfiles using symlinks.
-
-Having tried a great deal of similar tools, I highly recommend `homesick` and the
-workflow it facilitates. It allows editing config files in-place files, and then move
-them into homesick, and there's no funky renaming or template system in place.
+I use my own script (see `sync.py`) to keep this repository in sync with my
+actual dotfiles using symlinks.
 
 Overview
 --------
