@@ -2,6 +2,7 @@
 .*sw?
 .coverage
 .egg-info
+.eggs
 .git
 .mypy_cache
 .pyc
