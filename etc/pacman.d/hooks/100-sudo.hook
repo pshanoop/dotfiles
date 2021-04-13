@@ -1,0 +1,9 @@
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = sudo
+
+[Action]
+Description = Configuring sudo to use the yubikey...
+When = PostTransaction
+Exec = /usr/bin/patch -p0 /etc/pam.d/sudo -i /etc/pacman.d/hooks/sudo.patch --quiet

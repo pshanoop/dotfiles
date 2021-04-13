@@ -1,5 +1,0 @@
-#%PAM-1.0
-auth		sufficient	pam_u2f.so cue [cue_prompt=🔐 Waiting for key...]
-auth		include		system-auth
-account		include		system-auth
-session		include		system-auth
