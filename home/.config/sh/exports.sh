@@ -98,6 +98,7 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 export CARGO_HOME=$HOME/.cache/cargo
 export RUSTUP_HOME=$HOME/.cache/rustup
 export WORKON_HOME=$HOME/.cache/virtualenvs
+export GOPATH=$HOME/.cache/golang
 
 # Interactive shell histories:
 export PSQL_HISTORY=$HOME/.local/share/psql_history
