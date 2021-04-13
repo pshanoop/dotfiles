@@ -1,5 +1,4 @@
-My dotfiles
-===========
+# My dotfiles
 
 🏡 My personal dotfiles (i.e.: user-wide configuration for my systems).
 
@@ -9,29 +8,28 @@ got back to my previous configuration.
 
 Other uses of this repository include:
 
- - Sync configurations across machines.
- - Keep a backup of my configurations.
- - Keep old revisions of my configurations. (Duh!)
- - Quickly configure new machines. I keep a dump of my installed packages, so
-   installing all of them on a new device, and them cloning this repo in should
-   be enough to get me up and running!
+- Sync configurations across machines.
+- Keep a backup of my configurations.
+- Keep old revisions of my configurations. (Duh!)
+- Quickly configure new machines. I keep a dump of my installed packages, so
+  installing all of them on a new device, and them cloning this repo in should
+  be enough to get me up and running!
 
 This repository is public because:
 
- - There's no reason to keep it secret!
- - It might help other trying to configure things similarly. I document changes
-   (since it's very useful for me to know why I changed something a few
-   weeks/years back), and this should also be useful to others.
- - It's an easy way to share details about my setup, both when being asked for
-   tips, as well ask when asking for help debugging something.
- - The quickly share config files with others who are curious on how I
-   achieved something.
+- There's no reason to keep it secret!
+- It might help other trying to configure things similarly. I document changes
+  (since it's very useful for me to know why I changed something a few
+  weeks/years back), and this should also be useful to others.
+- It's an easy way to share details about my setup, both when being asked for
+  tips, as well ask when asking for help debugging something.
+- The quickly share config files with others who are curious on how I
+  achieved something.
 
 I use my own script (see `sync.py`) to keep this repository in sync with my
 actual dotfiles using symlinks.
 
-Overview
---------
+## Overview
 
 I use `sway` (i3-like wayland compositor) with `waybar` for my desktop.
 `Neovim` is my editor of choice, and the terminal (`alacritty` + `zsh`) is my
@@ -61,18 +59,16 @@ defaults commented out).
 The diff makes any settings that I've customised stand out very easily, and
 also figuring out if some value is the default or not.
 
-Manual commands
----------------
+## Manual commands
 
-The following commands should be run manually *after* symlinking:
+The following commands should be run manually _after_ symlinking:
 
 ```sh
 nvim -c "PlugInstall|q|q"
 chsh -s $(which zsh)
 ```
 
-LICENCE
--------
+## LICENCE
 
 Copyright (c) 2012-2020, Hugo Osvaldo Barrera &lt;hugo@barrera.io&gt;  
 This repository is licensed under the ISC licence. See LICENCE for details.
