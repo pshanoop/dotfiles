@@ -15,7 +15,7 @@
 # Include my local bin in $PATH:
 export PATH=$HOME/.local/bin:/home/hugo/.gem/ruby/2.7.0/bin:$PATH
 
-# Use neovim instead of vi.
+# Default text or code editor.
 export EDITOR=nvim
 export VISUAL=nvim
 

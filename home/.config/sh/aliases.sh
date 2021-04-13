@@ -17,8 +17,8 @@ alias gitd='pushd $(git rev-parse --show-toplevel)'
 # Show system info.
 alias 🐼=neofetch
 
-# Memory muscle. Also "nvim" is too long.
-alias vim="nvim"
+# Nice, short alias.
+alias v="nvim"
 
 alias grep="grep --color=auto --exclude-dir=.git"
 alias less='less -rX'
