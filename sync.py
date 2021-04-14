@@ -53,7 +53,7 @@ for path in all_paths:
 
     if home_path.is_symlink() and resolved_path == repo_path:
         print(path, Fore.MAGENTA + "Is linked")
-    elif home_path.exists():
+    elif home_path.exists() or home_path.is_symlink():
         print(path, Fore.RED + "Conflict")
     else:
         home_path.symlink_to(repo_path)
