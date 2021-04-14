@@ -56,5 +56,6 @@ for path in all_paths:
     elif home_path.exists() or home_path.is_symlink():
         print(path, Fore.RED + "Conflict")
     else:
+        home_path.parent.mkdir(mode=0o755, parents=True, exist_ok=True)
         home_path.symlink_to(repo_path)
         print(path, Fore.GREEN + "Linked!")
