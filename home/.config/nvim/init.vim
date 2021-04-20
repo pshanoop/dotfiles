@@ -29,7 +29,6 @@ set termguicolors
 
 " Show a ruler on the 80th and 120th columns.
 let &colorcolumn="80,120"
-highlight ColorColumn guibg=#121212
 
 " Show placeholders for these non-visible-characters.
 set listchars=tab:>-,trail:·,extends:>,precedes:<

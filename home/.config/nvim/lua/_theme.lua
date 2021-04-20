@@ -24,6 +24,7 @@ vim.cmd('highlight GitSignsCurrentLineBlame guifg=#747ae3')
 vim.cmd('highlight ALEErrorSign guifg=#cf6242 guibg=#333333')
 vim.cmd('highlight ALEWarningSign guifg=#ffb964 guibg=#333333')
 
+vim.cmd('highlight IndentBlanklineSpaceChar guifg=#333333')
+vim.cmd('highlight IndentBlanklineChar guifg=#555555')
 
-vim.cmd('highlight IndentSpace guifg=#333333')
-vim.cmd('highlight IndentLine guifg=#606060')
+vim.cmd('highlight ColorColumn guibg=#121212')
