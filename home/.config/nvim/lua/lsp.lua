@@ -25,5 +25,17 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+require'lspconfig'.sumneko_lua.setup{
+  cmd = { "lua-language-server" },
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+    }
+  }
+}
+
 -- See https://github.com/neovim/nvim-lspconfig/pull/757/
 nvim_lsp.terraformls.setup{ on_attach = on_attach, filetypes = { "terraform", "tf" }}
