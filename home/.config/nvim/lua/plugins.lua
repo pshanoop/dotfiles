@@ -56,9 +56,6 @@ require('packer').startup(function()
   -- Show thin vertical lines on each indentation level:
   use { 'lukas-reineke/indent-blankline.nvim', branch='lua', config = [[require('_indentlines')]] }
 
-  -- Show git blame at the end of lines.
-  use { 'APZelos/blamer.nvim', config = [[require('_blamer')]] }
-
   use {
     'lewis6991/gitsigns.nvim',
     requires = {

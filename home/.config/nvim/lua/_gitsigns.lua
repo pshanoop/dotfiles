@@ -6,4 +6,8 @@ require('gitsigns').setup{
     topdelete = {hl ='GitSignsDelete',text = '▔'},
     changedelete = {hl = 'GitSignsChange', text = '▎'},
   },
+  current_line_blame = true
 }
+
+-- Make CursorHold trigger after 10ms, so blame render immediately:
+vim.cmd("set updatetime=10")
