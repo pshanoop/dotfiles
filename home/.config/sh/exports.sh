@@ -98,6 +98,11 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}"/ripgrep.conf
 export CARGO_HOME=$HOME/.cache/cargo
 export RUSTUP_HOME=$HOME/.cache/rustup
 export WORKON_HOME=$HOME/.cache/virtualenvs
+
+# App data.
+export GNUPGHOME=$HOME/.local/share/gnupg
+
+# Cache data. Perfectly fine to lose.
 export GOPATH=$HOME/.cache/golang
 
 # Interactive shell histories:
