@@ -3,7 +3,7 @@
     "position": "bottom",
     "height": 26,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/mic"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/mic", "custom/yubikey"],
     "modules-center": ["sway/window"],
     "modules-right": ["custom/khal", "battery", "pulseaudio", "clock"],
     // Modules configuration
@@ -25,6 +25,10 @@
       "exec": "$HOME/.local/lib/waybar-mic",
       "return-type": "json",
       "on-click": "volume toggle-mic"
+    },
+    "custom/yubikey": {
+      "exec": "$HOME/.local/lib/waybar-yubikey",
+      "return-type": "json"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
