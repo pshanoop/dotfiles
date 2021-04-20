@@ -3,6 +3,11 @@ vim.g.jellybeans_overrides = { background = { guibg= '000000' } }
 
 vim.cmd 'colorscheme jellybeans'
 
+-- Load highlighting from lspconfig.
+-- It's not idea great, but works. I'll make something that fits better when I
+-- have time for it.
+require('vim.lsp.diagnostic')._define_default_signs_and_highlights()
+
 vim.cmd('highlight ALEError guifg=White guibg=Red')
 vim.cmd('highlight ALEWarning guifg=White guibg=Teal')
 
