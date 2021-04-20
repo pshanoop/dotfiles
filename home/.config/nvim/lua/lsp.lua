@@ -20,6 +20,7 @@ local servers = {
   "vuels",
   "bashls",
   "gopls",
+  "terraformls",
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -36,6 +37,3 @@ require'lspconfig'.sumneko_lua.setup{
     }
   }
 }
-
--- See https://github.com/neovim/nvim-lspconfig/pull/757/
-nvim_lsp.terraformls.setup{ on_attach = on_attach, filetypes = { "terraform", "tf" }}
