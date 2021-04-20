@@ -26,6 +26,11 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+require'lspconfig'.jedi_language_server.setup{
+  cmd = { "jedi-language-server", "--verbose", "--log-file", "/home/hugo/tmp/jedi.log" },
+  on_attach = on_attach,
+}
+
 require'lspconfig'.sumneko_lua.setup{
   cmd = { "lua-language-server" },
   settings = {
@@ -35,5 +40,6 @@ require'lspconfig'.sumneko_lua.setup{
         globals = {'vim'},
       },
     }
-  }
+  },
+  on_attach = on_attach,
 }
