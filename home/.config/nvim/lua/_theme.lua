@@ -17,13 +17,13 @@ vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight GitSignsAdd guifg=#238536')
 vim.cmd('highlight GitSignsChange guifg=#6A3EC1')
 vim.cmd('highlight GitSignsDelete guifg=#B35A56')
+vim.cmd('highlight GitSignsCurrentLineBlame guifg=#747ae3')
 
 -- Clearing these two sets them to black, rather than the original gutter color.
 -- I've copy-pasted this colour is copied over from the theme.
 vim.cmd('highlight ALEErrorSign guifg=#cf6242 guibg=#333333')
 vim.cmd('highlight ALEWarningSign guifg=#ffb964 guibg=#333333')
 
-vim.cmd('highlight GitSignsCurrentLineBlame guifg=#c06371 gui=italic')
 
 vim.cmd('highlight IndentSpace guifg=#333333')
 vim.cmd('highlight IndentLine guifg=#606060')
