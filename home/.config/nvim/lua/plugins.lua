@@ -59,9 +59,16 @@ require('packer').startup(function()
   -- Show git blame at the end of lines.
   use { 'APZelos/blamer.nvim', config = [[require('_blamer')]] }
 
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = [[require('_gitsigns')]]
+  }
+
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'
-  use 'airblade/vim-gitgutter'  -- Shows git status in the gutter.
   use 'dietsche/vim-lastplace'
   use 'ryanoasis/vim-devicons'
   use 'liuchengxu/vista.vim'  -- Sidebar with symbols, tags, etc.
