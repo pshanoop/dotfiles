@@ -68,7 +68,7 @@ require('packer').startup(function()
   use 'maximbaz/lightline-ale'
   use 'dietsche/vim-lastplace'
   use 'ryanoasis/vim-devicons'
-  use 'liuchengxu/vista.vim'  -- Sidebar with symbols, tags, etc.
+  use { 'simrat39/symbols-outline.nvim', config = [[require('_symbols_outline')]] }
   use 'psliwka/vim-smoothie'  -- Smooth scrolling
 
   -- Distraction-free writing.

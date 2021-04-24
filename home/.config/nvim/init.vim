@@ -143,9 +143,6 @@ map <Leader>c :TComment<CR>
 " Reload config file.
 map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 
-" Open Vista (A symbol/tag navigator)
-map <Leader>v :Vista!!<CR>
-
 " Show errors and warnings.
 map <Leader>e :lopen<CR>
 
