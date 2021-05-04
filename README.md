@@ -32,5 +32,5 @@ possible to roll back and forth in time between settings.
 
 ## LICENCE
 
-Copyright 2012-2021, Hugo Osvaldo Barrera <hugo@barrera.io>
+Copyright 2012-2021, Hugo Osvaldo Barrera <hugo@barrera.io>  
 This repository is licensed under the ISC licence. See LICENCE for details.
