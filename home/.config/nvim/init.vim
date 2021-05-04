@@ -15,6 +15,9 @@
 " TODO: Configure Leader<h> to show "Hover info", like COC did.
 " TODO: Gutter icons have bad colour (ALE? LSP?)
 
+" Leader is recommended for user-defined bindings
+let mapleader = " "
+
 " Plugins!
 lua require('plugins')
 
@@ -124,9 +127,6 @@ let g:suda_smart_edit = 1
 lua vim.cmd("autocmd BufWinEnter * silent! :%foldopen!")
 
 " ========== Leader keybindings ===============================================
-
-" Leader is recommended for user-specifc bindings
-let mapleader = " "
 
 " Insert ipdb breakpoint
 map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
