@@ -174,10 +174,6 @@ lua require('keymap')
 
 let g:python3_host_prog = '/usr/bin/python'
 
-" Switch between options with Tab (or Shift+Tab)
-inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><expr> <S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
-
 " Don't spellcheck quickfix window, and use absolute line numbers on it.
 autocmd FileType qf set nospell nu nornu wrap
 " TODO: For the above filetype: configure Leader+e to close it.

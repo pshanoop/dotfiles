@@ -16,3 +16,17 @@ vim.api.nvim_set_keymap(
 
 -- Ctrl-w followed by H, J, K or L will move the current window to the far
 -- left, bottom, top or right respectively (same directions as usual).
+
+-- Switch between autocompletion options with Tab (or Shift+Tab).
+vim.api.nvim_set_keymap(
+  'i',
+  '<TAB>',
+  [[pumvisible() ? "\<C-n>" : "\<TAB>"]],
+  { noremap = true, silent = true, expr = true}
+)
+vim.api.nvim_set_keymap(
+  'i',
+  '<S-TAB>',
+  [[pumvisible() ? "\<C-p>" : "\<TAB>"]],
+  { noremap = true, silent = true, expr = true}
+)
