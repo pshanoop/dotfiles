@@ -101,13 +101,6 @@ set clipboard=unnamed
 let g:csv_autocmd_arrange      = 1
 let g:csv_autocmd_arrange_size = 1024*1024*20
 
-" Don't auto-fold markdown
-let g:vim_markdown_folding_disabled = 1
-
-" Don't conceal markdown
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-
 " Disable arrow keys and PageDown/PageUp
 nnoremap <left> <nop>
 nnoremap <right> <nop>
