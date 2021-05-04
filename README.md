@@ -18,7 +18,7 @@ Other uses of this repository include:
 I use my own script (see `sync.py`) to keep this repository in sync with my
 actual dotfiles using symlinks.
 
-## Tools I use (or maintain)
+## Tools I use
 
 - `sway`: desktop compositor
 - `waybar`: system status bar
