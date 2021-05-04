@@ -95,7 +95,7 @@ set mouse=a
 " Copy to PRIMARY selection on mouse selection.
 vnoremap <LeftRelease> "*ygv
 
-" Yank to PRIMARY selection by default (i.e.: This is pasted with mouse2).
+" Yank to PRIMARY selection by default (PRIMARY = mouse2, CLIPBOARD = ctrl+v).
 set clipboard=unnamed
 
 let g:csv_autocmd_arrange      = 1
