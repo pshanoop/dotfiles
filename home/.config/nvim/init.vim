@@ -124,7 +124,7 @@ lua vim.cmd("autocmd BufWinEnter * silent! :%foldopen!")
 
 " ========== Leader keybindings ===============================================
 
-" Remove search highlighting by pressing ESC.
+" Hide search result highlight:
 map <Leader>f :nohlsearch<CR>
 
 " Toggle paste mode using F12 (does not try to indent input)
