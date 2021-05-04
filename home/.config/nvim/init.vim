@@ -21,6 +21,9 @@ let mapleader = " "
 " Plugins!
 lua require('plugins')
 
+" Misc stuff written in Lua.
+lua require('misc')
+
 " Lightline configurtion is pretty long:
 " Lightline is the plugin that renders the colourful statusbar.
 runtime lightline.vim
@@ -127,9 +130,6 @@ let g:suda_smart_edit = 1
 lua vim.cmd("autocmd BufWinEnter * silent! :%foldopen!")
 
 " ========== Leader keybindings ===============================================
-
-" Insert ipdb breakpoint
-map <Leader>i oimport ipdb; ipdb.set_trace()<ESC>
 
 " Remove search highlighting by pressing ESC.
 map <Leader>f :nohlsearch<CR>
