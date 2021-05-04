@@ -18,6 +18,8 @@ local servers = {
   "rls",
   "tsserver",
   "vuels",
+  "solargraph", -- ruby
+  -- "sorbet",  -- type checker for ruby
   "bashls",
   "gopls",
   "terraformls",
