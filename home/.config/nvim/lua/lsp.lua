@@ -1,5 +1,14 @@
 local lspconfig = require('lspconfig')
 local efm = require('efm')
+local lsp_status = require('lsp-status')
+
+-- Wrap the original diagnostics handler to add our own logic.
+local old_handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, _, params, client_id, _, config)
+  -- Update the statusline when there's diagnostics changes.
+  old_handler(_, _, params, client_id, _, config)
+  vim.cmd("call lightline#update()")
+end
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -18,6 +27,8 @@ local on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("v", "<space>a", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
+
+  lsp_status.on_attach(client, bufnr)
 end
 
 -- Use a loop to conveniently both setup defined servers and map buffer local
@@ -35,12 +46,16 @@ local servers = {
   "vuels",
 }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup { on_attach = on_attach }
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = lsp_status.capabilities,
+  }
 end
 
 lspconfig.jedi_language_server.setup{
   cmd = { "jedi-language-server", "--verbose", "--log-file", "/home/hugo/tmp/jedi.log" },
   on_attach = on_attach,
+  capabilities = lsp_status.capabilities,
 }
 
 lspconfig.sumneko_lua.setup{
@@ -54,14 +69,16 @@ lspconfig.sumneko_lua.setup{
     }
   },
   on_attach = on_attach,
+  capabilities = lsp_status.capabilities,
 }
 
 lspconfig.efm.setup {
-  on_attach = on_attach,
   init_options = {documentFormatting = true},
   settings = {
     rootMarkers = {".git/"},
     languages = efm.languages,
   },
   filetypes = efm.filetypes,
+  on_attach = on_attach,
+  capabilities = lsp_status.capabilities,
 }

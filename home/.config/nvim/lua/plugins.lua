@@ -31,7 +31,11 @@ require('packer').startup(function()
   use 'lambdalisue/suda.vim'
 
   -- Configuration for various LSP servers.
-  use { 'neovim/nvim-lspconfig', config = [[require('lsp')]]}
+  use {
+    'neovim/nvim-lspconfig',
+    requires = "nvim-lua/lsp-status.nvim",
+    config = [[require('lsp')]]
+  }
 
   -- Language-specific ===========================================================
 
@@ -60,7 +64,7 @@ require('packer').startup(function()
     config = [[require('_gitsigns')]]
   }
 
-  use 'itchyny/lightline.vim'
+  use { 'itchyny/lightline.vim', config = [[require('lightline')]] }
   use 'dietsche/vim-lastplace'
   use 'ryanoasis/vim-devicons'
   use { 'simrat39/symbols-outline.nvim', config = [[require('_symbols_outline')]] }
