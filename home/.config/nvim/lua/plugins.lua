@@ -18,10 +18,6 @@ require('packer').startup(function()
     config = [[require('_fzf')]]
   }
 
-
-  -- Syntax checking and linting.
-  use { 'dense-analysis/ale', config = [[require('_ale')]] }
-
   -- A few miscelaneous settings that just make sense.
   use 'tpope/vim-sensible'
 
@@ -65,7 +61,6 @@ require('packer').startup(function()
   }
 
   use 'itchyny/lightline.vim'
-  use 'maximbaz/lightline-ale'
   use 'dietsche/vim-lastplace'
   use 'ryanoasis/vim-devicons'
   use { 'simrat39/symbols-outline.nvim', config = [[require('_symbols_outline')]] }

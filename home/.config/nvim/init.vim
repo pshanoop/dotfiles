@@ -139,9 +139,6 @@ map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 " Show errors and warnings.
 map <Leader>e :lopen<CR>
 
-" Jump to the next error
-map <Leader>n :ALENextWrap<CR>
-
 " Open the tree-sitter playground. Used for debugging its queries.
 map <Leader>t :TSPlaygroundToggle<CR>
 

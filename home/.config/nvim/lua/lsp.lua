@@ -61,9 +61,7 @@ lspconfig.efm.setup {
   init_options = {documentFormatting = true},
   settings = {
     rootMarkers = {".git/"},
-    languages = {
-      typescript = {efm.prettier, efm.eslint},
-    }
+    languages = efm.languages,
   },
-  filetypes = { "typescript" }
+  filetypes = efm.filetypes,
 }
