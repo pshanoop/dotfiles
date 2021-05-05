@@ -139,9 +139,6 @@ map <Leader>r :so $HOME/.config/nvim/init.vim <CR>
 " Show errors and warnings.
 map <Leader>e :lopen<CR>
 
-" Lint and fix code.
-map <Leader>a :ALEFix<CR>
-
 " Jump to the next error
 map <Leader>n :ALENextWrap<CR>
 
