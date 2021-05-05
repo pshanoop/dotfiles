@@ -74,3 +74,6 @@ lspconfig.efm.setup {
   on_attach = on_attach,
   capabilities = lsp_status.capabilities,
 }
+
+-- Logs to ~/.cache/nvim/lsp.log
+-- vim.lsp.set_log_level("debug")
