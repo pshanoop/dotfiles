@@ -38,11 +38,16 @@ local servers = {
   "vuels",
   "solargraph", -- ruby
   -- "sorbet",  -- type checker for ruby
+  -- "sourcekit",  -- swift
   "bashls",
   "gopls",
   "terraformls",
   "vuels",
+  -- docker: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#dockerls
+  -- json: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jsonls
+  -- yaml: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#yamlls
 }
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
