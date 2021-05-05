@@ -12,7 +12,10 @@ local black = {
 local eslint = {
   lintCommand = "./node_modules/.bin/eslint -f unix --stdin",
   lintIgnoreExitCode = true,
-  lintStdin = true
+  lintStdin = true,
+  lintFormats = {
+    "%f:%l:%c: %m [%t%r]",
+  }
 }
 
 local flake8 =  {
