@@ -50,12 +50,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.jedi_language_server.setup{
-  cmd = { "jedi-language-server", "--verbose", "--log-file", "/home/hugo/tmp/jedi.log" },
-  on_attach = on_attach,
-  capabilities = lsp_status.capabilities,
-}
-
 lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" },
   settings = {
