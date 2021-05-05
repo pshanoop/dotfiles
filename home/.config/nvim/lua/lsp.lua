@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
 local efm = require('efm')
 
 local on_attach = function(client, bufnr)
@@ -35,15 +35,15 @@ local servers = {
   "vuels",
 }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+  lspconfig[lsp].setup { on_attach = on_attach }
 end
 
-require'lspconfig'.jedi_language_server.setup{
+lspconfig.jedi_language_server.setup{
   cmd = { "jedi-language-server", "--verbose", "--log-file", "/home/hugo/tmp/jedi.log" },
   on_attach = on_attach,
 }
 
-require'lspconfig'.sumneko_lua.setup{
+lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" },
   settings = {
     Lua = {
@@ -56,7 +56,7 @@ require'lspconfig'.sumneko_lua.setup{
   on_attach = on_attach,
 }
 
-nvim_lsp.efm.setup {
+lspconfig.efm.setup {
   on_attach = on_attach,
   init_options = {documentFormatting = true},
   settings = {
