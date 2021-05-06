@@ -1,6 +1,7 @@
 local lspconfig = require('lspconfig')
 local efm = require('efm')
 local lsp_status = require('lsp-status')
+local util = require 'lspconfig/util'
 
 -- Wrap the original diagnostics handler to add our own logic.
 local old_handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
@@ -76,6 +77,10 @@ lspconfig.efm.setup {
     languages = efm.languages,
   },
   filetypes = efm.filetypes,
+  -- Override this so that EFM works on any file, not just git repos.
+  root_dir = function(fname)
+    return util.root_pattern(".git")(fname) or vim.fn.getcwd()
+  end;
   on_attach = on_attach,
   capabilities = lsp_status.capabilities,
 }
