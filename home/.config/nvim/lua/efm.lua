@@ -19,10 +19,13 @@ local eslint = {
 }
 
 local flake8 =  {
-  lintCommand = "flake8 --stdin-display-name ${INPUT} -",
+  -- Requires flake8-efm
+  lintCommand = "flake8 --format efm --stdin-display-name ${INPUT} -",
   lintStdin = true,
   lintIgnoreExitCode = true,
-  lintFormats = {"%f:%l:%c: %m"}
+  lintFormats = {
+    "%f:%l:%c:%t:%m",
+  }
 }
 
 local mypy = {
