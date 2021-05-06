@@ -77,10 +77,6 @@ lspconfig.efm.setup {
     languages = efm.languages,
   },
   filetypes = efm.filetypes,
-  -- Override this so that EFM works on any file, not just git repos.
-  root_dir = function(fname)
-    return util.root_pattern(".git")(fname) or vim.fn.getcwd()
-  end;
   on_attach = on_attach,
   capabilities = lsp_status.capabilities,
 }
