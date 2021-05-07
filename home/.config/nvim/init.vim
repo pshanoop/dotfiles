@@ -109,9 +109,6 @@ au BufRead,BufNewFile *.conf set ft=dosini
 
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
-" Make Vista wider than the default. This seems like a reasonable value.
-let g:vista_sidebar_width = 50
-
 " Smart-detect unwriteable files and handle them with SudaWrite.
 let g:suda_smart_edit = 1
 
