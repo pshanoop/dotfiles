@@ -6,26 +6,30 @@
 " Brief overview of how it all works:
 "
 " - nvim-lspconfig sets up language servers which do a lot of heavy lifting.
+"   - Lanaguge servers handle diagnostics, autoformatting, and provide
+"     completion results.
+"   - EFM language server uses non-LSP tools as backends, so allows integrating
+"     other tools using the same interface (e.g.: black, eslint, prettier, etc.)
 " - nvim-treesitter configures tree sitters which do highlighting.
 " - nvim-compe handles automplete. It uses many sources, including LSP at TS.
-" - ale handles diagnostics. It doesn't fully integrate with LSP yet, so
-"   unifying all diagnostics is still WIP.
-" - ale does the fixing (e.g.: autoreformat).
+" - I use lightline as a statusbar since it's super lightweight. A downside it
+"   that the functions it calls must be VimScript functions, so it config is
+"   split in two.
+" - Lightline shows LSP diagnostics.
+" - The gutter refelcts git changes.
 "
 " TODO: Configure Leader<h> to show "Hover info", like COC did.
-" TODO: Gutter icons have bad colour (ALE? LSP?)
 
-" Leader is recommended for user-defined bindings
+" Leader is recommended for user-defined bindings. See `:h leader`.
 let mapleader = " "
 
-" Plugins!
+" Plugin definitions. This also calls all the per-plugin configs.
 lua require('plugins')
 
-" Misc stuff written in Lua.
+" Misc helpers written in Lua.
 lua require('misc')
 
 " Lightline configurtion is pretty long:
-" Lightline is the plugin that renders the colourful statusbar.
 runtime lightline.vim
 
 " Appearance ==================================================================
@@ -46,12 +50,13 @@ set number
 set relativenumber
 
 " When a line doesn't fit on-screen, it's rendered wrapped, but not actually
-" wrapped. For code, this reduces readability. This setting disables that:
+" wrapped. This is very confusing, and reduces readability.
 set nowrap
 
 " Indentation =================================================================
 
 " Number of spaces to use for each step of (auto)indent.
+" Note that this is just the default; some filetypes have a different setting.
 set shiftwidth=2
 
 " Use the appropriate number of spaces to insert a <Tab>.
@@ -63,12 +68,11 @@ set textwidth=79
 
 " Navigation ==================================================================
 
-" This is ignored when autocompleting wildcards (eg: `:open pro*`):
+" These are ignored when autocompleting wildcards (eg: `:open pro*`):
 set wildignore+=build,env,bin,dist,*.pyc,tmp
 
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
-
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -82,6 +86,7 @@ map <C-l> <C-w>l
 vnoremap < <gv
 vnoremap > >gv
 
+" Colour for highlighted leading spaces and such.
 highlight clear SpecialKey
 highlight SpecialKey guifg='#666666'
 
@@ -89,7 +94,7 @@ highlight SpecialKey guifg='#666666'
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 
-" Enable mouse support (which is really just used for scrolling).
+" Enable mouse support (which I really only use for scrolling).
 set mouse=a
 
 " Copy to PRIMARY selection on mouse selection.
