@@ -97,9 +97,6 @@ vnoremap <LeftRelease> "*ygv
 " Yank to PRIMARY selection by default (PRIMARY = mouse2, CLIPBOARD = ctrl+v).
 set clipboard=unnamed
 
-let g:csv_autocmd_arrange      = 1
-let g:csv_autocmd_arrange_size = 1024*1024*20
-
 " Disable arrow keys and PageDown/PageUp
 nnoremap <left> <nop>
 nnoremap <right> <nop>
