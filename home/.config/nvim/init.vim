@@ -112,8 +112,8 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 " Smart-detect unwriteable files and handle them with SudaWrite.
 let g:suda_smart_edit = 1
 
-" Open files unfolded. See https://stackoverflow.com/a/23672376
-lua vim.cmd("autocmd BufWinEnter * silent! :%foldopen!")
+" Completely disable folding
+set nofoldenable
 
 " ========== Leader keybindings ===============================================
 
