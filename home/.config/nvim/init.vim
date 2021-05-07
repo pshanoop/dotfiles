@@ -74,12 +74,6 @@ set wildignore+=build,env,bin,dist,*.pyc,tmp
 " These get lower priority for autocomplete:
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 
-" Shortcutting split navigation, saving a keypress:
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Kitchen Sink ================================================================
 
 " Make < > shifts keep selection.
