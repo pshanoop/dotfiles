@@ -13,7 +13,7 @@ function M.show_fuzzy_finder()
 
   local source, prompt, root
   if git_root then
-    source = 'git ls-files --cached --modified --others --exclude-standard'
+    source = 'git ls-files --cached --modified --others --exclude-standard | uniq'
     prompt = 'git> '
     root = git_root
   else
