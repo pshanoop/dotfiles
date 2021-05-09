@@ -150,11 +150,6 @@ nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 " use  system('git rev-parse --show-toplevel 2> /dev/null') and some awk
 nnoremap <Leader>. :echo @%<CR>
 
-" This only works on the current directory, and not the entire project.
-" TODO: Ideally, I'd want this to be the git-directory to the current file.
-" TODO: Should also show git-untracked files.
-map <Leader>p :Files<CR>
-
 " ========== Highlighting and Autocompletion ==================================
 
 lua require('keymap')
