@@ -25,6 +25,7 @@ actual dotfiles using symlinks.
 - `neovim`: code editor (using LSP, tree-sitter, and quite a few plugins)
 - `zsh`: shell and main working environment (it's designed for interactive use)
 - `alacritty`: very fast OpenGL terminal emulator in Rust
+- `gammastep`: screen colour temperature based on sunrise and sundown
 - `darkman`: automatic dark mode based on sundown and sunrise
 
 I try to keep my setup as a reproducible one, so in case of breakage it's
