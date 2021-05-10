@@ -20,3 +20,7 @@ vim.cmd('highlight IndentBlanklineSpaceChar guifg=#333333')
 vim.cmd('highlight IndentBlanklineChar guifg=#555555')
 
 vim.cmd('highlight ColorColumn guibg=#121212')
+
+-- Set INFO diagnostics to a colour that's less confusing
+-- The default doesn't play well with my theme.
+vim.cmd('highlight LspDiagnosticsDefaultInformation guifg=#1ABB9C')
