@@ -7,8 +7,8 @@ unset SSH_ASKPASS
 # Also make sure ssh-agent is really out of the way.
 unset SSH_AUTH_SOCK
 
-mkdir -p ~/backups/packages/$(hostnamectl --static)
-cd ~/backups/packages/$(hostnamectl --static)
+mkdir -p ~/backups/packages/"$(hostnamectl --static)"
+cd ~/backups/packages/"$(hostnamectl --static)"
 
 pacman -Qeqn > explicit-native
 pacman -Qeqm > explicit-foreign
