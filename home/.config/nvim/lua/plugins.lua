@@ -75,9 +75,6 @@ require('packer').startup(function(use)
   use { 'simrat39/symbols-outline.nvim', config = [[require('_symbols_outline')]] }
   use 'psliwka/vim-smoothie'  -- Smooth scrolling
 
-  -- Distraction-free writing.
-  use 'junegunn/goyo.vim'
-
   -- Shortcuts ===================================================================
   use 'tomtom/tcomment_vim'
 
