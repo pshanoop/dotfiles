@@ -8,14 +8,16 @@
 " - nvim-lspconfig sets up language servers which do a lot of heavy lifting.
 "   - Lanaguge servers handle diagnostics, autoformatting, and provide
 "     completion results.
-"   - EFM language server uses non-LSP tools as backends, so allows integrating
-"     other tools using the same interface (e.g.: black, eslint, prettier, etc.)
+"   - EFM language server uses non-LSP tools as backends, which allows
+"     integrating other tools using the same interface (e.g.: black, eslint,
+"     flake8, prettier, shellcheck, etc.)
 " - nvim-treesitter configures tree sitters which do highlighting.
 " - nvim-compe handles automplete. It uses many sources, including LSP at TS.
-" - I use lightline as a statusbar since it's super lightweight. A downside it
+" - I use lightline as a statusbar since it's super lightweight. A downside is
 "   that the functions it calls must be VimScript functions, so it config is
-"   split in two.
-" - Lightline shows LSP diagnostics.
+"   split in two files. The VimScript functions in thise case are pure
+"   wrappers.
+" - Lightline shows LSP diagnostics (amongst other niceties).
 " - The gutter refelcts git changes.
 "
 " TODO: Configure Leader<h> to show "Hover info", like COC did.
