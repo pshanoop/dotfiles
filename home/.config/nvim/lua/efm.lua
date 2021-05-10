@@ -44,7 +44,7 @@ local prettier = {
 }
 
 local reorder_python_imports = {
-  formatCommand = "reorder-python-imports -",
+  formatCommand = "reorder-python-imports --exit-zero-even-if-changed -",
   formatStdin = true
 }
 
