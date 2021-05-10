@@ -39,7 +39,8 @@ local mypy = {
 }
 
 local prettier = {
-  formatCommand = "./node_modules/.bin/prettier"
+  formatCommand = "prettier --stdin-filepath ${INPUT}",
+  formatStdin = true,
 }
 
 local reorder_python_imports = {
