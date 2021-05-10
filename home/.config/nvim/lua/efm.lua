@@ -48,6 +48,16 @@ local reorder_python_imports = {
   formatStdin = true
 }
 
+local shellcheck = {
+  lintCommand = "shellcheck -f gcc -x",
+  lintSource = "shellcheck",
+  lintFormats = {
+    '%f:%l:%c: %trror: %m',
+    '%f:%l:%c: %tarning: %m',
+    '%f:%l:%c: %tote: %m',
+  }
+}
+
 M.languages = {
   css = {prettier},
   html = {prettier},
@@ -55,6 +65,7 @@ M.languages = {
   json = {prettier},
   python = {flake8, mypy, black, reorder_python_imports},
   scss = {prettier},
+  sh = {shellcheck},
   typescript = {prettier, eslint},
   vue = {prettier},
   yaml = {prettier},
