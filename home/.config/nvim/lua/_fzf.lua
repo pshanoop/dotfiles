@@ -2,7 +2,6 @@ local M = {}
 
 -- Properly position the fzf prompt:
 vim.g.fzf_layout = { down = '40%' }
-vim.g.fzf_preview_window = {}
 
 -- TODO: Exclude current file from prompt
 -- See https://github.com/junegunn/fzf.vim/issues/695
