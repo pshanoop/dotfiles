@@ -1,15 +1,6 @@
 local lspconfig = require('lspconfig')
 local efm = require('efm')
 local lsp_status = require('lsp-status')
-local util = require 'lspconfig/util'
-
--- Wrap the original diagnostics handler to add our own logic.
-local old_handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
-vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, _, params, client_id, _, config)
-  -- Update the statusline when there's diagnostics changes.
-  old_handler(_, _, params, client_id, _, config)
-  vim.cmd("call lightline#update()")
-end
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end

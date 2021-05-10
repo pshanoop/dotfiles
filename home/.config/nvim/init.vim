@@ -13,11 +13,9 @@
 "     flake8, prettier, shellcheck, etc.)
 " - nvim-treesitter configures tree sitters which do highlighting.
 " - nvim-compe handles automplete. It uses many sources, including LSP at TS.
-" - I use lightline as a statusbar since it's super lightweight. A downside is
-"   that the functions it calls must be VimScript functions, so it config is
-"   split in two files. The VimScript functions in thise case are pure
-"   wrappers.
-" - Lightline shows LSP diagnostics (amongst other niceties).
+" - I use galaxyline to render the status line since it's super lightweight and
+"   configurable in lua.
+" - The status line shows LSP diagnostics (amongst other niceties).
 " - The gutter refelcts git changes.
 "
 " TODO: Configure Leader<h> to show "Hover info", like COC did.
@@ -30,9 +28,6 @@ lua require('plugins')
 
 " Misc helpers written in Lua.
 lua require('misc')
-
-" Lightline configurtion is pretty long:
-runtime lightline.vim
 
 " Appearance ==================================================================
 

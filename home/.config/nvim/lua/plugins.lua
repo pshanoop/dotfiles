@@ -64,9 +64,14 @@ require('packer').startup(function(use)
     config = [[require('_gitsigns')]]
   }
 
-  use { 'itchyny/lightline.vim', config = [[require('lightline')]] }
+  use {
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = [[require('_galaxyline')]],
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
   use 'dietsche/vim-lastplace'
-  use 'ryanoasis/vim-devicons'
   use { 'simrat39/symbols-outline.nvim', config = [[require('_symbols_outline')]] }
   use 'psliwka/vim-smoothie'  -- Smooth scrolling
 
