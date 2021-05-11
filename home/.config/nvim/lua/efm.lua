@@ -30,6 +30,7 @@ local flake8 =  {
 
 local mypy = {
   lintCommand = "mypy --show-column-numbers --ignore-missing-imports",
+  lintIgnoreExitCode = true,
   lintFormats = {
     "%f:%l:%c: %trror: %m",
     "%f:%l:%c: %tarning: %m",
