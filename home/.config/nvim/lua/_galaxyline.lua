@@ -83,6 +83,19 @@ local function get_diagnostic_info()
   end
 end
 
+local function get_file_info()
+  local format = vim.bo.fileformat .. ' | '
+  local encoding = vim.bo.fenc or vim.o.enc
+  local filetype = vim.bo.filetype
+  local icon = fileinfo.get_file_icon()
+
+  if encoding ~= '' then
+    encoding = encoding .. ' | '
+  end
+
+  return format .. encoding .. filetype .. ' ' .. icon .. ' '
+end
+
 sections.left[1] = {
   ViMode = {
     provider = function()
@@ -155,16 +168,8 @@ sections.left[7] = {
 
 sections.right[1] = {
   FileInfo = {
-    provider = {
-      function() return vim.bo.fileformat end,
-      inner_separator,
-      -- fenc might be empty, in which case we want to exlude the separator
-      function() return vim.bo.fenc or vim.o.enc end,
-      inner_separator,
-      function() return vim.bo.filetype end,
-      fileinfo.get_file_icon,
-    },
-    icon = "  ",
+    provider = get_file_info,
+    icon = "   ",
     highlight = {theme.base00, theme.base02},
   },
 }
