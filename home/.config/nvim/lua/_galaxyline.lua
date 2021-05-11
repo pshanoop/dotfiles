@@ -1,4 +1,6 @@
 local sections = require('galaxyline').section
+local fileinfo = require('galaxyline.provider_fileinfo')
+local lsp_messages = require('lsp-status/messaging').messages
 
 -- These are copied over from jellybeans.
 -- Moving to a lua-based theme rewrite would allow trimming this out.
@@ -35,6 +37,8 @@ local mode_map = {
     -- ['Rv'] = {'VIRTUAL'},
     -- ['rm'] = {'--MORE'},
 }
+
+local spinner_frames = {'⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷'}
 
 -- One space is always trimmed (by galaxyline?)
 local space = function() return '  ' end
@@ -76,6 +80,25 @@ sections.left[2] = {
 }
 
 sections.left[3] = {
+  LspProgress = {
+    provider = {function()
+      local msgs = lsp_messages()
+      local spinner
+
+      if #msgs > 0 and msgs[1].spinner then
+        local index = (msgs[1].spinner % #spinner_frames) + 1
+        spinner = spinner_frames[index]
+      else
+        spinner = ""
+      end
+
+      return spinner
+    end},
+    highlight = {theme.base00, theme.base02}
+  }
+}
+
+sections.left[4] = {
   Void = {
     provider = {space},
     highlight = {theme.base00, theme.base02}
