@@ -114,7 +114,7 @@ sections.right[1] = {
       function() return vim.bo.fenc or vim.o.enc end,
       inner_separator,
       function() return vim.bo.filetype end,
-      'FileIcon',
+      fileinfo.get_file_icon,
     },
     icon = " ",
     highlight = {theme.base00, theme.base02},
