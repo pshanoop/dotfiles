@@ -60,6 +60,29 @@ local function readonly()
   return ""
 end
 
+local function get_diagnostic_info()
+  -- INFO and HINT are aggregated for this.
+
+  if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
+  local active_clients = vim.lsp.get_active_clients()
+
+  if active_clients then
+    local count = 0
+
+    for _, type in ipairs({ "Hint",  "Information" }) do
+      for _, client in ipairs(active_clients) do
+        count = count + vim.lsp.diagnostic.get_count(
+          vim.api.nvim_get_current_buf(),
+          type,
+          client.id
+        )
+      end
+    end
+
+    if count ~= 0 then return count .. ' ' end
+  end
+end
+
 sections.left[1] = {
   ViMode = {
     provider = function()
@@ -94,14 +117,39 @@ sections.left[3] = {
 
       return spinner
     end},
-    highlight = {theme.base00, theme.base02}
+    highlight = {theme.base00, theme.base03}
   }
 }
 
 sections.left[4] = {
+  DiagnosticError = {
+    provider = { 'DiagnosticError'},
+    icon = '   ',
+    highlight = {theme.red, theme.base03},
+  }
+}
+
+sections.left[5] = {
+  DiagnosticWarn = {
+    provider = 'DiagnosticWarn',
+    icon = '   ',
+    highlight = {theme.yellow,theme.base03},
+  }
+}
+
+sections.left[6] = {
+  DiagnosticHint = {
+    provider = get_diagnostic_info,
+    -- icon = '   ',
+    icon = '   ',
+    highlight = {"#1ABB9C", theme.base03},
+  }
+}
+
+sections.left[7] = {
   Void = {
     provider = {space},
-    highlight = {theme.base00, theme.base02}
+    highlight = {theme.base00, theme.base03}
   }
 }
 
@@ -116,7 +164,7 @@ sections.right[1] = {
       function() return vim.bo.filetype end,
       fileinfo.get_file_icon,
     },
-    icon = " ",
+    icon = "  ",
     highlight = {theme.base00, theme.base02},
   },
 }
@@ -137,36 +185,4 @@ sections.right[3] = {
     highlight = {theme.base02, theme.base1},
     icon = " ",
   },
-}
-
-sections.right[4] = {
-  DiagnosticInfo = {
-    provider = 'DiagnosticInfo',
-    icon = '   ',
-    highlight = {theme.yellow,theme.base01},
-  }
-}
-
-sections.right[5] = {
-  DiagnosticHint = {
-    provider = 'DiagnosticHint',
-    icon = '   ',
-    highlight = {theme.yellow,theme.base01},
-  }
-}
-
-sections.right[6] = {
-  DiagnosticWarn = {
-    provider = 'DiagnosticWarn',
-    icon = '   ',
-    highlight = {theme.yellow,theme.base01},
-  }
-}
-
-sections.right[7] = {
-  DiagnosticError = {
-    provider = { 'DiagnosticError'},
-    icon = '   ',
-    highlight = {theme.red, theme.base02},
-  }
 }
