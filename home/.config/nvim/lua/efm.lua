@@ -38,6 +38,11 @@ local mypy = {
   }
 }
 
+local pg_format = {
+  formatCommand = "pg_format",
+  formatStdin = true,
+}
+
 local prettier = {
   formatCommand = "prettier --stdin-filepath ${INPUT}",
   formatStdin = true,
@@ -66,6 +71,7 @@ M.languages = {
   python = {flake8, mypy, black, reorder_python_imports},
   scss = {prettier},
   sh = {shellcheck},
+  sql = {pg_format},
   typescript = {prettier, eslint},
   vue = {prettier},
   yaml = {prettier},
