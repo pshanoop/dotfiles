@@ -1,11 +1,18 @@
+-- Plugin definitions for neovim, using packer.nvim.
+--
+-- Many plugins have additional configuration files, which are named after the
+-- plugin (e.g.: `fzf` has `_fzf.lua`). Each configuration file is executed
+-- _after_ the plugin itself has been loaded.
+
 -- Automatically install packer if it's not there.
--- Great for bootstrapping new setups.
--- You'll still need to run :PackerCompile and :PackerInstall")
+-- You'll still need to run :PackerInstall".
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  vim.api.nvim_command 'packadd packer.nvim'
 end
+
+-- Automatically recompile packer when this file changes.
+vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
 require('packer').startup(function(use)
   -- Packer can manage itself.
