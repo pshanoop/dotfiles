@@ -4,20 +4,20 @@
 #
 # This shows a small icon with the current microphone status in the taskbar. I
 # use a global hotkey (Super+M) to control the microphone, so I don't have to
-# remember a different muting hotkey for each webapp. It also makes it easier
-# to make sure I'm muted when handling multiple things at once.
+# remember a different muting hotkey for each [web] application. It also makes
+# it easier to make sure I'm muted when handling multiple things at once.
 #
 # Waybar's CSS is set so that an open mic is a RED icon, and it's less flashy
 # when the mic is muted.
 #
-# This is somewhat inefficient; it runs on a loop every 300ms. It should be
-# improved to listed to pulseaudio events, and only print if there's been any
-# change. Haven't figured out how to do that yet.
+# It might make sense to hide the module if no microphone is unmuted. This
+# depends on: https://github.com/Alexays/Waybar/issues/699
 #
-# It might also be possible to do with the `pulseaudio` module once #699 is
-# fixed: https://github.com/Alexays/Waybar/issues/699
+# TODO: If a non-primary microphone is one, that should somehow be reflected.
 
-while true; do
+show() {
+  # Prints the current micrphone state.
+
   if ponymix --source is-muted; then
     CLASS="muted"
     TEXT=""
@@ -25,6 +25,30 @@ while true; do
     CLASS="not-muted"
     TEXT=" $(ponymix --source get-volume)%"
   fi
-  echo {\"text\": \"$TEXT\", \"class\": \"$CLASS\", \"percentage\": 70 }
-  sleep 0.3
-done;
+
+  jq --compact-output \
+    --null-input \
+    --arg text "$TEXT" \
+    --arg class "$CLASS" \
+    '{"text": $text, "class": $class, "percentage": 70}'
+}
+
+monitor() {
+  # Monitors for changes in microphone state.
+
+  pactl subscribe | /usr/bin/grep --line-buffered "'change' on source" |
+    while read -r LINE; do
+      echo "$LINE" | grep change > /dev/null
+      STATUS=$?
+      if [ $STATUS -ne 0 ]; then
+        # Not a volume/mute change, do nothing.
+        continue
+      fi
+
+      show
+    done
+  exit
+}
+
+show  # Print once, so that the right state is shown at startup.
+monitor  # Update whenever pactl indicates there's been a change.
