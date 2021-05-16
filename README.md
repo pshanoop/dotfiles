@@ -47,3 +47,13 @@ A nice side effect of this, is that I can merely install this package onto a
 new system to have it up and ready to go with all my applications.
 
 It also serves as a pseudo-documentation of what's installed and why.
+
+# sudo
+
+`sudo` is configured to allow authenticating by just tapping the Yubikey. This
+is very handy since it avoid needing to type the password as much, and allows
+disabling sudo tickets.
+
+The authfile is in `/etc/u2f_keys`, and lines for it can be generated using:
+
+    pamu2fcfg -u $(whoami) -opam://$(hostname) -ipam://$(hostname)
