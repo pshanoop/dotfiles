@@ -1,7 +1,7 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=whynothugo-desktop
-pkgver=150.e2afebf
+pkgver=159.846f021
 pkgrel=1
 pkgdesc="Metapackage for WhyNotHugo's desktop."
 arch=('any')

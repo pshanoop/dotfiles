@@ -15,11 +15,3 @@ repos:
       - id: detect-aws-credentials
         args: [--allow-missing-credentials]
       - id: mixed-line-ending
-  - repo: local
-    hooks:
-      - id: mksrcinfo
-        name: Update .SRCINFO
-        description: Rebuild .SRCINFO based on the lastest PKGBUILD.
-        entry: mksrcinfo
-        pass_filenames: false
-        language: system
