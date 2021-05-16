@@ -10,6 +10,9 @@ license=('ISC')
 install=sysconfig.install
 replaces=("sysconfig")
 conflicts=("sysconfig")
+provides=(
+  awesome-terminal-fonts  # lsd depends on this but breaks if it's installed.
+)
 depends=(
   # System ====================================================================
   # The very basics
@@ -75,6 +78,7 @@ depends=(
   # Shell utilities ===========================================================
   drm_info-git
   khal
+  lsd  # colourful `ls` with icons.
   perl-file-mimeinfo  # mimetype, mimeopen
   perl-image-exiftool  # exiftool
   restic
