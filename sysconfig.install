@@ -2,4 +2,5 @@ post_upgrade() {
   systemctl enable kexec-load@linux
 
   systemctl enable --now pacman-index.timer
+  systemctl enable --now reflector.timer
 }
