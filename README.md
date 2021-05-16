@@ -1,17 +1,22 @@
-sysconfig
-=========
+# whynothugo-desktop
 
-I don't like editing files outside my `$HOME`. Since it later becomes
-impossible to keep track of what changed and why. Altering a package's file
-also results in it quickly being overwritten after an update, and setting up
-new devices becomes a pain, since I'd have to figure out how I configured
-everything.
+This meta-package carrier my system configuration and pulls in packages I rely
+on.
+
+## System configuration
+
+Altering files outside of `$HOME` is problematic. When upgrading, they may be
+overwritten by a new version, and introduce subtle breakage that's very hard to
+pinpoint. OTOH, some are not replaced when upgrading, and those might be
+problematic if they're incompatible with the new upgrade (and again, a hard to
+pinpoint issue).
 
 This repository contains all files outside of `$HOME` that are not owned by any
-package. Basically, the package manager keeps track of all system files.
+package. Basically, the package manager keeps track of ALL my system files.
 
 Files inside this repository are all copied into a package, and that's
-installed via pacman. Essentially, my configuration is simply a system package.
+installed via pacman. Essentially, my configuration is simply contained inside
+this package.
 
 Finally, note that some of the files here are pacman hooks, which get run
 whenever pacman installs some package. These are ideal if a file needs to be
@@ -24,6 +29,21 @@ Check out my [dotfiles][dotfiles] repository if you're interested in those.
 [homesick]: https://github.com/technicalpickles/homesick
 [dotfiles]: https://gitlab.com/WhyNotHugo/dotfiles
 
-# Other notes
+## Extra manual notes
 
 `$USER` needs to be in group `video` to be able to control laptop backlight.
+
+# Packages
+
+This meta-package also depends on packages that are part of my desktop:
+the compositor, browser, code editor, and all sorts of development tool.
+
+While I often install and un-install packages via my package manager, many times
+they're for a short time, or I'm testing something. When I want to commit
+something and also make sure it's in all my systems, I list in as a dependency
+here.
+
+A nice side effect of this, is that I can merely install this package onto a
+new system to have it up and ready to go with all my applications.
+
+It also serves as a pseudo-documentation of what's installed and why.
