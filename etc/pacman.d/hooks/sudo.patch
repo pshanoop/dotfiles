@@ -2,7 +2,7 @@
 +++ /etc/pam.d/sudo	2021-03-25 20:18:59.909436024 +0100
 @@ -1,4 +1,5 @@
  #%PAM-1.0
-+auth		sufficient	pam_u2f.so cue [cue_prompt=🔐 Waiting for key...]
++auth		sufficient	pam_u2f.so authfile=/etc/u2f_keys cue [cue_prompt=🔐 Waiting for key...]
  auth		include		system-auth
  account		include		system-auth
  session		include		system-auth
