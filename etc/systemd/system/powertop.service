@@ -2,7 +2,7 @@
 Description=Power usage optimisations
 
 [Service]
-ExecStart=/usr/bin/powertop-safe
+ExecStart=/usr/lib/powertop-safe
 RemainAfterExit=true
 
 [Install]
