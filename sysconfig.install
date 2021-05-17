@@ -1,3 +1,5 @@
+#!/bin/sh
+
 post_upgrade() {
   systemctl enable kexec-load@linux
 
