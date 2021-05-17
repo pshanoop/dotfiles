@@ -10,7 +10,7 @@ local black = {
 }
 
 local eslint = {
-  lintCommand = "./node_modules/.bin/eslint -f unix --stdin",
+  lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT} ",
   lintIgnoreExitCode = true,
   lintStdin = true,
   lintFormats = {
