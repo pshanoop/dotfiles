@@ -15,3 +15,10 @@ repos:
     rev: "v2.2.1"
     hooks:
       - id: prettier
+  - repo: local
+    hooks:
+      - id: shellcheck
+        name: Check shell scripts with shellcheck
+        entry: shellcheck -x
+        language: system
+        files: \.sh$
