@@ -1,8 +1,9 @@
+#!/bin/sh
 #
 # Shell aliases
 #
-# This file contains a kitchen sink of aliases. They're exclusively aliases I
-# use interactively, and no scripts depend on them.
+# A kitchen sink of aliases. These are all used interactively and not for
+# scripts.
 
 # Directory listing aliases.
 alias l="lsd -A"
@@ -53,8 +54,8 @@ alias brew="arch -x86_64 /usr/local/bin/brew "
 # This function is a workaround so that `nvm` can be run explicitly when
 # needed, but doesn't bother when not explicitly invoken. Like any other tool.
 
-function nvm-on {
+nvm_on() {
   export NVM_DIR=$HOME/.cache/nvm
-  source /usr/share/nvm/init-nvm.sh
+  . /usr/share/nvm/init-nvm.sh
   nvm use
 }
