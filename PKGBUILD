@@ -1,7 +1,7 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=whynothugo-desktop
-pkgver=159.846f021
+pkgver=170.103b4ad
 pkgrel=1
 pkgdesc="Metapackage for WhyNotHugo's desktop."
 arch=('any')
@@ -24,6 +24,7 @@ depends=(
   meta-group-base-devel
   nss-mdns
   paru
+  systemd-boot-pacman-hook
 
   # Hardware support ==========================================================
   kernel-modules-hook
