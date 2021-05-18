@@ -26,16 +26,8 @@ export PAGER="less -rX"
 # Enableds mouse scrolling:
 export LESS='--mouse'
 
-# Coloured man pages.
-man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
+# Neovim as a man pager. See :h ft-man-plugin.
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # Prevent wine from creating desktop entries for wine's apps (e.g.: notepad).
 export WINEDLLOVERRIDES=winemenubuilder.exe=d
