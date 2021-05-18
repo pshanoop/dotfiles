@@ -360,13 +360,7 @@ user_pref("privacy.clearOnShutdown.siteSettings", false); // Site Preferences
  * [SETUP-WEB] May break cross-domain logins and site functionality until perfected
  * [1] https://bugzilla.mozilla.org/1260931
  * [2] https://bugzilla.mozilla.org/1299996 [META] ***/
-user_pref("privacy.firstparty.isolate", false);
-// XXX: Breaks logging into Atlassian
-// This setting SHOULD be on. Setting it to true is a security risk. However,
-// we use Atlassian at work, and their login is broken and won't work without
-// this set to off. They actually _require_ users to **lower** their browser
-// security for their login to work (this seems to be the only website I've
-// visited in the last year or so that has this security issue in the login).
+user_pref("privacy.firstparty.isolate", true);
 
 /* 4002: enforce FPI restriction for window.opener [FF54+]
  * [NOTE] Setting this to false may reduce the breakage in 4001
