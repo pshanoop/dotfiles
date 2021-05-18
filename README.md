@@ -31,6 +31,9 @@ actual dotfiles using symlinks.
 I try to keep my setup as a reproducible one, so in case of breakage it's
 possible to roll back and forth in time between settings.
 
+I try to upstream any fixes, tweaks and improvements whenever possible, and
+limit this repository to customisations and very opinionated settings only.
+
 ## LICENCE
 
 Copyright 2012-2021, Hugo Osvaldo Barrera <hugo@barrera.io>  
