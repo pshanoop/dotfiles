@@ -1,0 +1,10 @@
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = etc/nsswitch.conf
+
+[Action]
+Description = Configuring NSS to use mDNS...
+When = PostTransaction
+Exec = /usr/bin/patch -p0 /etc/nsswitch -i /etc/pacman.d/hooks/nss-mdns.patch --quiet

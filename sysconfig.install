@@ -5,4 +5,6 @@ post_upgrade() {
 
   systemctl enable --now pacman-index.timer
   systemctl enable --now reflector.timer
+
+  systemctl enable --now avahi-daemon.service
 }

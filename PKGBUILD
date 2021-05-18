@@ -22,6 +22,7 @@ depends=(
   linux-firmware
   linux-headers
   meta-group-base-devel
+  nss-mdns
   paru
 
   # Hardware support ==========================================================
