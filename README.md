@@ -57,3 +57,18 @@ disabling sudo tickets.
 The authfile is in `/etc/u2f_keys`, and lines for it can be generated using:
 
     pamu2fcfg -u $(whoami) -opam://$(hostname) -ipam://$(hostname)
+
+# Secure Boot steps
+
+- Go to the firmware/UEFI menu.
+- Disable Secure Boot.
+- Turn on custom key mode.
+- Turn on setup mode.
+- Reboot into Arch.
+- `sbctl enroll-key`
+- Fill in `/etc/kernel/cmdline`.
+- `sbctl bundle -s /boot/EFI/Linux/$(hostname).efi`
+- Go to the firmware/UEFI menu.
+- Enable Secure Boot.
+- Leave custom key mode on.
+- Turn off setup mode.
