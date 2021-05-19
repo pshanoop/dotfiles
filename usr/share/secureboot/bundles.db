@@ -1,0 +1,14 @@
+{
+    "/boot/EFI/Linux/arch.efi": {
+        "output": "/boot/EFI/Linux/arch.efi",
+        "intel_microcode": "",
+        "amd_microcode": "",
+        "kernel_image": "/boot/vmlinuz-linux",
+        "initramfs": "/boot/initramfs-linux.img",
+        "cmdline": "/etc/kernel/cmdline",
+        "splash": "",
+        "os_release": "/usr/lib/os-release",
+        "efi_stub": "/usr/lib/systemd/boot/efi/linuxx64.efi.stub",
+        "esp": "/boot"
+    }
+}
