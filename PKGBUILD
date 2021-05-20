@@ -47,7 +47,7 @@ depends=(
   # directly.
   darkman
   gammastep
-  mako-git
+  mako
   ponymix # use for volume scripts
   swayidle
   swaylock
