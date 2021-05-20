@@ -3,9 +3,11 @@
 post_install() {
   systemctl enable kexec-load@linux
 
+  # Timers
   systemctl enable --now pacman-index.timer
   systemctl enable --now reflector.timer
 
+  # Services
   systemctl enable --now avahi-daemon.service
 }
 
