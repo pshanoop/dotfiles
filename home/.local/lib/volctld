@@ -50,7 +50,7 @@ show() {
     "$SINK\n$SOURCE"
 }
 
-pactl subscribe | /usr/bin/grep --line-buffered "'change' on s" |
+pactl subscribe | /usr/bin/grep --line-buffered "'change' on sink" |
   while read -r _; do
     show &
   done
