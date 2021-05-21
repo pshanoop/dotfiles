@@ -20,8 +20,7 @@ require('packer').startup(function(use)
 
   -- Core ========================================================================
   use {
-    'junegunn/fzf.vim',
-    requires = { 'junegunn/fzf' },
+    'junegunn/fzf',
     config = [[require('_fzf')]]
   }
 
