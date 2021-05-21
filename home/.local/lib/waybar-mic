@@ -37,14 +37,7 @@ monitor() {
   # Monitors for changes in microphone state.
 
   pactl subscribe | /usr/bin/grep --line-buffered "'change' on source" |
-    while read -r LINE; do
-      echo "$LINE" | grep change > /dev/null
-      STATUS=$?
-      if [ $STATUS -ne 0 ]; then
-        # Not a volume/mute change, do nothing.
-        continue
-      fi
-
+    while read -r _; do
       show
     done
   exit
