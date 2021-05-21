@@ -32,7 +32,9 @@ collections = [
   # study
   "9bcef3fa-504d-4c6f-b320-fd24257de5a7",
   # todo
-  "d3665837-f872-4228-90f2-af2922862590"
+  "d3665837-f872-4228-90f2-af2922862590",
+  # shopping
+  "2100F960-2655-4E75-870F-CAA793466105"
   ]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
