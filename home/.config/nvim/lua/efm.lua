@@ -28,6 +28,11 @@ local flake8 =  {
   }
 }
 
+local luaFormat = {
+  formatCommand = "lua-format -i",
+  formatStdin = true,
+}
+
 local mypy = {
   lintCommand = "mypy --show-column-numbers --ignore-missing-imports",
   lintIgnoreExitCode = true,
@@ -68,6 +73,7 @@ M.languages = {
   html = {prettier},
   javascript = {prettier, eslint},
   json = {prettier},
+  lua = {luaFormat},
   python = {flake8, mypy, black, reorder_python_imports},
   scss = {prettier},
   sh = {shellcheck},
