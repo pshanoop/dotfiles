@@ -9,6 +9,9 @@ post_install() {
 
   # Services
   systemctl enable --now avahi-daemon.service
+
+  # Grant *:wheel permission to read the systemd journal:
+  setfacl -Rnm g:wheel:rx,d:g:wheel:rx,g:adm:rx,d:g:adm:rx /var/log/journal/
 }
 
 post_upgrade() {
