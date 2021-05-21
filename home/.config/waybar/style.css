@@ -133,13 +133,20 @@ label:focus {
   color: #2a5c45;
 }
 
+#custom-mic {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
 #custom-mic.muted {
   background-color: transparent;
-  /* color: #ffffff; */
+  /* This padding makes is align PERFECTLY with the */
+  /* not-muted counterpart (which is narrower) */
+  padding: 0 6px;
 }
 
 #custom-mic.not-muted {
-  background-color: #2980b9;
+  background-color: #b92930;
   color: #ffffff;
 }
 

@@ -23,7 +23,7 @@ show() {
     TEXT=""
   else
     CLASS="not-muted"
-    TEXT=" $(ponymix --source get-volume)%"
+    TEXT=""
   fi
 
   jq --compact-output \
