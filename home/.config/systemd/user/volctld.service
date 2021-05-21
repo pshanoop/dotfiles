@@ -1,0 +1,9 @@
+[Unit]
+Description=Lightweight volume notification daemon
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/bin/sh ${HOME}/.local/lib/volctld
+
+[Install]
+WantedBy=graphical-session.target
