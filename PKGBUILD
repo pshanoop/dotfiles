@@ -18,6 +18,7 @@ depends=(
   # The very basics
   base
   downgrade
+  intel-ucode
   linux
   linux-firmware
   linux-headers

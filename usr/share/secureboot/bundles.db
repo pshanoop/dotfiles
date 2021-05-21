@@ -1,7 +1,7 @@
 {
     "/boot/EFI/Linux/arch.efi": {
         "output": "/boot/EFI/Linux/arch.efi",
-        "intel_microcode": "",
+        "intel_microcode": "/boot/intel-ucode.img",
         "amd_microcode": "",
         "kernel_image": "/boot/vmlinuz-linux",
         "initramfs": "/boot/initramfs-linux.img",
