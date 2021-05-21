@@ -1,4 +1,4 @@
 font=Cantarell 10
-layer=overlay
 icons=1
 icon-path=/usr/share/icons/Arc
+default-timeout=60000
