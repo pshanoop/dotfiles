@@ -1,34 +1,43 @@
 #!/bin/sh
 #
-# Displays a notification with volume changes. Eventually, this should be
-# rewritten as a deamon that connects to PA and receives volume notification
-# events.
+# Displays a notification with volume changes.
 #
-# Possible libs for that:
+# Listenes to events from the pulseaudio server, and shows a notification when
+# volume changes occurr.
+#
+# There's an assumption that only one output device and only one input device
+# are active at a given time. If that's not you're case, you're gonna have to
+# tinker with this.
+#
+# The same notification is updated in-place. This is done with "synchronous
+# hints", which are supported by dunst, mako (unrelease version), canonical's
+# notification daemon, and possibly others.
+#
+# TODO: Might want to rewrite this into a more-efficient binary:
 # https://github.com/jnqnfe/pulse-binding-rust
 # https://pypi.org/project/pulsectl/
-#
-# Waybar also has a module that updates on changes, many the code from there
-# can be reuse for this?
 
-set -ex
+set -e
 
 show() {
+  VOLUME=$(ponymix get-volume)
+  MICVOL=$(ponymix --source get-volume)
+
+  # Device names without the trailing "Analog Stereo":
+  SINK_NAME=$(ponymix --short --sink | grep sink | cut -f 4 | cut -d" " -f -2)
+  SOURCE_NAME=$(ponymix --short --source | grep source | cut -f 4 | cut -d" " -f -2)
+
   if ponymix --sink is-muted; then
-    VOL_ICON=""
-    VOLUME="$(ponymix get-volume)"
+    SINK="  $VOLUME% $SINK_NAME (muted)"
   else
-    VOL_ICON=""
-    VOLUME="$(ponymix get-volume)"
+    SINK="  $VOLUME% $SINK_NAME"
   fi
-  OUTPUT_DEVICE=$(ponymix --short --sink | grep sink | cut -f 4)
 
   if ponymix --source is-muted; then
-    MIC_ICON=""
+    SOURCE="  $MICVOL% $SOURCE_NAME (muted)"
   else
-    MIC_ICON=""
+    SOURCE="  $MICVOL% $SOURCE_NAME"
   fi
-  MIC="$MIC_ICON $(ponymix --source get-volume)"
 
   notify-send \
     --urgency=low \
@@ -38,17 +47,11 @@ show() {
     --hint=string:x-dunst-stack-tag:volctl \
     --hint=string:x-canonical-private-synchronous:volctl \
     "Volume changed" \
-    "Using $OUTPUT_DEVICE \n$VOL_ICON  $VOLUME% $MIC%"
+    "$SINK\n$SOURCE"
 }
 
-monitor() {
-  # Monitors for changes in sink states.
-
-  pactl subscribe | /usr/bin/grep --line-buffered "'change' on s" |
-    while read -r _; do
-      show
-    done
-  exit
-}
-
-monitor
+pactl subscribe | /usr/bin/grep --line-buffered "'change' on s" |
+  while read -r _; do
+    show &
+  done
+exit
