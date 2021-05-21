@@ -31,8 +31,6 @@ collections = [
   "502708f4-4b94-4963-b042-f7340c829bdf",
   # study
   "9bcef3fa-504d-4c6f-b320-fd24257de5a7",
-  # holidays
-  "7a9df965-03c9-493b-9e40-2120d5c7d239",
   # todo
   "d3665837-f872-4228-90f2-af2922862590"
   ]
@@ -55,7 +53,12 @@ password.fetch = ["command", "keyring", "get", "vdirsyncer", "hobarrera@fastmail
 [pair work_calendars]
 a = "calendars_local"
 b = "calendars_google"
-collections = ["hugo@proctorexam.com"]
+collections = [
+  # work
+  "hugo@proctorexam.com",
+  # holidays
+  "cln2sp3lehhmg8r8dtm6ip31f506esjfelo2sthecdgmopbechgn4bj7dtnmer355phmur8@virtual"
+  ]
 metadata = ["color", "displayname"]
 conflict_resolution = ["command", "vimdiff"]
 
