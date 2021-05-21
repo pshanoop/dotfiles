@@ -24,7 +24,7 @@
     "custom/mic": {
       "exec": "$HOME/.local/lib/waybar-mic",
       "return-type": "json",
-      "on-click": "volume toggle-mic"
+      "on-click": "ponymix --source toggle"
     },
     "custom/yubikey": {
       "exec": "$HOME/.local/lib/waybar-yubikey",
