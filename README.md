@@ -58,17 +58,27 @@ The authfile is in `/etc/u2f_keys`, and lines for it can be generated using:
 
     pamu2fcfg -u $(whoami) -opam://$(hostname) -ipam://$(hostname)
 
-# Secure Boot steps
+# Secure Boot
 
-- Go to the firmware/UEFI menu.
+Secure boot setup steps:
+
+### Part 1: prepare the firmware
+
+- Reboot into the firmware/UEFI menu.
 - Disable Secure Boot.
 - Turn on custom key mode.
 - Turn on setup mode.
+
+### Part 2: set up the OS
+
 - Reboot into Arch.
-- `sbctl enroll-key`
+- Enroll keys: `sbctl enroll-key`
 - Fill in `/etc/kernel/cmdline`.
-- `sbctl bundle -s /boot/EFI/Linux/$(hostname).efi`
-- Go to the firmware/UEFI menu.
+- Reinstall this package (to trigger all hooks).
+
+### Part 3:
+
+- Reboot into the firmware/UEFI menu.
 - Enable Secure Boot.
 - Leave custom key mode on.
 - Turn off setup mode.
