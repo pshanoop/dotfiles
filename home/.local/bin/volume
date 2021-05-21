@@ -26,5 +26,3 @@ fi
 ponymix $DEVICE_TYPES $COMMAND > /dev/null
 
 # XXX: Todo: if headphones are found, set speaker volume to 0.
-
-volume-notify

@@ -13,34 +13,42 @@
 
 set -ex
 
-if ponymix --sink is-muted; then
-  VOL_ICON=""
-  ICON=audio-volume-muted
-else
-  VOL_ICON=""
-  ICON=audio-volume-medium
-fi
-VOLUME=$(ponymix get-volume)
-OUTPUT_DEVICE=$(ponymix --short --sink | grep sink | cut -f 4)
+show() {
+  if ponymix --sink is-muted; then
+    VOL_ICON=""
+    VOLUME="$(ponymix get-volume)"
+  else
+    VOL_ICON=""
+    VOLUME="$(ponymix get-volume)"
+  fi
+  OUTPUT_DEVICE=$(ponymix --short --sink | grep sink | cut -f 4)
 
-if ponymix --source is-muted; then
-  MIC_ICON=""
-else
-  MIC_ICON=""
-fi
-MIC="$MIC_ICON $(ponymix --source get-volume)"
+  if ponymix --source is-muted; then
+    MIC_ICON=""
+  else
+    MIC_ICON=""
+  fi
+  MIC="$MIC_ICON $(ponymix --source get-volume)"
 
-NOTIFICATION_LOCK=$XDG_RUNTIME_DIR/volume-notification.lock
-# This'd be a lot better if we could work with seconds, but that's not the
-# case.
-find $XDG_RUNTIME_DIR/volume-notification.lock -mmin 2 -delete || true
+  notify-send \
+    --urgency=low \
+    --expire-time=1800 \
+    --hint=int:transient:1 \
+    --hint=int:value:"$VOLUME" \
+    --hint=string:x-dunst-stack-tag:volctl \
+    --hint=string:x-canonical-private-synchronous:volctl \
+    "Volume changed" \
+    "Using $OUTPUT_DEVICE \n$VOL_ICON  $VOLUME% $MIC%"
+}
 
-notify-send.sh \
-  --urgency=low \
-  --replace-file=$NOTIFICATION_LOCK \
-  --expire-time=1800 \
-  --icon $ICON \
-  --hint=int:transient:1 \
-  --hint=int:value:$VOLUME \
-  "Volume changed" \
-  "Using $OUTPUT_DEVICE \n$VOL_ICON  $VOLUME% $MIC%"
+monitor() {
+  # Monitors for changes in sink states.
+
+  pactl subscribe | /usr/bin/grep --line-buffered "'change' on s" |
+    while read -r _; do
+      show
+    done
+  exit
+}
+
+monitor
