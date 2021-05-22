@@ -34,8 +34,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "custom/khal": {
-        "interval": 10,
-        "exec": "khal-now",
+        "exec": "$HOME/.local/lib/waybar-khal",
+        "return-type": "json",
         "on-click": "alacritty --hold -e khal list now 24h"
     },
     "clock": {
