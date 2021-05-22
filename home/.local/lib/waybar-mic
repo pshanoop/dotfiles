@@ -30,7 +30,7 @@ show() {
     --null-input \
     --arg text "$TEXT" \
     --arg class "$CLASS" \
-    '{"text": $text, "class": $class, "percentage": 70}'
+    '{"text": $text, "class": $class}'
 }
 
 monitor() {
