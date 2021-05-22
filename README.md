@@ -1,42 +1,41 @@
 # whynothugo-desktop
 
-This meta-package carrier my system configuration and pulls in packages I rely
-on.
+This pseudo-package contains all my desktop system configuration. I've taken a
+declarative approach for this; this package depends on others that I want
+installed, and includes files to be placed into the root filesystem in order to
+achieve the configuration desired.
 
-## System configuration
+This includes not only configuration files, but also hooks that are installed
+when installing or updating certain other packages.
 
-Altering files outside of `$HOME` is problematic. When upgrading, they may be
-overwritten by a new version, and introduce subtle breakage that's very hard to
-pinpoint. OTOH, some are not replaced when upgrading, and those might be
-problematic if they're incompatible with the new upgrade (and again, a hard to
-pinpoint issue).
+This allows not only easily replicating my desktop setup, but also results in
+much easier to understand history of changes.
 
-This repository contains all files outside of `$HOME` that are not owned by any
-package. Basically, the package manager keeps track of ALL my system files.
+## Hooks + Patches
 
-Files inside this repository are all copied into a package, and that's
-installed via pacman. Essentially, my configuration is simply contained inside
-this package.
+Altering files outside of `$HOME` is highly problematic. If the file is owned
+by a package, it will be overwritten on next update, at which point whatever
+configuration had been done is lost forever.
 
-Finally, note that some of the files here are pacman hooks, which get run
-whenever pacman installs some package. These are ideal if a file needs to be
-modified, but will get overwritten by updates.
+Fortunately, a lot of software nowadays supports drop-in files: files that you
+place in a defined directory, and are appended to the software's configuration.
+
+For software that _doesn't_ support drop-ins and expects you to edit their
+files, I include a pacman hook+patch. The hook runs on each updated, and uses
+`patch` to update the provided config file. In case of error, I'm alerted and
+likely have to update the `patch` manually, but it's clear what failed and how.
 
 Note that this repository **only** contain configuration files that need
-to be installed as root. User-level settings are via [homesick][homesick]
-Check out my [dotfiles][dotfiles] repository if you're interested in those.
+to be installed as root. User-level settings are handled separately in my
+[dotfiles][dotfiles] repository.
 
-[homesick]: https://github.com/technicalpickles/homesick
-[dotfiles]: https://gitlab.com/WhyNotHugo/dotfiles
+[dotfiles]: https://git.sr.ht/~whynothugo/dotfiles
 
 ## Extra manual notes
 
 `$USER` needs to be in group `video` to be able to control laptop backlight.
 
 # Packages
-
-This meta-package also depends on packages that are part of my desktop:
-the compositor, browser, code editor, and all sorts of development tool.
 
 While I often install and un-install packages via my package manager, many times
 they're for a short time, or I'm testing something. When I want to commit
@@ -46,7 +45,9 @@ here.
 A nice side effect of this, is that I can merely install this package onto a
 new system to have it up and ready to go with all my applications.
 
-It also serves as a pseudo-documentation of what's installed and why.
+It also allows keeping pacman's "List of explicitly packages" short, since
+things that I need as part of my base system is omitted, being a dependency of
+this package.
 
 # sudo
 
@@ -60,7 +61,16 @@ The authfile is in `/etc/u2f_keys`, and lines for it can be generated using:
 
 # Secure Boot
 
-Secure boot setup steps:
+I use secure boot to harden my desktop. The way this works is:
+
+1. A pair of asymmetric keys is generated.
+2. The public key is registered with the BIOS/UEFI/firmware.
+3. The firmware is told to **only** boot executables signed with the private
+   key.
+4. The private key is kept on disk (which is fully encrypted), and used to sign
+   new boot images on each update.
+
+## Secure boot setup
 
 ### Part 1: prepare the firmware
 
