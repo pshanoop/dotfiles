@@ -12,6 +12,12 @@ post_install() {
 
   # Grant *:wheel permission to read the systemd journal:
   setfacl -Rnm g:wheel:rx,d:g:wheel:rx,g:adm:rx,d:g:adm:rx /var/log/journal/
+
+  # Install systemd-boot if it's not installed already.
+  # systemd-boot-pacman-hook will handle updates to it in future.
+  if [ ! "$(sudo bootctl is-installed)" ]; then
+    echo bootctl install
+  fi
 }
 
 post_upgrade() {
