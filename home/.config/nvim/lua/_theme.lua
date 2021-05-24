@@ -24,3 +24,4 @@ vim.cmd('highlight ColorColumn guibg=#121212')
 -- Set INFO diagnostics to a colour that's less confusing
 -- The default doesn't play well with my theme.
 vim.cmd('highlight LspDiagnosticsDefaultInformation guifg=#1ABB9C')
+vim.cmd('highlight link LspDiagnosticsDefaultHint LspDiagnosticsDefaultInformation')
