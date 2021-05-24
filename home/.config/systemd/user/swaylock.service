@@ -3,7 +3,7 @@ Description=Screen locker for Wayland
 PartOf=lock.target
 
 [Service]
-ExecStart=/usr/bin/swaylock -ec 111111
+ExecStart=/usr/bin/swaylock --ignore-empty-password --color 111111
 ExecStopPost=/usr/bin/systemctl --user stop lock.target
 
 [Install]
