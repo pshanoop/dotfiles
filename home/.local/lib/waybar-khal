@@ -15,7 +15,9 @@ render() {
   # TODO: On overlap, try to prefer the event where I've confirmed attendance.
 
   EVENT="$(
-    khal list "$SINCE" "$UNTIL" -df 'SKIPME' |  # tag headers as SKIPME
+    khal list "$SINCE" "$UNTIL" \
+      --day-format 'SKIPME' \
+      --format "{start-end-time-style} {title:.31}{repeat-symbol}" |
       grep -v SKIPME |  # filter out headers
       grep -v -P '↦|↔ |⇥' |  # filter out continuing all day events
       grep -v '\[Lunch\]' |  # filter out lunch
