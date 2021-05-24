@@ -88,6 +88,9 @@ local function get_file_info()
   local encoding = vim.bo.fenc or vim.o.enc
   local filetype = vim.bo.filetype
   local icon = fileinfo.get_file_icon()
+  -- FIXME: Fallback icon should be: 
+  -- Check https://github.com/kyazdani42/nvim-web-devicons
+  -- Leave this for help: 
 
   if encoding ~= '' then
     encoding = encoding .. ' | '
@@ -108,8 +111,10 @@ sections.left[1] = {
   },
 }
 
+-- TODO: Show if spell is on
+
 sections.left[2] = {
-  FileIcon = {
+  FileIcon = { -- help: 
     provider = {space, readonly, 'FileIcon', filename},
     highlight = {theme.base3, theme.base01},
   }

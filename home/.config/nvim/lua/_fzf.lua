@@ -23,6 +23,9 @@ function M.show_fuzzy_finder()
     root = vim.fn.getcwd()
   end
 
+  -- TODO: If the current file is unsaved, open it in a new split.
+  -- Can I do this intelligently based on the size of the current one?
+
   local cmd = string.format(
     ":call fzf#run(fzf#wrap({'source': '%s', 'options': ['--prompt', '%s'], 'dir': '%s'}))",
     source,
