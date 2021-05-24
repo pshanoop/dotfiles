@@ -60,13 +60,15 @@ require('packer').startup(function(use)
   -- UI ==========================================================================
 
   -- Show thin vertical lines on each indentation level:
-  use { 'lukas-reineke/indent-blankline.nvim', branch='lua', config = [[require('_indentlines')]] }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    branch='lua',
+    config = [[require('_indentlines')]]
+  }
 
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
+    requires = { 'nvim-lua/plenary.nvim' },
     config = [[require('_gitsigns')]]
   }
 
