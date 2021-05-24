@@ -57,6 +57,8 @@ export GDK_CORE_DEVICE_EVENTS=1
 export PKGDEST=$HOME/.cache/makepkg/packages
 export SRCDEST=$HOME/.cache/makepkg/src
 export PACKAGER="Hugo Osvaldo Barrera <hugo@barrera.io>"
+export PKGEXT='.pkg.tar'
+export GPGKEY="0x1BFBED44"
 
 export EMAIL="hugo@barrera.io"
 
