@@ -4,7 +4,10 @@ PartOf=lock.target
 
 [Service]
 ExecStart=/usr/bin/swaylock --ignore-empty-password --color 111111
+# When the locker exits, unlock the session:
 ExecStopPost=/usr/bin/systemctl --user stop lock.target
+# Note: if the locker fails or crashes, the system is also unlocked.
+# See https://github.com/swaywm/wlroots/issues/2706
 
 [Install]
 WantedBy=lock.target
