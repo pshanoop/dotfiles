@@ -42,7 +42,6 @@ local spinner_frames = {'⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷'}
 
 -- One space is always trimmed (by galaxyline?)
 local space = function() return '  ' end
-local inner_separator = function() return '|' end
 local function filename()
   local file = vim.fn.expand('%:t')
   if vim.fn.empty(file) == 1 then
