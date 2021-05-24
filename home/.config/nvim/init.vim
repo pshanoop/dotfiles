@@ -102,8 +102,6 @@ nnoremap <down> <nop>
 nnoremap <PageDown> <nop>
 nnoremap <PageUp> <nop>
 
-au BufRead,BufNewFile *.conf set ft=dosini
-
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
 " Smart-detect unwriteable files and handle them with SudaWrite.
