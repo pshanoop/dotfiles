@@ -1,0 +1,8 @@
+[Unit]
+Description=Automatically reload systemd unit files
+
+[Service]
+ExecStart=/bin/sh ${HOME}/.local/lib/systemd-autoreload
+
+[Install]
+WantedBy=default.target
