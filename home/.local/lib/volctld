@@ -42,7 +42,7 @@ show() {
   notify-send \
     --app-name volctl \
     --urgency=low \
-    --expire-time=1800 \
+    --expire-time=3000 \
     --hint=int:transient:1 \
     --hint=int:value:"$VOLUME" \
     --hint=string:x-dunst-stack-tag:volctl \
