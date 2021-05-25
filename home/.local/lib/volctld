@@ -40,6 +40,7 @@ show() {
   fi
 
   notify-send \
+    --app-name volctl \
     --urgency=low \
     --expire-time=1800 \
     --hint=int:transient:1 \
