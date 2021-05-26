@@ -106,7 +106,6 @@ depends=(
   awslogs
   docker-compose
   docker-credential-secretservice
-  docker-rootless-extras
   fzf
   git-crypt
   go
