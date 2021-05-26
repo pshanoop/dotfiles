@@ -74,9 +74,6 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 # Flatpak
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share:/home/hugo/.local/share/flatpak/exports/share
 
-# Use rootless docker.
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-
 # XDG dirs ====================================================================
 # Many apps don't follow the stadanrd locations for cache and data, and just
 # dump stuff into $HOME. This is extremely annoying, since $HOME quickly gets
