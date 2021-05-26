@@ -15,9 +15,7 @@ post_install() {
 
   # Install systemd-boot if it's not installed already.
   # systemd-boot-pacman-hook will handle updates to it in future.
-  if [ ! "$(sudo bootctl is-installed)" ]; then
-    echo bootctl install
-  fi
+  bootctl is-installed > /dev/null || bootctl install
 }
 
 post_upgrade() {
