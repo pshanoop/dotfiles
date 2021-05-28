@@ -33,7 +33,12 @@ to be installed as root. User-level settings are handled separately in my
 
 ## Extra manual notes
 
-`$USER` needs to be in group `video` to be able to control laptop backlight.
+`$USER` needs to be in these groups:
+
+- `video` to be able to control laptop backlight.
+- `systemd-journal` to read the system journal.
+- `docker`
+- `plugdev`
 
 # Packages
 
