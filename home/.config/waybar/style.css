@@ -134,7 +134,7 @@ label:focus {
 
 #custom-mic {
   transition-property: background-color;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 }
 
 #custom-mic.muted {
@@ -145,7 +145,7 @@ label:focus {
 }
 
 #custom-mic.not-muted {
-  background-color: #b92930;
+  background-color: #eb4d4b;
   color: #ffffff;
 }
 
