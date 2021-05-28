@@ -150,13 +150,15 @@ label:focus {
 }
 
 #custom-khal {
-  /* background-color: #90b1b1; */
+  padding-bottom: 0;
+  border-bottom: 3px solid #209050;
+}
 
-  background-color: #66cc99;
-  color: #2a5c45;
-
-  /* background-color: #2ecc71; */
-  /* color: #000000; */
-
-  /* background-color: #2980b9; */
+#workspaces #sway-workspace-9 {
+  border-bottom: 3px solid #2980b9;
+}
+#workspaces #sway-workspace-9:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inherit;
+  border-bottom: 3px solid #ffffff;
 }
