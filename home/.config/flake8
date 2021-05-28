@@ -1,0 +1,5 @@
+[flake8]
+import-order-style=smarkets
+max-line-length = 88
+
+# vim: ft=dosini
