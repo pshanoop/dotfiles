@@ -43,3 +43,5 @@
 	required = true
 [init]
 	defaultBranch = main
+[includeIf "gitdir:~/workspace/ProctorExam/"]
+	path = ~/.config/git/proctorexam
