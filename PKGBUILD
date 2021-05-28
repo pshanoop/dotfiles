@@ -1,7 +1,7 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=whynothugo-desktop
-pkgver=189.462afc0
+pkgver=192.90db5fd
 pkgrel=1
 pkgdesc="Metapackage for WhyNotHugo's desktop."
 arch=('any')
@@ -166,7 +166,7 @@ pkgver() {
 
 package() {
   cd "$srcdir/.."
-  for dir in usr etc boot; do
+  for dir in usr etc efi; do
     rsync -plr $dir "$pkgdir"
   done;
 
