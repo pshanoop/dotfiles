@@ -2,3 +2,6 @@ font=Cantarell 10
 icons=1
 icon-path=/usr/share/icons/Arc
 default-timeout=60000
+
+[app-name=volctl]
+anchor=top-center
