@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Generate a cmdline for the current system.
+#
+# The boot process still needs a few per-machine parameters (mostly device
+# UUIDs), so this script fill that in based on the current setup. This should
+# only really be necessary for bootstrapping new systems (or adding new
+# EXTRA_PARAMS).
+
+# NOTE: This assumes that there's only one LUKS volume present.
+LUKS_UUID=$(lsblk --list --output FSTYPE,UUID | grep crypto_LUKS | cut -d' ' -f2)
+LUKS_PARAM="rd.luks.uuid=$LUKS_UUID"
+
+ROOT_DEV=$(mount | grep " / " | awk '{ print $1 }')
+ROOT_PARAM="root=$(blkid --output export "$ROOT_DEV" | grep UUID)"
+
+# NOTE: This will fail if there is no swap.
+RESUME_DEV=$(swapon --show=NAME --noheadings)
+RESUME_PARAM="resume=$(blkid --output export "$RESUME_DEV" | grep UUID)"
+
+EXTRA_PARAMS="fastboot apparmor=1 lsm=lockdown,yama,apparmor "
+EXTRA_PARAMS+="systemd.unified_cgroup_hierarchy=1 rw "
+
+echo "$LUKS_PARAM $ROOT_PARAM $RESUME_PARAM $EXTRA_PARAMS"

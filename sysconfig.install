@@ -16,6 +16,9 @@ post_install() {
   # Install systemd-boot if it's not installed already.
   # systemd-boot-pacman-hook will handle updates to it in future.
   bootctl is-installed > /dev/null || bootctl install
+
+  # Generate a cmdline file. Later required by sbctl.
+  /usr/lib/gencmdline > /etc/kernel/cmdline
 }
 
 post_upgrade() {
