@@ -1,0 +1,12 @@
+{
+    "/efi/EFI/Boot/bootx64.efi": {
+        "file": "/efi/EFI/Boot/bootx64.efi",
+        "output_file": "/efi/EFI/Boot/bootx64.efi",
+        "checksum": "87add8d6abe5214ccbd4877456a10e2a40c606692628f012c6589e167dd8fd87"
+    },
+    "/efi/EFI/systemd/systemd-bootx64.efi": {
+        "file": "/efi/EFI/systemd/systemd-bootx64.efi",
+        "output_file": "/efi/EFI/systemd/systemd-bootx64.efi",
+        "checksum": "87add8d6abe5214ccbd4877456a10e2a40c606692628f012c6589e167dd8fd87"
+    },
+}
