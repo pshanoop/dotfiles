@@ -1,7 +1,7 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=whynothugo-desktop
-pkgver=170.103b4ad
+pkgver=189.462afc0
 pkgrel=1
 pkgdesc="Metapackage for WhyNotHugo's desktop."
 arch=('any')
@@ -77,6 +77,16 @@ depends=(
   wdisplays-git
   wf-recorder-git
   xorg-xeyes
+
+  # Virtual machines ==========================================================
+  # I use virt-manager for VMs, but all these optional dependencies are
+  # required too (kvm itsef is part of the kernel nowadays).
+  dnsmasq
+  ebtables
+  libvirt
+  qemu-arch-extra
+  radvd
+  virt-manager
 
   # Shell utilities ===========================================================
   drm_info-git
