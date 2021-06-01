@@ -83,6 +83,7 @@ depends=(
   # required too (kvm itsef is part of the kernel nowadays).
   dnsmasq
   ebtables
+  edk2-armvirt  # Provides UEFI binary for ARM64
   libvirt
   qemu-arch-extra
   radvd
