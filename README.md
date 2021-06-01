@@ -39,6 +39,15 @@ limit this repository to customisations and very opinionated settings only.
 I also keep my system-wide configuration settings in this repository. See
 [sysconfig/README.md](sysconfig/README.md) for more details on that.
 
+## Documentation
+
+I try to keep things relatively well documented. Some settings or overrides
+require attention only once every couple of years (e.g.: Firefox style
+overrides), and keeping comments around lets me figure out what existing code
+does, and where I got it from.
+
+Git blame should generally be rather useful too.
+
 ## LICENCE
 
 Copyright 2012-2021, Hugo Osvaldo Barrera <hugo@barrera.io>  
