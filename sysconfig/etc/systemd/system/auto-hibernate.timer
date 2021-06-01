@@ -1,0 +1,10 @@
+[Unit]
+Description=Check battery level and auto hibernate
+
+[Timer]
+OnBootSec=5m
+OnUnitActiveSec=5m
+AccuracySec=2m
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = hunspell-en_gb
+
+[Action]
+Description = Drop extra English dictionaries...
+When = PostTransaction
+Exec = /bin/sh -c 'for alias in en_AG en_BS en_BW en_BZ en_DK en_GB en_GH en_HK en_IE en_IN en_JM en_NA en_NG en_NZ en_SG en_TT en_ZA en_ZW; do rm /usr/share/hunspell/$alias.{aff,dic} /usr/share/myspell/dicts/$alias.{aff,dic}; done;'

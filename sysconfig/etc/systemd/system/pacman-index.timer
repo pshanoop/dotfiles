@@ -1,0 +1,10 @@
+[Unit]
+Description=Update the pacman package index
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=1h
+AccuracySec=5m
+
+[Install]
+WantedBy=timers.target

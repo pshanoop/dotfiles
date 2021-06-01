@@ -1,0 +1,6 @@
+[Unit]
+Description=Update the pacman package index
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Suwy --noconfirm

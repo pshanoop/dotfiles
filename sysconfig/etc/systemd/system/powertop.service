@@ -1,0 +1,9 @@
+[Unit]
+Description=Power usage optimisations
+
+[Service]
+ExecStart=/usr/lib/powertop-safe
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
