@@ -5,3 +5,5 @@ Allow spaces in cmdline:
 Should have instructions on /etc/fstab.
 - This generates /boot and swap, which is all I need:
 - genfstab -U -f /boot  /
+Should run `bootctl set-default arch.efi` AFTER the bundle is generated for the
+first time. It might make sense to generate it explicily the first time.
