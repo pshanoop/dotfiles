@@ -34,6 +34,11 @@ possible to roll back and forth in time between settings.
 I try to upstream any fixes, tweaks and improvements whenever possible, and
 limit this repository to customisations and very opinionated settings only.
 
+## Sysconfig
+
+I also keep my system-wide configuration settings in this repository. See
+[sysconfig/README.md](sysconfig/README.md) for more details on that.
+
 ## LICENCE
 
 Copyright 2012-2021, Hugo Osvaldo Barrera <hugo@barrera.io>  
