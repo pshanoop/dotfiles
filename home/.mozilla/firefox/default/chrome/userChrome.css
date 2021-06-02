@@ -1,3 +1,48 @@
-#pageActionButton {
-  display: none !important;
+@media (-moz-proton) {
+  /**
+   * Container Tab - Color line inside the tab
+   *
+   * Due to other changes in styling, the container line ends up outside the
+   * tab. This moves it back in.
+   */
+  .tab-context-line {
+    height: 3px;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Favicon - Don't hide on hover
+   *
+   * Firefox 89+ hides tab icones when you hover the tab. That's stupid, and
+   * this undoes that.
+   */
+  .tabbrowser-tab:hover
+    .tab-icon-stack:not([pinned], [sharing], [crashed], [soundplaying]):is([soundplaying], [muted], [activemedia-blocked])
+    > :not(.tab-icon-overlay) {
+    opacity: 1 !important;
+  }
+
+  .tab-icon-overlay:not([pinned], [sharing], [crashed], [soundplaying]):is([soundplaying], [muted], [activemedia-blocked]) {
+    opacity: 0;
+  }
+
+  /** Other minor nuances */
+  .tab-background {
+    /* Remove rounded borders from the bottom of the tab. */
+    /* I'd ideally want to keep the top radius, but the context-line messes that up. */
+    border-radius: 0 !important;
+
+    /* Remove spacing on top and under tabs. */
+    margin: 0 !important;
+
+    /* Remove the weird highlight from the currently active tab. */
+    box-shadow: none !important;
+  }
+
+  /** Sound Tab - Hide "muted" label unless something is playing */
+  .tab-secondary-label:not([soundplaying]):is([muted]) {
+    display: none !important;
+    text-transform: lowercase;
+  }
 }
