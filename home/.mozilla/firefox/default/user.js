@@ -44,8 +44,8 @@ user_pref("browser.startup.homepage", "about:blank");
 // And use the homepage as a newtab page too.
 user_pref("browser.startup.page", 3);
 
-// Position of UI elements in the toolbar.
-
+// Load userChrome.css. Not sure why this is called "legacy" now, can't figure
+// out what the "new" approach is.
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Remove the WebRTC indicator

@@ -45,4 +45,17 @@
     display: none !important;
     text-transform: lowercase;
   }
+
+  /* Hide "new tab" from the tab context menu.
+   *
+   * This new item provides absoutely no value, and makes "reload" far more
+   * unreachable when using a mouse
+   */
+  #tabContextMenu #context_openANewTab {
+    display: none;
+  }
+
+  #tabContextMenu #context_openANewTab + menuseparator {
+    display: none;
+  }
 }
