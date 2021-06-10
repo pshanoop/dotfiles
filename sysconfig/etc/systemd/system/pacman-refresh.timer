@@ -1,5 +1,5 @@
 [Unit]
-Description=Update the pacman package index
+Description=Update pacman index and retrieve packages
 
 [Timer]
 OnBootSec=15m
