@@ -1,17 +1,18 @@
 # Maintainer: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=whynothugo-desktop
-pkgver=192.90db5fd
+pkgver=2489.af5be18
 pkgrel=1
 pkgdesc="Metapackage for WhyNotHugo's desktop."
 arch=('any')
 url="https://gitlab.com/WhyNotHugo/sysconfig"
 license=('ISC')
 install=sysconfig.install
-replaces=("sysconfig")
-conflicts=("sysconfig")
+replaces=(sysconfig pacman-mirrorlist)
+conflicts=(sysconfig pacman-mirrorlist)
 provides=(
   awesome-terminal-fonts  # lsd depends on this but breaks if it's installed.
+  pacman-mirrorlist  # mirrorlist is maintained by a reflector timer.
 )
 depends=(
   # System ====================================================================
