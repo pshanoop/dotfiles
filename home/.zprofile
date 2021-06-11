@@ -9,7 +9,6 @@ if [ "$(tty)" = "/dev/tty1" ]; then
   # Affects apps like older Qts, etc.
   export XDG_SESSION_TYPE=wayland
 
-  # systemctl --user import-environment
   /usr/bin/sudo /usr/bin/plymouth quit --retain-splash
   WLR_DRM_NO_MODIFIERS=1 systemd-cat --identifier=sway sway
 elif case $(tty) in /dev/tty*) ;; *) false;; esac; then
