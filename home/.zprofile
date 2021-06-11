@@ -11,7 +11,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 
   # systemctl --user import-environment
   /usr/bin/sudo /usr/bin/plymouth quit --retain-splash
-  exec systemd-cat --identifier=sway sway
+  WLR_DRM_NO_MODIFIERS=1 systemd-cat --identifier=sway sway
 elif case $(tty) in /dev/tty*) ;; *) false;; esac; then
   exec bash
 fi
