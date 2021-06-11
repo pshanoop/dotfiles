@@ -18,7 +18,7 @@ function M.show_fuzzy_finder()
   else
     -- Sorting makes this super slow, since all input must be ready before the
     -- first render.
-    source = 'ag -g "" --hidden'
+    source = 'fd --hidden'
     prompt = 'pwd> '
     root = vim.fn.getcwd()
   end
