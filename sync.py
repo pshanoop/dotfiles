@@ -18,6 +18,8 @@ from colorama import init
 init(autoreset=True)
 os.chdir(Path(__file__).parent / "home")
 
+# List of directories that we don't traverse and symlink each file.
+# Instead we symlink the directory itself.
 # This can't be a generator since we'd exhaust it on the first iteration.
 linked_dirs = {
     Path(dir)
