@@ -10,7 +10,6 @@ configuration directory (which contains a bunch of scripts). These directories
 are enumerated in `linked_dirs`.
 """
 import os
-from itertools import chain
 from pathlib import Path
 
 from colorama import Fore
@@ -36,17 +35,22 @@ linked_dirs = {
 
 # XXX: hardlink support?
 
-all_files = (
-    file
-    for file in Path(".").rglob("*")
-    if not (file.is_dir() or any(file.is_relative_to(dir) for dir in linked_dirs))
-)
 
-all_paths = chain(linked_dirs, all_files)
+def all_paths():
+    """Return all paths that should be symlinked."""
+
+    for dir in linked_dirs:
+        yield dir
+    for file in Path(".").rglob("*"):
+        if file.is_dir():
+            continue
+        if any(file.is_relative_to(dir) for dir in linked_dirs):
+            continue
+        yield file
 
 
 home = Path.home()
-for path in all_paths:
+for path in all_paths():
     repo_path = path.absolute()
     home_path = home / path
     resolved_path = home_path.resolve()
