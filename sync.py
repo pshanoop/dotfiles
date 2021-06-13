@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """Sync symlinks to dotfiles repo.
 
 This script creates symlinks in $HOME pointing to the right files inside this
