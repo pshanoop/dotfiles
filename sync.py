@@ -30,6 +30,7 @@ linked_dirs = {
         ".local/share/flatpak/overrides",
         ".local/share/light-mode.d",
         ".local/share/nemo",
+        ".mozilla/firefox/default/chrome",
     ]
 }
 
