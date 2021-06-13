@@ -9,16 +9,16 @@ set -e
 # $@ = as separate args
 # $* = as a single arg
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   echo Bad usage.
-  exit -1
+  exit 1
 fi
 
+# TODO: Read this from a config file?
 BUCKET=terraform-20210410103357570100000001
+KEY=$(uuidgen)/$(basename "$1")
 
-UUID=$(uuidgen)
-KEY=$UUID/$(basename $1)
+aws-vault exec whynothugo -- aws s3 cp --quiet "$1" s3://$BUCKET/"$KEY"
 
-aws-vault exec whynothugo -- aws s3 cp --quiet $1 s3://$BUCKET/$KEY
-
-echo https://share.whynothugo.nl/$KEY
+# TODO: Read this from a config file?
+echo https://files.whynothugo.nl/"$KEY"
