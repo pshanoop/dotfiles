@@ -50,13 +50,11 @@ def all_paths():
         yield file
 
 
-home = Path.home()
 for path in all_paths():
     repo_path = path.absolute()
-    home_path = home / path
-    resolved_path = home_path.resolve()
+    home_path = Path.home() / path
 
-    if home_path.is_symlink() and resolved_path == repo_path:
+    if home_path.is_symlink() and home_path.resolve() == repo_path:
         print(path, Fore.MAGENTA + "Is linked")
     elif home_path.exists() or home_path.is_symlink():
         print(path, Fore.RED + "Conflict")
