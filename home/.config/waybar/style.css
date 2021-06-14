@@ -62,7 +62,6 @@ window#waybar.telegramdesktop {
 }
 
 #workspaces button.focused {
-  background-color: #64727d;
   border-bottom: 3px solid #ffffff;
 }
 
@@ -87,8 +86,9 @@ window#waybar.telegramdesktop {
 }
 
 #clock {
-  background-color: #64727d;
   margin-right: 0;
+  border-bottom: 3px solid #64727d;
+  border-top: 2px solid transparent;
 }
 
 #battery {
@@ -122,14 +122,13 @@ label:focus {
   background-color: #000000;
 }
 
-#pulseaudio {
+#pulseaudio:not(.muted) {
   background-color: #2980b9;
-  /* background-color: #f1c40f; */
 }
 
 #pulseaudio.muted {
-  background-color: #90b1b1;
-  color: #2a5c45;
+  border-bottom: 3px solid #90b1b1;
+  border-top: 2px solid transparent;
 }
 
 #custom-mic {
