@@ -27,7 +27,7 @@
     opacity: 0;
   }
 
-  /** Other minor nuances */
+  /** Tab bar tweaks. */
   .tab-background {
     /* Remove rounded borders from the bottom of the tab. */
     /* I'd ideally want to keep the top radius, but the context-line messes that up. */
@@ -38,6 +38,12 @@
 
     /* Remove the weird highlight from the currently active tab. */
     box-shadow: none !important;
+  }
+
+  /* Prevent growing the tab bar when these are visible. */
+  toolbarbutton#scrollbutton-up,
+  toolbarbutton#scrollbutton-down {
+    padding: 0;
   }
 
   /** Sound Tab - Hide "muted" label unless something is playing */
