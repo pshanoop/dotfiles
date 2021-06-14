@@ -47,8 +47,11 @@
   }
 
   /** Sound Tab - Hide "muted" label unless something is playing */
+  .tab-secondary-label:is([muted]) .tab-icon-sound-muted-label {
+    display: none;
+  }
+
   .tab-secondary-label:not([soundplaying]):is([muted]) {
-    display: none !important;
     text-transform: lowercase;
   }
 
