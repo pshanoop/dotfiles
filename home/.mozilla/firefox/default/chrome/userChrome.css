@@ -117,4 +117,14 @@
     transition-delay: 0s !important;
     z-index: 100;
   }
+
+  /* Hide icon for for templorary containers. */
+  #userContext-label[value^="t"] + #userContext-indicator {
+    display: none;
+  }
+
+  /* Hide the "tracking protection" icon. */
+  #tracking-protection-icon-container {
+    display: none;
+  }
 }
