@@ -68,6 +68,11 @@
     display: none;
   }
 
+  /* Make arrow paler when this is disabled. */
+  #scrollbutton-up[disabled] .toolbarbutton-icon {
+    opacity: 0.4;
+  }
+
   /* Auto-hide Navigation bar */
   /* From https://gist.github.com/MisteryMonster/f3abb493833a814f5dd102306b1f67a4 */
 
