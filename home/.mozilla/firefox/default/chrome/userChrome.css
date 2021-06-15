@@ -73,51 +73,6 @@
     opacity: 0.4;
   }
 
-  /* Auto-hide Navigation bar */
-  /* From https://gist.github.com/MisteryMonster/f3abb493833a814f5dd102306b1f67a4 */
-
-  :root {
-    --navbar-transition-delay: 0.2s;
-    --navbar-transition-duration: 135ms;
-    --nav-bar-margin: calc(
-      -1 * (var(--proton-tab-block-margin) + var(--tab-min-height))
-    );
-  }
-  :root:not([uidensity]) {
-    --bookmark-bar-margin: -28px;
-  }
-  :root[uidensity="touch"] {
-    --bookmark-bar-margin: -34px;
-  }
-
-  /* Auto-hide url-bar */
-  /* From https://gist.github.com/MisteryMonster/f3abb493833a814f5dd102306b1f67a4 */
-
-  :root:not([customizing])[chromehidden=""][sizemode="normal"] #nav-bar,
-  :root:not([customizing])[chromehidden=""][sizemode="maximized"] #nav-bar {
-    position: relative;
-    margin-bottom: var(--nav-bar-margin);
-    transform: rotateX(90deg);
-    transform-origin: top;
-    transition: transform var(--navbar-transition-duration) linear
-      var(--navbar-transition-delay) !important;
-    z-index: 101;
-  }
-  :root:not([customizing])[sizemode="normal"] #navigator-toolbox:hover #nav-bar,
-  :root:not([customizing])[sizemode="maximized"]
-    #navigator-toolbox:hover
-    #nav-bar,
-  :root:not([customizing])[sizemode="normal"]
-    #navigator-toolbox:focus-within
-    #nav-bar,
-  :root:not([customizing])[sizemode="maximized"]
-    #navigator-toolbox:focus-within
-    #nav-bar {
-    transform: rotateX(0deg);
-    transition-delay: 0s !important;
-    z-index: 100;
-  }
-
   /* Hide icon for for templorary containers. */
   #userContext-label[value^="t"] + #userContext-indicator {
     display: none;
