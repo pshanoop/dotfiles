@@ -45,3 +45,5 @@
 	defaultBranch = main
 [includeIf "gitdir:~/workspace/ProctorExam/"]
 	path = ~/.config/git/proctorexam
+[url "aur@aur.archlinux.org:"]
+	insteadOf = https://aur.archlinux.org/
