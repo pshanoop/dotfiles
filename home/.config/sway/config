@@ -105,7 +105,7 @@ input 1133:4122:Logitech_Performance_MX pointer_accel -0.3
 input 1739:30383:DELL07E6:00_06CB:76AF_Touchpad pointer_accel 1
 
 output eDP-1 mode 3840x2160 pos 0 960 scale 3
-output "Ancor Communications Inc ROG PG348Q #ASMuhJCcVsHd" mode 3440x1440 pos 1536 0 scale 1.5
+output "Ancor Communications Inc ROG PG348Q #ASMuhJCcVsHd" mode 3440x1440 pos 1536 0 scale 2
 output * adaptive_sync on
 
 # Disable the laptop screen when the lid is closed.
