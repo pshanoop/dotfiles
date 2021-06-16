@@ -6,3 +6,5 @@ set adjust-open width
 set recolor-lightcolor \#bea58b
 set recolor-darkcolor \#000000
 set default-bg \#bea58b
+
+set font "system-ui 11"
