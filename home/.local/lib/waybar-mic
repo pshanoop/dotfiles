@@ -13,7 +13,7 @@
 # It might make sense to hide the module if no microphone is unmuted. This
 # depends on: https://github.com/Alexays/Waybar/issues/699
 #
-# TODO: If a non-primary microphone is one, that should somehow be reflected.
+# TODO: If a non-primary microphone is on, that should somehow be reflected.
 
 show() {
   # Prints the current micrphone state.
