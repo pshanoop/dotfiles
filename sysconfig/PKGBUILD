@@ -33,6 +33,7 @@ depends=(
   openrazer-meta-git  # Properly handles DPI for Razer mice.
   pam-u2f  # Required to sudo with the yubikey.
   razercommander
+  sbctl
   solaar  # Used to reconfigure unifying receivers.
 
   # Fonts =====================================================================
