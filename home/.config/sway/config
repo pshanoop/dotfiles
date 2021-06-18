@@ -114,9 +114,13 @@ bindswitch --reload lid:off output eDP-1 enable
 
 # xwayland disable
 
-# Import DISPLAY and WAYLAND_DISPLAY.
-include /etc/sway/config.d/50-systemd-user.conf
-
+# Import some env variables that will be required by other serivces.
+#
+# DISPLAY is ommited since it seems to be unecessary.
+# WAYLAND_DISPLAY is quite obvious.
+# SWAYSOCK and XDG_CURRENT_DESKTOP are required for things like screensharing and alike
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 # Start services that rely on the compositor being up.
 exec systemctl --user start sway-session.target
 
