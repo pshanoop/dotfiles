@@ -14,6 +14,10 @@ if [ "$(tty)" = "/dev/tty1" ]; then
 
   /usr/bin/sudo /usr/bin/plymouth quit --retain-splash
   WLR_DRM_NO_MODIFIERS=1 systemd-cat --identifier=sway sway
-elif case $(tty) in /dev/tty*) ;; *) false;; esac; then
+elif [ "$(tty)" = "/dev/tty7" ]; then
+  # tty7 is to rescue the system in case I break zsh to a point where
+  # where I can' t even run interactive commands to edit this file.
   exec bash
+elif case $(tty) in /dev/tty*) ;; *) false;; esac; then
+  exec zsh
 fi
