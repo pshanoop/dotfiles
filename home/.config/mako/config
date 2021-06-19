@@ -5,3 +5,6 @@ default-timeout=60000
 
 [app-name=volctl]
 anchor=top-center
+format=%b
+text-alignment=center
+width=200

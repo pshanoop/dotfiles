@@ -28,13 +28,13 @@ show() {
   SOURCE_NAME=$(ponymix --short --source | grep source | cut -f 4 | cut -d" " -f -2)
 
   if ponymix --sink is-muted; then
-    SINK="  $VOLUME% $SINK_NAME (muted)"
+    SINK="  $VOLUME% $SINK_NAME"
   else
     SINK="  $VOLUME% $SINK_NAME"
   fi
 
   if ponymix --source is-muted; then
-    SOURCE="  $MICVOL% $SOURCE_NAME (muted)"
+    SOURCE="  $MICVOL% $SOURCE_NAME"
   else
     SOURCE="  $MICVOL% $SOURCE_NAME"
   fi
