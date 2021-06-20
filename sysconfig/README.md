@@ -38,7 +38,7 @@ to be installed as root. User-level settings are handled separately in my
 - `video` to be able to control laptop backlight.
 - `systemd-journal` to read the system journal.
 - `docker`
-- `plugdev`
+- `plugdev` for openrazer to work.
 
 # Packages
 
