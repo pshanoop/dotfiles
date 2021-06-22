@@ -153,12 +153,3 @@ label:focus {
   border-bottom: 3px solid #209050;
   border-top: 2px solid transparent;
 }
-
-#workspaces #sway-workspace-9 {
-  border-bottom: 3px solid #2980b9;
-}
-#workspaces #sway-workspace-9:hover {
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: inherit;
-  border-bottom: 3px solid #ffffff;
-}

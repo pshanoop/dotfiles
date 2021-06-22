@@ -14,8 +14,6 @@
         "all-outputs": false,
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "",
-            "9": "",
             "urgent": "",
             "focused": "",
             "default": ""
