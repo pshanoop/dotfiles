@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Turn of the screen after 15 seconds idle, but turn it off upon any activity.
+# Turn off the screen after 15 seconds idle, but turn it on upon any activity.
 # This script is meant to be run when the system is locked, to keep the screen
 # off almost permanently.
 
